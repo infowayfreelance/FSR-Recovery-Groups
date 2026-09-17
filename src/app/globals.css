@@ -72,10 +72,16 @@ h4,
     url("/images/service-roadside.webp") center/cover no-repeat;
 }
 
+/* ── Homepage hero background (distinct from the shared .hero-bg above) ── */
+.home-hero-bg {
+  background: linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8)),
+    url("/images/home-hero.jpg") center/cover no-repeat;
+}
+
 /* ── CTA background (no fixed on mobile — Android/iOS don't support it) ── */
 .cta-parallax-bg {
   background: linear-gradient(rgba(11, 34, 65, 0.85), rgba(11, 34, 65, 0.85)),
-    url("/images/gallery-2.webp") center/cover no-repeat;
+    url("/images/home-cta.jpg") center/cover no-repeat;
 }
 @media (min-width: 768px) and (hover: hover) {
   .cta-parallax-bg {
