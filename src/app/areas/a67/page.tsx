@@ -57,7 +57,6 @@ const content: AreaPageContent = {
   ctaHeading: "Broken Down on the A67?",
   ctaText: "Call or WhatsApp FSR Recovery Group now with your location on the A67, and we'll confirm the fastest way to reach you.",
   nearbyAreas: [
-    { label: "Darlington", href: "/areas/darlington" },
     { label: "Barnard Castle", href: "/areas/barnard-castle" },
     { label: "A66 Recovery", href: "/areas/a66" },
   ],

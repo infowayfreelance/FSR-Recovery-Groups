@@ -58,7 +58,6 @@ const content: AreaPageContent = {
   ctaHeading: "Broken Down on the A1(M)?",
   ctaText: "Call or WhatsApp FSR Recovery Group now with your exact location and nearest junction, and we'll confirm the fastest way to reach you.",
   nearbyAreas: [
-    { label: "Darlington", href: "/areas/darlington" },
     { label: "Durham", href: "/areas/durham" },
     { label: "Catterick", href: "/areas/catterick" },
     { label: "A66 Recovery", href: "/areas/a66" },
