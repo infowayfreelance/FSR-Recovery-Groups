@@ -10,9 +10,6 @@ export const metadata: Metadata = {
   alternates: { canonical: "/contact" },
 };
 
-const GBP_MAP_SRC =
-  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.2663569650504!2d-1.5587199999999999!3d54.5287988!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xeed77f7b9c8a489%3A0x3af9f4efbabca787!2sFSR%20Recovery%20Group!5e0!3m2!1sen!2s!4v1789458414338!5m2!1sen!2s";
-
 const contactMethods = [
   {
     icon: "fa-solid fa-phone",
@@ -220,28 +217,6 @@ export default function ContactPage() {
                   Browse our recovery services →
                 </a>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Map */}
-        <section className="bg-white py-20">
-          <div className="container-site">
-            <div className="fade-up mx-auto mb-8 max-w-2xl text-center">
-              <p className="mb-3 font-bold text-red">Find Us</p>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">{business.name} Location</h2>
-            </div>
-            <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
-              <iframe
-                src={GBP_MAP_SRC}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title={`${business.name} Location`}
-              />
             </div>
           </div>
         </section>
