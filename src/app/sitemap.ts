@@ -31,6 +31,7 @@ const entries: Entry[] = [
   // Areas: Cities & Towns
   { path: "/areas/newcastle", changeFrequency: "monthly", priority: 0.6 },
   { path: "/areas/durham", changeFrequency: "monthly", priority: 0.6 },
+  { path: "/areas/darlington", changeFrequency: "monthly", priority: 0.6 },
   { path: "/areas/sunderland", changeFrequency: "monthly", priority: 0.6 },
   { path: "/areas/peterlee", changeFrequency: "monthly", priority: 0.6 },
   { path: "/areas/middlesbrough", changeFrequency: "monthly", priority: 0.6 },

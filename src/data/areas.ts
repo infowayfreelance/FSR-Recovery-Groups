@@ -8,6 +8,7 @@ export type AreaNavigationItem = {
 export const areaNavigation: AreaNavigationItem[] = [
   { key: "newcastle", label: "Newcastle", href: "/areas/newcastle", category: "city" },
   { key: "durham", label: "Durham", href: "/areas/durham", category: "city" },
+  { key: "darlington", label: "Darlington", href: "/areas/darlington", category: "city" },
   { key: "sunderland", label: "Sunderland", href: "/areas/sunderland", category: "city" },
   { key: "peterlee", label: "Peterlee", href: "/areas/peterlee", category: "city" },
   { key: "middlesbrough", label: "Middlesbrough", href: "/areas/middlesbrough", category: "city" },
