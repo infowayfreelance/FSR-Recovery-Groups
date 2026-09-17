@@ -58,6 +58,7 @@ const content: AreaPageContent = {
   ctaText: "Call or WhatsApp FSR Recovery Group now with your location and we'll confirm the fastest way to help.",
   nearbyAreas: [
     { label: "Thirsk", href: "/areas/thirsk" },
+    { label: "Darlington", href: "/areas/darlington" },
     { label: "A167 Recovery", href: "/areas/a167" },
   ],
 };

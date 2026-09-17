@@ -59,6 +59,7 @@ const content: AreaPageContent = {
   ctaHeading: "Broken Down in Durham?",
   ctaText: "Call or WhatsApp FSR Recovery Group now and we will confirm the fastest way to reach your location in Durham.",
   nearbyAreas: [
+    { label: "Darlington", href: "/areas/darlington" },
     { label: "Newcastle", href: "/areas/newcastle" },
     { label: "Bishop Auckland", href: "/areas/bishop-auckland" },
     { label: "A1(M) Recovery", href: "/areas/a1m" },

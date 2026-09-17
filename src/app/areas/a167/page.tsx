@@ -57,6 +57,7 @@ const content: AreaPageContent = {
   ctaHeading: "Broken Down on the A167?",
   ctaText: "Call or WhatsApp FSR Recovery Group now with your exact location on the A167, and we'll confirm the fastest way to reach you.",
   nearbyAreas: [
+    { label: "Darlington", href: "/areas/darlington" },
     { label: "Durham", href: "/areas/durham" },
     { label: "Newcastle", href: "/areas/newcastle" },
     { label: "A1(M) Recovery", href: "/areas/a1m" },

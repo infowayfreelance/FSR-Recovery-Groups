@@ -58,6 +58,7 @@ const content: AreaPageContent = {
   ctaHeading: "Need Recovery in Middlesbrough?",
   ctaText: "Call or WhatsApp FSR Recovery Group with your location in Middlesbrough and we'll confirm the fastest way to help.",
   nearbyAreas: [
+    { label: "Darlington", href: "/areas/darlington" },
     { label: "Thirsk", href: "/areas/thirsk" },
     { label: "A66 Recovery", href: "/areas/a66" },
     { label: "A19 Recovery", href: "/areas/a19" },
