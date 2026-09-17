@@ -57,7 +57,6 @@ const content: AreaPageContent = {
   ctaHeading: "Broken Down in Barnard Castle?",
   ctaText: "Call or WhatsApp FSR Recovery Group now with your location and we'll confirm the fastest way to help.",
   nearbyAreas: [
-    { label: "Darlington", href: "/areas/darlington" },
     { label: "Bishop Auckland", href: "/areas/bishop-auckland" },
     { label: "A67 Recovery", href: "/areas/a67" },
     { label: "A66 Recovery", href: "/areas/a66" },
