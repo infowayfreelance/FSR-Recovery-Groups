@@ -16,7 +16,7 @@ const services = [
   {
     icon: "fa-solid fa-truck-pickup",
     img: "/images/service-breakdown.jpg",
-    alt: "24/7 Vehicle Breakdown Recovery",
+    alt: "Car being loaded onto a flatbed recovery truck at dusk",
     title: "24/7 Vehicle Breakdown Recovery",
     ...getServiceNavigation("vehicle-breakdown-recovery"),
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
@@ -29,7 +29,7 @@ const services = [
   {
     icon: "fa-solid fa-triangle-exclamation",
     img: "/images/service-roadside.jpg",
-    alt: "Roadside Assistance",
+    alt: "Technician checking a car engine roadside in the rain",
     title: "Roadside Assistance",
     ...getServiceNavigation("roadside-assistance"),
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
@@ -42,7 +42,7 @@ const services = [
   {
     icon: "fa-solid fa-car-battery",
     img: "/images/service-jumpstart.jpg",
-    alt: "Jumpstart Services",
+    alt: "Jump-starting a car battery on a frosty driveway",
     title: "Jumpstart Services",
     ...getServiceNavigation("jumpstart-services"),
     desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
@@ -55,7 +55,7 @@ const services = [
   {
     icon: "fa-solid fa-truck-monster",
     img: "/images/service-winch.jpg",
-    alt: "Winch Out",
+    alt: "Land Rover being winched out of a ditch",
     title: "Winch Out",
     ...getServiceNavigation("winch-out"),
     desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
@@ -68,7 +68,7 @@ const services = [
   {
     icon: "fa-solid fa-car-burst",
     img: "/images/service-accident.jpg",
-    alt: "Accident Emergency Assistance",
+    alt: "Technician inspecting a damaged car with a tow truck behind",
     title: "Accident Emergency Assistance",
     ...getServiceNavigation("accident-emergency-assistance"),
     desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
@@ -81,7 +81,7 @@ const services = [
   {
     icon: "fa-solid fa-circle-dot",
     img: "/images/service-tyre.jpg",
-    alt: "Changing Spare Tyre",
+    alt: "Technician fitting a spare wheel to a car",
     title: "Changing Spare Tyre",
     ...getServiceNavigation("changing-spare-tyre"),
     desc: "Quick, safe roadside tyre changes so a puncture doesn't leave you waiting around.",
@@ -94,7 +94,7 @@ const services = [
   {
     icon: "fa-solid fa-gas-pump",
     img: "/images/service-refuel.jpg",
-    alt: "Refueling",
+    alt: "Technician pouring fuel from a can into a car",
     title: "Refueling",
     ...getServiceNavigation("refueling"),
     desc: "Run out of fuel? We'll bring enough to get you safely to the nearest station.",
@@ -107,7 +107,7 @@ const services = [
   {
     icon: "fa-solid fa-truck-ramp-box",
     img: "/images/service-transport.jpg",
-    alt: "Vehicle Transporting",
+    alt: "Clean car strapped to a flatbed in a car park",
     title: "Vehicle Transporting",
     ...getServiceNavigation("vehicle-transporting"),
     desc: "Safe, secure transport for vehicles that can't be driven, over any distance.",
