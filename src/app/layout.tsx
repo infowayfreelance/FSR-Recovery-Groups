@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
 import { Poppins, Inter } from "next/font/google";
-import { GoogleTagManager } from "@next/third-parties/google";
 import "./globals.css";
 import { FloatingButtons } from "@/components/FloatingButtons";
 import { ScrollAnimations } from "@/components/ScrollAnimations";
+import { CookieConsentProvider } from "@/components/CookieConsent";
 import { business } from "@/data/business";
 
 const poppins = Poppins({
@@ -33,7 +33,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
-      <GoogleTagManager gtmId="GTM-MQ4STV94" />
       <head>
         <link rel="preload" as="image" href="/images/service-roadside.webp" />
         {/* Self-hosted icon font (solid + brands only) — same-origin to avoid the
@@ -42,17 +41,9 @@ export default function RootLayout({
         <link rel="stylesheet" href="/fonts/fontawesome/fontawesome.min.css" />
       </head>
       <body className="pb-14 antialiased sm:pb-0">
-        <noscript>
-          <iframe
-            src="https://www.googletagmanager.com/ns.html?id=GTM-MQ4STV94"
-            height="0"
-            width="0"
-            style={{ display: "none", visibility: "hidden" }}
-          />
-        </noscript>
         <ScrollAnimations />
         <FloatingButtons />
-        {children}
+        <CookieConsentProvider>{children}</CookieConsentProvider>
       </body>
     </html>
   );

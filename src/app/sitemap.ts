@@ -52,6 +52,7 @@ const entries: Entry[] = [
   // Legal
   { path: "/privacy-policy", changeFrequency: "yearly", priority: 0.3 },
   { path: "/terms-and-conditions", changeFrequency: "yearly", priority: 0.3 },
+  { path: "/cookie-policy", changeFrequency: "yearly", priority: 0.3 },
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
