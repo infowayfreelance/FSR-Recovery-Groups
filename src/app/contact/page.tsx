@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
+import { GoogleMapEmbed } from "@/components/GoogleMapEmbed";
 import { business } from "@/data/business";
 
 export const metadata: Metadata = {
@@ -232,16 +233,7 @@ export default function ContactPage() {
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">{business.name} Location</h2>
             </div>
             <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
-              <iframe
-                src={GBP_MAP_SRC}
-                width="100%"
-                height="100%"
-                style={{ border: 0 }}
-                allowFullScreen
-                loading="lazy"
-                referrerPolicy="strict-origin-when-cross-origin"
-                title={`${business.name} Location`}
-              />
+              <GoogleMapEmbed src={GBP_MAP_SRC} title={`${business.name} Location`} />
             </div>
           </div>
         </section>
