@@ -172,7 +172,19 @@ export default function ServicesPage() {
 
       <main>
         {/* Page Banner */}
-        <section className="hero-bg text-white">
+        <section className="relative isolate overflow-hidden text-white">
+          <Image
+            src="/images/service-roadside.webp"
+            alt="Technician checking a car engine roadside in the rain"
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }}
+          />
           <div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20">
             <p className="mb-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/40 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
               <i className="fa-solid fa-screwdriver-wrench flex-shrink-0"></i> Our Services
@@ -210,7 +222,7 @@ export default function ServicesPage() {
             <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
                 <article id={service.key} key={service.title} className="service-card fade-up flex scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white">
-                  <Image src={service.img} alt={service.alt} width={900} height={600} className="h-48 w-full object-cover" />
+                  <Image src={service.img} alt={service.alt} width={900} height={600} sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" className="h-48 w-full object-cover" />
                   <div className="flex flex-1 flex-col p-6">
                     <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
                       <i className={`${service.icon} text-xl text-red`}></i>

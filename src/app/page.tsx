@@ -146,7 +146,19 @@ export default function Home() {
 
       <main>
         {/* ── Hero ── */}
-        <section className="home-hero-bg text-white">
+        <section className="relative isolate overflow-hidden text-white">
+          <Image
+            src="/images/home-hero.jpg"
+            alt="Tow truck recovering a car on the road at dusk"
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }}
+          />
           <div className="container-site grid items-center gap-8 py-10 sm:py-16 lg:grid-cols-[1.15fr_.85fr] lg:gap-12 lg:py-28">
             <div className="fade-up">
               <p className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/30 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:px-4 sm:py-2 sm:text-sm">
@@ -236,6 +248,7 @@ export default function Home() {
                 alt="FSR Recovery Groups vehicle transported safely on a flatbed"
                 width={1200}
                 height={900}
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="min-h-[360px] w-full rounded-3xl object-cover shadow-2xl"
               />
             </div>
@@ -309,6 +322,7 @@ export default function Home() {
                         alt={service.alt}
                         width={900}
                         height={600}
+                        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
                         className="h-52 w-full rounded-t-3xl object-cover"
                       />
                     </Link>
@@ -410,6 +424,7 @@ export default function Home() {
                 alt="FSR Recovery technician providing roadside assistance"
                 width={1200}
                 height={900}
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
             </div>
