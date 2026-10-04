@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
@@ -70,7 +71,19 @@ export default function ContactPage() {
 
       <main>
         {/* Page Banner */}
-        <section className="hero-bg text-white">
+        <section className="relative isolate overflow-hidden text-white">
+          <Image
+            src="/images/service-roadside.webp"
+            alt="Technician checking a car engine roadside in the rain"
+            fill
+            priority
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }}
+          />
           <div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20">
             <p className="mb-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/40 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
               <i className="fa-solid fa-envelope flex-shrink-0"></i> Contact Us

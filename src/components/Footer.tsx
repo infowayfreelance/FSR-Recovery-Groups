@@ -10,7 +10,7 @@ export function Footer() {
         <div className="mb-12 grid gap-10 md:grid-cols-2 lg:grid-cols-4">
           {/* Brand */}
           <div>
-            <Logo variant="light" size="md" />
+            <Logo variant="light" size="md" priority={false} />
             <p className="mt-4 mb-5 text-sm leading-7 text-slate-400">
               Vehicle recovery, towing and roadside support for drivers across the region,
               24 hours a day, every day of the year.

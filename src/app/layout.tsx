@@ -34,11 +34,22 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${poppins.variable} ${inter.variable}`}>
       <head>
-        <link rel="preload" as="image" href="/images/service-roadside.webp" />
         {/* Self-hosted icon font (solid + brands only) — same-origin to avoid the
-            extra DNS/TLS round trip a CDN link adds on slow connections. */}
+            extra DNS/TLS round trip a CDN link adds on slow connections. Loaded as
+            non-render-blocking (media="print" swapped to "all" once fetched) since
+            icons are decorative and shouldn't delay first paint; noscript covers
+            visitors without JS. */}
         {/* eslint-disable-next-line @next/next/no-css-tags */}
-        <link rel="stylesheet" href="/fonts/fontawesome/fontawesome.min.css" />
+        <link rel="stylesheet" href="/fonts/fontawesome/fontawesome.min.css" media="print" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: "document.currentScript.previousElementSibling.media='all';",
+          }}
+        />
+        <noscript>
+          {/* eslint-disable-next-line @next/next/no-css-tags */}
+          <link rel="stylesheet" href="/fonts/fontawesome/fontawesome.min.css" />
+        </noscript>
       </head>
       <body className="pb-14 antialiased sm:pb-0">
         <ScrollAnimations />

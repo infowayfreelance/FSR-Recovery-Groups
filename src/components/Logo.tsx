@@ -22,9 +22,11 @@ const variantMap = {
 export function Logo({
   variant = "light",
   size = "md",
+  priority = true,
 }: {
   variant?: "light" | "dark";
   size?: "sm" | "md" | "lg";
+  priority?: boolean;
 }) {
   const s = sizeMap[size];
   const v = variantMap[variant];
@@ -35,7 +37,7 @@ export function Logo({
       alt="FSR Recovery Groups"
       width={v.width}
       height={v.height}
-      priority
+      priority={priority}
       className={`w-auto ${s.className}`}
     />
   );
