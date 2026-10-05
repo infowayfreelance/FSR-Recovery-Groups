@@ -83,8 +83,8 @@ export default function AboutPage() {
         {/* Page Banner */}
         <section className="relative isolate overflow-hidden text-white">
           <Image
-            src="/images/service-roadside.webp"
-            alt="Technician checking a car engine roadside in the rain"
+            src="/images/about-hero.webp"
+            alt="FSR Recovery Group technician checking equipment on the back of a recovery truck"
             fill
             preload
             fetchPriority="high"
@@ -149,10 +149,10 @@ export default function AboutPage() {
             </div>
             <div className="fade-up">
               <Image
-                src="/images/service-transport.jpg"
-                alt="FSR Recovery Group vehicle transporter on the highway"
-                width={1735}
-                height={1080}
+                src="/images/about-fleet-transport.webp"
+                alt="FSR Recovery Group transporter delivering a car outside the depot"
+                width={1600}
+                height={900}
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
@@ -212,10 +212,10 @@ export default function AboutPage() {
             </div>
             <div className="fade-up">
               <Image
-                src="/images/gallery-2.jpg"
-                alt="FSR Recovery technician winching a vehicle free"
-                width={2000}
-                height={1333}
+                src="/images/about-tyre-strap.webp"
+                alt="FSR Recovery Group technician securing a car wheel with a ratchet strap"
+                width={1200}
+                height={800}
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
