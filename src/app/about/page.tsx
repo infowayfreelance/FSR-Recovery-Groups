@@ -86,7 +86,8 @@ export default function AboutPage() {
             src="/images/service-roadside.webp"
             alt="Technician checking a car engine roadside in the rain"
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="-z-20 object-cover"
           />
@@ -124,7 +125,7 @@ export default function AboutPage() {
         <section className="bg-white py-20">
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Our Story</p>
+              <p className="mb-3 font-bold text-red-dark">Our Story</p>
               <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
                 A Recovery Team You Can Rely On
               </h2>
@@ -163,7 +164,7 @@ export default function AboutPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">What Drives Us</p>
+              <p className="mb-3 font-bold text-red-dark">What Drives Us</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Our Values</h2>
               <p className="text-navy/70">The principles we apply to every job, regardless of size or complexity.</p>
             </div>
@@ -185,7 +186,7 @@ export default function AboutPage() {
         <section className="bg-navy py-20 text-white">
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Why Drivers Choose Us</p>
+              <p className="mb-3 font-bold text-red-dark">Why Drivers Choose Us</p>
               <h2 className="mb-5 text-3xl font-extrabold lg:text-4xl">
                 Trusted, Straightforward and Fast
               </h2>
@@ -226,7 +227,7 @@ export default function AboutPage() {
         <section className="bg-white py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">Where We Operate</p>
+              <p className="mb-3 font-bold text-red-dark">Where We Operate</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Areas We Cover</h2>
               <p className="text-navy/70">
                 We regularly assist drivers across the following situations and locations. Not sure if we
@@ -253,7 +254,7 @@ export default function AboutPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
-              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <p className="mb-3 font-bold text-red-dark">Common Questions</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">About {business.name}</h2>
             </div>
             <div className="grid gap-5">

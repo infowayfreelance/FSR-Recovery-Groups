@@ -63,7 +63,7 @@ const schema = { "@context": "https://schema.org", "@graph": [
 export default function JumpstartServicesPage() {
   return <><Header activePath="/services" /><main>
     <section className="service-hero relative isolate min-h-[680px] overflow-hidden bg-navy text-white">
-      <Image src="/images/service-jumpstart.jpg" alt="Car receiving battery starting assistance" fill priority sizes="100vw" className="-z-20 object-cover" />
+      <Image src="/images/service-jumpstart.jpg" alt="Car receiving battery starting assistance" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
       <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl">
         <Eyebrow>24/7 Battery Assistance</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Jumpstart Services for Flat or Weak Batteries</h1>
@@ -81,7 +81,7 @@ export default function JumpstartServicesPage() {
       </div>
     </div></section>
 
-    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Common Situations That May Need a Jumpstart" intro="A vehicle that will not start can be caused by different faults, but several common situations may point towards a weak or discharged battery." /><CardGrid cards={situations} /><p className="mx-auto mt-7 max-w-3xl text-center text-sm leading-6 text-navy/60">These symptoms can have other causes. A jumpstart is not a full diagnosis of the vehicle&apos;s battery, starter or charging system.</p></div></section>
+    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Common Situations That May Need a Jumpstart" intro="A vehicle that will not start can be caused by different faults, but several common situations may point towards a weak or discharged battery." /><CardGrid cards={situations} /><p className="mx-auto mt-7 max-w-3xl text-center text-sm leading-6 text-navy/70">These symptoms can have other causes. A jumpstart is not a full diagnosis of the vehicle&apos;s battery, starter or charging system.</p></div></section>
 
     <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28"><Image src="/images/service-jumpstart.jpg" alt="24 hour jumpstart service" fill sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10 bg-navy/90"/><div className="container-site"><div className="fade-up max-w-2xl"><Eyebrow>Day or Night</Eyebrow><h2 className="text-3xl font-extrabold sm:text-5xl">24-Hour Emergency Jump Start Assistance</h2><div className="my-6 space-y-4 leading-7 text-white/75"><p>A flat battery can cause problems at any time. Your vehicle may refuse to start early in the morning, after work, late at night or during a weekend journey.</p><p>FSR Recovery Group provides 24/7 roadside assistance, including professional flat battery assistance for suitable vehicles with battery-related starting problems.</p><p>When contacting us, provide your location, vehicle make and model, and explain what happens when you try to start the engine. This helps us understand what type of assistance may be required.</p></div><ContactButtons dark callLabel="Call for Jumpstart Assistance" whatsappLabel="WhatsApp Us" /></div></div></section>
 

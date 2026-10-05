@@ -76,7 +76,8 @@ export default function ContactPage() {
             src="/images/service-roadside.webp"
             alt="Technician checking a car engine roadside in the rain"
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="-z-20 object-cover"
           />
@@ -114,7 +115,7 @@ export default function ContactPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">How to Reach Us</p>
+              <p className="mb-3 font-bold text-red-dark">How to Reach Us</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Contact Options</h2>
               <p className="text-navy/70">Choose the method that suits your situation best.</p>
             </div>
@@ -145,7 +146,7 @@ export default function ContactPage() {
         <section className="bg-white py-20">
           <div className="container-site grid items-start gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Request a Quote</p>
+              <p className="mb-3 font-bold text-red-dark">Request a Quote</p>
               <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
                 Get a Free Quote on WhatsApp
               </h2>
@@ -242,7 +243,7 @@ export default function ContactPage() {
         <section className="bg-white py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-8 max-w-2xl text-center">
-              <p className="mb-3 font-bold text-red">Find Us</p>
+              <p className="mb-3 font-bold text-red-dark">Find Us</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">{business.name} Location</h2>
             </div>
             <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
@@ -255,7 +256,7 @@ export default function ContactPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
-              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <p className="mb-3 font-bold text-red-dark">Common Questions</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">Contact &amp; Response</h2>
             </div>
             <div className="grid gap-5">

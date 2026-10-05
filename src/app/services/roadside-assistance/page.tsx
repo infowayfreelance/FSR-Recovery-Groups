@@ -63,7 +63,7 @@ const schema = { "@context": "https://schema.org", "@graph": [
 export default function RoadsideAssistancePage() {
   return <><Header activePath="/services" /><main>
     <section className="service-hero relative isolate min-h-[680px] overflow-hidden bg-navy text-white">
-      <Image src="/images/service-roadside.jpg" alt="Professional roadside assistance for a stranded vehicle" fill priority sizes="100vw" className="-z-20 object-cover" />
+      <Image src="/images/service-roadside.jpg" alt="Professional roadside assistance for a stranded vehicle" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
       <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl">
         <Eyebrow>24/7 Roadside Support</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Roadside Assistance When You Need It</h1>

@@ -151,7 +151,8 @@ export default function Home() {
             src="/images/home-hero.jpg"
             alt="Tow truck recovering a car on the road at dusk"
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="-z-20 object-cover"
           />
@@ -253,7 +254,7 @@ export default function Home() {
               />
             </div>
             <div className="fade-up order-1 lg:order-2">
-              <p className="mb-3 font-bold text-red">15+ Years of Roadside Support</p>
+              <p className="mb-3 font-bold text-red-dark">15+ Years of Roadside Support</p>
               <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
                 {business.name} — Here When You Need Us
               </h2>
@@ -304,7 +305,7 @@ export default function Home() {
         <section id="services" className="bg-navy py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">Services We Offer</p>
+              <p className="mb-3 font-bold text-red-dark">Services We Offer</p>
               <h2 className="mb-4 text-3xl font-extrabold text-white lg:text-4xl">Our Key Service Offerings</h2>
               <p className="text-slate-400">
                 From roadside breakdowns to full accident recovery, our range of services covers every
@@ -367,7 +368,7 @@ export default function Home() {
         <section className="bg-slate-50 py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">Why Drivers Call Us</p>
+              <p className="mb-3 font-bold text-red-dark">Why Drivers Call Us</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Simple, Safe and Reliable</h2>
               <p className="text-navy/70">No confusing steps. Call or message us and we&rsquo;ll explain the next move clearly.</p>
             </div>
@@ -389,7 +390,7 @@ export default function Home() {
         <section className="overflow-hidden bg-white py-20">
           <div className="container-site fade-up mb-10">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">Customer Feedback</p>
+              <p className="mb-3 font-bold text-red-dark">Customer Feedback</p>
               <h2 className="mb-3 text-3xl font-extrabold text-navy lg:text-4xl">What Our Customers Say</h2>
               <p className="text-sm text-navy/50">Hover or tap to pause</p>
             </div>
@@ -401,7 +402,7 @@ export default function Home() {
         <section id="areas" className="bg-navy py-20 text-white">
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Coverage</p>
+              <p className="mb-3 font-bold text-red-dark">Coverage</p>
               <h2 className="mb-5 text-3xl font-extrabold lg:text-4xl">Supporting Drivers Across the Region</h2>
               <p className="mb-8 leading-8 text-slate-400">
                 Our fleet covers motorways, city streets and rural roads alike. Share your location and
@@ -435,7 +436,7 @@ export default function Home() {
         <section className="bg-slate-50 py-16">
           <div className="container-site">
             <div className="fade-up mx-auto mb-8 max-w-2xl text-center">
-              <p className="mb-3 font-bold text-red">Find Us</p>
+              <p className="mb-3 font-bold text-red-dark">Find Us</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">{business.name} Location</h2>
             </div>
             <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
