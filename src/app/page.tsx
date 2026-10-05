@@ -29,6 +29,40 @@ export const metadata: Metadata = {
   },
 };
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://fsrrecoverygroups.co.uk/#business",
+      name: business.name,
+      telephone: business.phone,
+      email: business.email,
+      url: "https://fsrrecoverygroups.co.uk/",
+      image: "https://fsrrecoverygroups.co.uk/images/fsr-open-graph.png",
+      address: {
+        "@type": "PostalAddress",
+        streetAddress: business.address.street,
+        addressLocality: business.address.locality,
+        postalCode: business.address.postalCode,
+        addressCountry: business.address.countryCode,
+      },
+      openingHoursSpecification: {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        opens: "00:00",
+        closes: "23:59",
+      },
+      priceRange: "££",
+    },
+    {
+      "@type": "WebSite",
+      name: business.name,
+      url: "https://fsrrecoverygroups.co.uk/",
+    },
+  ],
+};
+
 const marqueeItems = [
   { icon: "fa-solid fa-truck-pickup", text: "24/7 Breakdown Recovery" },
   { icon: "fa-solid fa-triangle-exclamation", text: "Roadside Assistance" },
@@ -470,6 +504,8 @@ export default function Home() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />

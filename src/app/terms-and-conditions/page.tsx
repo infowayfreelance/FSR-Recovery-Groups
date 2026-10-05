@@ -27,9 +27,14 @@ const sections = [
   ["13. Changes to these terms", <p key="p">We may update these terms to reflect changes to our services, practices or legal obligations. The version published on this page applies from its stated update date.</p>],
 ] as const;
 
+const schema = { "@context": "https://schema.org", "@graph": [
+  { "@type": "WebPage", name: "Terms & Conditions", url: "https://fsrrecoverygroups.co.uk/terms-and-conditions", description: "The terms that apply when you request our roadside, recovery or vehicle transport services.", isPartOf: { "@type": "WebSite", name: business.name, url: "https://fsrrecoverygroups.co.uk/" } },
+] };
+
 export default function TermsAndConditionsPage() {
   return <><Header /><main>
     <section className="relative isolate overflow-hidden text-white"><Image src="/images/service-roadside.webp" alt="Technician checking a car engine roadside in the rain" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10" style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }} /><div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20"><p className="mb-4 font-bold text-red-100">Legal Information</p><h1 className="text-3xl font-extrabold sm:text-4xl lg:text-6xl">Terms &amp; Conditions</h1><p className="mx-auto mt-5 max-w-2xl text-white/80">The terms that apply when you request our roadside, recovery or vehicle transport services.</p></div></section>
     <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><div className="mx-auto max-w-4xl rounded-3xl border border-navy/10 bg-white p-6 shadow-sm sm:p-10 lg:p-12"><p className="mb-8 text-sm font-semibold text-navy/70">Last updated: 26 August 2026</p><div className="space-y-9">{sections.map(([title, content]) => <section key={title}><h2 className="mb-3 text-2xl font-extrabold text-navy">{title}</h2><div className="space-y-3 leading-7 text-navy/70 [&_a]:font-semibold [&_a]:text-red [&_a]:underline">{content}</div></section>)}</div><div className="mt-10 border-t border-navy/10 pt-7"><Link href="/contact" className="font-bold text-red underline">Contact FSR Recovery Group</Link></div></div></div></section>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
   </main><Footer /></>;
 }

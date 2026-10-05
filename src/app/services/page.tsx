@@ -165,6 +165,34 @@ const faqs = [
   },
 ];
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: "Vehicle Recovery Services",
+      url: "https://fsrrecoverygroups.co.uk/services",
+      hasPart: {
+        "@type": "ItemList",
+        itemListElement: services.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://fsrrecoverygroups.co.uk${s.href}`,
+          name: s.title,
+        })),
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <>
@@ -325,6 +353,8 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />

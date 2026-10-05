@@ -5,10 +5,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
 
+const title = "About FSR Recovery Group | Darlington Recovery Team";
+const description = "Meet FSR Recovery Group: a fully insured, 15-year Darlington recovery team offering fast, honest 24/7 breakdown and roadside assistance across the region.";
+
 export const metadata: Metadata = {
-  title: { absolute: "FSR Recovery Group: Expert Guidance for Your Needs" },
-  description: "Experience effective recovery strategies with FSR Recovery Group. Join us and change your future now!",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/about" },
+  openGraph: { title, description, url: "/about", type: "website", siteName: business.name },
+  twitter: { card: "summary", title, description },
 };
 
 const values = [
@@ -73,6 +78,41 @@ const faqs = [
     a: "We can give you a clear idea of cost once we know your vehicle type, location and destination. Call or WhatsApp us with the details for an accurate quote.",
   },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      name: title,
+      description,
+      url: "https://fsrrecoverygroups.co.uk/about",
+      mainEntity: {
+        "@type": "LocalBusiness",
+        name: business.name,
+        telephone: business.phone,
+        email: business.email,
+        foundingDate: "2011",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: business.address.street,
+          addressLocality: business.address.locality,
+          postalCode: business.address.postalCode,
+          addressCountry: business.address.countryCode,
+        },
+        description: "A fully insured vehicle recovery and roadside assistance company based in Darlington, providing 24/7 breakdown recovery, winch-out, jumpstart, refuelling, tyre and accident recovery services across the North East.",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
 
 export default function AboutPage() {
   return (
@@ -293,6 +333,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />
