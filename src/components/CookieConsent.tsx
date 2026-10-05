@@ -92,11 +92,11 @@ function CookieBanner() {
             We use necessary technologies to keep our website working. With your permission, we may
             also use optional technologies for analytics or embedded maps. You can accept, reject or
             manage your choices. See our{" "}
-            <Link href="/cookie-policy" className="font-semibold text-red underline decoration-red/50 underline-offset-2 hover:text-white">
+            <Link href="/cookie-policy" className="font-semibold text-red-400 underline decoration-red-400/50 underline-offset-2 hover:text-white">
               Cookie Policy
             </Link>{" "}
             and{" "}
-            <Link href="/privacy-policy" className="font-semibold text-red underline decoration-red/50 underline-offset-2 hover:text-white">
+            <Link href="/privacy-policy" className="font-semibold text-red-400 underline decoration-red-400/50 underline-offset-2 hover:text-white">
               Privacy Policy
             </Link>{" "}
             for details.

@@ -64,7 +64,7 @@ const schema = { "@context": "https://schema.org", "@graph": [
 export default function AccidentEmergencyAssistancePage() {
   return <><Header activePath="/services" /><main>
     <section className="service-hero relative isolate min-h-[680px] overflow-hidden bg-navy text-white">
-      <Image src="/images/about-tow.jpg" alt="Professional vehicle recovery after a road accident" fill preload sizes="100vw" className="-z-20 object-cover" />
+      <Image src="/images/about-tow.jpg" alt="Professional vehicle recovery after a road accident" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
       <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl">
         <Eyebrow>24/7 Accident Support</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Accident Recovery &amp; Emergency Assistance</h1>
@@ -82,7 +82,7 @@ export default function AccidentEmergencyAssistancePage() {
       </div>
     </div></section>
 
-    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Accident Situations We Can Help With" intro="After a collision, the safest next step depends on the condition of the vehicle and the location. If your car or van cannot continue safely, professional recovery may be required." /><CardGrid cards={situations} /><p className="mt-7 text-center text-sm text-navy/60">If there are injuries, danger to life, fire, fuel leakage or a hazardous road situation, contact the emergency services first.</p></div></section>
+    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Accident Situations We Can Help With" intro="After a collision, the safest next step depends on the condition of the vehicle and the location. If your car or van cannot continue safely, professional recovery may be required." /><CardGrid cards={situations} /><p className="mt-7 text-center text-sm text-navy/70">If there are injuries, danger to life, fire, fuel leakage or a hazardous road situation, contact the emergency services first.</p></div></section>
 
     <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28"><Image src="/images/gallery-2.jpg" alt="24 hour accident recovery assistance" fill sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10 bg-navy/90"/><div className="container-site"><div className="fade-up max-w-2xl"><Eyebrow>Day or Night</Eyebrow><h2 className="text-3xl font-extrabold sm:text-5xl">24-Hour Accident Recovery Assistance</h2><div className="my-6 space-y-4 leading-7 text-white/75"><p>Road traffic accidents can happen at any time. A collision may occur during a busy commute, late at night or while travelling at the weekend.</p><p>FSR Recovery Group provides 24/7 accident emergency assistance for situations where a damaged vehicle needs professional recovery or transportation after the scene has been made safe.</p><p>When contacting us, provide your location, vehicle details and a brief description of the damage or situation. This helps us understand the recovery requirements.</p></div><ContactButtons dark callLabel="Call for Accident Assistance" whatsappLabel="WhatsApp Us" /></div></div></section>
 

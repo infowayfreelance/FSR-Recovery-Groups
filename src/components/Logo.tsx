@@ -37,7 +37,8 @@ export function Logo({
       alt="FSR Recovery Groups"
       width={v.width}
       height={v.height}
-      priority={priority}
+      preload={priority}
+      sizes="180px"
       className={`w-auto ${s.className}`}
     />
   );

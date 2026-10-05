@@ -35,6 +35,34 @@ const faqs = [
 const GBP_MAP_SRC =
   "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.266181975819!2d-1.5612949233137332!3d54.528801885596664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xeed77f7b9c8a489%3A0x3af9f4efbabca787!2sFSR%20Recovery%20Group!5e0!3m2!1sen!2s!4v1784967444093!5m2!1sen!2s";
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: "Vehicle Recovery Service Areas",
+      url: "https://fsrrecoverygroups.co.uk/areas",
+      hasPart: {
+        "@type": "ItemList",
+        itemListElement: [...cityAreas, ...roadAreas].map((a, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://fsrrecoverygroups.co.uk${a.href}`,
+          name: a.label,
+        })),
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
+
 export default function AreasPage() {
   return (
     <>
@@ -47,7 +75,8 @@ export default function AreasPage() {
             src="/images/service-roadside.webp"
             alt="Technician checking a car engine roadside in the rain"
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="-z-20 object-cover"
           />
@@ -85,7 +114,7 @@ export default function AreasPage() {
         <section className="bg-white py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">Dedicated Local Pages</p>
+              <p className="mb-3 font-bold text-red-dark">Dedicated Local Pages</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Find Recovery Near You</h2>
               <p className="text-navy/70">
                 Explore dedicated recovery pages for the cities, towns and main roads we cover most often.
@@ -136,7 +165,7 @@ export default function AreasPage() {
         <section className="bg-navy py-20 text-white">
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Local Knowledge</p>
+              <p className="mb-3 font-bold text-red-dark">Local Knowledge</p>
               <h2 className="mb-5 text-3xl font-extrabold lg:text-4xl">
                 We Know the Roads
               </h2>
@@ -188,7 +217,7 @@ export default function AreasPage() {
         <section className="bg-slate-50 py-16">
           <div className="container-site">
             <div className="fade-up mx-auto mb-8 max-w-2xl text-center">
-              <p className="mb-3 font-bold text-red">Find Us</p>
+              <p className="mb-3 font-bold text-red-dark">Find Us</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">{business.name} Location</h2>
             </div>
             <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
@@ -201,7 +230,7 @@ export default function AreasPage() {
         <section className="bg-white py-20">
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
-              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <p className="mb-3 font-bold text-red-dark">Common Questions</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">Coverage Questions</h2>
             </div>
             <div className="grid gap-5">
@@ -240,6 +269,8 @@ export default function AreasPage() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />

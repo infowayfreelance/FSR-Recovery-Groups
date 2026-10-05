@@ -64,7 +64,7 @@ const schema = { "@context": "https://schema.org", "@graph": [
 export default function ChangingSpareTyrePage() {
   return <><Header activePath="/services" /><main>
     <section className="service-hero relative isolate min-h-[680px] overflow-hidden bg-navy text-white">
-      <Image src="/images/service-tyre.jpg" alt="Professional spare tyre change assistance" fill preload sizes="100vw" className="-z-20 object-cover" />
+      <Image src="/images/service-tyre.jpg" alt="Professional spare tyre change assistance" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
       <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl">
         <Eyebrow>24/7 Tyre Assistance</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Spare Tyre Change Assistance When You Have a Flat</h1>
@@ -82,7 +82,7 @@ export default function ChangingSpareTyrePage() {
       </div>
     </div></section>
 
-    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Tyre Problems We Can Help With" intro="A flat tyre does not always mean the same thing. The right next step depends on the tyre condition, your spare wheel and whether the vehicle is in a safe location." /><CardGrid cards={situations} /><p className="mt-7 text-center text-sm text-navy/60">This service is for fitting a suitable spare wheel or tyre that is already available with the vehicle.</p></div></section>
+    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Tyre Problems We Can Help With" intro="A flat tyre does not always mean the same thing. The right next step depends on the tyre condition, your spare wheel and whether the vehicle is in a safe location." /><CardGrid cards={situations} /><p className="mt-7 text-center text-sm text-navy/70">This service is for fitting a suitable spare wheel or tyre that is already available with the vehicle.</p></div></section>
 
     <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28"><Image src="/images/gallery-2.jpg" alt="24 hour roadside tyre assistance" fill sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10 bg-navy/90"/><div className="container-site"><div className="fade-up max-w-2xl"><Eyebrow>Day or Night</Eyebrow><h2 className="text-3xl font-extrabold sm:text-5xl">24-Hour Spare Tyre Assistance</h2><div className="my-6 space-y-4 leading-7 text-white/75"><p>A flat tyre can happen during your morning commute, while shopping, on an evening journey or late at night. When you cannot safely continue, getting professional roadside help can make the situation much simpler.</p><p>FSR Recovery Group provides 24/7 roadside assistance, including help changing to a suitable spare wheel where the vehicle and location allow safe work.</p><p>When contacting us, provide your location, vehicle make/model and confirm whether you have a spare wheel or tyre available.</p></div><ContactButtons dark callLabel="Call for Tyre Assistance" whatsappLabel="WhatsApp Us" /></div></div></section>
 

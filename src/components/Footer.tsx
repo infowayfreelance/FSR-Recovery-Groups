@@ -16,13 +16,13 @@ export function Footer() {
               24 hours a day, every day of the year.
             </p>
             <div className="flex gap-3">
-              <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon">
+              <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Message us on WhatsApp">
                 <i className="fab fa-whatsapp"></i>
               </a>
-              <a href="#" className="social-icon">
+              <a href="#" className="social-icon" aria-label="FSR Recovery Groups on Facebook">
                 <i className="fab fa-facebook-f"></i>
               </a>
-              <a href="#" className="social-icon">
+              <a href="#" className="social-icon" aria-label="FSR Recovery Groups on Instagram">
                 <i className="fab fa-instagram"></i>
               </a>
             </div>
@@ -30,7 +30,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Contact Us</h4>
+            <h3 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Contact Us</h3>
             <div className="space-y-1">
               <div className="contact-info-item">
                 <i className="fa-solid fa-phone mt-0.5 shrink-0 text-red"></i>
@@ -55,7 +55,7 @@ export function Footer() {
 
           {/* Quick Links */}
           <div>
-            <h4 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Quick Links</h4>
+            <h3 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Quick Links</h3>
             <ul className="space-y-3">
               <li><Link href="/" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Home</Link></li>
               <li><Link href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Services</Link></li>
@@ -67,7 +67,7 @@ export function Footer() {
 
           {/* Services */}
           <div>
-            <h4 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Our Services</h4>
+            <h3 className="mb-5 border-b border-red/40 pb-2 text-lg font-bold text-white">Our Services</h3>
             <ul className="space-y-3">
               <li><Link href="/services/vehicle-breakdown-recovery" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>24/7 Vehicle Breakdown Recovery</Link></li>
               <li><Link href="/services/roadside-assistance" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Roadside Assistance</Link></li>
@@ -82,7 +82,7 @@ export function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-500 sm:flex-row">
+        <div className="flex flex-col items-center justify-between gap-3 border-t border-white/10 pt-6 text-sm text-slate-400 sm:flex-row">
           <p>{`© ${new Date().getFullYear()} ${business.name} — Roadside Recovery & Towing Services. All rights reserved.`}</p>
           <div className="flex flex-wrap justify-center gap-x-5 gap-y-2">
             <Link href="/privacy-policy" className="transition hover:text-red">Privacy Policy</Link>

@@ -5,10 +5,15 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
 
+const title = "About FSR Recovery Group | Darlington Recovery Team";
+const description = "Meet FSR Recovery Group: a fully insured, 15-year Darlington recovery team offering fast, honest 24/7 breakdown and roadside assistance across the region.";
+
 export const metadata: Metadata = {
-  title: { absolute: "FSR Recovery Group: Expert Guidance for Your Needs" },
-  description: "Experience effective recovery strategies with FSR Recovery Group. Join us and change your future now!",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/about" },
+  openGraph: { title, description, url: "/about", type: "website", siteName: business.name },
+  twitter: { card: "summary", title, description },
 };
 
 const values = [
@@ -74,6 +79,41 @@ const faqs = [
   },
 ];
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "AboutPage",
+      name: title,
+      description,
+      url: "https://fsrrecoverygroups.co.uk/about",
+      mainEntity: {
+        "@type": "LocalBusiness",
+        name: business.name,
+        telephone: business.phone,
+        email: business.email,
+        foundingDate: "2011",
+        address: {
+          "@type": "PostalAddress",
+          streetAddress: business.address.street,
+          addressLocality: business.address.locality,
+          postalCode: business.address.postalCode,
+          addressCountry: business.address.countryCode,
+        },
+        description: "A fully insured vehicle recovery and roadside assistance company based in Darlington, providing 24/7 breakdown recovery, winch-out, jumpstart, refuelling, tyre and accident recovery services across the North East.",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
@@ -83,10 +123,11 @@ export default function AboutPage() {
         {/* Page Banner */}
         <section className="relative isolate overflow-hidden text-white">
           <Image
-            src="/images/service-roadside.webp"
-            alt="Technician checking a car engine roadside in the rain"
+            src="/images/about-hero.webp"
+            alt="FSR Recovery Group technician checking equipment on the back of a recovery truck"
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="-z-20 object-cover"
           />
@@ -124,7 +165,7 @@ export default function AboutPage() {
         <section className="bg-white py-20">
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Our Story</p>
+              <p className="mb-3 font-bold text-red-dark">Our Story</p>
               <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
                 A Recovery Team You Can Rely On
               </h2>
@@ -148,10 +189,10 @@ export default function AboutPage() {
             </div>
             <div className="fade-up">
               <Image
-                src="/images/service-transport.jpg"
-                alt="FSR Recovery Group vehicle transporter on the highway"
-                width={1735}
-                height={1080}
+                src="/images/about-fleet-transport.webp"
+                alt="FSR Recovery Group transporter delivering a car outside the depot"
+                width={1600}
+                height={900}
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
@@ -163,7 +204,7 @@ export default function AboutPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">What Drives Us</p>
+              <p className="mb-3 font-bold text-red-dark">What Drives Us</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Our Values</h2>
               <p className="text-navy/70">The principles we apply to every job, regardless of size or complexity.</p>
             </div>
@@ -185,7 +226,7 @@ export default function AboutPage() {
         <section className="bg-navy py-20 text-white">
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Why Drivers Choose Us</p>
+              <p className="mb-3 font-bold text-red-dark">Why Drivers Choose Us</p>
               <h2 className="mb-5 text-3xl font-extrabold lg:text-4xl">
                 Trusted, Straightforward and Fast
               </h2>
@@ -211,10 +252,10 @@ export default function AboutPage() {
             </div>
             <div className="fade-up">
               <Image
-                src="/images/gallery-2.jpg"
-                alt="FSR Recovery technician winching a vehicle free"
-                width={2000}
-                height={1333}
+                src="/images/about-tyre-strap.webp"
+                alt="FSR Recovery Group technician securing a car wheel with a ratchet strap"
+                width={1200}
+                height={800}
                 sizes="(max-width: 1023px) 100vw, 50vw"
                 className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
@@ -226,7 +267,7 @@ export default function AboutPage() {
         <section className="bg-white py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">Where We Operate</p>
+              <p className="mb-3 font-bold text-red-dark">Where We Operate</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Areas We Cover</h2>
               <p className="text-navy/70">
                 We regularly assist drivers across the following situations and locations. Not sure if we
@@ -253,7 +294,7 @@ export default function AboutPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
-              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <p className="mb-3 font-bold text-red-dark">Common Questions</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">About {business.name}</h2>
             </div>
             <div className="grid gap-5">
@@ -292,6 +333,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />

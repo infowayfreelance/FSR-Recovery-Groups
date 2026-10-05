@@ -165,6 +165,34 @@ const faqs = [
   },
 ];
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: "Vehicle Recovery Services",
+      url: "https://fsrrecoverygroups.co.uk/services",
+      hasPart: {
+        "@type": "ItemList",
+        itemListElement: services.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://fsrrecoverygroups.co.uk${s.href}`,
+          name: s.title,
+        })),
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
+
 export default function ServicesPage() {
   return (
     <>
@@ -177,7 +205,8 @@ export default function ServicesPage() {
             src="/images/service-roadside.webp"
             alt="Technician checking a car engine roadside in the rain"
             fill
-            priority
+            preload
+            fetchPriority="high"
             sizes="100vw"
             className="-z-20 object-cover"
           />
@@ -215,7 +244,7 @@ export default function ServicesPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">What We Offer</p>
+              <p className="mb-3 font-bold text-red-dark">What We Offer</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Complete Roadside &amp; Recovery Support</h2>
               <p className="text-navy/70">From a flat battery to a full accident recovery, our team handles every job with the same care and attention.</p>
             </div>
@@ -266,7 +295,7 @@ export default function ServicesPage() {
         <section className="bg-navy py-20 text-white">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">How It Works</p>
+              <p className="mb-3 font-bold text-red-dark">How It Works</p>
               <h2 className="mb-4 text-3xl font-extrabold lg:text-4xl">Simple From First Call to Drop-Off</h2>
               <p className="text-white/70">No confusing steps. Here is exactly what happens when you contact us.</p>
             </div>
@@ -287,7 +316,7 @@ export default function ServicesPage() {
         <section className="bg-white py-20">
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
-              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <p className="mb-3 font-bold text-red-dark">Common Questions</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">Frequently Asked Questions</h2>
             </div>
             <div className="grid gap-5">
@@ -324,6 +353,8 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />

@@ -64,7 +64,7 @@ const schema = { "@context": "https://schema.org", "@graph": [
 export default function RefuelingPage() {
   return <><Header activePath="/services" /><main>
     <section className="service-hero relative isolate min-h-[680px] overflow-hidden bg-navy text-white">
-      <Image src="/images/service-refuel.jpg" alt="Emergency roadside refueling assistance" fill preload sizes="100vw" className="-z-20 object-cover" />
+      <Image src="/images/service-refuel.jpg" alt="Emergency roadside refueling assistance" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
       <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl">
         <Eyebrow>24/7 Fuel Assistance</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Emergency Refueling When You Run Out of Fuel</h1>
@@ -82,7 +82,7 @@ export default function RefuelingPage() {
       </div>
     </div></section>
 
-    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Fuel-Related Situations We Can Help With" intro="Running out of fuel can happen in different situations. Contact FSR Recovery Group with your vehicle details and location so the appropriate assistance can be discussed." /><CardGrid cards={situations} /><p className="mt-7 text-center text-sm text-navy/60">This service is for genuine out-of-fuel situations.</p></div></section>
+    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Fuel-Related Situations We Can Help With" intro="Running out of fuel can happen in different situations. Contact FSR Recovery Group with your vehicle details and location so the appropriate assistance can be discussed." /><CardGrid cards={situations} /><p className="mt-7 text-center text-sm text-navy/70">This service is for genuine out-of-fuel situations.</p></div></section>
 
     <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28"><Image src="/images/gallery-2.jpg" alt="24 hour roadside fuel help" fill sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10 bg-navy/90"/><div className="container-site"><div className="fade-up max-w-2xl"><Eyebrow>Day or Night</Eyebrow><h2 className="text-3xl font-extrabold sm:text-5xl">24-Hour Emergency Fuel Assistance</h2><div className="my-6 space-y-4 leading-7 text-white/75"><p>Running out of fuel can happen at any time, from an early morning journey to a late-night drive when nearby filling stations are limited or closed.</p><p>FSR Recovery Group provides 24/7 roadside assistance, including emergency refueling support for suitable out-of-fuel situations.</p><p>When contacting us, provide your location, vehicle make/model and the fuel type your vehicle requires if known. This helps us understand what assistance is needed.</p></div><ContactButtons dark callLabel="Call for Fuel Assistance" whatsappLabel="WhatsApp Us" /></div></div></section>
 
