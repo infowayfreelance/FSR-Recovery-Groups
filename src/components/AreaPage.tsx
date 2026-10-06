@@ -41,6 +41,10 @@ export type AreaPageContent = {
   /** Overrides for the shared services grid heading/intro; falls back to generic copy if omitted. */
   servicesHeading?: string;
   servicesIntro?: string;
+  /** Optional photo gallery section. Omit to skip the section. */
+  galleryTitle?: string;
+  galleryIntro?: string;
+  gallery?: { src: string; alt: string; caption: string }[];
   faqs: ServiceFaq[];
   ctaHeading: string;
   ctaText: string;
@@ -167,6 +171,29 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
           <CardGrid cards={content.situations} />
         </div>
       </section>
+
+      {/* Gallery */}
+      {content.gallery && content.gallery.length > 0 && (
+        <section className="py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading
+              eyebrow="On the Job"
+              title={content.galleryTitle ?? `${content.eyebrow} Recovery in Action`}
+              intro={content.galleryIntro}
+            />
+            <div className="grid gap-6 md:grid-cols-3">
+              {content.gallery.map((photo) => (
+                <figure key={photo.src} className="fade-up overflow-hidden rounded-3xl border border-navy/10 bg-slate-50 shadow-sm">
+                  <div className="relative h-64">
+                    <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+                  </div>
+                  <figcaption className="px-5 py-4 text-sm font-semibold text-navy/70">{photo.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Major roads */}
       {content.majorRoads && content.majorRoads.length > 0 && (
