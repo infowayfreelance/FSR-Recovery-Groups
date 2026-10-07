@@ -20,8 +20,8 @@ const content: AreaPageContent = {
   eyebrow: "A19",
   h1: "A19 Breakdown & Recovery Service",
   heroIntro: "Need vehicle recovery on the A19? FSR Recovery Group provides 24/7 breakdown recovery, roadside assistance and towing support for drivers travelling through the A19 sections covered by our team.",
-  heroImage: "/images/service-breakdown.jpg",
-  heroImageAlt: "Recovery vehicle on a busy dual carriageway",
+  heroImage: "/images/a19-breakdown-recovery-flatbed.webp",
+  heroImageAlt: "Car loaded onto a flatbed recovery truck on an A-road",
   badges: ["Available 24/7", "Dual Carriageway Route", "Cars & Vans"],
   introHeading: "Reliable Recovery on the A19",
   introParagraphs: [
@@ -45,6 +45,11 @@ const content: AreaPageContent = {
     { icon: "fa-solid fa-temperature-high", title: "Vehicle Overheating", text: "If your vehicle begins overheating, continuing to drive may cause further damage. Stop in a safe location where possible and contact us for suitable assistance." },
     { icon: "fa-solid fa-gas-pump", title: "Running Out of Fuel", text: "Running out of fuel during a journey can leave you stranded on the roadside. Our emergency fuel delivery service can provide assistance in suitable situations." },
     { icon: "fa-solid fa-car-burst", title: "Accident Recovery", text: "After a collision, a vehicle may no longer be safe to drive. We provide accident recovery assistance for suitable vehicles following road traffic accidents." },
+  ],
+  galleryIntro: "A look at the kind of recovery and roadside assistance work we carry out for drivers along the A19.",
+  gallery: [
+    { src: "/images/a19-roadside-tyre-change.webp", alt: "Technician changing a wheel on a car using a jack and ratchet strap", caption: "Roadside tyre and wheel changes" },
+    { src: "/images/a19-securing-vehicle-strap.webp", alt: "Technician securing a vehicle to a flatbed recovery truck with a ratchet strap", caption: "Securing vehicles for safe transport" },
   ],
   servicesHeading: "A19 Recovery and Roadside Services",
   servicesIntro: "FSR Recovery Group provides a range of services for drivers who need assistance on the A19.",
@@ -81,6 +86,8 @@ const content: AreaPageContent = {
   ],
   ctaHeading: "Need Recovery on the A19?",
   ctaText: "If your vehicle has broken down on the A19, contact FSR Recovery Group with your exact location, direction of travel and vehicle details. Whether you need breakdown recovery, roadside assistance, a jump start, tyre assistance, accident recovery or another suitable recovery service, our team can discuss the available options with you.",
+  ctaImage: "/images/a19-van-recovery-safety-check.webp",
+  ctaImageAlt: "Recovery operator carrying out a safety check on a van loaded onto a flatbed truck",
   nearbyAreas: [
     { label: "Middlesbrough", href: "/areas/middlesbrough" },
     { label: "Sunderland", href: "/areas/sunderland" },

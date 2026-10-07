@@ -52,6 +52,9 @@ export type AreaPageContent = {
   faqs: ServiceFaq[];
   ctaHeading: string;
   ctaText: string;
+  /** Optional overrides for the closing CTA section's background photo; falls back to the generic shared image if omitted. */
+  ctaImage?: string;
+  ctaImageAlt?: string;
   nearbyAreas: NearbyLink[];
 };
 
@@ -306,7 +309,7 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
 
       {/* CTA */}
       <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28">
-        <Image src="/images/trackrecord-bg.jpg" alt="Recovery truck ready to respond" fill sizes="100vw" className="-z-20 object-cover" />
+        <Image src={content.ctaImage ?? "/images/trackrecord-bg.jpg"} alt={content.ctaImageAlt ?? "Recovery truck ready to respond"} fill sizes="100vw" className="-z-20 object-cover" />
         <div className="absolute inset-0 -z-10 bg-navy/90" />
         <div className="container-site fade-up text-center">
           <Eyebrow>{content.eyebrow}</Eyebrow>
