@@ -30,6 +30,10 @@ export type AreaPageContent = {
   situationsTitle: string;
   situationsIntro: string;
   situations: ServiceCard[];
+  /** Optional "Why Choose Us" section. Omit to skip the section. */
+  whyChooseTitle?: string;
+  whyChooseIntro?: string;
+  whyChoose?: ServiceCard[];
   /** Optional "Major Roads Around X" section with links to dedicated road pages. Omit to skip the section. */
   roadsTitle?: string;
   roadsIntro?: string;
@@ -48,6 +52,9 @@ export type AreaPageContent = {
   faqs: ServiceFaq[];
   ctaHeading: string;
   ctaText: string;
+  /** Optional overrides for the closing CTA section's background photo; falls back to the generic shared image if omitted. */
+  ctaImage?: string;
+  ctaImageAlt?: string;
   nearbyAreas: NearbyLink[];
 };
 
@@ -172,6 +179,20 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
         </div>
       </section>
 
+      {/* Why choose us */}
+      {content.whyChoose && content.whyChoose.length > 0 && (
+        <section className="py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading
+              eyebrow="Why Choose Us"
+              title={content.whyChooseTitle ?? `Why Choose ${business.name}?`}
+              intro={content.whyChooseIntro}
+            />
+            <CardGrid cards={content.whyChoose} />
+          </div>
+        </section>
+      )}
+
       {/* Gallery */}
       {content.gallery && content.gallery.length > 0 && (
         <section className="py-16 sm:py-24">
@@ -288,7 +309,7 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
 
       {/* CTA */}
       <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28">
-        <Image src="/images/trackrecord-bg.jpg" alt="Recovery truck ready to respond" fill sizes="100vw" className="-z-20 object-cover" />
+        <Image src={content.ctaImage ?? "/images/trackrecord-bg.jpg"} alt={content.ctaImageAlt ?? "Recovery truck ready to respond"} fill sizes="100vw" className="-z-20 object-cover" />
         <div className="absolute inset-0 -z-10 bg-navy/90" />
         <div className="container-site fade-up text-center">
           <Eyebrow>{content.eyebrow}</Eyebrow>
