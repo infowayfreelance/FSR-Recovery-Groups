@@ -30,6 +30,10 @@ export type AreaPageContent = {
   situationsTitle: string;
   situationsIntro: string;
   situations: ServiceCard[];
+  /** Optional "Why Choose Us" section. Omit to skip the section. */
+  whyChooseTitle?: string;
+  whyChooseIntro?: string;
+  whyChoose?: ServiceCard[];
   /** Optional "Major Roads Around X" section with links to dedicated road pages. Omit to skip the section. */
   roadsTitle?: string;
   roadsIntro?: string;
@@ -171,6 +175,20 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
           <CardGrid cards={content.situations} />
         </div>
       </section>
+
+      {/* Why choose us */}
+      {content.whyChoose && content.whyChoose.length > 0 && (
+        <section className="py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading
+              eyebrow="Why Choose Us"
+              title={content.whyChooseTitle ?? `Why Choose ${business.name}?`}
+              intro={content.whyChooseIntro}
+            />
+            <CardGrid cards={content.whyChoose} />
+          </div>
+        </section>
+      )}
 
       {/* Gallery */}
       {content.gallery && content.gallery.length > 0 && (
