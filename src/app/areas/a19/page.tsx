@@ -50,6 +50,7 @@ const content: AreaPageContent = {
   gallery: [
     { src: "/images/a19-roadside-tyre-change.webp", alt: "Technician changing a wheel on a car using a jack and ratchet strap", caption: "Roadside tyre and wheel changes" },
     { src: "/images/a19-securing-vehicle-strap.webp", alt: "Technician securing a vehicle to a flatbed recovery truck with a ratchet strap", caption: "Securing vehicles for safe transport" },
+    { src: "/images/a19-emergency-fuel-delivery.webp", alt: "Technician pouring emergency fuel from a can into a car", caption: "Emergency fuel delivery" },
   ],
   servicesHeading: "A19 Recovery and Roadside Services",
   servicesIntro: "FSR Recovery Group provides a range of services for drivers who need assistance on the A19.",
