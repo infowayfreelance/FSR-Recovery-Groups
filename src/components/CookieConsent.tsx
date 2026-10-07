@@ -64,7 +64,7 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
     <ConsentContext.Provider
       value={{ consent, isPreferencesOpen, openPreferences, closePreferences, acceptAll, rejectNonEssential, savePreferences }}
     >
-      {consent?.analytics && <GoogleTagManager gtmId="GTM-MQ4STV94" />}
+      {consent?.analytics && <GoogleTagManager gtmId="GTM-KVNW6GV7" />}
       {children}
       {hydrated && consent === null && !isPreferencesOpen && <CookieBanner />}
       {isPreferencesOpen && <CookiePreferencesModal />}
