@@ -320,22 +320,6 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
                   </a>
                 )
               )}
-              <a
-                href={business.tel}
-                className="mt-2 rounded-xl bg-red px-5 py-3 text-center font-bold text-white"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <i className="fa-solid fa-phone mr-2"></i>Call Now
-              </a>
-              <a
-                href={business.whatsapp}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-xl bg-whatsapp px-5 py-3 text-center font-bold text-white"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                <i className="fab fa-whatsapp mr-2"></i>WhatsApp Us
-              </a>
             </div>
           </div>
         )}
