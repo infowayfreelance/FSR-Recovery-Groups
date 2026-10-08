@@ -51,10 +51,21 @@ const content: AreaPageContent = {
     { icon: "fa-solid fa-car-burst", title: "Accident Recovery", text: "Following a collision on the A1(M), we provide prompt, careful vehicle recovery in coordination with other responders where needed." },
     { icon: "fa-solid fa-gas-pump", title: "Running Out of Fuel", text: "Running low on fuel on a long stretch of the A1(M) is more common than you'd think — we can bring fuel to you." },
   ],
-  galleryIntro: "A look at the kind of recovery and roadside assistance work we carry out for drivers along the A1(M).",
-  gallery: [
-    { src: "/images/a1m-equipped-recovery-van.webp", alt: "Technician selecting recovery equipment from a fully stocked van at night", caption: "Fully equipped for night-time callouts" },
-    { src: "/images/a1m-customer-handover.webp", alt: "Technician talking through the paperwork with a customer beside their recovered car", caption: "Talking drivers through their options on-site" },
+  featured: [
+    {
+      image: "/images/a1m-equipped-recovery-van.webp",
+      imageAlt: "Technician selecting recovery equipment from a fully stocked van at night",
+      eyebrow: "Ready for Anything",
+      heading: "Fully Equipped, Day or Night",
+      text: "Our recovery vehicles carry the equipment needed for fast, safe assistance on the A1(M) at any hour — from winching gear to roadside tools — so we're ready to get to work as soon as we arrive.",
+    },
+    {
+      image: "/images/a1m-customer-handover.webp",
+      imageAlt: "Technician talking through the paperwork with a customer beside their recovered car",
+      eyebrow: "Clear Communication",
+      heading: "Talking You Through Your Options",
+      text: "Once we reach you, we'll explain what's happened and the options available — roadside assistance, recovery or onward transport — so you know exactly what to expect before we get moving.",
+    },
   ],
   faqs: [
     { question: "Do you recover vehicles broken down on the A1(M) hard shoulder?", answer: "Yes, we respond to breakdowns on the A1(M) hard shoulder, following appropriate motorway safety procedures throughout." },
