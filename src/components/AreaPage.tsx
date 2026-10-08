@@ -49,6 +49,8 @@ export type AreaPageContent = {
   galleryTitle?: string;
   galleryIntro?: string;
   gallery?: { src: string; alt: string; caption: string }[];
+  /** Optional photo+text split sections, alternating sides, woven into the page flow. Omit to skip. */
+  featured?: { image: string; imageAlt: string; eyebrow: string; heading: string; text: string }[];
   faqs: ServiceFaq[];
   ctaHeading: string;
   ctaText: string;
@@ -178,6 +180,22 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
           <CardGrid cards={content.situations} />
         </div>
       </section>
+
+      {/* Featured photo + text sections */}
+      {content.featured?.map((feature, i) => (
+        <section key={feature.image} className={i % 2 === 0 ? "bg-white py-16 sm:py-24" : "bg-slate-50 py-16 sm:py-24"}>
+          <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className={`fade-up relative min-h-[320px] overflow-hidden rounded-3xl sm:min-h-[400px] ${i % 2 === 1 ? "lg:order-2" : ""}`}>
+              <Image src={feature.image} alt={feature.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            </div>
+            <div className="fade-up">
+              <Eyebrow>{feature.eyebrow}</Eyebrow>
+              <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">{feature.heading}</h2>
+              <p className="leading-8 text-navy/70">{feature.text}</p>
+            </div>
+          </div>
+        </section>
+      ))}
 
       {/* Why choose us */}
       {content.whyChoose && content.whyChoose.length > 0 && (
