@@ -8,11 +8,16 @@ const title = "A1(M) Breakdown Recovery Services Available Now";
 const description = "Need speedy A1(M) breakdown recovery? Our experts can help you get back on the road quickly. Contact us!";
 const path = "/areas/a1m";
 
+const ogImage = "/images/a1m-breakdown-recovery-flatbed.webp";
+
 export const metadata: Metadata = {
   title: { absolute: title }, description,
   alternates: { canonical: path }, robots: { index: true, follow: true },
-  openGraph: { title, description, url: path, type: "website", siteName: business.name },
-  twitter: { card: "summary", title, description },
+  openGraph: {
+    title, description, url: path, type: "website", siteName: business.name,
+    images: [{ url: ogImage, width: 1536, height: 1024, alt: "Car being loaded onto a flatbed recovery truck on a dual carriageway near the A1(M)" }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [ogImage] },
 };
 
 const content: AreaPageContent = {
@@ -20,8 +25,8 @@ const content: AreaPageContent = {
   eyebrow: "A1(M)",
   h1: "24/7 Breakdown Recovery on the A1(M)",
   heroIntro: "A breakdown on the A1(M) needs a fast, safety-conscious response. FSR Recovery Group provides 24/7 recovery along the A1(M) through County Durham and North Yorkshire, including the junctions near Darlington, Scotch Corner, Catterick and Durham.",
-  heroImage: "/images/trackrecord-bg.jpg",
-  heroImageAlt: "Recovery truck on a UK motorway hard shoulder",
+  heroImage: ogImage,
+  heroImageAlt: "Car being loaded onto a flatbed recovery truck on a dual carriageway near the A1(M)",
   badges: ["Available 24/7", "Motorway Recovery", "Cars & Vans"],
   introHeading: "Recovery Along the A1(M)",
   introParagraphs: [
@@ -45,6 +50,11 @@ const content: AreaPageContent = {
     { icon: "fa-solid fa-temperature-high", title: "Overheating", text: "An overheating engine on a long A1(M) journey is recovered before it causes further damage." },
     { icon: "fa-solid fa-car-burst", title: "Accident Recovery", text: "Following a collision on the A1(M), we provide prompt, careful vehicle recovery in coordination with other responders where needed." },
     { icon: "fa-solid fa-gas-pump", title: "Running Out of Fuel", text: "Running low on fuel on a long stretch of the A1(M) is more common than you'd think — we can bring fuel to you." },
+  ],
+  galleryIntro: "A look at the kind of recovery and roadside assistance work we carry out for drivers along the A1(M).",
+  gallery: [
+    { src: "/images/a1m-equipped-recovery-van.webp", alt: "Technician selecting recovery equipment from a fully stocked van at night", caption: "Fully equipped for night-time callouts" },
+    { src: "/images/a1m-customer-handover.webp", alt: "Technician talking through the paperwork with a customer beside their recovered car", caption: "Talking drivers through their options on-site" },
   ],
   faqs: [
     { question: "Do you recover vehicles broken down on the A1(M) hard shoulder?", answer: "Yes, we respond to breakdowns on the A1(M) hard shoulder, following appropriate motorway safety procedures throughout." },
