@@ -8,11 +8,16 @@ const title = "Need A66 Car Recovery? We're Here to Help!";
 const description = "Experience top-notch A66 car recovery with our expert team. Reach out today for immediate support!";
 const path = "/areas/a66";
 
+const ogImage = "/images/a66-breakdown-recovery-flatbed.webp";
+
 export const metadata: Metadata = {
   title: { absolute: title }, description,
   alternates: { canonical: path }, robots: { index: true, follow: true },
-  openGraph: { title, description, url: path, type: "website", siteName: business.name },
-  twitter: { card: "summary", title, description },
+  openGraph: {
+    title, description, url: path, type: "website", siteName: business.name,
+    images: [{ url: ogImage, width: 1536, height: 1024, alt: "Car being transported on a flatbed recovery truck on the A66 with the Pennines behind" }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [ogImage] },
 };
 
 const content: AreaPageContent = {
@@ -20,8 +25,8 @@ const content: AreaPageContent = {
   eyebrow: "A66",
   h1: "24/7 Breakdown Recovery on the A66",
   heroIntro: "The A66 carries traffic across the Pennines between Teesside and Cumbria, with long exposed stretches and challenging weather at times. FSR Recovery Group provides 24/7 recovery along the A66 through Darlington, Barnard Castle and beyond.",
-  heroImage: "/images/gallery-3.jpg",
-  heroImageAlt: "Recovery vehicle on an exposed trans-Pennine road",
+  heroImage: ogImage,
+  heroImageAlt: "Car being transported on a flatbed recovery truck on the A66 with the Pennines behind",
   badges: ["Available 24/7", "Trans-Pennine Route", "Cars & Vans"],
   introHeading: "Recovery Along the A66",
   introParagraphs: [
@@ -46,6 +51,22 @@ const content: AreaPageContent = {
     { icon: "fa-solid fa-snowflake", title: "Weather-Related Breakdowns", text: "Wind, rain and snow on the high sections of the A66 can affect vehicles — we respond as conditions allow." },
     { icon: "fa-solid fa-gas-pump", title: "Running Out of Fuel", text: "Fewer fuel stops on the A66's rural stretches mean running low is a real risk — we can bring fuel to you." },
   ],
+  featured: [
+    {
+      image: "/images/a66-equipped-recovery-van.webp",
+      imageAlt: "Recovery van equipment compartment with straps, wheel chocks and a work light, Pennine hills in the background",
+      eyebrow: "Ready for the Pennines",
+      heading: "Equipped for Exposed, Remote Stretches",
+      text: "The A66's high, open sections can bring sudden weather changes and limited shelter. Our recovery vehicles carry the straps, chocks and lighting needed to work safely and efficiently, whatever the conditions.",
+    },
+    {
+      image: "/images/a66-customer-handover.webp",
+      imageAlt: "Technician talking with a driver beside their van, recovery truck and Pennine hills in the background",
+      eyebrow: "Here When You Need Us",
+      heading: "A Friendly Face on an Isolated Road",
+      text: "Breaking down on a quiet stretch of the A66 can feel isolating. We'll talk you through what's happened and the options available, so you're never left wondering what happens next.",
+    },
+  ],
   faqs: [
     { question: "Do you recover vehicles on the exposed sections of the A66?", answer: "Yes, we regularly recover vehicles from the higher, more exposed sections of the A66, including near Bowes Moor." },
     { question: "What should I do if I break down on the A66 in bad weather?", answer: "Try to reach a safe pull-in or lay-by, stay warm and visible, and call us with your exact location so we can plan the safest route to reach you." },
@@ -56,6 +77,8 @@ const content: AreaPageContent = {
   ],
   ctaHeading: "Broken Down on the A66?",
   ctaText: "Call or WhatsApp FSR Recovery Group now with your exact location on the A66, and we'll confirm the fastest way to reach you.",
+  ctaImage: "/images/a66-roadside-inspection.webp",
+  ctaImageAlt: "Technician inspecting a car's tyre with a torch at the roadside",
   nearbyAreas: [
     { label: "Barnard Castle", href: "/areas/barnard-castle" },
     { label: "Middlesbrough", href: "/areas/middlesbrough" },
