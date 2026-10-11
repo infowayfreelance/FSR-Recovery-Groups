@@ -25,11 +25,17 @@ export type AreaPageContent = {
   badges: [string, string, string];
   introHeading: string;
   introParagraphs: string[];
+  /** Optional photo shown within the local intro section, above the paragraph text. */
+  introImage?: string;
+  introImageAlt?: string;
   localHighlightsTitle: string;
   localHighlights: string[];
   situationsTitle: string;
   situationsIntro: string;
   situations: ServiceCard[];
+  /** Optional photo shown within the situations section, between the heading and the card grid. */
+  situationsImage?: string;
+  situationsImageAlt?: string;
   /** Optional "Why Choose Us" section. Omit to skip the section. */
   whyChooseTitle?: string;
   whyChooseIntro?: string;
@@ -141,6 +147,11 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
           <div className="fade-up">
             <Eyebrow>Local Coverage</Eyebrow>
             <h2 className="mb-5 text-3xl font-extrabold sm:text-4xl">{content.introHeading}</h2>
+            {content.introImage && (
+              <div className="relative mb-6 h-56 overflow-hidden rounded-3xl sm:h-72">
+                <Image src={content.introImage} alt={content.introImageAlt ?? ""} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              </div>
+            )}
             <div className="space-y-4 leading-7 text-navy/70">
               {content.introParagraphs.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -177,6 +188,11 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
       <section className="bg-slate-50 py-16 sm:py-24">
         <div className="container-site">
           <SectionHeading eyebrow="When You May Need Us" title={content.situationsTitle} intro={content.situationsIntro} />
+          {content.situationsImage && (
+            <div className="fade-up relative mb-10 h-64 overflow-hidden rounded-3xl sm:h-80">
+              <Image src={content.situationsImage} alt={content.situationsImageAlt ?? ""} fill sizes="100vw" className="object-cover" />
+            </div>
+          )}
           <CardGrid cards={content.situations} />
         </div>
       </section>
