@@ -34,7 +34,7 @@ export function Logo({
   return (
     <Image
       src={v.src}
-      alt="FSR Recovery Groups"
+      alt="FSR Recovery Group logo"
       width={v.width}
       height={v.height}
       preload={priority}
