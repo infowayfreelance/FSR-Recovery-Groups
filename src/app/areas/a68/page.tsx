@@ -9,7 +9,8 @@ import { business } from "@/data/business";
 const title = "A68 Breakdown & Recovery Service | FSR";
 const description = "24/7 breakdown recovery, roadside assistance and towing for drivers on the A68. Call or WhatsApp FSR Recovery Group with your location and vehicle details.";
 const path = "/areas/a68";
-const ogImage = "/images/about-tow.jpg";
+const ogImage = "/images/a68-flatbed-recovery-rural-hills.webp";
+const ogImageAlt = "Car loaded onto a flatbed recovery truck on a rural road near the A68, rolling hills behind";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -22,7 +23,7 @@ export const metadata: Metadata = {
     url: path,
     type: "website",
     siteName: business.name,
-    images: [{ url: ogImage, alt: "Recovery vehicle on a rural moorland road" }],
+    images: [{ url: ogImage, alt: ogImageAlt }],
   },
   twitter: { card: "summary_large_image", title, description, images: [ogImage] },
 };
@@ -296,7 +297,7 @@ export default function A68AreaPage() {
       <main>
         {/* Hero */}
         <section className="service-hero relative isolate min-h-[560px] overflow-hidden bg-navy text-white">
-          <Image src={ogImage} alt="Recovery vehicle on a rural moorland road" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
+          <Image src={ogImage} alt={ogImageAlt} fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
           <div className="container-site flex min-h-[560px] items-center py-16">
             <div className="fade-up max-w-3xl">
@@ -380,6 +381,15 @@ export default function A68AreaPage() {
         <section className="py-16 sm:py-24">
           <div className="container-site">
             <SectionHeading eyebrow="Know the Risks" title="Common A68 Breakdown Problems" />
+            <div className="fade-up relative mb-10 h-64 overflow-hidden rounded-3xl sm:h-80">
+              <Image
+                src="/images/a68-roadside-tyre-change.webp"
+                alt="Technician changing a wheel at the roadside with a trolley jack on a rural road"
+                fill
+                sizes="100vw"
+                className="object-cover"
+              />
+            </div>
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
               {problems.map((p) => (
                 <article key={p.title} className="fade-up rounded-3xl border border-navy/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red/40 hover:shadow-xl">
@@ -400,6 +410,15 @@ export default function A68AreaPage() {
                 eyebrow="Full Range of Support"
                 title="A68 Recovery and Roadside Assistance Services"
                 intro="FSR Recovery Group provides several recovery and roadside services for drivers travelling on the A68."
+              />
+            </div>
+            <div className="fade-up relative mb-10 h-64 overflow-hidden rounded-3xl sm:h-80">
+              <Image
+                src="/images/a68-jumpstart-van-roadside.webp"
+                alt="Technician jump-starting a van battery at the roadside near the A68"
+                fill
+                sizes="100vw"
+                className="object-cover"
               />
             </div>
             <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
@@ -570,7 +589,13 @@ export default function A68AreaPage() {
 
         {/* CTA */}
         <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28">
-          <Image src="/images/trackrecord-bg.jpg" alt="Recovery truck ready to respond" fill sizes="100vw" className="-z-20 object-cover" />
+          <Image
+            src="/images/a68-engine-inspection-torch-dusk.webp"
+            alt="Technician inspecting a car engine with a torch at dusk in a village near the A68"
+            fill
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
           <div className="absolute inset-0 -z-10 bg-navy/90" />
           <div className="container-site fade-up mx-auto max-w-3xl text-center">
             <Eyebrow>A68</Eyebrow>
