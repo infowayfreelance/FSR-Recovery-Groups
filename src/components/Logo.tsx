@@ -1,9 +1,9 @@
 import Image from "next/image";
 
 const sizeMap = {
-  sm: { className: "h-8" },
-  md: { className: "h-10" },
-  lg: { className: "h-13" },
+  sm: { className: "h-8", renderedWidth: 110 },
+  md: { className: "h-10", renderedWidth: 137 },
+  lg: { className: "h-13", renderedWidth: 178 },
 };
 
 const variantMap = {
@@ -38,7 +38,7 @@ export function Logo({
       width={v.width}
       height={v.height}
       preload={priority}
-      sizes="180px"
+      sizes={`${s.renderedWidth}px`}
       className={`w-auto ${s.className}`}
     />
   );
