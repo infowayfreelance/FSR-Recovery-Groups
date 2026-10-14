@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
 const title = "About FSR Recovery Group | Darlington Recovery Team";
 const description = "Meet FSR Recovery Group: a fully insured, 15-year Darlington recovery team offering fast, honest 24/7 breakdown and roadside assistance across the region.";
@@ -82,24 +83,15 @@ const faqs = [
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
+    breadcrumbList([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]),
     {
       "@type": "AboutPage",
       name: title,
       description,
       url: "https://fsrrecoverygroups.co.uk/about",
       mainEntity: {
-        "@type": "LocalBusiness",
-        name: business.name,
-        telephone: business.phone,
+        ...businessEntityRef,
         email: business.email,
-        foundingDate: "2011",
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: business.address.street,
-          addressLocality: business.address.locality,
-          postalCode: business.address.postalCode,
-          addressCountry: business.address.countryCode,
-        },
         description: "A fully insured vehicle recovery and roadside assistance company based in Darlington, providing 24/7 breakdown recovery, winch-out, jumpstart, refuelling, tyre and accident recovery services across the North East.",
       },
     },

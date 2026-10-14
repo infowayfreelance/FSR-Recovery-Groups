@@ -6,9 +6,10 @@ import { Footer } from "@/components/Footer";
 import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHeading, type ServiceCard, type ServiceFaq } from "@/components/ServicePage";
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
-const title = "Facing a Breakdown? We Provide Quick Recovery Solutions";
-const description = "Get back on the road faster with our reliable vehicle breakdown recovery. Reach out for support today!";
+const title = "24/7 Breakdown Recovery Darlington | FSR Recovery";
+const description = "24/7 vehicle breakdown recovery in Darlington and nearby areas for cars and light vans that cannot safely continue. Contact FSR Recovery Group.";
 const path = "/services/vehicle-breakdown-recovery";
 
 export const metadata: Metadata = {
@@ -56,7 +57,8 @@ const faqs: ServiceFaq[] = [
 ].map(([question, answer]) => ({ question, answer }));
 
 const schema = { "@context": "https://schema.org", "@graph": [
-  { "@type": "Service", name: "24/7 Vehicle Breakdown Recovery", description, serviceType: "Vehicle breakdown recovery", provider: { "@type": "LocalBusiness", name: business.name, telephone: business.phone, address: { "@type": "PostalAddress", streetAddress: business.address.street, addressLocality: business.address.locality, postalCode: business.address.postalCode, addressCountry: business.address.countryCode } }, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
+  breadcrumbList([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "24/7 Vehicle Breakdown Recovery", path }]),
+  { "@type": "Service", name: "24/7 Vehicle Breakdown Recovery", description, serviceType: "Vehicle breakdown recovery", provider: businessEntityRef, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
   { "@type": "FAQPage", mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }
 ] };
 

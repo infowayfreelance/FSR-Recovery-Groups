@@ -152,6 +152,28 @@ const schema = {
               provider: { "@id": "https://fsrrecoverygroups.co.uk/#business" },
             },
           },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Changing spare tyre",
+              url: "https://fsrrecoverygroups.co.uk/services/changing-spare-tyre",
+              serviceType: "Changing spare tyre",
+              description: "Roadside help fitting a suitable spare tyre following a puncture.",
+              provider: { "@id": "https://fsrrecoverygroups.co.uk/#business" },
+            },
+          },
+          {
+            "@type": "Offer",
+            itemOffered: {
+              "@type": "Service",
+              name: "Refueling",
+              url: "https://fsrrecoverygroups.co.uk/services/refueling",
+              serviceType: "Refueling",
+              description: "Emergency fuel delivery when a vehicle has run out of fuel.",
+              provider: { "@id": "https://fsrrecoverygroups.co.uk/#business" },
+            },
+          },
         ],
       },
       sameAs: ["https://www.freeindex.co.uk/profile(fsr-recovery-groups)_858150.htm"],
@@ -299,7 +321,7 @@ const services = [
     img: "/images/service-winch.jpg",
     alt: "Land Rover being winched out of a ditch",
     title: "Winch Out",
-    desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
+    desc: "Vehicle stuck in mud, soft ground or a ditch? We assess the situation and provide controlled winch-out assistance where safe access and conditions allow.",
   },
   {
     key: "vehicle-transporting",
@@ -810,8 +832,18 @@ export default function Home() {
                 gives the same advice.
               </p>
               <p>
+                If you are stranded in moving traffic and cannot safely leave the vehicle, stay inside
+                with your seat belt fastened and hazard lights on. Call 999 and ask for the police. Do
+                not attempt to cross moving traffic.
+              </p>
+              <p>
                 If anyone is hurt or in danger, call 999 first. Then call us with your exact location,
                 including the junction number or the number on the nearest marker post.
+              </p>
+              <p className="text-sm text-navy/50">
+                This is general safety guidance, not a substitute for the official Highway Code or
+                National Highways advice above. FSR Recovery Group provides vehicle recovery once you
+                and the vehicle are safe — it does not replace the emergency services.
               </p>
             </div>
           </div>

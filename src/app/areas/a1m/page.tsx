@@ -33,6 +33,7 @@ const content: AreaPageContent = {
     "The A1(M) is the main north-south motorway through our coverage area, running past Darlington, Scotch Corner, Catterick and Durham on its way between Yorkshire and the North East. A breakdown here — whether on the carriageway, a hard shoulder or a slip road — puts you and other drivers at risk, so a prompt, careful response matters.",
     "FSR Recovery Group is regularly called to breakdowns and accidents on the A1(M), and we follow appropriate safety procedures for motorway recovery, including working with the emergency services when required.",
     "If you've broken down on the A1(M), stay safe first — if possible, move to the hard shoulder or a place of relative safety, keep your hazard lights on, and call us with your exact location, including the nearest junction number if you know it.",
+    "If you are stranded in moving traffic and cannot safely leave the vehicle, stay inside with your seat belt fastened and hazard lights on, call 999 and ask for the police, and do not attempt to cross moving traffic. Once you and the vehicle are safe, call us to arrange recovery.",
   ],
   localHighlightsTitle: "A1(M) Coverage Highlights",
   localHighlights: [
