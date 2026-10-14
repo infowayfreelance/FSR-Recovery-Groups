@@ -6,9 +6,10 @@ import { Footer } from "@/components/Footer";
 import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHeading, type ServiceCard, type ServiceFaq } from "@/components/ServicePage";
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
-const title = "Fast Roadside Tyre Change Assistance Available";
-const description = "Stuck with a flat tyre? Our roadside assistance offers quick tyre changes wherever you are. Call now!";
+const title = "Spare Tyre Assistance Darlington | FSR Recovery";
+const description = "Flat tyre? FSR Recovery Group provides roadside spare tyre fitting in Darlington and nearby areas, where a suitable spare tyre is available.";
 const path = "/services/changing-spare-tyre";
 
 export const metadata: Metadata = {
@@ -57,7 +58,8 @@ const faqs: ServiceFaq[] = [
 ].map(([question, answer]) => ({ question, answer }));
 
 const schema = { "@context": "https://schema.org", "@graph": [
-  { "@type": "Service", name: "Spare Tyre Change Service", description, serviceType: "Spare tyre change service", provider: { "@type": "LocalBusiness", name: business.name, telephone: business.phone, address: { "@type": "PostalAddress", streetAddress: business.address.street, addressLocality: business.address.locality, postalCode: business.address.postalCode, addressCountry: business.address.countryCode } }, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
+  breadcrumbList([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Changing Spare Tyre", path }]),
+  { "@type": "Service", name: "Spare Tyre Change Service", description, serviceType: "Spare tyre change service", provider: businessEntityRef, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
   { "@type": "FAQPage", mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }
 ] };
 

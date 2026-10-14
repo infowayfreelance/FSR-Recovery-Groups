@@ -5,6 +5,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { Eyebrow, SectionHeading, ContactButtons, FaqAccordion, type ServiceFaq } from "@/components/ServicePage";
 import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
 const title = "A68 Breakdown & Recovery Service | FSR";
 const description = "24/7 breakdown recovery, roadside assistance and towing for drivers on the A68. Call or WhatsApp FSR Recovery Group with your location and vehicle details.";
@@ -255,23 +256,13 @@ const faqs: ServiceFaq[] = [
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
+    breadcrumbList([{ name: "Home", path: "/" }, { name: "Areas", path: "/areas" }, { name: "A68", path }]),
     {
       "@type": "Service",
       name: "A68 Breakdown & Recovery Service",
       description,
       serviceType: "Vehicle recovery and roadside assistance",
-      provider: {
-        "@type": "LocalBusiness",
-        name: business.name,
-        telephone: business.phone,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: business.address.street,
-          addressLocality: business.address.locality,
-          postalCode: business.address.postalCode,
-          addressCountry: business.address.countryCode,
-        },
-      },
+      provider: businessEntityRef,
       areaServed: { "@type": "Place", name: "A68" },
       url: `https://fsrrecoverygroups.co.uk${path}`,
       availableChannel: {

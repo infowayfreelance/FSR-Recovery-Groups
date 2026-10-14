@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
 import { GoogleMapEmbed } from "@/components/GoogleMapEmbed";
 import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
 export const metadata: Metadata = {
   title: { absolute: "Need Assistance? Contact FSR Recovery Group Now" },
@@ -15,22 +16,14 @@ export const metadata: Metadata = {
 const schema = {
   "@context": "https://schema.org",
   "@graph": [
+    breadcrumbList([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]),
     {
       "@type": "ContactPage",
       name: "Contact FSR Recovery Group",
       url: "https://fsrrecoverygroups.co.uk/contact",
       about: {
-        "@type": "LocalBusiness",
-        name: business.name,
-        telephone: business.phone,
+        ...businessEntityRef,
         email: business.email,
-        address: {
-          "@type": "PostalAddress",
-          streetAddress: business.address.street,
-          addressLocality: business.address.locality,
-          postalCode: business.address.postalCode,
-          addressCountry: business.address.countryCode,
-        },
         contactPoint: {
           "@type": "ContactPoint",
           telephone: business.phone,

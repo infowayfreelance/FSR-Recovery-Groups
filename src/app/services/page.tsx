@@ -58,7 +58,7 @@ const services = [
     alt: "Land Rover being winched out of a ditch",
     title: "Winch Out",
     ...getServiceNavigation("winch-out"),
-    desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
+    desc: "Vehicle stuck in mud, soft ground or a ditch? We assess the situation and provide controlled winch-out assistance where safe access and conditions allow.",
     features: [
       "Equipped for off-road and difficult-access recovery",
       "Careful winching to avoid further vehicle damage",

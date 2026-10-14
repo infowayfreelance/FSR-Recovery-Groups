@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { business } from "@/data/business";
 import { serviceNavigation } from "@/data/services";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 import {
   CardGrid,
   ContactButtons,
@@ -81,23 +82,13 @@ function AreaSchema({ content, path }: { content: AreaPageContent; path: string 
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
+      breadcrumbList([{ name: "Home", path: "/" }, { name: "Areas", path: "/areas" }, { name: content.eyebrow, path }]),
       {
         "@type": "Service",
         name: `${content.h1}`,
         description: content.heroIntro,
         serviceType: "Vehicle recovery and roadside assistance",
-        provider: {
-          "@type": "LocalBusiness",
-          name: business.name,
-          telephone: business.phone,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: business.address.street,
-            addressLocality: business.address.locality,
-            postalCode: business.address.postalCode,
-            addressCountry: business.address.countryCode,
-          },
-        },
+        provider: businessEntityRef,
         areaServed: { "@type": content.category === "road" ? "Place" : "City", name: content.eyebrow },
         url: `https://fsrrecoverygroups.co.uk${path}`,
         availableChannel: {

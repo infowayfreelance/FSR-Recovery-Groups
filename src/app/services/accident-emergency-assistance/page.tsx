@@ -6,9 +6,10 @@ import { Footer } from "@/components/Footer";
 import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHeading, type ServiceCard, type ServiceFaq } from "@/components/ServicePage";
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
-const title = "Accident Recovery Service for Quick Support";
-const description = "Get immediate assistance with our accident recovery service. We’re here to help you every step of the way!";
+const title = "Accident Recovery Darlington | FSR Recovery";
+const description = "Vehicle recovery following a road accident in Darlington and nearby areas, once the scene is safe. Contact FSR Recovery Group for assistance.";
 const path = "/services/accident-emergency-assistance";
 
 export const metadata: Metadata = {
@@ -57,7 +58,8 @@ const faqs: ServiceFaq[] = [
 ].map(([question, answer]) => ({ question, answer }));
 
 const schema = { "@context": "https://schema.org", "@graph": [
-  { "@type": "Service", name: "Accident Emergency Assistance", description, serviceType: "Vehicle accident recovery service", provider: { "@type": "LocalBusiness", name: business.name, telephone: business.phone, address: { "@type": "PostalAddress", streetAddress: business.address.street, addressLocality: business.address.locality, postalCode: business.address.postalCode, addressCountry: business.address.countryCode } }, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
+  breadcrumbList([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Accident Emergency Assistance", path }]),
+  { "@type": "Service", name: "Accident Emergency Assistance", description, serviceType: "Vehicle accident recovery service", provider: businessEntityRef, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
   { "@type": "FAQPage", mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }
 ] };
 

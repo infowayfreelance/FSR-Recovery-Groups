@@ -6,9 +6,10 @@ import { Footer } from "@/components/Footer";
 import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHeading, type ServiceCard, type ServiceFaq } from "@/components/ServicePage";
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
-const title = "Reliable Roadside Assistance When You Need It";
-const description = "Don’t let car troubles ruin your day. Reach out for immediate roadside assistance and get back on track!";
+const title = "Roadside Assistance Darlington | FSR Recovery";
+const description = "On-the-spot help for suitable vehicle problems in Darlington and nearby areas. Contact FSR Recovery Group for roadside assistance.";
 const path = "/services/roadside-assistance";
 
 export const metadata: Metadata = {
@@ -56,7 +57,8 @@ const faqs: ServiceFaq[] = [
 ].map(([question, answer]) => ({ question, answer }));
 
 const schema = { "@context": "https://schema.org", "@graph": [
-  { "@type": "Service", name: "Roadside Assistance", description, serviceType: "Roadside assistance", provider: { "@type": "LocalBusiness", name: business.name, telephone: business.phone, address: { "@type": "PostalAddress", streetAddress: business.address.street, addressLocality: business.address.locality, postalCode: business.address.postalCode, addressCountry: business.address.countryCode } }, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
+  breadcrumbList([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Roadside Assistance", path }]),
+  { "@type": "Service", name: "Roadside Assistance", description, serviceType: "Roadside assistance", provider: businessEntityRef, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
   { "@type": "FAQPage", mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }
 ] };
 
