@@ -212,19 +212,19 @@ export default function AccidentEmergencyAssistancePage() {
 
         {/* Professional Accident Recovery */}
         <section className="py-16 sm:py-24">
-          <div className="container-site mx-auto max-w-3xl">
+          <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="fade-up relative min-h-[320px] overflow-hidden rounded-3xl sm:min-h-[400px]">
+              <Image
+                src="/images/accident-damage-assessment-torch.webp"
+                alt="Technician assessing accident damage to a car's front bumper with a torch"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
             <div className="fade-up space-y-4">
               <Eyebrow>Professional Service</Eyebrow>
-              <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">Professional Accident Recovery</h2>
-              <div className="relative mb-2 h-56 overflow-hidden rounded-3xl sm:h-72">
-                <Image
-                  src="/images/accident-damage-assessment-torch.webp"
-                  alt="Technician assessing accident damage to a car's front bumper with a torch"
-                  fill
-                  sizes="(min-width: 1024px) 50vw, 100vw"
-                  className="object-cover"
-                />
-              </div>
+              <h2 className="mb-1 text-3xl font-extrabold text-navy sm:text-4xl">Professional Accident Recovery</h2>
               <p className="leading-7 text-navy/70">
                 A road accident can leave your vehicle damaged, unsafe to drive or unable to continue.
                 Once the immediate situation has been dealt with, arranging safe and suitable vehicle
@@ -251,7 +251,7 @@ export default function AccidentEmergencyAssistancePage() {
 
         {/* When Accident Recovery Is Needed */}
         <section className="bg-slate-50 py-16 sm:py-24">
-          <div className="container-site mx-auto max-w-3xl">
+          <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="fade-up">
               <Eyebrow>When You May Need Us</Eyebrow>
               <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">When Accident Recovery Is Needed</h2>
@@ -259,15 +259,6 @@ export default function AccidentEmergencyAssistancePage() {
                 Not every accident results in the same type of vehicle damage. Recovery may be required
                 when:
               </p>
-              <div className="relative mb-6 h-56 overflow-hidden rounded-3xl sm:h-72">
-                <Image
-                  src="/images/accident-van-damage-flatbed.webp"
-                  alt="Van with accident-damaged bodywork loaded on a flatbed recovery truck"
-                  fill
-                  sizes="100vw"
-                  className="object-cover"
-                />
-              </div>
               <ul className="mb-6 space-y-3">
                 {needRecovery.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-navy/75">
@@ -283,6 +274,15 @@ export default function AccidentEmergencyAssistancePage() {
                 </Link>{" "}
                 and explain the situation.
               </p>
+            </div>
+            <div className="fade-up relative min-h-[320px] overflow-hidden rounded-3xl sm:min-h-[400px]">
+              <Image
+                src="/images/accident-van-damage-flatbed.webp"
+                alt="Van with accident-damaged bodywork loaded on a flatbed recovery truck"
+                fill
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
