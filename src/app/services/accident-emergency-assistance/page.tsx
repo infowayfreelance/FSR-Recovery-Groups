@@ -10,8 +10,10 @@ import { businessEntityRef, breadcrumbList } from "@/data/schema";
 const title = "Accident Recovery Services Darlington | FSR Recovery";
 const description = "Car accident recovery and recovery from accident situations in Darlington and nearby areas. FSR Recovery Group recovers suitable cars and vans safely.";
 const path = "/services/accident-emergency-assistance";
-const heroImage = "/images/about-tow.jpg";
-const heroImageAlt = "Professional vehicle recovery after a road accident";
+const heroImage = "/images/accident-recovery-handover-flatbed.webp";
+const heroImageAlt = "Recovery technician talking with a driver beside a damaged car on a flatbed truck";
+const ctaImage = "/images/accident-recovery-loading-flatbed.webp";
+const ctaImageAlt = "Technician loading a damaged car onto a flatbed recovery truck";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -35,7 +37,14 @@ const includes: { icon: string; title: string; text: React.ReactNode }[] = [
   {
     icon: "fa-solid fa-car-burst",
     title: "Damaged Vehicle Recovery",
-    text: "Recovery of suitable cars and light vans that cannot safely continue following an accident.",
+    text: (
+      <>
+        <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
+          Recovery of suitable cars and light vans
+        </Link>{" "}
+        that cannot safely continue following an accident.
+      </>
+    ),
   },
   {
     icon: "fa-solid fa-screwdriver-wrench",
@@ -107,12 +116,28 @@ const whyChoose: { icon: string; title: string; text: React.ReactNode }[] = [
   {
     icon: "fa-solid fa-car-side",
     title: "Suitable Vehicle Recovery",
-    text: "We provide recovery for suitable cars and light vans following accidents and breakdown situations.",
+    text: (
+      <>
+        We provide recovery for suitable cars and light vans following{" "}
+        <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
+          accidents and breakdown situations
+        </Link>
+        .
+      </>
+    ),
   },
   {
     icon: "fa-solid fa-location-arrow",
     title: "Flexible Recovery Destinations",
-    text: "Depending on the circumstances, a recovered vehicle can be transported to an agreed suitable destination.",
+    text: (
+      <>
+        Depending on the circumstances, a recovered vehicle can be{" "}
+        <Link href="/services/vehicle-transporting" className="font-semibold text-red hover:underline">
+          transported to an agreed suitable destination
+        </Link>
+        .
+      </>
+    ),
   },
 ];
 
@@ -191,6 +216,15 @@ export default function AccidentEmergencyAssistancePage() {
             <div className="fade-up space-y-4">
               <Eyebrow>Professional Service</Eyebrow>
               <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">Professional Accident Recovery</h2>
+              <div className="relative mb-2 h-56 overflow-hidden rounded-3xl sm:h-72">
+                <Image
+                  src="/images/accident-damage-assessment-torch.webp"
+                  alt="Technician assessing accident damage to a car's front bumper with a torch"
+                  fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
+                  className="object-cover"
+                />
+              </div>
               <p className="leading-7 text-navy/70">
                 A road accident can leave your vehicle damaged, unsafe to drive or unable to continue.
                 Once the immediate situation has been dealt with, arranging safe and suitable vehicle
@@ -225,6 +259,15 @@ export default function AccidentEmergencyAssistancePage() {
                 Not every accident results in the same type of vehicle damage. Recovery may be required
                 when:
               </p>
+              <div className="relative mb-6 h-56 overflow-hidden rounded-3xl sm:h-72">
+                <Image
+                  src="/images/accident-van-damage-flatbed.webp"
+                  alt="Van with accident-damaged bodywork loaded on a flatbed recovery truck"
+                  fill
+                  sizes="100vw"
+                  className="object-cover"
+                />
+              </div>
               <ul className="mb-6 space-y-3">
                 {needRecovery.map((item) => (
                   <li key={item} className="flex items-start gap-3 text-navy/75">
@@ -323,7 +366,7 @@ export default function AccidentEmergencyAssistancePage() {
 
         {/* Final CTA */}
         <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28">
-          <Image src={heroImage} alt={heroImageAlt} fill sizes="100vw" className="-z-20 object-cover" />
+          <Image src={ctaImage} alt={ctaImageAlt} fill sizes="100vw" className="-z-20 object-cover" />
           <div className="absolute inset-0 -z-10 bg-navy/90" />
           <div className="container-site fade-up mx-auto max-w-3xl text-center">
             <Eyebrow>Get in Touch</Eyebrow>
@@ -336,8 +379,11 @@ export default function AccidentEmergencyAssistancePage() {
               , contact FSR Recovery Group with your location and vehicle details.
             </p>
             <p className="mx-auto mb-8 max-w-2xl text-base leading-7 text-white/70">
-              Whether your vehicle has been damaged in a collision, will not start after an accident or
-              simply cannot safely continue, we&rsquo;ll discuss the appropriate recovery option with
+              Whether your vehicle has been damaged in a collision,{" "}
+              <Link href="/services/jumpstart-services" className="font-semibold text-red hover:underline">
+                will not start after an accident
+              </Link>{" "}
+              or simply cannot safely continue, we&rsquo;ll discuss the appropriate recovery option with
               you.
             </p>
             <div className="flex justify-center">
