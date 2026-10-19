@@ -66,7 +66,7 @@ const schema = { "@context": "https://schema.org", "@graph": [
 export default function WinchOutPage() {
   return <><Header activePath="/services" /><main>
     <section className="service-hero relative isolate min-h-[680px] overflow-hidden bg-navy text-white">
-      <Image src="/images/service-winch.jpg" alt="Professional vehicle winch-out assistance" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
+      <Image src="/images/service-winch.jpg" alt="Professional vehicle winch-out assistance" fill preload fetchPriority="high" quality={65} sizes="100vw" className="-z-20 object-cover" />
       <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
       <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl"><Eyebrow>24/7 Vehicle Extraction</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Professional Winch Out Service for Stuck Vehicles</h1><p className="my-6 max-w-2xl text-lg leading-8 text-white/80">When your car or van becomes stuck and cannot move under its own power, forcing it free can make the situation worse. FSR Recovery Group provides professional winch-out assistance for suitable vehicles stuck in mud, soft ground or other difficult positions.</p><ContactButtons dark callLabel={`Call ${business.phoneDisplay}`} whatsappLabel="WhatsApp for Winch-Out Help" /><div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">{["Available 24/7", "Professional Winching", "Cars & Suitable Vans"].map(x=><span key={x}><i className="fa-solid fa-circle-check mr-2 text-red" />{x}</span>)}</div></div></div>
     </section>

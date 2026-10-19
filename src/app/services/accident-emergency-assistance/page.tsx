@@ -188,7 +188,7 @@ export default function AccidentEmergencyAssistancePage() {
       <main>
         {/* Hero */}
         <section className="service-hero relative isolate min-h-[560px] overflow-hidden bg-navy text-white">
-          <Image src={heroImage} alt={heroImageAlt} fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
+          <Image src={heroImage} alt={heroImageAlt} fill preload fetchPriority="high" quality={65} sizes="100vw" className="-z-20 object-cover" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
           <div className="container-site flex min-h-[560px] items-center py-16">
             <div className="fade-up max-w-3xl">
