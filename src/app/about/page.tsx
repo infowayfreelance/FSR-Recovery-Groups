@@ -120,6 +120,7 @@ export default function AboutPage() {
             fill
             preload
             fetchPriority="high"
+            quality={65}
             sizes="100vw"
             className="-z-20 object-cover"
           />
