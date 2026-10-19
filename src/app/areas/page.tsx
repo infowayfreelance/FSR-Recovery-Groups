@@ -333,21 +333,21 @@ export default function AreasPage() {
           </div>
 
           <div className="container-site">
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <h3 className="fade-up mb-6 flex items-center gap-3 text-xl font-bold text-navy">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-red/10 text-red"><i className="fa-solid fa-city" /></span>
+              Cities &amp; Towns
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {cityAreaDetails.map((area) => (
-                <article
+                <Link
                   key={area.key}
-                  className="fade-up flex flex-col rounded-3xl border border-navy/10 bg-slate-50 p-6 transition duration-300 hover:-translate-y-1 hover:border-red/40 hover:bg-white hover:shadow-xl"
+                  href={area.href}
+                  title={area.desc}
+                  className="fade-up flex items-center justify-between rounded-2xl border border-navy/10 bg-slate-50 px-6 py-4 font-bold text-navy transition hover:-translate-y-0.5 hover:border-red/40 hover:bg-white hover:shadow-md"
                 >
-                  <h3 className="mb-2 flex items-center gap-2 text-lg font-bold text-navy">
-                    <i className="fa-solid fa-location-dot text-red" />
-                    {area.label}
-                  </h3>
-                  <p className="mb-5 flex-1 leading-7 text-navy/70">{area.desc}</p>
-                  <Link href={area.href} className="inline-flex items-center gap-2 font-bold text-red hover:text-red-dark">
-                    View {area.label} Recovery Services <i className="fa-solid fa-arrow-right text-sm" />
-                  </Link>
-                </article>
+                  <span><i className="fa-solid fa-location-dot mr-3 text-red" />{area.label}</span>
+                  <i className="fa-solid fa-arrow-right text-red" />
+                </Link>
               ))}
             </div>
           </div>
@@ -379,21 +379,21 @@ export default function AreasPage() {
           </div>
 
           <div className="container-site">
-            <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+            <h3 className="fade-up mb-6 flex items-center gap-3 text-xl font-bold text-navy">
+              <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-red/10 text-red"><i className="fa-solid fa-road" /></span>
+              Main Roads
+            </h3>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {roadAreaDetails.map((road) => (
-                <article
+                <Link
                   key={road.key}
-                  className="fade-up flex flex-col rounded-3xl border border-navy/10 bg-white p-6 transition duration-300 hover:-translate-y-1 hover:border-red/40 hover:shadow-xl"
+                  href={road.href}
+                  title={road.desc}
+                  className="fade-up flex items-center justify-between rounded-2xl border border-navy/10 bg-white px-6 py-4 font-bold text-navy transition hover:-translate-y-0.5 hover:border-red/40 hover:bg-slate-50 hover:shadow-md"
                 >
-                  <h3 className="mb-2 flex items-center gap-2 text-lg font-bold text-navy">
-                    <i className="fa-solid fa-road text-red" />
-                    {road.label}
-                  </h3>
-                  <p className="mb-5 flex-1 leading-7 text-navy/70">{road.desc}</p>
-                  <Link href={road.href} className="inline-flex items-center gap-2 font-bold text-red hover:text-red-dark">
-                    {road.label} Breakdown &amp; Recovery <i className="fa-solid fa-arrow-right text-sm" />
-                  </Link>
-                </article>
+                  <span><i className="fa-solid fa-road mr-3 text-red" />{road.label}</span>
+                  <i className="fa-solid fa-arrow-right text-red" />
+                </Link>
               ))}
             </div>
           </div>
