@@ -3,106 +3,357 @@ import Image from "next/image";
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { CardGrid, ContactButtons, Eyebrow, FaqAccordion, RelatedCard, SectionHeading, type ServiceCard, type ServiceFaq } from "@/components/ServicePage";
-import { getServiceNavigation } from "@/data/services";
+import { ContactButtons, Eyebrow, FaqAccordion, SectionHeading, type ServiceFaq } from "@/components/ServicePage";
 import { business } from "@/data/business";
 import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
-const title = "Accident Recovery Darlington | FSR Recovery";
-const description = "Vehicle recovery following a road accident in Darlington and nearby areas, once the scene is safe. Contact FSR Recovery Group for assistance.";
+const title = "Accident Recovery Services Darlington | FSR Recovery";
+const description = "Car accident recovery and recovery from accident situations in Darlington and nearby areas. FSR Recovery Group recovers suitable cars and vans safely.";
 const path = "/services/accident-emergency-assistance";
+const heroImage = "/images/about-tow.jpg";
+const heroImageAlt = "Professional vehicle recovery after a road accident";
 
 export const metadata: Metadata = {
-  title: { absolute: title }, description,
-  alternates: { canonical: path }, robots: { index: true, follow: true },
-  openGraph: { title, description, url: path, type: "website", siteName: business.name, images: [{ url: "/images/about-tow.jpg", alt: "Professional vehicle recovery after a road accident" }] },
-  twitter: { card: "summary_large_image", title, description, images: ["/images/about-tow.jpg"] },
+  title: { absolute: title },
+  description,
+  alternates: { canonical: path },
+  robots: { index: true, follow: true },
+  openGraph: { title, description, url: path, type: "website", siteName: business.name, images: [{ url: heroImage, alt: heroImageAlt }] },
+  twitter: { card: "summary_large_image", title, description, images: [heroImage] },
 };
 
-const situations: ServiceCard[] = [
-  { icon: "fa-solid fa-triangle-exclamation", title: "Vehicle Not Safe to Drive", text: "Damage to steering, wheels, tyres, bodywork or other components can make continuing the journey unsafe." },
-  { icon: "fa-solid fa-key", title: "Vehicle Will Not Start", text: "A collision can leave a vehicle unable to restart. If it cannot be driven, recovery can be arranged." },
-  { icon: "fa-solid fa-circle-dot", title: "Damaged Wheels or Tyres", text: "Impact damage to wheels or tyres may prevent the vehicle from moving safely under its own power." },
-  { icon: "fa-solid fa-car-side", title: "Bodywork Damage", text: "Loose or badly damaged panels can create additional risk and may make the vehicle unsuitable to continue driving." },
-  { icon: "fa-solid fa-road", title: "Vehicle Off the Road", text: "If the vehicle has moved into an awkward but safely accessible position, recovery or extraction may be required." },
-  { icon: "fa-solid fa-car-burst", title: "Collision With Another Vehicle", text: "After a road traffic collision, FSR Recovery Group can help arrange professional recovery when your vehicle needs to be moved safely." },
+const needRecovery = [
+  "The vehicle is unsafe or unsuitable to drive.",
+  "The vehicle has suffered significant bodywork damage.",
+  "A wheel, tyre or other important component has been damaged.",
+  "The vehicle will not start following the accident.",
+  "The vehicle has been involved in a collision and cannot continue safely.",
+  "The vehicle has left the road and requires suitable recovery assistance.",
 ];
-const included: ServiceCard[] = [
-  { icon: "fa-solid fa-clipboard-list", title: "Situation Information Review", text: "Tell us where the vehicle is, what happened and whether it can move under its own power." },
-  { icon: "fa-solid fa-truck-ramp-box", title: "Damaged Vehicle Recovery", text: "Professional recovery can be arranged when accident damage makes the vehicle unsafe or impossible to drive." },
-  { icon: "fa-solid fa-car-side", title: "Cars & Light Vans", text: "Assistance is available for common passenger cars and suitable light vans depending on the vehicle and circumstances." },
-  { icon: "fa-solid fa-screwdriver-wrench", title: "Garage or Body Shop Drop-Off", text: "The vehicle can be transported to an agreed garage, repair centre or body shop." },
-  { icon: "fa-solid fa-location-dot", title: "Alternative Destination", text: "Where required, the vehicle can be taken to another suitable agreed location." },
-  { icon: "fa-solid fa-shield-halved", title: "Careful Transportation", text: "The damaged vehicle is handled and transported with care according to the recovery situation." },
-];
-const benefits: ServiceCard[] = [
-  { icon: "fa-solid fa-clock", title: "Available 24/7", text: "Accidents can happen at any time, so our recovery assistance is available around the clock." },
-  { icon: "fa-solid fa-car-burst", title: "Damaged Vehicle Recovery", text: "We provide recovery support for vehicles that cannot safely continue following a collision." },
-  { icon: "fa-solid fa-van-shuttle", title: "Cars & Suitable Vans", text: "Assistance is available for common passenger cars and suitable light commercial vehicles." },
-  { icon: "fa-solid fa-location-arrow", title: "Flexible Destinations", text: "Your vehicle can be transported to an agreed garage, body shop, home address or another suitable location." },
-  { icon: "fa-solid fa-comments", title: "Clear Communication", text: "Tell us what happened and where the vehicle is, and we can discuss the appropriate recovery requirements." },
-  { icon: "fa-solid fa-map-location-dot", title: "Local Recovery Support", text: "Based in Darlington, FSR Recovery Group provides accident and vehicle recovery services across Darlington and surrounding areas." },
-];
-const faqs: ServiceFaq[] = [
-  ["What should I do immediately after a road accident?", "If anyone is injured or there is an immediate danger, contact the emergency services first. Once the scene is safe and your vehicle needs recovery, you can contact FSR Recovery Group for assistance."],
-  ["Can you recover a vehicle after an accident?", "Yes. If your vehicle is damaged and cannot safely continue, professional recovery can be arranged to an agreed destination."],
-  ["Is accident recovery available 24/7?", "Yes. FSR Recovery Group provides 24/7 vehicle recovery assistance, including support after road traffic accidents."],
-  ["Where can you take my damaged vehicle?", "Your vehicle can be transported to an agreed garage, body repair centre, home address or another suitable destination depending on your requirements."],
-  ["Can you recover a vehicle that will not start after a collision?", "Yes. If accident damage prevents the vehicle from starting or being driven safely, recovery can be arranged."],
-  ["Can you recover a van after an accident?", "Recovery may be available for suitable light vans. Tell us the vehicle type, size and condition when contacting us so the recovery requirements can be discussed."],
-  ["What information should I provide when calling?", "Provide your current location, vehicle make and model, a brief description of the accident damage and where you would like the vehicle taken."],
-  ["Can you help if my vehicle has gone off the road?", "Depending on access, position and safety conditions, vehicle extraction or recovery may be possible. The situation needs to be assessed before assistance can be confirmed."],
-  ["Do you deal with insurance claims?", "FSR Recovery Group provides vehicle recovery and transportation after an accident, not insurance claims handling. Please contact your insurer directly for claims-related advice — we're happy to help arrange recovery of your vehicle in the meantime."],
-  ["Do you provide accident recovery in Darlington?", "Yes. FSR Recovery Group is based in Darlington and provides accident recovery assistance across Darlington and surrounding areas. Contact us with your location to confirm availability."],
-  ["How much does accident recovery cost?", "The cost depends on factors such as the vehicle, location, condition, access and destination. Call or WhatsApp us with the details so an appropriate quote can be discussed."],
-].map(([question, answer]) => ({ question, answer }));
 
-const schema = { "@context": "https://schema.org", "@graph": [
-  breadcrumbList([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Accident Emergency Assistance", path }]),
-  { "@type": "Service", name: "Accident Emergency Assistance", description, serviceType: "Vehicle accident recovery service", provider: businessEntityRef, areaServed: { "@type": "City", name: "Darlington" }, availableChannel: { "@type": "ServiceChannel", servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" } } },
-  { "@type": "FAQPage", mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })) }
-] };
+const includes: { icon: string; title: string; text: React.ReactNode }[] = [
+  {
+    icon: "fa-solid fa-car-burst",
+    title: "Damaged Vehicle Recovery",
+    text: "Recovery of suitable cars and light vans that cannot safely continue following an accident.",
+  },
+  {
+    icon: "fa-solid fa-screwdriver-wrench",
+    title: "Roadside Recovery Assistance",
+    text: (
+      <>
+        Assistance for suitable situations where a vehicle needs to be moved from an accident location —
+        see our{" "}
+        <Link href="/services/roadside-assistance" className="font-semibold text-red hover:underline">
+          roadside assistance
+        </Link>{" "}
+        service.
+      </>
+    ),
+  },
+  {
+    icon: "fa-solid fa-truck-ramp-box",
+    title: "Vehicle Transportation",
+    text: (
+      <>
+        Transporting the recovered vehicle to an agreed destination, such as a suitable garage, body
+        shop, home or another agreed location — see our{" "}
+        <Link href="/services/vehicle-transporting" className="font-semibold text-red hover:underline">
+          vehicle transporting
+        </Link>{" "}
+        service.
+      </>
+    ),
+  },
+  {
+    icon: "fa-solid fa-road",
+    title: "Recovery After a Collision",
+    text: "Vehicle recovery following a road traffic accident where the vehicle is no longer suitable or safe to drive.",
+  },
+  {
+    icon: "fa-solid fa-van-shuttle",
+    title: "Light Van Recovery",
+    text: "Recovery assistance for suitable light commercial vans following an accident.",
+  },
+];
+
+const whatToDo = [
+  "Check yourself and others involved for immediate danger or injuries.",
+  "Contact the emergency services if there are injuries, serious danger or another emergency.",
+  "Move to a safe location if you can do so safely.",
+  "Switch on your hazard warning lights where appropriate.",
+  "Do not attempt to drive a vehicle that appears unsafe or seriously damaged.",
+];
+
+const whyChoose: { icon: string; title: string; text: React.ReactNode }[] = [
+  {
+    icon: "fa-solid fa-clock",
+    title: "24/7 Recovery Assistance",
+    text: "Accidents can happen at any time. FSR Recovery Group provides accident recovery assistance 24 hours a day.",
+  },
+  {
+    icon: "fa-solid fa-map-location-dot",
+    title: "Local Recovery Service",
+    text: (
+      <>
+        We provide recovery services in Darlington and across our{" "}
+        <Link href="/areas" className="font-semibold text-red hover:underline">
+          wider service area
+        </Link>
+        .
+      </>
+    ),
+  },
+  {
+    icon: "fa-solid fa-car-side",
+    title: "Suitable Vehicle Recovery",
+    text: "We provide recovery for suitable cars and light vans following accidents and breakdown situations.",
+  },
+  {
+    icon: "fa-solid fa-location-arrow",
+    title: "Flexible Recovery Destinations",
+    text: "Depending on the circumstances, a recovered vehicle can be transported to an agreed suitable destination.",
+  },
+];
+
+const faqs: ServiceFaq[] = [
+  { question: "Can you recover my car after an accident?", answer: "Yes. FSR Recovery Group provides accident recovery for suitable cars that cannot safely continue after a collision." },
+  { question: "Do you provide accident recovery 24/7?", answer: "Yes. Accident recovery assistance is available 24 hours a day." },
+  { question: "Can you recover a vehicle that will not start after an accident?", answer: "Yes. If the vehicle cannot safely continue, vehicle recovery may be appropriate." },
+  { question: "Can you recover a damaged vehicle from the roadside?", answer: "Yes. We can provide recovery for suitable vehicles that have been damaged and cannot safely be driven away." },
+  { question: "Where can you take my damaged vehicle?", answer: "Depending on the circumstances, the vehicle can be transported to an agreed suitable destination, such as a garage, body shop, home or another agreed location." },
+  { question: "Can you recover a van after an accident?", answer: "Yes. Recovery assistance is available for suitable light vans." },
+  { question: "What information do I need to provide?", answer: "Provide your exact location, vehicle details and a description of what happened. If possible, also provide information about the condition of the vehicle." },
+  { question: "Can you recover a vehicle that has left the road?", answer: "Suitable vehicles may be recoverable depending on their position, condition and the recovery requirements. Contact us with your exact location and details." },
+  { question: "Should I drive my car after an accident?", answer: "You should not drive a vehicle if it appears unsafe or has suffered damage that could affect its roadworthiness. Arrange suitable assistance instead." },
+  { question: "How much does accident recovery cost?", answer: "The cost can depend on the vehicle, location, recovery requirements and destination. Contact FSR Recovery Group with your details for information about the available recovery service." },
+];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbList([{ name: "Home", path: "/" }, { name: "Services", path: "/services" }, { name: "Accident Recovery & Emergency Assistance", path }]),
+    {
+      "@type": "Service",
+      name: "Accident Recovery & Emergency Assistance",
+      description,
+      serviceType: "Accident recovery service",
+      provider: businessEntityRef,
+      areaServed: { "@type": "City", name: "Darlington" },
+      availableChannel: {
+        "@type": "ServiceChannel",
+        servicePhone: { "@type": "ContactPoint", telephone: business.phone, contactType: "customer service", availableLanguage: "English" },
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map(({ question, answer }) => ({
+        "@type": "Question",
+        name: question,
+        acceptedAnswer: { "@type": "Answer", text: answer },
+      })),
+    },
+  ],
+};
 
 export default function AccidentEmergencyAssistancePage() {
-  return <><Header activePath="/services" /><main>
-    <section className="service-hero relative isolate min-h-[680px] overflow-hidden bg-navy text-white">
-      <Image src="/images/about-tow.jpg" alt="Professional vehicle recovery after a road accident" fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
-      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
-      <div className="container-site flex min-h-[680px] items-center py-20"><div className="fade-up max-w-3xl">
-        <Eyebrow>24/7 Accident Support</Eyebrow><h1 className="text-4xl font-extrabold leading-[1.08] sm:text-5xl lg:text-7xl">Accident Recovery &amp; Emergency Assistance</h1>
-        <p className="my-6 max-w-2xl text-lg leading-8 text-white/80">A road traffic accident can leave you shaken, stranded and unsure what to do next. FSR Recovery Group provides professional 24/7 accident emergency assistance, helping with vehicle recovery and safe transportation when your car or van cannot continue after a collision.</p>
-        <ContactButtons dark callLabel={`Call ${business.phoneDisplay}`} whatsappLabel="WhatsApp for Accident Assistance" />
-        <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">{["Available 24/7", "Accident Vehicle Recovery", "Cars & Suitable Vans"].map(x=><span key={x}><i className="fa-solid fa-circle-check mr-2 text-red" />{x}</span>)}</div>
-      </div></div>
-    </section>
+  return (
+    <>
+      <Header activePath="/services" />
+      <main>
+        {/* Hero */}
+        <section className="service-hero relative isolate min-h-[560px] overflow-hidden bg-navy text-white">
+          <Image src={heroImage} alt={heroImageAlt} fill preload fetchPriority="high" sizes="100vw" className="-z-20 object-cover" />
+          <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
+          <div className="container-site flex min-h-[560px] items-center py-16">
+            <div className="fade-up max-w-3xl">
+              <Eyebrow>Accident Recovery</Eyebrow>
+              <h1 className="text-3xl font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl">Accident Recovery &amp; Emergency Assistance</h1>
+              <p className="my-6 max-w-2xl text-lg leading-8 text-white/80">
+                24/7 accident recovery and emergency assistance for drivers in Darlington and the
+                surrounding areas. FSR Recovery Group helps recover cars and suitable light vans
+                following road accidents, collisions and other situations where a vehicle cannot safely
+                continue its journey.
+              </p>
+              <ContactButtons dark callLabel="Call for Accident Recovery" whatsappLabel="WhatsApp Us" />
+              <div className="mt-8 flex flex-wrap gap-x-6 gap-y-3 text-sm font-bold">
+                {["Available 24/7", "Cars & Suitable Vans", "Emergency Assistance"].map((x) => (
+                  <span key={x}><i className="fa-solid fa-circle-check mr-2 text-red" />{x}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
 
-    <section className="py-16 sm:py-24"><div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-      <div className="fade-up relative min-h-[430px] overflow-hidden rounded-3xl"><Image src="/images/gallery-1.jpg" alt="Damaged car receiving accident recovery assistance" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div>
-      <div className="fade-up"><Eyebrow>Support After a Collision</Eyebrow><h2 className="mb-5 text-3xl font-extrabold sm:text-4xl">Professional Help When Your Vehicle Is Damaged</h2>
-        <div className="space-y-4 leading-7 text-navy/70"><p>Even a relatively minor collision can leave a vehicle unsafe to drive. Bodywork damage, wheel damage, broken lights, steering problems or other faults may make continuing the journey risky.</p><p>FSR Recovery Group provides professional accident emergency assistance for drivers who need help after a road traffic incident. We can assess the information you provide and arrange suitable recovery where the vehicle cannot continue safely.</p><p>Your vehicle can be collected from an accessible location and transported to an agreed garage, body repair centre, home address or another suitable destination.</p><p>If anyone is injured or there is an immediate danger, contact the emergency services first. Once the scene is safe and vehicle recovery is required, contact FSR Recovery Group.</p></div>
-        <a href={business.tel} className="mt-7 block rounded-2xl border-l-4 border-red bg-navy p-5 font-bold text-white">Need vehicle recovery after an accident? <span className="text-red">Call {business.phoneDisplay}</span>.</a>
-      </div>
-    </div></section>
+        {/* Professional Accident Recovery */}
+        <section className="py-16 sm:py-24">
+          <div className="container-site mx-auto max-w-3xl">
+            <div className="fade-up space-y-4">
+              <Eyebrow>Professional Service</Eyebrow>
+              <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">Professional Accident Recovery</h2>
+              <p className="leading-7 text-navy/70">
+                A road accident can leave your vehicle damaged, unsafe to drive or unable to continue.
+                Once the immediate situation has been dealt with, arranging safe and suitable vehicle
+                recovery is often the next step.
+              </p>
+              <p className="leading-7 text-navy/70">
+                FSR Recovery Group provides accident recovery services for suitable cars and light vans
+                following collisions and other road incidents. Depending on the condition and
+                circumstances of the vehicle, we can arrange recovery from the roadside and transport it
+                to an agreed destination.
+              </p>
+              <p className="leading-7 text-navy/70">
+                Our accident recovery service is designed to help when a vehicle cannot safely be driven
+                away after an incident. When you{" "}
+                <Link href="/contact" className="font-semibold text-red hover:underline">
+                  contact us
+                </Link>
+                , provide your exact location, vehicle details and a brief description of what has
+                happened so we can understand your recovery requirements.
+              </p>
+            </div>
+          </div>
+        </section>
 
-    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="When You May Need Us" title="Accident Situations We Can Help With" intro="After a collision, the safest next step depends on the condition of the vehicle and the location. If your car or van cannot continue safely, professional recovery may be required." /><CardGrid cards={situations} /><p className="mt-7 text-center text-sm text-navy/70">If there are injuries, danger to life, fire, fuel leakage or a hazardous road situation, contact the emergency services first.</p></div></section>
+        {/* When Accident Recovery Is Needed */}
+        <section className="bg-slate-50 py-16 sm:py-24">
+          <div className="container-site mx-auto max-w-3xl">
+            <div className="fade-up">
+              <Eyebrow>When You May Need Us</Eyebrow>
+              <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">When Accident Recovery Is Needed</h2>
+              <p className="mb-6 leading-7 text-navy/70">
+                Not every accident results in the same type of vehicle damage. Recovery may be required
+                when:
+              </p>
+              <ul className="mb-6 space-y-3">
+                {needRecovery.map((item) => (
+                  <li key={item} className="flex items-start gap-3 text-navy/75">
+                    <i className="fa-solid fa-circle-check mt-1 flex-shrink-0 text-red" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <p className="leading-7 text-navy/70">
+                If you are unsure whether you need roadside assistance or full vehicle recovery,{" "}
+                <Link href="/contact" className="font-semibold text-red hover:underline">
+                  contact FSR Recovery Group
+                </Link>{" "}
+                and explain the situation.
+              </p>
+            </div>
+          </div>
+        </section>
 
-    <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28"><Image src="/images/gallery-2.jpg" alt="24 hour accident recovery assistance" fill sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10 bg-navy/90"/><div className="container-site"><div className="fade-up max-w-2xl"><Eyebrow>Day or Night</Eyebrow><h2 className="text-3xl font-extrabold sm:text-5xl">24-Hour Accident Recovery Assistance</h2><div className="my-6 space-y-4 leading-7 text-white/75"><p>Road traffic accidents can happen at any time. A collision may occur during a busy commute, late at night or while travelling at the weekend.</p><p>FSR Recovery Group provides 24/7 accident emergency assistance for situations where a damaged vehicle needs professional recovery or transportation after the scene has been made safe.</p><p>When contacting us, provide your location, vehicle details and a brief description of the damage or situation. This helps us understand the recovery requirements.</p></div><ContactButtons dark callLabel="Call for Accident Assistance" whatsappLabel="WhatsApp Us" /></div></div></section>
+        {/* What Our Accident Recovery Includes */}
+        <section className="py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading eyebrow="Our Service" title="What Our Accident Recovery Includes" intro="Our accident and recovery service can include:" />
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
+              {includes.map((item) => (
+                <article key={item.title} className="fade-up rounded-3xl border border-navy/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red/40 hover:shadow-xl">
+                  <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-red/15 text-xl text-red"><i className={item.icon} /></span>
+                  <h3 className="mb-2 text-xl font-bold text-navy">{item.title}</h3>
+                  <p className="leading-7 text-navy/70">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-    <section className="py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="Post-Accident Recovery Support" title="What Our Accident Assistance Service Includes" intro="Our accident emergency assistance service is designed to help move a damaged or undriveable vehicle safely once the immediate safety situation has been addressed." /><CardGrid cards={included} /></div></section>
+        {/* What To Do After a Road Accident */}
+        <section className="bg-slate-50 py-16 sm:py-24">
+          <div className="container-site mx-auto max-w-3xl">
+            <div className="fade-up">
+              <Eyebrow>Stay Safe</Eyebrow>
+              <h2 className="mb-3 text-3xl font-extrabold text-navy sm:text-4xl">What To Do After a Road Accident</h2>
+              <p className="mb-6 leading-7 text-navy/70">Your safety should come first after an accident.</p>
+              <ol className="space-y-4">
+                {whatToDo.map((step, i) => (
+                  <li key={step} className="flex items-start gap-4 rounded-2xl border border-navy/10 bg-white p-5">
+                    <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-red/10 text-sm font-extrabold text-red">{i + 1}</span>
+                    <span className="pt-1 leading-7 text-navy/75">{step}</span>
+                  </li>
+                ))}
+                <li className="flex items-start gap-4 rounded-2xl border border-navy/10 bg-white p-5">
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-red/10 text-sm font-extrabold text-red">6</span>
+                  <span className="pt-1 leading-7 text-navy/75">
+                    Once the immediate situation is safe, contact{" "}
+                    <Link href="/contact" className="font-semibold text-red hover:underline">
+                      FSR Recovery Group
+                    </Link>{" "}
+                    if you require vehicle recovery.
+                  </span>
+                </li>
+                <li className="flex items-start gap-4 rounded-2xl border border-navy/10 bg-white p-5">
+                  <span className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-full bg-red/10 text-sm font-extrabold text-red">7</span>
+                  <span className="pt-1 leading-7 text-navy/75">Provide your exact location, vehicle details and information about the damage.</span>
+                </li>
+              </ol>
+              <p className="mt-6 leading-7 text-navy/70">
+                Do not put yourself at further risk by attempting repairs or moving a badly damaged
+                vehicle in an unsafe situation.
+              </p>
+            </div>
+          </div>
+        </section>
 
-    <section className="bg-navy py-16 text-white sm:py-24"><div className="container-site"><div className="[&_h2]:!text-white"><SectionHeading eyebrow="Simple Process" title="How Accident Recovery Assistance Works" /></div><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">{[["01","Make the Situation Safe","If anyone is injured or there is immediate danger, contact the emergency services first."],["02","Contact FSR Recovery Group","Once it is safe to do so, call or WhatsApp us and explain that your vehicle has been involved in an accident."],["03","Share the Details","Provide your location, vehicle information, a brief description of the damage and where you would like the vehicle taken."],["04","Vehicle Recovery","Where appropriate, professional recovery is arranged and the vehicle is transported to the agreed destination."]].map(([n,t,x])=><article key={n} className="fade-up rounded-3xl border border-white/10 bg-white/[.06] p-6"><span className="text-4xl font-extrabold text-red">{n}</span><h3 className="mb-2 mt-5 text-xl font-bold">{t}</h3><p className="leading-7 text-white/70">{x}</p></article>)}</div><div className="mt-9 flex justify-center"><ContactButtons dark callLabel="Call Now" whatsappLabel="WhatsApp for Accident Help" /></div></div></section>
+        {/* Why Choose FSR Recovery Group */}
+        <section className="py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading eyebrow="Why Choose Us" title="Why Choose FSR Recovery Group?" />
+            <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
+              {whyChoose.map((item) => (
+                <article key={item.title} className="fade-up rounded-3xl border border-navy/10 bg-white p-6 shadow-sm transition duration-300 hover:-translate-y-1 hover:border-red/40 hover:shadow-xl">
+                  <span className="mb-5 flex h-12 w-12 items-center justify-center rounded-2xl bg-red/15 text-xl text-red"><i className={item.icon} /></span>
+                  <h3 className="mb-2 text-xl font-bold text-navy">{item.title}</h3>
+                  <p className="leading-7 text-navy/70">{item.text}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
 
-    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="Why Choose Us" title="Professional Support After an Accident" /><CardGrid cards={benefits} /></div></section>
+        {/* FAQs */}
+        <section className="bg-slate-50 py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading eyebrow="Common Questions" title="Accident Recovery FAQs" />
+            <FaqAccordion faqs={faqs} />
+          </div>
+        </section>
 
-    <section className="py-16 sm:py-24"><div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16"><div className="fade-up"><Eyebrow>Local Accident Recovery Support</Eyebrow><h2 className="text-3xl font-extrabold sm:text-4xl">Accident Emergency Assistance in Darlington and Surrounding Areas</h2><div className="my-6 space-y-4 leading-7 text-navy/70"><p>FSR Recovery Group is based at 135 Gladstone St, Darlington DL3 6LB and provides accident vehicle recovery assistance across Darlington and surrounding areas.</p><p>If your car or van has been involved in a collision and cannot safely continue, contact us with your location, vehicle details and a brief description of the situation. This includes collisions on the <Link href="/areas/a1m" className="font-semibold text-red">A1(M)</Link> near Darlington as well as town centre and residential roads.</p><p>If you are outside Darlington, call or WhatsApp us with your location so we can confirm whether recovery is available.</p></div><address className="mb-7 rounded-2xl bg-slate-100 p-5 not-italic leading-7"><strong>{business.name}</strong><br/>{business.addressFull}<br/><a href={business.tel} className="font-bold text-red">{business.phoneDisplay}</a></address><div className="flex flex-col gap-3 sm:flex-row"><a href={business.tel} className="rounded-full bg-red px-6 py-3.5 text-center font-bold text-white">Call for Accident Recovery</a><Link href="/areas" className="rounded-full border border-navy/20 px-6 py-3.5 text-center font-bold">View Areas Covered</Link></div></div><div className="fade-up relative min-h-[480px] overflow-hidden rounded-3xl"><Image src="/images/service-transport.jpg" alt="Vehicle transportation after accident recovery" fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div></div></section>
+        {/* Final CTA */}
+        <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28">
+          <Image src={heroImage} alt={heroImageAlt} fill sizes="100vw" className="-z-20 object-cover" />
+          <div className="absolute inset-0 -z-10 bg-navy/90" />
+          <div className="container-site fade-up mx-auto max-w-3xl text-center">
+            <Eyebrow>Get in Touch</Eyebrow>
+            <h2 className="text-3xl font-extrabold sm:text-5xl">Need Accident Recovery?</h2>
+            <p className="mx-auto my-6 max-w-2xl text-lg leading-8 text-white/75">
+              If you need car accident recovery in Darlington or the surrounding{" "}
+              <Link href="/areas" className="font-semibold text-red hover:underline">
+                service area
+              </Link>
+              , contact FSR Recovery Group with your location and vehicle details.
+            </p>
+            <p className="mx-auto mb-8 max-w-2xl text-base leading-7 text-white/70">
+              Whether your vehicle has been damaged in a collision, will not start after an accident or
+              simply cannot safely continue, we&rsquo;ll discuss the appropriate recovery option with
+              you.
+            </p>
+            <div className="flex justify-center">
+              <ContactButtons dark callLabel="Call FSR Recovery Group" whatsappLabel="WhatsApp FSR Recovery Group" />
+            </div>
+            <p className="mt-8 text-lg font-bold text-white/90">{business.phoneDisplay}</p>
+            <div className="mt-6 flex flex-wrap justify-center gap-x-6 gap-y-2 text-sm font-bold">
+              <Link href="/services" className="text-white/80 transition hover:text-red">← View All Services</Link>
+              <Link href="/contact" className="text-white/80 transition hover:text-red">Contact Us →</Link>
+            </div>
+          </div>
+        </section>
 
-    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="Know the Next Step" title="Roadside Safety or Vehicle Recovery?" /><div className="grid gap-6 lg:grid-cols-2">{[["Scene Safety Comes First","If anyone is injured, the road is blocked, there is fire, leaking fuel or another immediate danger, the emergency services should be contacted first.","Do not put yourself at risk trying to inspect or move the vehicle in a dangerous situation.","/images/gallery-1.jpg","Recovery operator assisting at a safe accident scene"],["Vehicle Recovery After the Scene Is Safe","Once the immediate danger has been addressed, FSR Recovery Group can help arrange recovery for a damaged vehicle that cannot safely continue.","The vehicle can be transported to an agreed repair centre, garage, home address or another suitable location.","/images/about-tow.jpg","Damaged vehicle recovery service"]].map(([t,a,b,img,alt])=><article key={t} className="fade-up overflow-hidden rounded-3xl bg-navy text-white"><div className="relative h-64"><Image src={img} alt={alt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" /></div><div className="p-7"><h3 className="mb-3 text-2xl font-bold">{t}</h3><p className="mb-3 leading-7 text-white/70">{a}</p><p className="leading-7 text-white/70">{b}</p></div></article>)}</div><div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"><a href={business.tel} className="rounded-full bg-red px-7 py-4 font-bold text-white">Request Accident Recovery</a><Link href="/services/vehicle-breakdown-recovery" className="rounded-full border border-navy/20 px-7 py-4 font-bold text-navy">View 24/7 Vehicle Breakdown Recovery</Link></div></div></section>
-
-    <section className="bg-navy py-16 text-white sm:py-24"><div className="container-site"><div className="[&_h2]:!text-white"><SectionHeading eyebrow="More Ways We Can Help" title="Related Roadside & Recovery Services" /></div><div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4"><RelatedCard title="24/7 Vehicle Breakdown Recovery" text="Professional recovery when a vehicle cannot safely continue because of a breakdown or other fault." href={getServiceNavigation("vehicle-breakdown-recovery").href} icon="fa-solid fa-truck-pickup"/><RelatedCard title="Roadside Assistance" text="Professional roadside help for suitable vehicle problems at your current location." href={getServiceNavigation("roadside-assistance").href} icon="fa-solid fa-screwdriver-wrench"/><RelatedCard title="Winch Out" text="Vehicle extraction support when a car or van becomes stuck or immobilised in a difficult position." href={getServiceNavigation("winch-out").href} icon="fa-solid fa-truck-monster"/><RelatedCard title="Vehicle Transporting" text="Safe transportation when a vehicle needs moving from one agreed location to another." href={getServiceNavigation("vehicle-transporting").href} icon="fa-solid fa-truck-ramp-box"/></div><div className="mt-9 flex justify-center gap-6"><Link href="/services" className="font-bold text-white underline decoration-red decoration-2 underline-offset-4">View All Services</Link><Link href="/contact" className="font-bold text-white underline decoration-red decoration-2 underline-offset-4">Contact Us</Link></div></div></section>
-
-    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><SectionHeading eyebrow="Common Questions" title="Accident Emergency Assistance FAQs" /><FaqAccordion faqs={faqs} /></div></section>
-
-    <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28"><Image src="/images/about-tow.jpg" alt="24 hour accident recovery assistance" fill sizes="100vw" className="-z-20 object-cover"/><div className="absolute inset-0 -z-10 bg-navy/90"/><div className="container-site fade-up text-center"><Eyebrow>Need Help After an Accident?</Eyebrow><h2 className="text-3xl font-extrabold sm:text-5xl">Get 24/7 Accident Emergency Assistance</h2><p className="mx-auto my-6 max-w-3xl text-lg leading-8 text-white/75">If your car or van has been involved in a collision and cannot safely continue, contact FSR Recovery Group. Once the immediate situation is safe, tell us where you are and what vehicle you have so we can discuss the recovery you need.</p><div className="flex justify-center"><ContactButtons dark callLabel={`Call ${business.phoneDisplay}`} whatsappLabel="WhatsApp for Accident Assistance" /></div><address className="mt-8 not-italic leading-7 text-white/75"><strong className="text-white">{business.name}</strong><br/>{business.addressFull}<br/><a href={business.tel}>{business.phoneDisplay}</a></address></div></section>
-    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
-  </main><Footer /></>;
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+      </main>
+      <Footer />
+    </>
+  );
 }
