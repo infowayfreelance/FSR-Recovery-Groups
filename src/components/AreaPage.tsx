@@ -25,7 +25,7 @@ export type AreaPageContent = {
   heroImageAlt: string;
   badges: [string, string, string];
   introHeading: string;
-  introParagraphs: string[];
+  introParagraphs: React.ReactNode[];
   /** Optional photo shown within the local intro section, above the paragraph text. */
   introImage?: string;
   introImageAlt?: string;
@@ -43,7 +43,7 @@ export type AreaPageContent = {
   whyChoose?: ServiceCard[];
   /** Optional "Major Roads Around X" section with links to dedicated road pages. Omit to skip the section. */
   roadsTitle?: string;
-  roadsIntro?: string;
+  roadsIntro?: React.ReactNode;
   majorRoads?: RoadLink[];
   /** Optional "What We Need When You Call" checklist section. Omit to skip the section. */
   whatWeNeedTitle?: string;
@@ -57,7 +57,7 @@ export type AreaPageContent = {
   galleryIntro?: string;
   gallery?: { src: string; alt: string; caption: string }[];
   /** Optional photo+text split sections, alternating sides, woven into the page flow. Omit to skip. */
-  featured?: { image: string; imageAlt: string; eyebrow: string; heading: string; text: string }[];
+  featured?: { image: string; imageAlt: string; eyebrow: string; heading: string; text: React.ReactNode }[];
   faqs: ServiceFaq[];
   ctaHeading: string;
   ctaText: string;
@@ -65,6 +65,11 @@ export type AreaPageContent = {
   ctaImage?: string;
   ctaImageAlt?: string;
   nearbyAreas: NearbyLink[];
+  /** Optional overrides for the Service JSON-LD node; fall back to generic copy derived from h1/heroIntro/eyebrow if omitted. */
+  serviceSchemaName?: string;
+  serviceSchemaType?: string;
+  serviceSchemaDescription?: string;
+  areaServedName?: string;
 };
 
 const serviceLinkCards: { title: string; text: string; icon: string; key: string }[] = [
@@ -85,11 +90,11 @@ function AreaSchema({ content, path }: { content: AreaPageContent; path: string 
       breadcrumbList([{ name: "Home", path: "/" }, { name: "Areas", path: "/areas" }, { name: content.eyebrow, path }]),
       {
         "@type": "Service",
-        name: `${content.h1}`,
-        description: content.heroIntro,
-        serviceType: "Vehicle recovery and roadside assistance",
+        name: content.serviceSchemaName ?? content.h1,
+        description: content.serviceSchemaDescription ?? content.heroIntro,
+        serviceType: content.serviceSchemaType ?? "Vehicle recovery and roadside assistance",
         provider: businessEntityRef,
-        areaServed: { "@type": content.category === "road" ? "Place" : "City", name: content.eyebrow },
+        areaServed: { "@type": content.category === "road" ? "Place" : "City", name: content.areaServedName ?? content.eyebrow },
         url: `https://fsrrecoverygroups.co.uk${path}`,
         availableChannel: {
           "@type": "ServiceChannel",
@@ -140,7 +145,7 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
             <h2 className="mb-5 text-3xl font-extrabold sm:text-4xl">{content.introHeading}</h2>
             {content.introImage && (
               <div className="relative mb-6 h-56 overflow-hidden rounded-3xl sm:h-72">
-                <Image src={content.introImage} alt={content.introImageAlt ?? ""} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+                <Image src={content.introImage} alt={content.introImageAlt ?? ""} fill quality={65} sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
               </div>
             )}
             <div className="space-y-4 leading-7 text-navy/70">
@@ -181,7 +186,7 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
           <SectionHeading eyebrow="When You May Need Us" title={content.situationsTitle} intro={content.situationsIntro} />
           {content.situationsImage && (
             <div className="fade-up relative mb-10 h-64 overflow-hidden rounded-3xl sm:h-80">
-              <Image src={content.situationsImage} alt={content.situationsImageAlt ?? ""} fill sizes="100vw" className="object-cover" />
+              <Image src={content.situationsImage} alt={content.situationsImageAlt ?? ""} fill quality={65} sizes="100vw" className="object-cover" />
             </div>
           )}
           <CardGrid cards={content.situations} />
@@ -193,7 +198,7 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
         <section key={feature.image} className={i % 2 === 0 ? "bg-white py-16 sm:py-24" : "bg-slate-50 py-16 sm:py-24"}>
           <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
             <div className={`fade-up relative min-h-[320px] overflow-hidden rounded-3xl sm:min-h-[400px] ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-              <Image src={feature.image} alt={feature.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              <Image src={feature.image} alt={feature.imageAlt} fill quality={65} sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
             </div>
             <div className="fade-up">
               <Eyebrow>{feature.eyebrow}</Eyebrow>

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { business } from "@/data/business";
 
-export type ServiceCard = { icon: string; title: string; text: string };
+export type ServiceCard = { icon: string; title: string; text: React.ReactNode };
 export type ServiceStep = { number: string; title: string; text: string };
 export type ServiceFaq = { question: string; answer: string };
 
@@ -9,7 +9,7 @@ export function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.18em] text-red">{children}</p>;
 }
 
-export function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: string }) {
+export function SectionHeading({ eyebrow, title, intro }: { eyebrow: string; title: string; intro?: React.ReactNode }) {
   return (
     <div className="fade-up mx-auto mb-10 max-w-3xl text-center lg:mb-14">
       <Eyebrow>{eyebrow}</Eyebrow>
