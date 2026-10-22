@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!post) return {};
 
   const path = `/blog/${post.slug}`;
-  const title = `${post.title} | FSR Recovery Group`;
+  const title = post.metaTitle ?? `${post.title} | FSR Recovery Group`;
 
   return {
     title: { absolute: title },
