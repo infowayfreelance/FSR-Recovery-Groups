@@ -101,6 +101,49 @@ export function ArticleContent({ blocks }: { blocks: BlogContentBlock[] }) {
             </blockquote>
           );
         }
+        if (block.type === "image") {
+          return (
+            <div key={i} className="relative my-2 h-64 overflow-hidden rounded-3xl sm:h-80">
+              <Image
+                src={block.src}
+                alt={block.alt}
+                fill
+                loading="lazy"
+                quality={65}
+                sizes="(min-width: 1024px) 768px, 100vw"
+                className="object-cover"
+              />
+            </div>
+          );
+        }
+        if (block.type === "table") {
+          return (
+            <div key={i} className="overflow-x-auto rounded-2xl border border-navy/10">
+              <table className="w-full min-w-[480px] border-collapse text-left text-sm">
+                <thead>
+                  <tr className="bg-slate-50">
+                    {block.headers.map((header) => (
+                      <th key={header} scope="col" className="border-b border-navy/10 px-4 py-3 font-bold text-navy">
+                        {header}
+                      </th>
+                    ))}
+                  </tr>
+                </thead>
+                <tbody>
+                  {block.rows.map((row, r) => (
+                    <tr key={r} className="odd:bg-white even:bg-slate-50/60">
+                      {row.map((cell, c) => (
+                        <td key={c} className="border-b border-navy/5 px-4 py-3 leading-6 text-navy/75">
+                          {cell}
+                        </td>
+                      ))}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          );
+        }
         return (
           <p key={i} className="leading-8 text-navy/75">
             {block.text}
@@ -184,7 +227,7 @@ export function ArticleSchema({ post }: { post: BlogPost }) {
         { name: post.title, path: `/blog/${post.slug}` },
       ]),
       {
-        "@type": "Article",
+        "@type": "BlogPosting",
         headline: post.title,
         description: post.metaDescription,
         image: `${SITE_URL}${post.featuredImage}`,
