@@ -12,6 +12,7 @@ const navLinks = [
   { href: "/services", label: "Services" },
   { href: "/about", label: "About" },
   { href: "/areas", label: "Areas" },
+  { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },
 ];
 
@@ -310,8 +311,8 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
                     href={link.href}
                     className={
                       link.href === activePath
-                        ? "py-2 text-red"
-                        : "py-2 text-white/85 hover:text-red"
+                        ? "block py-2 text-red"
+                        : "block py-2 text-white/85 hover:text-red"
                     }
                     onClick={() => setIsMenuOpen(false)}
                   >
