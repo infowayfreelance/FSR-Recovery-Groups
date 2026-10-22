@@ -61,6 +61,7 @@ export function Footer() {
               <li><Link href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Services</Link></li>
               <li><Link href="/about" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>About Us</Link></li>
               <li><Link href="/areas" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Areas Covered</Link></li>
+              <li><Link href="/blog" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Blog</Link></li>
               <li><Link href="/contact" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Contact</Link></li>
             </ul>
           </div>

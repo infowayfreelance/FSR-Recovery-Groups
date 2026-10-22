@@ -1,4 +1,5 @@
 import type { MetadataRoute } from "next";
+import { getPublishedPosts } from "@/data/blog";
 
 const BASE_URL = "https://fsrrecoverygroups.co.uk";
 
@@ -16,6 +17,9 @@ const entries: Entry[] = [
 
   // Services
   { path: "/services", changeFrequency: "monthly", priority: 0.9 },
+
+  // Blog
+  { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
   { path: "/services/vehicle-breakdown-recovery", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services/roadside-assistance", changeFrequency: "monthly", priority: 0.8 },
   { path: "/services/jumpstart-services", changeFrequency: "monthly", priority: 0.8 },
@@ -56,9 +60,18 @@ const entries: Entry[] = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return entries.map(({ path, changeFrequency, priority }) => ({
+  const staticEntries = entries.map(({ path, changeFrequency, priority }) => ({
     url: `${BASE_URL}${path}`,
     changeFrequency,
     priority,
   }));
+
+  const blogEntries = getPublishedPosts().map((post) => ({
+    url: `${BASE_URL}/blog/${post.slug}`,
+    lastModified: post.updatedDate ?? post.publishedDate,
+    changeFrequency: "monthly" as const,
+    priority: 0.6,
+  }));
+
+  return [...staticEntries, ...blogEntries];
 }
