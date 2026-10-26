@@ -3,7 +3,7 @@ import { business } from "@/data/business";
 
 export type ServiceCard = { icon: string; title: string; text: React.ReactNode };
 export type ServiceStep = { number: string; title: string; text: string };
-export type ServiceFaq = { question: string; answer: string };
+export type ServiceFaq = { question: string; answer: React.ReactNode };
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return <p className="mb-3 text-sm font-extrabold uppercase tracking-[0.18em] text-red">{children}</p>;

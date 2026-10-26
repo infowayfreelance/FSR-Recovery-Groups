@@ -12,8 +12,8 @@ const title = "Vehicle Transport Darlington | FSR Recovery";
 const description =
   "FSR Recovery Group provides vehicle transport for cars and suitable light vans between agreed locations in Darlington and surrounding areas. Call or WhatsApp to discuss collection and delivery.";
 const path = "/services/vehicle-transporting";
-const heroImage = "/images/service-transport.jpg";
-const heroImageAlt = "Professional vehicle transport service";
+const heroImage = "/images/vehicle-transport-car-loading.webp";
+const heroImageAlt = "Car being winched onto a flatbed recovery truck for vehicle transport";
 
 export const metadata: Metadata = {
   title: { absolute: title },
@@ -34,35 +34,101 @@ const usefulFor = [
   "Recovery-related vehicle transport",
 ];
 
-const collectionFeatures = [
+const collectionFeatures: { eyebrow: string; heading: string; text: React.ReactNode; image: string; imageAlt: string }[] = [
   {
     eyebrow: "Buying or Selling",
     heading: "Car Collection",
-    text: "If you have purchased or sold a vehicle, we can discuss a suitable car collection service and arrange transport from the agreed collection point.",
-    image: "/images/home-transport-2.jpg",
-    imageAlt: "Vehicle loaded onto a recovery truck ready for collection",
+    text: (
+      <>
+        If you have purchased or sold a vehicle, we can discuss a suitable car collection service and arrange
+        transport from the agreed collection point &mdash; handing over keys and paperwork on the day, just like
+        our{" "}
+        <Link href="/services/roadside-assistance" className="font-semibold text-red hover:underline">
+          roadside assistance
+        </Link>{" "}
+        team does when they reach a driver.
+      </>
+    ),
+    image: "/images/vehicle-transport-key-handover.webp",
+    imageAlt: "Driver handing over car keys to an FSR Recovery transport driver on a driveway",
   },
   {
     eyebrow: "Agreed Destination",
     heading: "Car Delivery",
-    text: "Our car delivery service can move a suitable vehicle to an agreed destination. This may include car home delivery, garage delivery or delivery to another suitable address.",
-    image: "/images/about-tow.jpg",
-    imageAlt: "Car being transported safely to its destination",
+    text: (
+      <>
+        Our car delivery service can move a suitable vehicle to an agreed destination. This may include car home
+        delivery, garage delivery or delivery to another suitable address across{" "}
+        <Link href="/areas" className="font-semibold text-red hover:underline">
+          our coverage area
+        </Link>
+        .
+      </>
+    ),
+    image: "/images/vehicle-transport-car-delivery.webp",
+    imageAlt: "Car secured on a flatbed truck being transported to its destination",
   },
   {
     eyebrow: "Repairs & Servicing",
     heading: "Vehicle Transport to a Garage",
-    text: "If a vehicle needs to be moved to a garage or repair facility, we can discuss suitable vehicle transport to a garage based on the vehicle's condition and collection location.",
-    image: "/images/about-fleet-transport.webp",
-    imageAlt: "Vehicle being collected from outside a garage workshop",
+    text: (
+      <>
+        If a vehicle needs to be moved to a garage or repair facility, we can discuss suitable vehicle transport
+        based on its condition and collection location. If it breaks down before it reaches the garage, our{" "}
+        <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
+          vehicle breakdown recovery
+        </Link>{" "}
+        team can step in instead.
+      </>
+    ),
+    image: "/images/vehicle-transport-van-garage.webp",
+    imageAlt: "Van loaded onto a recovery flatbed outside a vehicle repair garage",
   },
 ];
 
-const vehicleTypes = [
-  { icon: "fa-solid fa-car-side", title: "Cars and Passenger Vehicles", text: "Our service can be used for private cars that need to be collected, delivered or moved between locations." },
-  { icon: "fa-solid fa-van-shuttle", title: "Light Vans", text: "We can discuss van transport service requirements for suitable light commercial vehicles, depending on their size, condition and transport needs." },
-  { icon: "fa-solid fa-car-burst", title: "Non-Running Vehicles", text: "A vehicle does not always need to be driveable to be transported. If your car will not start or cannot safely be driven, tell us its condition and location so we can discuss suitable options." },
-  { icon: "fa-solid fa-truck-ramp-box", title: "Damaged Vehicles", text: "Following an accident or other damage, a vehicle may need transportation to a garage, body shop or another agreed destination. We can discuss damaged car transport where suitable." },
+const vehicleTypes: { icon: string; title: string; text: React.ReactNode }[] = [
+  {
+    icon: "fa-solid fa-car-side",
+    title: "Cars and Passenger Vehicles",
+    text: "Our service can be used for private cars that need to be collected, delivered or moved between locations.",
+  },
+  {
+    icon: "fa-solid fa-van-shuttle",
+    title: "Light Vans",
+    text: "We can discuss van transport service requirements for suitable light commercial vehicles, depending on their size, condition and transport needs.",
+  },
+  {
+    icon: "fa-solid fa-car-burst",
+    title: "Non-Running Vehicles",
+    text: (
+      <>
+        A vehicle does not always need to be driveable to be transported. If your car won&rsquo;t start, read our
+        guide on{" "}
+        <Link href="/blog/car-wont-start-but-battery-is-fine" className="font-semibold text-red hover:underline">
+          possible reasons a car won&rsquo;t start
+        </Link>{" "}
+        or ask about our{" "}
+        <Link href="/services/jumpstart-services" className="font-semibold text-red hover:underline">
+          jump start service
+        </Link>{" "}
+        &mdash; if it still can&rsquo;t be driven, tell us its condition and location so we can discuss transport.
+      </>
+    ),
+  },
+  {
+    icon: "fa-solid fa-truck-ramp-box",
+    title: "Damaged Vehicles",
+    text: (
+      <>
+        Following an accident or other damage, a vehicle may need transportation to a garage, body shop or another
+        agreed destination. Our{" "}
+        <Link href="/services/accident-emergency-assistance" className="font-semibold text-red hover:underline">
+          accident &amp; emergency assistance
+        </Link>{" "}
+        team can also help at the scene where suitable.
+      </>
+    ),
+  },
 ];
 
 const whenNeeded = [
@@ -81,6 +147,7 @@ const relatedServices = [
   { label: "Roadside Assistance", icon: "fa-solid fa-screwdriver-wrench", key: "roadside-assistance" },
   { label: "Accident & Emergency Assistance", icon: "fa-solid fa-car-burst", key: "accident-emergency-assistance" },
   { label: "Jump Start Services", icon: "fa-solid fa-car-battery", key: "jumpstart-services" },
+  { label: "Winch-Out Recovery", icon: "fa-solid fa-truck-monster", key: "winch-out" },
 ];
 
 const processSteps = [
@@ -96,25 +163,69 @@ const roadLinks = [
   { label: "A67", href: "/areas/a67" },
   { label: "A68", href: "/areas/a68" },
   { label: "A167", href: "/areas/a167" },
+  { label: "A19", href: "/areas/a19" },
 ];
 
-const whyChoose = [
-  { icon: "fa-solid fa-handshake", title: "Recovery and Transport Experience", text: "FSR Recovery Group provides vehicle recovery alongside transport services, making us suitable for planned vehicle movement as well as some recovery-related transport requirements." },
-  { icon: "fa-solid fa-van-shuttle", title: "Cars and Suitable Light Vans", text: "We can discuss transport requirements for suitable cars and light commercial vans." },
-  { icon: "fa-solid fa-arrows-left-right", title: "Collection and Delivery", text: "We arrange transport around the agreed collection and delivery locations rather than providing a one-size-fits-all service." },
-  { icon: "fa-solid fa-comments", title: "Clear Communication", text: "We ask for the important details before arranging transport, including the vehicle condition, collection point and destination." },
-  { icon: "fa-solid fa-map-location-dot", title: "Local Base, Wider Coverage", text: "Based in Darlington, FSR Recovery Group serves the surrounding area and wider road network for suitable transport and recovery requirements." },
+const townLinks = [
+  { label: "Barnard Castle", href: "/areas/barnard-castle" },
+  { label: "Durham", href: "/areas/durham" },
+  { label: "Newcastle", href: "/areas/newcastle" },
+  { label: "Middlesbrough", href: "/areas/middlesbrough" },
+];
+
+const whyChoose: { icon: string; title: string; text: React.ReactNode }[] = [
+  {
+    icon: "fa-solid fa-handshake",
+    title: "Recovery and Transport Experience",
+    text: "FSR Recovery Group provides vehicle recovery alongside transport services, making us suitable for planned vehicle movement as well as some recovery-related transport requirements.",
+  },
+  {
+    icon: "fa-solid fa-van-shuttle",
+    title: "Cars and Suitable Light Vans",
+    text: "We can discuss transport requirements for suitable cars and light commercial vans.",
+  },
+  {
+    icon: "fa-solid fa-arrows-left-right",
+    title: "Collection and Delivery",
+    text: "We arrange transport around the agreed collection and delivery locations rather than providing a one-size-fits-all service.",
+  },
+  {
+    icon: "fa-solid fa-comments",
+    title: "Clear Communication",
+    text: "We ask for the important details before arranging transport, including the vehicle condition, collection point and destination.",
+  },
+  {
+    icon: "fa-solid fa-map-location-dot",
+    title: "Local Base, Wider Coverage",
+    text: (
+      <>
+        Based in Darlington,{" "}
+        <Link href="/about" className="font-semibold text-red hover:underline">
+          FSR Recovery Group
+        </Link>{" "}
+        serves the surrounding area and wider road network for suitable transport and recovery requirements.
+      </>
+    ),
+  },
 ];
 
 const faqs: ServiceFaq[] = [
   { question: "Can you transport a car from one location to another?", answer: "Yes. We provide vehicle transport for suitable cars between agreed collection and delivery locations." },
   { question: "Can you collect and deliver a car?", answer: "Yes. Our car collection and delivery service can be arranged between suitable locations." },
   { question: "Can you provide car home delivery?", answer: "Yes. Car home delivery may be available when the collection and destination are suitable." },
-  { question: "Can you transport a non-running vehicle?", answer: "Potentially, yes. Tell us why the vehicle cannot be driven, where it is located and where it needs to go so we can discuss the appropriate option." },
+  {
+    question: "Can you transport a non-running vehicle?",
+    answer:
+      "Potentially, yes. Tell us why the vehicle cannot be driven, where it is located and where it needs to go so we can discuss the appropriate option. Our recovery & roadside blog also has practical advice if you are not sure what is wrong.",
+  },
   { question: "Can you transport a damaged vehicle?", answer: "Yes, where suitable. We can discuss damaged car transport following an accident or other vehicle damage." },
   { question: "Can you take a vehicle to a garage?", answer: "Yes. We can discuss vehicle transport to a garage or another agreed repair destination." },
   { question: "Do you transport vans?", answer: "Yes. We provide transport for suitable light vans. Vehicle size, condition and collection requirements will need to be confirmed." },
-  { question: "Do you provide vehicle recovery and transport?", answer: "Yes. FSR Recovery Group provides both recovery and transport services. The appropriate option depends on whether the vehicle needs planned transportation or recovery because it cannot safely continue its journey." },
+  {
+    question: "Do you provide vehicle recovery and transport?",
+    answer:
+      "Yes. FSR Recovery Group provides both recovery and transport services from our Darlington base. The appropriate option depends on whether the vehicle needs planned transportation or recovery because it cannot safely continue its journey — see our full range of services for more.",
+  },
 ];
 
 const schema = {
@@ -135,7 +246,9 @@ const schema = {
     },
     {
       "@type": "FAQPage",
-      mainEntity: faqs.map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })),
+      mainEntity: faqs
+        .filter((f): f is { question: string; answer: string } => typeof f.answer === "string")
+        .map(({ question, answer }) => ({ "@type": "Question", name: question, acceptedAnswer: { "@type": "Answer", text: answer } })),
     },
   ],
 };
@@ -146,14 +259,16 @@ export default function VehicleTransportingPage() {
       <Header activePath="/services" />
       <main>
         {/* Hero */}
-        <section className="service-hero relative isolate min-h-[560px] overflow-hidden bg-navy text-white">
+        <section className="service-hero relative isolate min-h-[520px] overflow-hidden bg-navy text-white">
           <Image src={heroImage} alt={heroImageAlt} fill preload fetchPriority="high" quality={65} sizes="100vw" className="-z-20 object-cover" />
           <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
-          <div className="container-site flex min-h-[560px] items-center py-16">
+          <div className="container-site flex min-h-[520px] items-center py-14">
             <div className="fade-up max-w-3xl">
               <Eyebrow>Vehicle Transport</Eyebrow>
-              <h1 className="text-3xl font-extrabold leading-[1.1] sm:text-5xl lg:text-6xl">
-                Vehicle Transport Service for Cars and Vans
+              <h1 className="text-[1.35rem] font-extrabold leading-[1.25] min-[360px]:text-[1.55rem] sm:text-5xl sm:leading-[1.1]">
+                Vehicle Transport Service
+                <br />
+                for Cars and Vans
               </h1>
               <p className="my-6 max-w-2xl text-lg leading-8 text-white/80">
                 FSR Recovery Group provides reliable vehicle transport for cars and suitable light vans. We can
@@ -171,7 +286,7 @@ export default function VehicleTransportingPage() {
         </section>
 
         {/* Intro + sidebar list */}
-        <section className="py-16 sm:py-24">
+        <section className="py-12 sm:py-16">
           <div className="container-site grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="fade-up">
               <Eyebrow>Move Your Vehicle Without the Hassle</Eyebrow>
@@ -181,15 +296,25 @@ export default function VehicleTransportingPage() {
               <div className="space-y-4 leading-7 text-navy/70">
                 <p>
                   Moving a vehicle between locations can be difficult when you do not have the right equipment or
-                  the vehicle cannot be driven.
-                </p>
-                <p>
-                  Our vehicle transport service provides a practical way to move suitable cars and vans safely
-                  between agreed collection and delivery points.
+                  the vehicle cannot be driven. The{" "}
+                  <Link href="/" className="font-semibold text-red hover:underline">
+                    FSR Recovery Group
+                  </Link>{" "}
+                  vehicle transport service provides a practical way to move suitable cars and vans safely between
+                  agreed collection and delivery points.
                 </p>
                 <p>
                   Whether you need a car transport service, vehicle transportation or a suitable transportation
-                  service, we can discuss the vehicle, collection point and destination before arranging the move.
+                  service, we can discuss the vehicle, collection point and destination before arranging the move
+                  &mdash; see our full{" "}
+                  <Link href="/services" className="font-semibold text-red hover:underline">
+                    range of recovery and transport services
+                  </Link>{" "}
+                  or our{" "}
+                  <Link href="/blog" className="font-semibold text-red hover:underline">
+                    recovery &amp; roadside blog
+                  </Link>{" "}
+                  for more practical advice.
                 </p>
                 <p>
                   If you need a vehicle moved because you have bought or sold it, it needs repairs, or it cannot
@@ -197,7 +322,11 @@ export default function VehicleTransportingPage() {
                   <Link href="/contact" className="font-semibold text-red hover:underline">
                     contact us
                   </Link>{" "}
-                  to discuss the transport requirements.
+                  to discuss the transport requirements, or{" "}
+                  <Link href="/about" className="font-semibold text-red hover:underline">
+                    learn more about FSR Recovery Group
+                  </Link>
+                  .
                 </p>
               </div>
             </div>
@@ -221,9 +350,9 @@ export default function VehicleTransportingPage() {
         </section>
 
         {/* Collection to delivery — alternating features */}
-        <section className="bg-slate-50 py-16 sm:py-24">
+        <section className="bg-slate-50 py-12 sm:py-16">
           <div className="container-site">
-            <div className="fade-up mx-auto mb-14 max-w-3xl text-center">
+            <div className="fade-up mx-auto mb-10 max-w-3xl text-center">
               <Eyebrow>From Collection Point to Final Destination</Eyebrow>
               <h2 className="text-3xl font-extrabold text-navy sm:text-4xl">
                 Arranged Around the Locations You Provide
@@ -233,11 +362,11 @@ export default function VehicleTransportingPage() {
                 suitable location. The vehicle can then be transported to the agreed destination.
               </p>
             </div>
-            <div className="space-y-14">
+            <div className="space-y-10">
               {collectionFeatures.map((feature, i) => (
                 <div key={feature.heading} className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-                  <div className={`fade-up relative min-h-[300px] overflow-hidden rounded-3xl sm:min-h-[380px] ${i % 2 === 1 ? "lg:order-2" : ""}`}>
-                    <Image src={feature.image} alt={feature.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+                  <div className={`fade-up relative min-h-[260px] overflow-hidden rounded-3xl sm:min-h-[320px] ${i % 2 === 1 ? "lg:order-2" : ""}`}>
+                    <Image src={feature.image} alt={feature.imageAlt} fill sizes="(min-width: 1024px) 50vw, 100vw" quality={65} className="object-cover" />
                   </div>
                   <div className="fade-up">
                     <Eyebrow>{feature.eyebrow}</Eyebrow>
@@ -251,21 +380,17 @@ export default function VehicleTransportingPage() {
         </section>
 
         {/* Vehicle types — flat divided list */}
-        <section className="py-16 sm:py-24">
+        <section className="py-12 sm:py-16">
           <div className="container-site">
-            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+            <div className="fade-up mx-auto mb-10 max-w-3xl text-center">
               <Eyebrow>Transport for Cars, Vans and Difficult-to-Move Vehicles</Eyebrow>
               <h2 className="text-3xl font-extrabold text-navy sm:text-4xl">
                 Suitable Cars and Light Vans, Including Vehicles That Won&rsquo;t Move Easily
               </h2>
-              <p className="mt-4 leading-7 text-navy/70">
-                We transport suitable cars and light vans, including vehicles that may be difficult to move because
-                they are not currently roadworthy.
-              </p>
             </div>
-            <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2">
+            <div className="grid gap-x-10 gap-y-7 sm:grid-cols-2">
               {vehicleTypes.map((v) => (
-                <div key={v.title} className="fade-up flex gap-5 border-b border-navy/10 pb-8">
+                <div key={v.title} className="fade-up flex gap-5 border-b border-navy/10 pb-7">
                   <span className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-2xl bg-red/10 text-xl text-red">
                     <i className={v.icon} />
                   </span>
@@ -280,9 +405,9 @@ export default function VehicleTransportingPage() {
         </section>
 
         {/* When needed — numbered checklist */}
-        <section className="bg-navy py-16 text-white sm:py-24">
+        <section className="bg-navy py-12 text-white sm:py-16">
           <div className="container-site">
-            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+            <div className="fade-up mx-auto mb-10 max-w-3xl text-center">
               <Eyebrow>Not Just After a Breakdown</Eyebrow>
               <h2 className="text-3xl font-extrabold sm:text-4xl">When Your Vehicle Needs to Be Moved</h2>
               <p className="mt-4 leading-7 text-white/70">
@@ -299,30 +424,39 @@ export default function VehicleTransportingPage() {
                 </div>
               ))}
             </div>
-            <p className="fade-up mx-auto mt-10 max-w-3xl text-center leading-7 text-white/70">
-              If you need to transport a broken down car, our recovery team can also discuss whether recovery or
-              planned vehicle transport is more appropriate.
+            <p className="fade-up mx-auto mt-8 max-w-3xl text-center leading-7 text-white/70">
+              If you need to transport a broken down car, our{" "}
+              <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
+                vehicle breakdown recovery
+              </Link>{" "}
+              team can also discuss whether recovery or planned vehicle transport is more appropriate.
             </p>
           </div>
         </section>
 
         {/* Transport vs recovery */}
-        <section className="py-16 sm:py-24">
+        <section className="py-12 sm:py-16">
           <div className="container-site grid items-start gap-10 lg:grid-cols-2 lg:gap-16">
             <div className="fade-up">
               <Eyebrow>Transport or Recovery? We Can Help With Both</Eyebrow>
               <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">Two Related but Different Services</h2>
               <div className="space-y-4 leading-7 text-navy/70">
-                <p>Vehicle transport and vehicle recovery are related but they are not always the same service.</p>
-                <p>Vehicle transport is generally planned in advance to move a vehicle from one agreed location to another.</p>
                 <p>
-                  Vehicle recovery is normally required when a vehicle has broken down, been involved in an accident
-                  or cannot safely continue its journey.
+                  Vehicle transport and vehicle recovery are related but they are not always the same service.
+                  Vehicle transport is generally planned in advance to move a vehicle from one agreed location to
+                  another.
                 </p>
                 <p>
-                  FSR Recovery Group provides both vehicle recovery and transport options for suitable situations.
-                  If your vehicle has broken down, we can discuss car recovery and transport to an agreed garage,
-                  home or other suitable destination.
+                  Vehicle{" "}
+                  <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
+                    recovery
+                  </Link>{" "}
+                  is normally required when a vehicle has broken down, been involved in an{" "}
+                  <Link href="/services/accident-emergency-assistance" className="font-semibold text-red hover:underline">
+                    accident
+                  </Link>{" "}
+                  or cannot safely continue its journey. FSR Recovery Group provides both options for suitable
+                  situations.
                 </p>
               </div>
             </div>
@@ -345,15 +479,15 @@ export default function VehicleTransportingPage() {
         </section>
 
         {/* Process — vertical timeline */}
-        <section className="bg-slate-50 py-16 sm:py-24">
+        <section className="bg-slate-50 py-12 sm:py-16">
           <div className="container-site">
-            <div className="fade-up mx-auto mb-14 max-w-3xl text-center">
+            <div className="fade-up mx-auto mb-10 max-w-3xl text-center">
               <Eyebrow>Simple Process</Eyebrow>
               <h2 className="text-3xl font-extrabold text-navy sm:text-4xl">A Simple Four-Step Transport Process</h2>
             </div>
             <div className="mx-auto max-w-2xl">
               {processSteps.map((step, i) => (
-                <div key={step.n} className="fade-up relative flex gap-6 pb-10 last:pb-0">
+                <div key={step.n} className="fade-up relative flex gap-6 pb-7 last:pb-0">
                   {i < processSteps.length - 1 && (
                     <span className="absolute left-6 top-14 h-[calc(100%-2.5rem)] w-px -translate-x-1/2 bg-navy/15" aria-hidden="true" />
                   )}
@@ -367,16 +501,16 @@ export default function VehicleTransportingPage() {
                 </div>
               ))}
             </div>
-            <div className="mt-10 flex justify-center">
+            <div className="mt-8 flex justify-center">
               <ContactButtons callLabel="Request a Transport Quote" whatsappLabel="WhatsApp Your Details" />
             </div>
           </div>
         </section>
 
         {/* Coverage */}
-        <section className="py-16 sm:py-24">
+        <section className="py-12 sm:py-16">
           <div className="container-site">
-            <div className="fade-up mx-auto mb-10 max-w-3xl text-center">
+            <div className="fade-up mx-auto mb-8 max-w-3xl text-center">
               <Eyebrow>Serving Darlington and the Wider Road Network</Eyebrow>
               <h2 className="mb-4 text-3xl font-extrabold text-navy sm:text-4xl">
                 A Local Base With Wider Road Coverage
@@ -384,20 +518,28 @@ export default function VehicleTransportingPage() {
               <div className="space-y-4 text-left leading-7 text-navy/70">
                 <p>
                   FSR Recovery Group operates from Darlington and provides vehicle recovery and transport support
-                  across the surrounding area and wider road network.
+                  across the surrounding area and wider road network, including{" "}
+                  <Link href="/areas/durham" className="font-semibold text-red hover:underline">
+                    Durham
+                  </Link>
+                  ,{" "}
+                  <Link href="/areas/newcastle" className="font-semibold text-red hover:underline">
+                    Newcastle
+                  </Link>
+                  ,{" "}
+                  <Link href="/areas/middlesbrough" className="font-semibold text-red hover:underline">
+                    Middlesbrough
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/areas/barnard-castle" className="font-semibold text-red hover:underline">
+                    Barnard Castle
+                  </Link>
+                  .
                 </p>
                 <p>
                   Local requirements can include vehicle transport Darlington, car transport Darlington, vehicle
-                  collection and delivery, and transport to suitable garages or other destinations.
-                </p>
-                <p>
-                  For drivers searching for vehicle transport near me or car transport near me, the exact collection
-                  location, vehicle type and destination are important when confirming whether a transport request
-                  is suitable.
-                </p>
-                <p>
-                  Our wider road coverage also connects with routes including the A1(M), A66, A67, A68 and A167.
-                  Dedicated{" "}
+                  collection and delivery, and transport to suitable garages or other destinations. Our wider road
+                  coverage also connects with routes including the A1(M), A66, A67, A68, A167 and A19. Dedicated{" "}
                   <Link href="/areas" className="font-semibold text-red hover:underline">
                     route and area pages
                   </Link>{" "}
@@ -405,29 +547,49 @@ export default function VehicleTransportingPage() {
                 </p>
               </div>
             </div>
-            <div className="mx-auto grid max-w-4xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {roadLinks.map((road) => (
-                <Link
-                  key={road.href}
-                  href={road.href}
-                  className="fade-up flex items-center justify-between rounded-2xl border border-navy/10 bg-slate-50 px-6 py-4 font-bold text-navy transition hover:-translate-y-0.5 hover:border-red/40 hover:bg-white hover:shadow-md"
-                >
-                  <span><i className="fa-solid fa-road mr-3 text-red" />{road.label}</span>
-                  <i className="fa-solid fa-arrow-right text-red" />
-                </Link>
-              ))}
+            <div className="grid gap-6 lg:grid-cols-2">
+              <div>
+                <h3 className="fade-up mb-3 text-sm font-extrabold uppercase tracking-wide text-navy/60">Main Roads</h3>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {roadLinks.map((road) => (
+                    <Link
+                      key={road.href}
+                      href={road.href}
+                      className="fade-up flex items-center justify-between rounded-2xl border border-navy/10 bg-slate-50 px-5 py-3.5 font-bold text-navy transition hover:-translate-y-0.5 hover:border-red/40 hover:bg-white hover:shadow-md"
+                    >
+                      <span><i className="fa-solid fa-road mr-3 text-red" />{road.label}</span>
+                      <i className="fa-solid fa-arrow-right text-red" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
+              <div>
+                <h3 className="fade-up mb-3 text-sm font-extrabold uppercase tracking-wide text-navy/60">Towns We Cover</h3>
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {townLinks.map((town) => (
+                    <Link
+                      key={town.href}
+                      href={town.href}
+                      className="fade-up flex items-center justify-between rounded-2xl border border-navy/10 bg-slate-50 px-5 py-3.5 font-bold text-navy transition hover:-translate-y-0.5 hover:border-red/40 hover:bg-white hover:shadow-md"
+                    >
+                      <span><i className="fa-solid fa-location-dot mr-3 text-red" />{town.label}</span>
+                      <i className="fa-solid fa-arrow-right text-red" />
+                    </Link>
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Why choose us — stacked list */}
-        <section className="bg-slate-50 py-16 sm:py-24">
+        <section className="bg-slate-50 py-12 sm:py-16">
           <div className="container-site">
-            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+            <div className="fade-up mx-auto mb-10 max-w-3xl text-center">
               <Eyebrow>Why Drivers Choose Us</Eyebrow>
               <h2 className="text-3xl font-extrabold text-navy sm:text-4xl">Why Drivers Choose FSR Recovery Group</h2>
             </div>
-            <div className="mx-auto max-w-3xl space-y-5">
+            <div className="mx-auto max-w-3xl space-y-4">
               {whyChoose.map((item) => (
                 <div key={item.title} className="fade-up flex items-start gap-5 rounded-2xl border-l-4 border-red bg-white p-6 shadow-sm">
                   <span className="flex h-11 w-11 flex-shrink-0 items-center justify-center rounded-xl bg-red/10 text-lg text-red">
@@ -444,9 +606,9 @@ export default function VehicleTransportingPage() {
         </section>
 
         {/* FAQs */}
-        <section className="py-16 sm:py-24">
+        <section className="py-12 sm:py-16">
           <div className="container-site mx-auto max-w-3xl">
-            <div className="fade-up mb-12 text-center">
+            <div className="fade-up mb-10 text-center">
               <Eyebrow>Common Questions</Eyebrow>
               <h2 className="text-3xl font-extrabold text-navy sm:text-4xl">Vehicle Transport Questions, Answered</h2>
             </div>
@@ -455,8 +617,15 @@ export default function VehicleTransportingPage() {
         </section>
 
         {/* Final CTA */}
-        <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28">
-          <Image src="/images/about-tow.jpg" alt="Vehicle loaded for transport" fill sizes="100vw" className="-z-20 object-cover" />
+        <section className="relative isolate overflow-hidden bg-navy py-16 text-white sm:py-24">
+          <Image
+            src="/images/vehicle-transport-car-delivery.webp"
+            alt="Vehicle secured on a flatbed truck ready for transport"
+            fill
+            sizes="100vw"
+            quality={65}
+            className="-z-20 object-cover"
+          />
           <div className="absolute inset-0 -z-10 bg-navy/90" />
           <div className="container-site fade-up text-center">
             <Eyebrow>Ready to Move Your Vehicle?</Eyebrow>
