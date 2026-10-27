@@ -539,6 +539,423 @@ export const blogPosts: BlogPost[] = [
       },
     ],
   },
+  {
+    slug: "car-overheating-while-driving",
+    title: "Car Overheating While Driving? Causes and What to Do",
+    metaTitle: "Car Overheating While Driving? Causes and Fixes",
+    excerpt:
+      "Car overheating while driving? See the common causes, what to do at the roadside and when to call for recovery. Advice from FSR Recovery Group.",
+    metaDescription:
+      "Car overheating while driving? See the common causes, what to do at the roadside and when to call for recovery. Advice from FSR Recovery Group.",
+    featuredImage: "/images/car-overheating-roadside-driver-calling-recovery.webp",
+    featuredImageAlt: "Driver on the phone beside a steaming car at the roadside after it overheated while driving",
+    publishedDate: "2026-10-27",
+    author: "FSR Recovery Group",
+    authorRole: "Editorial Team",
+    readingTime: "8 min read",
+    tags: ["breakdown recovery", "engine overheating", "roadside assistance"],
+    content: [
+      {
+        type: "paragraph",
+        text: "Your temperature gauge climbs, steam rises from the bonnet or a red warning light comes on. Car overheating while driving is stressful, and every extra minute of heat adds engine damage.",
+      },
+      {
+        type: "paragraph",
+        text: "Pull over safely, switch off and call for help. This guide covers the first steps, the common causes, motorway rules and when to call for recovery.",
+      },
+      { type: "heading", level: 2, id: "what-to-do-first", text: "What to do first if your car overheats while driving" },
+      {
+        type: "paragraph",
+        text: "What to do if your car overheats: turn off the air conditioning, turn the heater to full and pull over at the first safe place.",
+      },
+      {
+        type: "list",
+        items: [
+          "Switch off the air conditioning. Turn the heater and fan to full to pull some heat away from the engine.",
+          "Pull over at the first safe place, such as a layby or side road. On a motorway, follow the motorway steps below.",
+          "Switch off the engine and turn on your hazard lights. Read the manual note below first if your car shows an on-screen message.",
+          "Get everyone out on the side away from traffic, if it is safe.",
+          "Wait about 30 minutes before you open the bonnet. Never open the radiator or coolant cap while the engine is hot.",
+          "Call your breakdown provider or a recovery firm. If you see flames, move well away and call 999.",
+        ],
+      },
+      {
+        type: "quote",
+        text: "Do not pour cold water into a hot radiator. The sudden temperature change can damage the engine.",
+      },
+      { type: "heading", level: 3, id: "check-owners-manual", text: "Check your owner's manual first" },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            Generic advice says switch off at once, but manufacturers differ.{" "}
+            <a
+              href="https://www.volvocars.com/ie/support/car/v60/article/c71ccdbc88ebfe30c0a80151177dd9f0/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-red hover:underline"
+            >
+              Volvo&rsquo;s V60 support page
+            </a>{" "}
+            separates two dashboard messages.
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "On “Stop safely”, Volvo says to let the engine idle for several minutes. On “Turn off engine”, switch it off.",
+      },
+      {
+        type: "paragraph",
+        text: "Read the cooling section of your manual now. It names the exact messages your car shows.",
+      },
+      { type: "heading", level: 2, id: "how-do-you-know", text: "How do you know your car is overheating?" },
+      {
+        type: "paragraph",
+        text: "A red or amber engine temperature warning light, a gauge climbing into the red or steam from the bonnet means the engine is too hot.",
+      },
+      { type: "image", src: "/images/car-overheating-temperature-gauge-warning.webp", alt: "Car dashboard temperature gauge showing the needle climbing into the red overheating zone" },
+      {
+        type: "list",
+        items: [
+          "A temperature warning light on the dashboard",
+          "A gauge needle that climbs towards hot or red",
+          "Steam or smoke from under the bonnet",
+          "A sweet smell, a sign of leaking coolant",
+          "Loss of power or a rough-running engine",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            Not every car has a gauge. In a July 2026{" "}
+            <a
+              href="https://www.theaa.com/about-us/newsroom/drivers-want-engine-temperature-gauges-to-help-avoid-overheating-breakdowns"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-red hover:underline"
+            >
+              AA survey
+            </a>{" "}
+            of 12,438 AA members, run by Yonder, 63% wanted both a gauge and a warning light. 15% wanted a warning
+            light only and 14% a gauge only.
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "If your car has only a warning light, treat steam or a sweet smell as the same alert. Do not wait for the light.",
+      },
+      { type: "heading", level: 2, id: "why-overheating-causes", text: "Why is my car overheating? 7 common causes" },
+      {
+        type: "paragraph",
+        text: "Most overheating comes from a cooling system fault: low coolant, a stuck thermostat, a failing pump or fan, or a radiator problem.",
+      },
+      {
+        type: "table",
+        headers: ["Cause", "What you notice", "Roadside fix or recovery?"],
+        rows: [
+          ["Low coolant or a leak", "Puddle under the car, sweet smell, low coolant reservoir", "Top up with the correct coolant only if the engine is cold and nothing is leaking. Otherwise, recovery."],
+          ["Stuck thermostat", "Gauge climbs quickly soon after starting", "Recovery"],
+          ["Radiator fault", "Steam, a leak at the front of the car, poor cooling", "Recovery"],
+          ["Failing water pump", "Coolant leak at the front of the engine, a whining noise", "Recovery"],
+          ["Cooling fan fault", "Overheats in traffic or at idle, cools down at speed", "Recovery"],
+          ["Low engine oil", "Oil warning light, engine noise, burning smell", "Do not drive. Check the oil level when cold, then recovery."],
+          ["Blocked or air-locked cooling system", "Temperature swings, heater blows cold", "Recovery"],
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "You can't confirm most of these at the roadside. A garage finds the exact fault, so your job is to stop safely and limit the damage.",
+      },
+      { type: "heading", level: 2, id: "can-you-keep-driving", text: "Can you keep driving an overheating car?" },
+      {
+        type: "paragraph",
+        text: "No. Stop as soon as it is safe and let the engine cool.",
+      },
+      {
+        type: "paragraph",
+        text: "Motrio's UK guide says a few minutes of overheating can warp the cylinder head or blow the gasket. Both are serious engine faults.",
+      },
+      {
+        type: "paragraph",
+        text: "After the engine cools, don't treat the problem as solved. The cause is still there, so get the car checked before your next journey.",
+      },
+      {
+        type: "paragraph",
+        text: "One UK owner-forum thread suggests a quick check after an overheat. With the engine cold, open the oil filler cap and look underneath for a creamy residue. If you see it, tell the garage.",
+      },
+      { type: "heading", level: 2, id: "motorway-a-road", text: "Car overheating on a motorway or A-road" },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            On a motorway, a red or amber warning light means leave at the next exit or service area, says{" "}
+            <a
+              href="https://nationalhighways.co.uk/safety/driving-on-our-roads/driving-on-motorways/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-red hover:underline"
+            >
+              National Highways
+            </a>
+            . Never stop in a live lane.
+          </>
+        ),
+      },
+      {
+        type: "list",
+        items: [
+          "If you can't leave, go left onto the hard shoulder or into an emergency area with your hazard lights on.",
+          "Get out on the side away from traffic and wait behind the barrier.",
+          "Do not try to repair the car.",
+          "Call National Highways on 0300 123 5000, then your breakdown provider.",
+          "Do not leave an emergency area without speaking to National Highways.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If you can't reach a safe place, stay in the car with your seatbelt and hazard lights on and call 999. Keep animals in the vehicle or, in an emergency, under control on the verge.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            This happens to real drivers.{" "}
+            <a
+              href="https://www.cheshirefire.gov.uk/news-events/incidents/?i=55605"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-red hover:underline"
+            >
+              Cheshire Fire and Rescue
+            </a>{" "}
+            attended an overheated engine bay on the M56 eastbound hard shoulder, between junctions 10 and 9, on 25
+            May 2026.
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "Crews cooled it with a hose reel jet and checked it with thermal imaging. Two lanes closed.",
+      },
+      {
+        type: "paragraph",
+        text: "On an A-road, pull into a layby, gateway or side road. Avoid stopping on a bend or the brow of a hill.",
+      },
+      { type: "heading", level: 2, id: "traffic-heat-hills", text: "Why cars overheat in traffic, heat and on hills" },
+      {
+        type: "paragraph",
+        text: "Slow traffic, hot weather and long climbs all make the cooling system work harder.",
+      },
+      {
+        type: "paragraph",
+        text: "In stop-start traffic, less air passes through the radiator, so the cooling fan does the work. A weak fan or low coolant shows up first.",
+      },
+      {
+        type: "paragraph",
+        text: "On a hill, the engine works harder and makes more heat. The AA attended 21% more overheating-related callouts in the week before its 5 August 2026 survey release than in the same week of 2025.",
+      },
+      { type: "heading", level: 2, id: "hybrid-electric", text: "Hybrid and electric cars: is it different?" },
+      {
+        type: "paragraph",
+        text: "Yes. Hybrids and electric cars cool a drive system as well as an engine, and the steps differ.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            Volkswagen UK&rsquo;s page for its{" "}
+            <a
+              href="https://volkswagen.co.uk/en/owners-and-services/my-car/warning-light/electric-drive-overheated.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-red hover:underline"
+            >
+              &ldquo;Electric drive overheated&rdquo;
+            </a>{" "}
+            warning says to park in the open air and deactivate the drive system. It also says not to add coolant
+            and to call roadside assistance.
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "Other brands word this differently. Read your own manual and tell the operator your car is a hybrid or electric.",
+      },
+      { type: "heading", level: 2, id: "when-to-call-recovery", text: "When to call for recovery, and what to tell us" },
+      {
+        type: "paragraph",
+        text: "Call for recovery if the warning returns after the engine cools, coolant is leaking or you are on a fast road.",
+      },
+      { type: "image", src: "/images/car-overheating-recovery-truck-garage.webp", alt: "Car loaded onto a flatbed recovery truck outside a garage after overheating" },
+      {
+        type: "table",
+        headers: ["Situation", "What to do"],
+        rows: [
+          ["Coolant slightly low, engine cold, no leak", "Top up with the correct coolant, then book a garage check"],
+          ["Warning returns after a top-up", "Stop driving and call recovery"],
+          ["Coolant on the ground or steam from the bonnet", "Call recovery"],
+          ["Overheating in traffic or at idle", "Call recovery so the fan, pump and thermostat get checked"],
+          ["Motorway or hard shoulder", "Call National Highways, then your breakdown provider"],
+          ["Hybrid or electric warning", "Park in the open air and call recovery"],
+        ],
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            FSR Recovery Group&rsquo;s{" "}
+            <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
+              vehicle breakdown recovery
+            </Link>{" "}
+            covers cars, light vans, 4x4s and SUVs, 24/7. We work around Darlington, on the{" "}
+            <Link href="/areas/a1m" className="font-semibold text-red hover:underline">
+              A1(M)
+            </Link>{" "}
+            and the{" "}
+            <Link href="/areas/a66" className="font-semibold text-red hover:underline">
+              A66
+            </Link>
+            , and across the{" "}
+            <Link href="/areas" className="font-semibold text-red hover:underline">
+              areas we cover
+            </Link>
+            .
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            For a flat battery or a flat tyre, our{" "}
+            <Link href="/services/roadside-assistance" className="font-semibold text-red hover:underline">
+              roadside assistance
+            </Link>{" "}
+            can help on the spot. An overheating engine needs recovery, and{" "}
+            <Link href="/services/vehicle-transporting" className="font-semibold text-red hover:underline">
+              vehicle transporting
+            </Link>{" "}
+            covers moving the car on afterwards.
+          </>
+        ),
+      },
+      { type: "heading", level: 3, id: "what-to-tell-operator", text: "What to tell the operator" },
+      {
+        type: "paragraph",
+        text: "Give the operator these details so the right truck arrives:",
+      },
+      {
+        type: "list",
+        items: [
+          "Your exact location: road, direction and nearest junction or marker post",
+          "Make, model and fuel type, including hybrid or electric",
+          "The warning message or symbol on the dash",
+          "Whether coolant is leaking or steam is rising",
+          "Whether the car is low or lowered",
+          "Who is with you, including pets",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "A lowered car needs the right truck, so say so when you call.",
+      },
+      { type: "heading", level: 3, id: "no-breakdown-cover", text: "No breakdown cover?" },
+      {
+        type: "paragraph",
+        text: "You can still call a recovery firm directly. Alphabet Fleet and Ageas both say you can ask for emergency help without cover.",
+      },
+      {
+        type: "paragraph",
+        text: "Ageas adds that most online policies take 24 hours to activate, so buying cover after you break down does not help.",
+      },
+      {
+        type: "paragraph",
+        text: "Ask for a quote before the truck loads. At FSR, we discuss a quote before any work begins.",
+      },
+      { type: "heading", level: 2, id: "prevent-overheating", text: "How to stop it happening again" },
+      {
+        type: "paragraph",
+        text: "Check your coolant level regularly, and always with the engine cold.",
+      },
+      {
+        type: "list",
+        items: [
+          "Keep the level between the minimum and maximum marks",
+          "Top up only with the coolant your manual specifies",
+          "Ask your garage to inspect the hoses, water pump and cooling fan at each service",
+          "Note the exact warning messages in your manual",
+          "Save your breakdown provider, National Highways (0300 123 5000) and FSR (+44 7888 502989) in your phone",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            A car that won&rsquo;t start is a different fault. Our guide to{" "}
+            <Link href="/blog/car-wont-start-but-battery-is-fine" className="font-semibold text-red hover:underline">
+              a car that won&rsquo;t start when the battery is fine
+            </Link>{" "}
+            covers it, and you can browse every{" "}
+            <Link href="/services" className="font-semibold text-red hover:underline">
+              service we offer
+            </Link>
+            .
+          </>
+        ),
+      },
+      { type: "heading", level: 2, id: "faq", text: "Car overheating FAQ" },
+      { type: "heading", level: 3, id: "faq-wait-bonnet", text: "How long should I wait before opening the bonnet or checking the coolant?" },
+      {
+        type: "paragraph",
+        text: "Wait about 30 minutes. Never open the radiator or coolant cap while the engine is hot, because pressurised coolant can spray out and scald you. Check the level only when the engine is cold, and add the coolant your manual specifies.",
+      },
+      { type: "heading", level: 3, id: "faq-drive-after-cool", text: "Can I drive after the engine has cooled?" },
+      {
+        type: "paragraph",
+        text: "Recovery is the safest choice. The cause of the overheating is still there, and a second overheat can finish the damage the first one started. If you must move the car, drive only to the nearest safe place and stop if the warning returns.",
+      },
+      { type: "heading", level: 3, id: "faq-water-instead", text: "Can I top up with water instead of coolant?" },
+      {
+        type: "paragraph",
+        text: "No, use the coolant your manual specifies. Plain water dilutes the coolant mix that protects the engine, and cold water poured into a hot radiator can damage it. Wait until the engine is cold, then have the system checked.",
+      },
+      { type: "heading", level: 3, id: "faq-idle-traffic", text: "Why does my car overheat when idling or in traffic?" },
+      {
+        type: "paragraph",
+        text: "A faulty cooling fan is a common cause, because little air passes through the radiator at idle. Low coolant and a weak water pump show up first in traffic too. If the gauge drops once you move, ask a garage to check the fan.",
+      },
+      { type: "heading", level: 3, id: "faq-stop-straight-away", text: "Does the temperature warning light mean stop straight away?" },
+      {
+        type: "paragraph",
+        text: "Yes, stop at the first safe place. National Highways says a red or amber warning light on a motorway means leave at the next exit or service area. Manufacturers word these messages differently, so check your manual for what your car shows.",
+      },
+      { type: "heading", level: 3, id: "faq-no-cover-call", text: "Can I call a recovery firm if I have no breakdown cover?" },
+      {
+        type: "paragraph",
+        text: "Yes, you can call a recovery firm directly and ask for emergency help, say Alphabet Fleet and Ageas. Ageas adds that most online policies take 24 hours to activate. At FSR, we discuss a quote before work begins.",
+      },
+      { type: "heading", level: 2, id: "contact-cta", text: "Overheating on the A1(M), the A66 or around Darlington?" },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            Call or WhatsApp FSR Recovery Group on{" "}
+            <a href="tel:+447888502989" className="font-semibold text-red hover:underline">
+              +44 7888 502989
+            </a>
+            , or use our{" "}
+            <Link href="/contact" className="font-semibold text-red hover:underline">
+              contact page
+            </Link>
+            . We are at 135 Gladstone St, Darlington DL3 6LB and recover cars, light vans, 4x4s and SUVs 24/7.
+          </>
+        ),
+      },
+    ],
+  },
 ];
 
 export function getPublishedPosts(): BlogPost[] {
