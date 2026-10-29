@@ -52,6 +52,17 @@ export default function RootLayout({
         </noscript>
       </head>
       <body className="pb-14 antialiased sm:pb-0">
+        {/* Google Tag Manager (noscript) */}
+        <noscript>
+          <iframe
+            src="https://www.googletagmanager.com/ns.html?id=GTM-MQ4STV94"
+            height="0"
+            width="0"
+            style={{ display: "none", visibility: "hidden" }}
+            title="Google Tag Manager"
+          />
+        </noscript>
+        {/* End Google Tag Manager (noscript) */}
         <ScrollAnimations />
         <FloatingButtons />
         <CookieConsentProvider>{children}</CookieConsentProvider>
