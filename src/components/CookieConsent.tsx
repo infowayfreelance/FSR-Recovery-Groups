@@ -2,6 +2,7 @@
 
 import { createContext, useCallback, useContext, useEffect, useId, useRef, useState } from "react";
 import Link from "next/link";
+import { GoogleTagManager } from "@next/third-parties/google";
 import {
   type ConsentCategories,
   readStoredConsent,
@@ -39,7 +40,7 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
     const stored = readStoredConsent();
     if (stored) {
       // eslint-disable-next-line react-hooks/set-state-in-effect -- one-time hydration-safe read, see comment above
-      setConsent({ necessary: true, maps: stored.maps });
+      setConsent({ necessary: true, analytics: stored.analytics, maps: stored.maps });
     }
     setHydrated(true);
   }, []);
@@ -50,8 +51,8 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
     setIsPreferencesOpen(false);
   }, []);
 
-  const acceptAll = useCallback(() => persist({ maps: true }), [persist]);
-  const rejectNonEssential = useCallback(() => persist({ maps: false }), [persist]);
+  const acceptAll = useCallback(() => persist({ analytics: true, maps: true }), [persist]);
+  const rejectNonEssential = useCallback(() => persist({ analytics: false, maps: false }), [persist]);
   const savePreferences = useCallback(
     (categories: Omit<ConsentCategories, "necessary">) => persist(categories),
     [persist]
@@ -63,6 +64,7 @@ export function CookieConsentProvider({ children }: { children: React.ReactNode 
     <ConsentContext.Provider
       value={{ consent, isPreferencesOpen, openPreferences, closePreferences, acceptAll, rejectNonEssential, savePreferences }}
     >
+      {consent?.analytics && <GoogleTagManager gtmId="GTM-MQ4STV94" />}
       {children}
       {hydrated && consent === null && !isPreferencesOpen && <CookieBanner />}
       {isPreferencesOpen && <CookiePreferencesModal />}
@@ -88,13 +90,13 @@ function CookieBanner() {
           </h2>
           <p className="text-sm leading-6 text-white/75">
             We use necessary technologies to keep our website working. With your permission, we may
-            also use optional technologies for analytics or other purposes. You can accept, reject or
+            also use optional technologies for analytics or embedded maps. You can accept, reject or
             manage your choices. See our{" "}
-            <Link href="/cookie-policy" className="font-semibold text-red underline decoration-red/50 underline-offset-2 hover:text-white">
+            <Link href="/cookie-policy" className="font-semibold text-red-400 underline decoration-red-400/50 underline-offset-2 hover:text-white">
               Cookie Policy
             </Link>{" "}
             and{" "}
-            <Link href="/privacy-policy" className="font-semibold text-red underline decoration-red/50 underline-offset-2 hover:text-white">
+            <Link href="/privacy-policy" className="font-semibold text-red-400 underline decoration-red-400/50 underline-offset-2 hover:text-white">
               Privacy Policy
             </Link>{" "}
             for details.
@@ -130,6 +132,7 @@ function CookieBanner() {
 
 function CookiePreferencesModal() {
   const { consent, closePreferences, acceptAll, rejectNonEssential, savePreferences } = useCookieConsent();
+  const [analyticsEnabled, setAnalyticsEnabled] = useState(consent?.analytics ?? false);
   const [mapsEnabled, setMapsEnabled] = useState(consent?.maps ?? false);
   const headingId = useId();
   const dialogRef = useRef<HTMLDivElement>(null);
@@ -214,6 +217,28 @@ function CookiePreferencesModal() {
 
           <div className="rounded-2xl border border-navy/10 p-5">
             <div className="mb-2 flex items-center justify-between gap-4">
+              <h3 className="font-bold text-navy">Analytics (Google Tag Manager)</h3>
+              <label className="relative inline-flex cursor-pointer items-center">
+                <span className="sr-only">Toggle analytics</span>
+                <input
+                  type="checkbox"
+                  checked={analyticsEnabled}
+                  onChange={(event) => setAnalyticsEnabled(event.target.checked)}
+                  className="peer sr-only"
+                />
+                <span className="h-6 w-11 rounded-full bg-navy/15 transition peer-checked:bg-red peer-focus-visible:outline peer-focus-visible:outline-2 peer-focus-visible:outline-offset-2 peer-focus-visible:outline-red" />
+                <span className="absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white shadow transition peer-checked:translate-x-5" />
+              </label>
+            </div>
+            <p className="text-sm leading-6 text-navy/70">
+              Loads Google Tag Manager, which may set cookies to help us understand how visitors use
+              this website. Tag Manager is not loaded, and no related cookies are set, until you accept
+              this category.
+            </p>
+          </div>
+
+          <div className="rounded-2xl border border-navy/10 p-5">
+            <div className="mb-2 flex items-center justify-between gap-4">
               <h3 className="font-bold text-navy">Embedded Maps (Google)</h3>
               <label className="relative inline-flex cursor-pointer items-center">
                 <span className="sr-only">Toggle embedded Google Maps</span>
@@ -228,9 +253,9 @@ function CookiePreferencesModal() {
               </label>
             </div>
             <p className="text-sm leading-6 text-navy/70">
-              Loads the interactive Google Map showing our location on the homepage and Areas page.
-              Google may set cookies through this embed. If switched off, a link to view our location
-              on Google Maps is shown instead.
+              Loads the interactive Google Map showing our location on the homepage, Areas and Contact
+              pages. Google may set cookies through this embed. If switched off, a link to view our
+              location on Google Maps is shown instead.
             </p>
           </div>
         </div>
@@ -245,7 +270,7 @@ function CookiePreferencesModal() {
           </button>
           <button
             type="button"
-            onClick={() => savePreferences({ maps: mapsEnabled })}
+            onClick={() => savePreferences({ analytics: analyticsEnabled, maps: mapsEnabled })}
             className="min-h-[44px] flex-1 rounded-full bg-navy px-5 py-2.5 text-sm font-bold text-white transition hover:bg-navy-light sm:flex-none"
           >
             Save Preferences

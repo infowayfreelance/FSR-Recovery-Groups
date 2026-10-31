@@ -20,8 +20,8 @@ const content: AreaPageContent = {
   eyebrow: "A167",
   h1: "Breakdown Recovery on the A167",
   heroIntro: "The A167, the old Great North Road, runs close to the A1(M) through Darlington, Durham and toward Newcastle. FSR Recovery Group provides 24/7 recovery for breakdowns anywhere along the A167.",
-  heroImage: "/images/service-transport.jpg",
-  heroImageAlt: "Recovery vehicle on a former main road route",
+  heroImage: "/images/a167-breakdown-recovery-flatbed.webp",
+  heroImageAlt: "Car being loaded onto a flatbed recovery truck on a rural road near the A167",
   badges: ["Local Route", "Available 24/7", "Cars & Vans"],
   introHeading: "Recovery Along the A167",
   introParagraphs: [
@@ -46,6 +46,12 @@ const content: AreaPageContent = {
     { icon: "fa-solid fa-temperature-high", title: "Overheating", text: "An overheating engine on the A167 is recovered before it causes further damage." },
     { icon: "fa-solid fa-gas-pump", title: "Out of Fuel", text: "Run out of fuel on the A167? We can bring fuel directly to your location." },
   ],
+  galleryIntro: "A look at the kind of recovery and roadside assistance work we carry out for drivers along the A167.",
+  gallery: [
+    { src: "/images/a167-roadside-battery-assistance.webp", alt: "Technician providing roadside jumpstart assistance to a car at dusk with a recovery van behind", caption: "Jumpstart assistance for a flat battery" },
+    { src: "/images/a167-roadside-tyre-change.webp", alt: "Technician changing a wheel on a car using a jack and ratchet strap", caption: "Roadside tyre and wheel changes" },
+    { src: "/images/a167-van-recovery-transport.webp", alt: "Van loaded onto a flatbed recovery truck on a residential street", caption: "Flatbed transport for vans and cars" },
+  ],
   faqs: [
     { question: "Do you cover the whole length of the A167?", answer: "Yes, we cover the A167 from Darlington through Durham and toward Chester-le-Street and Newcastle." },
     { question: "Is the A167 a good alternative route if the A1(M) is closed?", answer: "The A167 does run close to the A1(M) for much of its length. If you break down on it, call us with your exact location and we'll confirm response times." },
@@ -57,7 +63,6 @@ const content: AreaPageContent = {
   ctaHeading: "Broken Down on the A167?",
   ctaText: "Call or WhatsApp FSR Recovery Group now with your exact location on the A167, and we'll confirm the fastest way to reach you.",
   nearbyAreas: [
-    { label: "Darlington", href: "/areas/darlington" },
     { label: "Durham", href: "/areas/durham" },
     { label: "Newcastle", href: "/areas/newcastle" },
     { label: "A1(M) Recovery", href: "/areas/a1m" },

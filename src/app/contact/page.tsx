@@ -1,39 +1,69 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { QuoteForm } from "@/components/QuoteForm";
+import { GoogleMapEmbed } from "@/components/GoogleMapEmbed";
+import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 
 export const metadata: Metadata = {
-  title: "Contact Us",
-  description:
-    "Contact FSR Recovery Groups by phone or WhatsApp for roadside help, towing, breakdown recovery and more across the region. Call +44 7888 502989.",
+  title: { absolute: "Need Assistance? Contact FSR Recovery Group Now" },
+  description: "Looking for recovery assistance? FSR Recovery Group is ready to help. Contact us today for guidance.",
+  alternates: { canonical: "/contact" },
 };
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbList([{ name: "Home", path: "/" }, { name: "Contact", path: "/contact" }]),
+    {
+      "@type": "ContactPage",
+      name: "Contact FSR Recovery Group",
+      url: "https://fsrrecoverygroups.co.uk/contact",
+      about: {
+        ...businessEntityRef,
+        email: business.email,
+        contactPoint: {
+          "@type": "ContactPoint",
+          telephone: business.phone,
+          email: business.email,
+          contactType: "customer service",
+          availableLanguage: "English",
+        },
+      },
+    },
+  ],
+};
+
+const GBP_MAP_SRC =
+  "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2315.266181975819!2d-1.5612949233137332!3d54.528801885596664!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xeed77f7b9c8a489%3A0x3af9f4efbabca787!2sFSR%20Recovery%20Group!5e0!3m2!1sen!2s!4v1784967444093!5m2!1sen!2s";
 
 const contactMethods = [
   {
     icon: "fa-solid fa-phone",
     title: "Call Us",
-    detail: "+44 7888 502989",
+    detail: business.phoneDisplay,
     desc: "Speak directly to our team. Best for urgent roadside situations.",
-    href: "tel:+447888502989",
+    href: business.tel,
     cta: "Call Now",
     external: false,
   },
   {
     icon: "fa-brands fa-whatsapp",
     title: "WhatsApp",
-    detail: "+44 7888 502989",
+    detail: business.phoneDisplay,
     desc: "Send your location, vehicle details and a brief description and we will respond as quickly as possible.",
-    href: "https://wa.me/447888502989",
+    href: business.whatsapp,
     cta: "Message Us",
     external: true,
   },
   {
     icon: "fa-solid fa-envelope",
     title: "Email",
-    detail: "Fsrbreakdownrecovery@gmail.com",
+    detail: business.email,
     desc: "For non-urgent enquiries, quotes or general questions about our services.",
-    href: "mailto:Fsrbreakdownrecovery@gmail.com",
+    href: `mailto:${business.email}`,
     cta: "Send Email",
     external: false,
   },
@@ -65,7 +95,21 @@ export default function ContactPage() {
 
       <main>
         {/* Page Banner */}
-        <section className="hero-bg text-white">
+        <section className="relative isolate overflow-hidden text-white">
+          <Image
+            src="/images/service-roadside.webp"
+            alt="Technician checking a car engine roadside in the rain"
+            fill
+            preload
+            fetchPriority="high"
+            quality={65}
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }}
+          />
           <div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20">
             <p className="mb-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/40 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
               <i className="fa-solid fa-envelope flex-shrink-0"></i> Contact Us
@@ -77,11 +121,11 @@ export default function ContactPage() {
               Need roadside help or want to ask a question? Call or WhatsApp us and a member of our team will be in touch.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
-                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
@@ -96,7 +140,7 @@ export default function ContactPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">How to Reach Us</p>
+              <p className="mb-3 font-bold text-red-dark">How to Reach Us</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Contact Options</h2>
               <p className="text-navy/70">Choose the method that suits your situation best.</p>
             </div>
@@ -127,7 +171,7 @@ export default function ContactPage() {
         <section className="bg-white py-20">
           <div className="container-site grid items-start gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Request a Quote</p>
+              <p className="mb-3 font-bold text-red-dark">Request a Quote</p>
               <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
                 Get a Free Quote on WhatsApp
               </h2>
@@ -148,7 +192,7 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="mb-1 text-sm text-white/60">Phone</p>
-                      <a href="tel:+447888502989" className="font-semibold transition hover:text-red">+44 7888 502989</a>
+                      <a href={business.tel} className="font-semibold transition hover:text-red">{business.phoneDisplay}</a>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -158,12 +202,12 @@ export default function ContactPage() {
                     <div>
                       <p className="mb-1 text-sm text-white/60">WhatsApp</p>
                       <a
-                        href="https://wa.me/447888502989"
+                        href={business.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="font-semibold transition hover:text-red"
                       >
-                        +44 7888 502989
+                        {business.phoneDisplay}
                       </a>
                     </div>
                   </li>
@@ -173,9 +217,18 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <p className="mb-1 text-sm text-white/60">Email</p>
-                      <a href="mailto:Fsrbreakdownrecovery@gmail.com" className="font-semibold break-all transition hover:text-red">
-                        Fsrbreakdownrecovery@gmail.com
+                      <a href={`mailto:${business.email}`} className="font-semibold break-all transition hover:text-red">
+                        {business.email}
                       </a>
+                    </div>
+                  </li>
+                  <li className="flex items-start gap-4">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-white/10">
+                      <i className="fa-solid fa-location-dot text-red"></i>
+                    </div>
+                    <div>
+                      <p className="mb-1 text-sm text-white/60">Address</p>
+                      <p className="font-semibold">{business.addressFull}</p>
                     </div>
                   </li>
                   <li className="flex items-start gap-4">
@@ -202,7 +255,24 @@ export default function ContactPage() {
                 <a href="/areas" className="mt-4 inline-block text-sm font-bold text-red">
                   See full coverage area →
                 </a>
+                <br />
+                <a href="/services" className="mt-2 inline-block text-sm font-bold text-red">
+                  Browse our recovery services →
+                </a>
               </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Map */}
+        <section className="bg-white py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-8 max-w-2xl text-center">
+              <p className="mb-3 font-bold text-red-dark">Find Us</p>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">{business.name} Location</h2>
+            </div>
+            <div className="fade-up w-full overflow-hidden rounded-3xl border border-navy/10 shadow-2xl" style={{ height: "420px" }}>
+              <GoogleMapEmbed src={GBP_MAP_SRC} title={`${business.name} Location`} />
             </div>
           </div>
         </section>
@@ -211,7 +281,7 @@ export default function ContactPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
-              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <p className="mb-3 font-bold text-red-dark">Common Questions</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">Contact &amp; Response</h2>
             </div>
             <div className="grid gap-5">
@@ -236,11 +306,11 @@ export default function ContactPage() {
               Call or WhatsApp us now and our team will respond as quickly as possible.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+              <a href={business.tel} className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
                 <i className="fa-solid fa-phone mr-2"></i>Call Now
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"
@@ -250,6 +320,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />

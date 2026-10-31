@@ -1,13 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
-import { usePathname } from "next/navigation";
 
 export function ScrollAnimations() {
-  const pathname = usePathname();
-
   useEffect(() => {
-    const animatedElements = new Set<Element>();
+    const root = document.documentElement;
+    const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    if (reducedMotion.matches || !("IntersectionObserver" in window)) {
+      document.querySelectorAll(".fade-up").forEach((element) => element.classList.add("show"));
+      return;
+    }
+
+    root.classList.add("scroll-animations-ready");
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -15,34 +20,37 @@ export function ScrollAnimations() {
           if (entry.isIntersecting) {
             entry.target.classList.add("show");
             observer.unobserve(entry.target);
-            animatedElements.delete(entry.target);
           }
         });
       },
       { threshold: 0.12 }
     );
 
-    const observeAnimations = (root: ParentNode = document) => {
-      root.querySelectorAll(".fade-up:not(.show)").forEach((element) => {
-        if (!animatedElements.has(element)) {
-          animatedElements.add(element);
-          observer.observe(element);
-        }
-      });
+    const observeAnimations = (scope: ParentNode) => {
+      if (scope instanceof Element && scope.matches(".fade-up")) observer.observe(scope);
+      scope.querySelectorAll(".fade-up:not(.show)").forEach((element) => observer.observe(element));
     };
 
-    observeAnimations();
+    observeAnimations(document);
 
-    // The root layout persists during client-side navigation. Watch for streamed
-    // route content so newly rendered animation elements are never left hidden.
-    const mutationObserver = new MutationObserver(() => observeAnimations());
+    // The component lives in the root layout, so it does not remount after a
+    // client-side navigation. Observe streamed and newly navigated page content
+    // as it is added instead of leaving its fade-up elements permanently hidden.
+    const mutationObserver = new MutationObserver((mutations) => {
+      mutations.forEach((mutation) => {
+        mutation.addedNodes.forEach((node) => {
+          if (node instanceof Element) observeAnimations(node);
+        });
+      });
+    });
     mutationObserver.observe(document.body, { childList: true, subtree: true });
 
     return () => {
       mutationObserver.disconnect();
       observer.disconnect();
+      root.classList.remove("scroll-animations-ready");
     };
-  }, [pathname]);
+  }, []);
 
   return null;
 }

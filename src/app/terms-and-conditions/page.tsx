@@ -1,167 +1,40 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { LegalPageLayout } from "@/components/LegalPage";
+import { Header } from "@/components/Header";
+import { Footer } from "@/components/Footer";
 import { business } from "@/data/business";
 
-const title = "Terms & Conditions";
-const description = "The terms that apply when you use this website or request services from FSR Recovery Group.";
-const path = "/terms-and-conditions";
-const lastUpdated = "14 September 2026";
-
 export const metadata: Metadata = {
-  title: { absolute: `${title} | ${business.name}` },
-  description,
-  alternates: { canonical: path },
-  robots: { index: true, follow: true },
+  title: { absolute: "FSR Recovery Group: Terms & Conditions Guide" },
+  description: "Explore the terms and conditions of FSR Recovery Group. Get clarity on your agreement with us now.",
+  alternates: { canonical: "/terms-and-conditions" },
 };
 
+const sections = [
+  ["1. About these terms", <p key="p">These terms apply when you request roadside assistance, vehicle recovery, winch-out assistance or vehicle transport from FSR Recovery Group. Please read them before confirming a service. Nothing in these terms affects rights that you have under applicable UK consumer law.</p>],
+  ["2. Contact details", <p key="p">FSR Recovery Group can be contacted at {business.addressFull}, by telephone on <a href={business.tel}>{business.phoneDisplay}</a>, or by email at <a href={`mailto:${business.email}`}>{business.email}</a>.</p>],
+  ["3. Service requests and acceptance", <><p>Contacting us is a request for assistance and does not by itself guarantee that a job can be accepted. We may need your location, vehicle details, description of the issue, access information and intended destination before confirming whether assistance is available.</p><p>A service is agreed when we confirm that we can undertake the work and you accept the service details and any quote provided. Availability remains subject to safe access, suitable equipment, vehicle condition, location and circumstances.</p></>],
+  ["4. Quotes and payment", <><p>Prices or estimates are based on the information available when they are provided. Tell us promptly if the vehicle, location, destination, access or circumstances differ from what was described, as this may affect the work required and the price.</p><p>We will explain the applicable charge and accepted payment arrangements when the service is discussed. You are responsible for paying charges you have agreed, unless another person or organisation has expressly accepted responsibility for payment.</p></>],
+  ["5. Your responsibilities", <><p>You must provide information that is accurate to the best of your knowledge, including the vehicle&apos;s location, condition, dimensions where relevant, access restrictions and any known damage or hazards. You must have authority to request work on the vehicle and identify a lawful, suitable collection and destination point.</p><p>Follow reasonable safety instructions, keep away from recovery equipment and do not interfere while work is underway. Remove or secure valuables and personal belongings where reasonably possible.</p></>],
+  ["6. Safety and service limitations", <p key="content">We may pause, alter or decline work where access, traffic, weather, terrain, vehicle condition, instructions from authorities or another circumstance makes the proposed service unsafe, unlawful or unsuitable. Winch-out and roadside work is subject to an on-site assessment; extraction, repair or a successful restart cannot be guaranteed.</p>],
+  ["7. Delays and events outside our control", <p key="content">Arrival and completion times are estimates unless expressly agreed otherwise. Traffic, weather, road closures, emergency incidents, availability of suitable equipment and other events outside our reasonable control may cause delay. We will seek to keep you informed where reasonably possible.</p>],
+  ["8. Vehicle condition and belongings", <p key="content">Tell us about existing damage, modifications, mechanical defects, security systems or other matters that may affect handling. We are not responsible for pre-existing faults or damage, or for loss of unsecured personal items, except where responsibility cannot lawfully be excluded.</p>],
+  ["9. Cancellation", <p key="content">If you need to cancel, contact us as soon as possible. We will tell you before confirmation if a particular booking has cancellation terms or if reasonable costs may arise after a vehicle or operator has been dispatched. Any statutory cancellation rights that apply to you remain unaffected.</p>],
+  ["10. Liability", <><p>We are responsible for foreseeable loss or damage caused by our failure to use reasonable care and skill or by our breach of these terms. We are not responsible for loss that was not foreseeable, was caused by inaccurate or incomplete information, arose from a pre-existing defect, or could not reasonably have been avoided.</p><p>Nothing in these terms excludes or limits liability where it would be unlawful to do so, including liability for death or personal injury caused by negligence, fraud or fraudulent misrepresentation, or your statutory consumer rights.</p></>],
+  ["11. Complaints", <p key="content">If you are dissatisfied, contact us promptly with your name, contact details, vehicle details, date and location of the service, and an explanation of the issue. We will review the information and respond as soon as reasonably practicable.</p>],
+  ["12. General", <><p>If a court finds part of these terms unlawful, the remaining terms will continue to apply. A delay in enforcing a right does not waive that right. These terms are between you and FSR Recovery Group; no other person has a right to enforce them unless the law provides otherwise.</p><p>These terms are governed by the law of England and Wales. The courts that may hear a dispute will be determined by applicable law, including the protections available to consumers in the part of the UK where they live.</p></>],
+  ["13. Changes to these terms", <p key="p">We may update these terms to reflect changes to our services, practices or legal obligations. The version published on this page applies from its stated update date.</p>],
+] as const;
+
+const schema = { "@context": "https://schema.org", "@graph": [
+  { "@type": "WebPage", name: "Terms & Conditions", url: "https://fsrrecoverygroups.co.uk/terms-and-conditions", description: "The terms that apply when you request our roadside, recovery or vehicle transport services.", isPartOf: { "@type": "WebSite", name: business.name, url: "https://fsrrecoverygroups.co.uk/" } },
+] };
+
 export default function TermsAndConditionsPage() {
-  return (
-    <LegalPageLayout path={path} eyebrow="Legal" title={title} lastUpdated={lastUpdated}>
-      <h2>About us</h2>
-      <p>
-        This website (fsrrecoverygroups.co.uk) is operated by {business.name}, based at{" "}
-        {business.addressFull} (&ldquo;we&rdquo;, &ldquo;us&rdquo;, &ldquo;our&rdquo;). We provide vehicle
-        breakdown recovery, roadside assistance, jumpstart, winch-out, accident recovery, tyre-change,
-        refuelling and vehicle transporting services. By using this website, or by contacting us to request
-        our services, you agree to these terms.
-      </p>
-
-      <h2>Website information</h2>
-      <p>
-        The content on this website is provided for general information about our services and coverage
-        area. While we try to keep it accurate and up to date, we do not guarantee that the website is
-        complete, error-free or continuously available, and we may update or change it at any time.
-      </p>
-
-      <h2>Enquiries and service requests</h2>
-      <p>
-        You can request our services or ask for a quote by phone, WhatsApp or email using the contact
-        details on this website, or via the &ldquo;Get a Free Quote&rdquo; form, which prepares a WhatsApp
-        message for you to review and send. Submitting an enquiry — including through the quote form — does
-        not itself create a contract between us. A booking is only confirmed once we have discussed your
-        requirements with you directly and agreed to carry out the work.
-      </p>
-
-      <h2>Availability</h2>
-      <p>
-        We aim to respond to enquiries as promptly as we reasonably can, but availability depends on
-        factors such as our current workload, your location and the nature of the job. We do not guarantee
-        a specific response time, or that a vehicle or driver will always be available immediately.
-      </p>
-
-      <h2>Quotes and pricing</h2>
-      <p>
-        We do not publish standard prices on this website — every quote depends on your specific vehicle,
-        location, destination and circumstances, and is given to you individually by phone, WhatsApp or
-        email before any work begins. We will aim to make any additional costs clear before carrying out
-        work; if a job turns out to need something not covered by an initial quote (for example, unexpected
-        access difficulties), we will discuss this with you before proceeding wherever reasonably possible.
-      </p>
-
-      <h2>Payment</h2>
-      <p>
-        Payment method and timing are agreed directly with you at the time of booking. This website does
-        not display or take payments online.
-      </p>
-      <p>
-        <em>
-          Note for the site owner: specific accepted payment methods (e.g. cash, card, bank transfer) and
-          timing (e.g. on completion, invoiced) are not stated here as they could not be confirmed from the
-          website — let us know if you&rsquo;d like this section made more specific.
-        </em>
-      </p>
-
-      <h2>Cancellations</h2>
-      <p>
-        If you need to cancel a booked job, please let us know as soon as possible by phone or WhatsApp.
-      </p>
-      <p>
-        <em>
-          Note for the site owner: this website does not currently publish a cancellation policy or fee, so
-          none is stated here. Any cancellation terms are agreed directly with you at the time of booking —
-          confirm if you would like a standard policy added.
-        </em>
-      </p>
-
-      <h2>Your responsibilities</h2>
-      <p>When you request our services, please:</p>
-      <ul>
-        <li>Provide accurate information about your location, vehicle and situation, to help us respond appropriately.</li>
-        <li>Ensure, so far as you reasonably can, that our driver can safely access your vehicle and that it is safe to approach.</li>
-        <li>Remove or secure personal belongings and valuables from the vehicle where possible — we cannot be responsible for items left inside.</li>
-        <li>Follow any reasonable safety instructions given by our team, particularly at the roadside or on a motorway.</li>
-      </ul>
-
-      <h2>Delays and circumstances outside our control</h2>
-      <p>
-        We will do our best to reach you and complete work promptly, but timing can be affected by matters
-        outside our reasonable control, including traffic, weather, road closures, breakdowns of our own
-        vehicles or equipment, or the actions of third parties (such as other emergency services at the
-        scene). We will not be liable for delay or failure to perform caused by circumstances outside our
-        reasonable control.
-      </p>
-
-      <h2>Liability</h2>
-      <p>
-        Nothing in these terms limits or excludes our liability for death or personal injury caused by our
-        negligence, for fraud, or for any other liability that cannot be limited or excluded under UK law.
-      </p>
-      <p>Subject to that, we will take reasonable care when recovering, loading, transporting and handling your vehicle, but we are not liable for:</p>
-      <ul>
-        <li>Pre-existing damage, wear and tear, or mechanical faults not caused by us.</li>
-        <li>Loss of, or damage to, personal belongings left in the vehicle.</li>
-        <li>Indirect or consequential losses (such as loss of use of the vehicle, loss of earnings, or missed appointments), except where this cannot lawfully be excluded.</li>
-      </ul>
-      <p>
-        <em>
-          Note for the site owner: please confirm your public liability / goods-in-transit insurance
-          arrangements so this section can reference them accurately — cover details are not assumed or
-          invented here.
-        </em>
-      </p>
-
-      <h2>Intellectual property</h2>
-      <p>
-        The content, design, logo and branding on this website belong to {business.name} or our licensors,
-        unless otherwise stated. You may view and print pages for your own personal, non-commercial use,
-        but you may not reproduce, copy or reuse any part of this website for other purposes without our
-        permission.
-      </p>
-
-      <h2>Links to other websites</h2>
-      <p>
-        This website may link to third-party services (for example, WhatsApp or Google Maps). We are not
-        responsible for the content or privacy practices of any third-party sites, and linking to them does
-        not imply endorsement.
-      </p>
-
-      <h2>Privacy and cookies</h2>
-      <p>
-        Our use of personal information is described in our <Link href="/privacy-policy">Privacy Policy</Link>,
-        and our use of cookies and similar technologies is described in our{" "}
-        <Link href="/cookie-policy">Cookie Policy</Link>.
-      </p>
-
-      <h2>Governing law and jurisdiction</h2>
-      <p>
-        These terms are governed by the laws of England and Wales. Any disputes relating to these terms or
-        our services will be subject to the exclusive jurisdiction of the courts of England and Wales.
-      </p>
-
-      <h2>Contact us</h2>
-      <p>
-        {business.name}
-        <br />
-        {business.addressFull}
-        <br />
-        Phone: <a href={business.tel}>{business.phoneDisplay}</a>
-        <br />
-        Email: <a href={`mailto:${business.email}`}>{business.email}</a>
-      </p>
-
-      <h2>Changes to these terms</h2>
-      <p>We may update these terms from time to time. The date at the top of this page shows when they were last updated.</p>
-    </LegalPageLayout>
-  );
+  return <><Header /><main>
+    <section className="relative isolate overflow-hidden text-white"><Image src="/images/service-roadside.webp" alt="Technician checking a car engine roadside in the rain" fill preload fetchPriority="high" quality={65} sizes="100vw" className="-z-20 object-cover" /><div className="absolute inset-0 -z-10" style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }} /><div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20"><p className="mb-4 font-bold text-red-100">Legal Information</p><h1 className="text-3xl font-extrabold sm:text-4xl lg:text-6xl">Terms &amp; Conditions</h1><p className="mx-auto mt-5 max-w-2xl text-white/80">The terms that apply when you request our roadside, recovery or vehicle transport services.</p></div></section>
+    <section className="bg-slate-50 py-16 sm:py-24"><div className="container-site"><div className="mx-auto max-w-4xl rounded-3xl border border-navy/10 bg-white p-6 shadow-sm sm:p-10 lg:p-12"><p className="mb-8 text-sm font-semibold text-navy/70">Last updated: 26 August 2026</p><div className="space-y-9">{sections.map(([title, content]) => <section key={title}><h2 className="mb-3 text-2xl font-extrabold text-navy">{title}</h2><div className="space-y-3 leading-7 text-navy/70 [&_a]:font-semibold [&_a]:text-red [&_a]:underline">{content}</div></section>)}</div><div className="mt-10 border-t border-navy/10 pt-7"><Link href="/contact" className="font-bold text-red underline">Contact FSR Recovery Group</Link></div></div></div></section>
+    <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
+  </main><Footer /></>;
 }

@@ -8,22 +8,29 @@ const title = "A67 Car Recovery Services Near You";
 const description = "In need of A67 car recovery? Our professionals are ready to help you 24/7. Reach out for assistance!";
 const path = "/areas/a67";
 
+const ogImage = "/images/a67-breakdown-recovery-flatbed.webp";
+
 export const metadata: Metadata = {
   title: { absolute: title }, description,
   alternates: { canonical: path }, robots: { index: true, follow: true },
-  openGraph: { title, description, url: path, type: "website", siteName: business.name },
-  twitter: { card: "summary", title, description },
+  openGraph: {
+    title, description, url: path, type: "website", siteName: business.name,
+    images: [{ url: ogImage, width: 1536, height: 1024, alt: "Recovery truck viewed from inside a workshop, with Teesdale countryside beyond" }],
+  },
+  twitter: { card: "summary_large_image", title, description, images: [ogImage] },
 };
 
 const content: AreaPageContent = {
   category: "road",
   eyebrow: "A67",
-  h1: "Breakdown Recovery on the A67",
+  h1: "A67 Breakdown & Recovery Service",
   heroIntro: "The A67 links Darlington to Barnard Castle through Teesdale, and it's a route right on our doorstep. FSR Recovery Group provides fast, local recovery for breakdowns anywhere along the A67.",
-  heroImage: "/images/gallery-2.jpg",
-  heroImageAlt: "Recovery vehicle on a rural A-road",
+  heroImage: ogImage,
+  heroImageAlt: "Recovery truck viewed from inside a workshop, with Teesdale countryside beyond",
   badges: ["Local Route", "Available 24/7", "Cars & Vans"],
   introHeading: "Recovery Along the A67",
+  introImage: "/images/a67-roadside-battery-assistance.webp",
+  introImageAlt: "Technician jump-starting a car battery at the roadside near a Teesdale village",
   introParagraphs: [
     "Running west from Darlington through villages such as Piercebridge, Winston and Gainford before reaching Barnard Castle, the A67 is a route we cover as part of our everyday local recovery work.",
     "The road passes through open countryside as well as village centres, so breakdowns here can range from a straightforward roadside fix to a full recovery from a rural verge.",
@@ -38,6 +45,8 @@ const content: AreaPageContent = {
   ],
   situationsTitle: "Common A67 Breakdown Situations",
   situationsIntro: "These are among the most frequent reasons drivers call us for recovery on the A67.",
+  situationsImage: "/images/a67-stuck-on-verge.webp",
+  situationsImageAlt: "Technician assessing a van stuck on a soft verge beside a Teesdale road, recovery truck approaching",
   situations: [
     { icon: "fa-solid fa-key", title: "Vehicle Won't Start", text: "A car that won't start after stopping on the A67 near a village is a common local callout." },
     { icon: "fa-solid fa-circle-notch", title: "Tyre Damage", text: "Punctures on the A67's country stretches are dealt with quickly and safely." },
@@ -56,8 +65,9 @@ const content: AreaPageContent = {
   ],
   ctaHeading: "Broken Down on the A67?",
   ctaText: "Call or WhatsApp FSR Recovery Group now with your location on the A67, and we'll confirm the fastest way to reach you.",
+  ctaImage: "/images/a67-village-recovery-transport.webp",
+  ctaImageAlt: "Car on a flatbed recovery truck with a Teesdale village in the valley below",
   nearbyAreas: [
-    { label: "Darlington", href: "/areas/darlington" },
     { label: "Barnard Castle", href: "/areas/barnard-castle" },
     { label: "A66 Recovery", href: "/areas/a66" },
   ],
