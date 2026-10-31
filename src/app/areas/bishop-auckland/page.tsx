@@ -228,82 +228,124 @@ export default function BishopAucklandAreaPage() {
 
         {/* Local Breakdown Recovery in Bishop Auckland */}
         <section className="py-16 sm:py-24">
-          <div className="container-site mx-auto max-w-3xl">
-            <Eyebrow>Local Coverage</Eyebrow>
-            <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">Local Breakdown Recovery in Bishop Auckland</h2>
-            <div className="space-y-4 leading-7 text-navy/70">
-              <p>
-                A vehicle breakdown can happen on a town road, residential street or while travelling between Bishop
-                Auckland and nearby areas. When your vehicle cannot safely continue, getting suitable assistance is
-                important.
-              </p>
-              <p>
-                Our{" "}
-                <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
-                  breakdown recovery service in Bishop Auckland
-                </Link>{" "}
-                is available for suitable cars and light vans that have suffered a mechanical, electrical or other
-                vehicle problem.
-              </p>
-              <p>
-                We provide car breakdown recovery, vehicle breakdown assistance, emergency breakdown recovery and{" "}
-                <Link href="/services/roadside-assistance" className="font-semibold text-red hover:underline">
-                  roadside assistance
-                </Link>{" "}
-                depending on the situation.
-              </p>
-              <p>
-                If a roadside solution is suitable, we can discuss the available assistance. If the vehicle cannot
-                safely continue, vehicle recovery can be arranged to an agreed destination.
-              </p>
-              <p>
-                For drivers searching for 24 hour breakdown recovery, 24/7 vehicle recovery or a local breakdown
-                recovery service,{" "}
-                <Link href="/contact" className="font-semibold text-red hover:underline">
-                  contact FSR Recovery Group
-                </Link>{" "}
-                with your location and vehicle details.
-              </p>
+          <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="fade-up relative order-2 min-h-[280px] overflow-hidden rounded-3xl sm:min-h-[360px] lg:order-1">
+              <Image
+                src="/images/bishop-auckland-jumpstart-residential-street.webp"
+                alt="Technician jump-starting a car battery on a residential street near Bishop Auckland"
+                fill
+                quality={65}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
+            </div>
+            <div className="fade-up order-1 lg:order-2">
+              <Eyebrow>Local Coverage</Eyebrow>
+              <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">Local Breakdown Recovery in Bishop Auckland</h2>
+              <div className="space-y-4 leading-7 text-navy/70">
+                <p>
+                  A vehicle breakdown can happen on a town road, residential street or while travelling between
+                  Bishop Auckland and nearby areas. When your vehicle cannot safely continue, getting suitable
+                  assistance is important.
+                </p>
+                <p>
+                  Our{" "}
+                  <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
+                    breakdown recovery service in Bishop Auckland
+                  </Link>{" "}
+                  is available for suitable cars and light vans that have suffered a mechanical, electrical or other
+                  vehicle problem.
+                </p>
+                <p>
+                  We provide car breakdown recovery, vehicle breakdown assistance, emergency breakdown recovery and{" "}
+                  <Link href="/services/roadside-assistance" className="font-semibold text-red hover:underline">
+                    roadside assistance
+                  </Link>{" "}
+                  depending on the situation.
+                </p>
+                <p>
+                  If a roadside solution is suitable, we can discuss the available assistance. If the vehicle cannot
+                  safely continue, vehicle recovery can be arranged to an agreed destination.
+                </p>
+                <p>
+                  We also provide recovery support to nearby towns including{" "}
+                  <Link href="/areas/durham" className="font-semibold text-red hover:underline">
+                    Durham
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/areas/barnard-castle" className="font-semibold text-red hover:underline">
+                    Barnard Castle
+                  </Link>
+                  .
+                </p>
+                <p>
+                  For drivers searching for 24 hour breakdown recovery, 24/7 vehicle recovery or a local breakdown
+                  recovery service,{" "}
+                  <Link href="/contact" className="font-semibold text-red hover:underline">
+                    contact FSR Recovery Group
+                  </Link>{" "}
+                  with your location and vehicle details.
+                </p>
+              </div>
             </div>
           </div>
         </section>
 
         {/* Recovery Across Bishop Auckland's Main Roads */}
         <section className="bg-slate-50 py-16 sm:py-24">
-          <div className="container-site mx-auto max-w-3xl">
-            <Eyebrow>Key Routes</Eyebrow>
-            <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">Recovery Across Bishop Auckland&rsquo;s Main Roads</h2>
-            <div className="space-y-4 leading-7 text-navy/70">
-              <p>
-                Bishop Auckland is connected to surrounding areas by several important local and regional routes,
-                including the A688, A689,{" "}
-                <Link href="/areas/a68" className="font-semibold text-red hover:underline">
-                  A68
-                </Link>{" "}
-                and{" "}
-                <Link href="/areas/a167" className="font-semibold text-red hover:underline">
-                  A167
-                </Link>
-                .
-              </p>
-              <p>
-                These routes can take drivers between Bishop Auckland, surrounding County Durham locations and the
-                wider regional road network. A vehicle problem can therefore occur on a busy route, a local
-                connection or a quieter section of road.
-              </p>
-              <p>FSR Recovery Group provides recovery assistance across relevant roads within our service coverage.</p>
-              <p>
-                If you break down on the A688, A689, A68 or A167, provide your exact location and direction of
-                travel when you contact us. This helps us understand where your vehicle is and what type of
-                assistance may be suitable.
-              </p>
-              <p>
-                For more specific route information, see our{" "}
-                <Link href="/areas" className="font-semibold text-red hover:underline">
-                  dedicated road recovery pages
-                </Link>
-                .
-              </p>
+          <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className="fade-up">
+              <Eyebrow>Key Routes</Eyebrow>
+              <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">Recovery Across Bishop Auckland&rsquo;s Main Roads</h2>
+              <div className="space-y-4 leading-7 text-navy/70">
+                <p>
+                  Bishop Auckland is connected to surrounding areas by several important local and regional routes,
+                  including the A688, A689,{" "}
+                  <Link href="/areas/a68" className="font-semibold text-red hover:underline">
+                    A68
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/areas/a167" className="font-semibold text-red hover:underline">
+                    A167
+                  </Link>
+                  .
+                </p>
+                <p>
+                  These routes can take drivers between Bishop Auckland, surrounding County Durham locations such as{" "}
+                  <Link href="/areas/durham" className="font-semibold text-red hover:underline">
+                    Durham
+                  </Link>{" "}
+                  and{" "}
+                  <Link href="/areas/barnard-castle" className="font-semibold text-red hover:underline">
+                    Barnard Castle
+                  </Link>
+                  , and the wider regional road network. A vehicle problem can therefore occur on a busy route, a
+                  local connection or a quieter section of road.
+                </p>
+                <p>FSR Recovery Group provides recovery assistance across relevant roads within our service coverage.</p>
+                <p>
+                  If you break down on the A688, A689, A68 or A167, provide your exact location and direction of
+                  travel when you contact us. This helps us understand where your vehicle is and what type of
+                  assistance may be suitable.
+                </p>
+                <p>
+                  For more specific route information, see our{" "}
+                  <Link href="/areas" className="font-semibold text-red hover:underline">
+                    dedicated road recovery pages
+                  </Link>
+                  .
+                </p>
+              </div>
+            </div>
+            <div className="fade-up relative min-h-[280px] overflow-hidden rounded-3xl sm:min-h-[360px]">
+              <Image
+                src="/images/bishop-auckland-roadside-tyre-change.webp"
+                alt="Technician changing a wheel at the roadside on a rural road near Bishop Auckland"
+                fill
+                quality={65}
+                sizes="(min-width: 1024px) 50vw, 100vw"
+                className="object-cover"
+              />
             </div>
           </div>
         </section>
