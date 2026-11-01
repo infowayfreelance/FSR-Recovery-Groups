@@ -417,7 +417,7 @@ export default function Home() {
             className="absolute inset-0 -z-10"
             style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }}
           />
-          <div className="container-site grid items-center gap-8 py-10 sm:py-16 lg:grid-cols-[1.15fr_.85fr] lg:gap-12 lg:py-28">
+          <div className="container-site grid items-start gap-8 py-10 sm:py-16 lg:grid-cols-[1.15fr_.85fr] lg:gap-12 lg:py-28">
             <div className="fade-up">
               <a
                 href="https://maps.app.goo.gl/4pRMrYVe7fvJQBp57"
