@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { business } from "@/data/business";
 import { serviceNavigation } from "@/data/services";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
 import {
   CardGrid,
   ContactButtons,
@@ -24,15 +25,25 @@ export type AreaPageContent = {
   heroImageAlt: string;
   badges: [string, string, string];
   introHeading: string;
-  introParagraphs: string[];
+  introParagraphs: React.ReactNode[];
+  /** Optional photo shown within the local intro section, above the paragraph text. */
+  introImage?: string;
+  introImageAlt?: string;
   localHighlightsTitle: string;
   localHighlights: string[];
   situationsTitle: string;
   situationsIntro: string;
   situations: ServiceCard[];
+  /** Optional photo shown within the situations section, between the heading and the card grid. */
+  situationsImage?: string;
+  situationsImageAlt?: string;
+  /** Optional "Why Choose Us" section. Omit to skip the section. */
+  whyChooseTitle?: string;
+  whyChooseIntro?: string;
+  whyChoose?: ServiceCard[];
   /** Optional "Major Roads Around X" section with links to dedicated road pages. Omit to skip the section. */
   roadsTitle?: string;
-  roadsIntro?: string;
+  roadsIntro?: React.ReactNode;
   majorRoads?: RoadLink[];
   /** Optional "What We Need When You Call" checklist section. Omit to skip the section. */
   whatWeNeedTitle?: string;
@@ -41,10 +52,24 @@ export type AreaPageContent = {
   /** Overrides for the shared services grid heading/intro; falls back to generic copy if omitted. */
   servicesHeading?: string;
   servicesIntro?: string;
+  /** Optional photo gallery section. Omit to skip the section. */
+  galleryTitle?: string;
+  galleryIntro?: string;
+  gallery?: { src: string; alt: string; caption: string }[];
+  /** Optional photo+text split sections, alternating sides, woven into the page flow. Omit to skip. */
+  featured?: { image: string; imageAlt: string; eyebrow: string; heading: string; text: React.ReactNode }[];
   faqs: ServiceFaq[];
   ctaHeading: string;
   ctaText: string;
+  /** Optional overrides for the closing CTA section's background photo; falls back to the generic shared image if omitted. */
+  ctaImage?: string;
+  ctaImageAlt?: string;
   nearbyAreas: NearbyLink[];
+  /** Optional overrides for the Service JSON-LD node; fall back to generic copy derived from h1/heroIntro/eyebrow if omitted. */
+  serviceSchemaName?: string;
+  serviceSchemaType?: string;
+  serviceSchemaDescription?: string;
+  areaServedName?: string;
 };
 
 const serviceLinkCards: { title: string; text: string; icon: string; key: string }[] = [
@@ -62,24 +87,14 @@ function AreaSchema({ content, path }: { content: AreaPageContent; path: string 
   const schema = {
     "@context": "https://schema.org",
     "@graph": [
+      breadcrumbList([{ name: "Home", path: "/" }, { name: "Areas", path: "/areas" }, { name: content.eyebrow, path }]),
       {
         "@type": "Service",
-        name: `${content.h1}`,
-        description: content.heroIntro,
-        serviceType: "Vehicle recovery and roadside assistance",
-        provider: {
-          "@type": "LocalBusiness",
-          name: business.name,
-          telephone: business.phone,
-          address: {
-            "@type": "PostalAddress",
-            streetAddress: business.address.street,
-            addressLocality: business.address.locality,
-            postalCode: business.address.postalCode,
-            addressCountry: business.address.countryCode,
-          },
-        },
-        areaServed: { "@type": content.category === "road" ? "Place" : "City", name: content.eyebrow },
+        name: content.serviceSchemaName ?? content.h1,
+        description: content.serviceSchemaDescription ?? content.heroIntro,
+        serviceType: content.serviceSchemaType ?? "Vehicle recovery and roadside assistance",
+        provider: businessEntityRef,
+        areaServed: { "@type": content.category === "road" ? "Place" : "City", name: content.areaServedName ?? content.eyebrow },
         url: `https://fsrrecoverygroups.co.uk${path}`,
         availableChannel: {
           "@type": "ServiceChannel",
@@ -105,7 +120,7 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
     <>
       {/* Hero */}
       <section className="service-hero relative isolate min-h-[600px] overflow-hidden bg-navy text-white">
-        <Image src={content.heroImage} alt={content.heroImageAlt} fill preload sizes="100vw" className="-z-20 object-cover" />
+        <Image src={content.heroImage} alt={content.heroImageAlt} fill preload fetchPriority="high" quality={65} sizes="100vw" className="-z-20 object-cover" />
         <div className="absolute inset-0 -z-10 bg-gradient-to-r from-navy via-navy/90 to-navy/30" />
         <div className="container-site flex min-h-[600px] items-center py-16">
           <div className="fade-up max-w-3xl">
@@ -128,6 +143,11 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
           <div className="fade-up">
             <Eyebrow>Local Coverage</Eyebrow>
             <h2 className="mb-5 text-3xl font-extrabold sm:text-4xl">{content.introHeading}</h2>
+            {content.introImage && (
+              <div className="relative mb-6 h-56 overflow-hidden rounded-3xl sm:h-72">
+                <Image src={content.introImage} alt={content.introImageAlt ?? ""} fill quality={65} sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+              </div>
+            )}
             <div className="space-y-4 leading-7 text-navy/70">
               {content.introParagraphs.map((p, i) => (
                 <p key={i}>{p}</p>
@@ -164,9 +184,67 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
       <section className="bg-slate-50 py-16 sm:py-24">
         <div className="container-site">
           <SectionHeading eyebrow="When You May Need Us" title={content.situationsTitle} intro={content.situationsIntro} />
+          {content.situationsImage && (
+            <div className="fade-up relative mb-10 h-64 overflow-hidden rounded-3xl sm:h-80">
+              <Image src={content.situationsImage} alt={content.situationsImageAlt ?? ""} fill quality={65} sizes="100vw" className="object-cover" />
+            </div>
+          )}
           <CardGrid cards={content.situations} />
         </div>
       </section>
+
+      {/* Featured photo + text sections */}
+      {content.featured?.map((feature, i) => (
+        <section key={feature.image} className={i % 2 === 0 ? "bg-white py-16 sm:py-24" : "bg-slate-50 py-16 sm:py-24"}>
+          <div className="container-site grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
+            <div className={`fade-up relative min-h-[320px] overflow-hidden rounded-3xl sm:min-h-[400px] ${i % 2 === 1 ? "lg:order-2" : ""}`}>
+              <Image src={feature.image} alt={feature.imageAlt} fill quality={65} sizes="(min-width: 1024px) 50vw, 100vw" className="object-cover" />
+            </div>
+            <div className="fade-up">
+              <Eyebrow>{feature.eyebrow}</Eyebrow>
+              <h2 className="mb-5 text-3xl font-extrabold text-navy sm:text-4xl">{feature.heading}</h2>
+              <p className="leading-8 text-navy/70">{feature.text}</p>
+            </div>
+          </div>
+        </section>
+      ))}
+
+      {/* Why choose us */}
+      {content.whyChoose && content.whyChoose.length > 0 && (
+        <section className="py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading
+              eyebrow="Why Choose Us"
+              title={content.whyChooseTitle ?? `Why Choose ${business.name}?`}
+              intro={content.whyChooseIntro}
+            />
+            <CardGrid cards={content.whyChoose} />
+          </div>
+        </section>
+      )}
+
+      {/* Gallery */}
+      {content.gallery && content.gallery.length > 0 && (
+        <section className="py-16 sm:py-24">
+          <div className="container-site">
+            <SectionHeading
+              eyebrow="On the Job"
+              title={content.galleryTitle ?? `${content.eyebrow} Recovery in Action`}
+              intro={content.galleryIntro}
+            />
+            <div className="grid gap-6 md:grid-cols-3">
+              {content.gallery.map((photo) => (
+                <figure key={photo.src} className="fade-up overflow-hidden rounded-3xl border border-navy/10 bg-slate-50 shadow-sm">
+                  <div className="relative h-64">
+                    <Image src={photo.src} alt={photo.alt} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+                  </div>
+                  <figcaption className="px-5 py-4 text-sm font-semibold text-navy/70">{photo.caption}</figcaption>
+                </figure>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
 
       {/* Major roads */}
       {content.majorRoads && content.majorRoads.length > 0 && (
@@ -261,7 +339,7 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
 
       {/* CTA */}
       <section className="relative isolate overflow-hidden bg-navy py-20 text-white sm:py-28">
-        <Image src="/images/trackrecord-bg.jpg" alt="Recovery truck ready to respond" fill sizes="100vw" className="-z-20 object-cover" />
+        <Image src={content.ctaImage ?? "/images/trackrecord-bg.jpg"} alt={content.ctaImageAlt ?? "Recovery truck ready to respond"} fill sizes="100vw" className="-z-20 object-cover" />
         <div className="absolute inset-0 -z-10 bg-navy/90" />
         <div className="container-site fade-up text-center">
           <Eyebrow>{content.eyebrow}</Eyebrow>

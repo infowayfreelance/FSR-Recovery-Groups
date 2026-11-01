@@ -2,12 +2,14 @@
 //
 // Categories reflect what this site actually uses (see /cookie-policy):
 // - necessary: required for the site to remember your consent choice. Always on.
-// - maps: loads the embedded Google Map (homepage + /areas). Off until accepted.
+// - analytics: loads Google Tag Manager (GTM-MQ4STV94). Off until accepted.
+// - maps: loads the embedded Google Map (homepage, /areas and /contact). Off until accepted.
 //
 // Add a new key here only when a new non-essential technology is actually
 // added to the site — do not add placeholder categories.
 export type ConsentCategories = {
   necessary: true;
+  analytics: boolean;
   maps: boolean;
 };
 
@@ -30,6 +32,7 @@ export function readStoredConsent(): StoredConsent | null {
     return {
       version: CONSENT_VERSION,
       necessary: true,
+      analytics: parsed.analytics === true,
       maps: parsed.maps === true,
       decidedAt: typeof parsed.decidedAt === "string" ? parsed.decidedAt : new Date().toISOString(),
     };
@@ -42,6 +45,7 @@ export function writeStoredConsent(categories: Omit<ConsentCategories, "necessar
   const stored: StoredConsent = {
     version: CONSENT_VERSION,
     necessary: true,
+    analytics: categories.analytics,
     maps: categories.maps,
     decidedAt: new Date().toISOString(),
   };

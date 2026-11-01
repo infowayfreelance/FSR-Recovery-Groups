@@ -4,110 +4,117 @@ import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getServiceNavigation } from "@/data/services";
+import { business } from "@/data/business";
 
 export const metadata: Metadata = {
-  title: "Services",
-  description:
-    "24/7 vehicle breakdown recovery, roadside assistance, jumpstarts, winch out, accident recovery, tyre changes, refueling and vehicle transporting across the region.",
+  title: { absolute: "Expert Vehicle Recovery Services You Can Trust" },
+  description: "Need fast help? Our professional vehicle recovery services are just a call away. Get assistance today!",
+  alternates: { canonical: "/services" },
 };
 
 const services = [
   {
     icon: "fa-solid fa-truck-pickup",
     img: "/images/service-breakdown.jpg",
-    alt: "24/7 Vehicle Breakdown Recovery",
+    alt: "Car being loaded onto a flatbed recovery truck at dusk",
     title: "24/7 Vehicle Breakdown Recovery",
-    href: "/services/vehicle-breakdown-recovery",
+    ...getServiceNavigation("vehicle-breakdown-recovery"),
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
-    key: "vehicle-breakdown-recovery",
     features: [
-      "Available day and night",
-      "Safe recovery to your chosen location",
+      "Available 24 hours a day, every day of the year",
+      "Modern fleet of flatbed and recovery vehicles",
+      "Transport to a garage, home address or storage location",
     ],
   },
   {
     icon: "fa-solid fa-triangle-exclamation",
     img: "/images/service-roadside.jpg",
-    alt: "Roadside Assistance",
+    alt: "Technician checking a car engine roadside in the rain",
     title: "Roadside Assistance",
-    href: "/services/roadside-assistance",
+    ...getServiceNavigation("roadside-assistance"),
     desc: "On-the-spot help with minor faults so you can get back on your way without a full tow.",
-    key: "roadside-assistance",
     features: [
-      "Roadside fault assessment",
-      "Recovery arranged when needed",
+      "On-site assessment of the issue where possible",
+      "Safe assistance on motorways, A-roads and residential streets",
+      "Onward recovery arranged if the issue can't be fixed roadside",
     ],
   },
   {
     icon: "fa-solid fa-car-battery",
     img: "/images/service-jumpstart.jpg",
-    alt: "Jumpstart Services",
+    alt: "Jump-starting a car battery on a frosty driveway",
     title: "Jumpstart Services",
     ...getServiceNavigation("jumpstart-services"),
     desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
     features: [
-      "Fast battery restart",
-      "Charging issue check",
+      "Fast response for flat or failing batteries",
+      "Basic diagnostic check of charging issues",
+      "Recovery arranged if the vehicle cannot be restarted",
     ],
   },
   {
     icon: "fa-solid fa-truck-monster",
     img: "/images/service-winch.jpg",
-    alt: "Winch Out",
+    alt: "Land Rover being winched out of a ditch",
     title: "Winch Out",
     ...getServiceNavigation("winch-out"),
-    desc: "Stuck in mud, sand, or a ditch? Our winches pull your vehicle free without further damage.",
+    desc: "Vehicle stuck in mud, soft ground or a ditch? We assess the situation and provide controlled winch-out assistance where safe access and conditions allow.",
     features: [
-      "Mud, ditch and difficult-access recovery",
-      "Careful, controlled winching",
+      "Equipped for off-road and difficult-access recovery",
+      "Careful winching to avoid further vehicle damage",
+      "Transport back to a hard surface or your chosen location",
     ],
   },
   {
     icon: "fa-solid fa-car-burst",
     img: "/images/service-accident.jpg",
-    alt: "Accident Emergency Assistance",
+    alt: "Technician inspecting a damaged car with a tow truck behind",
     title: "Accident Emergency Assistance",
     ...getServiceNavigation("accident-emergency-assistance"),
     desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
     features: [
-      "Professional scene recovery",
-      "Transport to a body shop or storage",
+      "Sensitive, professional handling at the scene",
+      "Coordination with insurers, police or third parties on request",
+      "Transport to a body shop, garage or storage compound",
     ],
   },
   {
     icon: "fa-solid fa-circle-dot",
     img: "/images/service-tyre.jpg",
-    alt: "Changing Spare Tyre",
+    alt: "Technician fitting a spare wheel to a car",
     title: "Changing Spare Tyre",
     ...getServiceNavigation("changing-spare-tyre"),
     desc: "Quick, safe roadside tyre changes so a puncture doesn't leave you waiting around.",
     features: [
-      "Cars and light vans",
-      "Safe roadside fitting",
+      "Fast roadside tyre swaps for cars and light vans",
+      "Safe working practices on busy roads",
+      "Advice on next steps if a replacement tyre is needed",
     ],
   },
   {
     icon: "fa-solid fa-gas-pump",
     img: "/images/service-refuel.jpg",
-    alt: "Refueling",
+    alt: "Technician pouring fuel from a can into a car",
     title: "Refueling",
     ...getServiceNavigation("refueling"),
     desc: "Run out of fuel? We'll bring enough to get you safely to the nearest station.",
     features: [
-      "Petrol and diesel delivery",
-      "Enough fuel to reach a station",
+      "Enough fuel to reach the nearest station",
+      "Fast response to minimise time stuck roadside",
+      "Available for petrol and diesel vehicles",
     ],
   },
   {
     icon: "fa-solid fa-truck-ramp-box",
     img: "/images/service-transport.jpg",
-    alt: "Vehicle Transporting",
+    alt: "Clean car strapped to a flatbed in a car park",
     title: "Vehicle Transporting",
     ...getServiceNavigation("vehicle-transporting"),
     desc: "Safe, secure transport for vehicles that can't be driven, over any distance.",
     features: [
-      "Flexible local and long-distance moves",
-      "Secure loading and transport",
+      "Suitable for dealership transfers and personal moves",
+      "Flexible scheduling to suit your timeline",
+      "Secure strapping and careful loading throughout",
     ],
   },
 ];
@@ -156,31 +163,35 @@ const faqs = [
     q: "Is my vehicle insured during recovery?",
     a: "Yes, we are fully insured and take care to load, transport and unload every vehicle safely from start to finish.",
   },
-  {
-    q: "Are you available at night and on weekends?",
-    a: "Yes. Our recovery service operates 24 hours a day, seven days a week, including weekends and bank holidays.",
-  },
-  {
-    q: "What details should I provide when I call?",
-    a: "Please share your exact location, vehicle make and model, the problem you are experiencing and where you would like the vehicle taken.",
-  },
-  {
-    q: "Can you recover vehicles from motorways?",
-    a: "Yes. Move to a safe place where possible, follow motorway safety guidance and tell us your carriageway, direction and nearest marker or junction.",
-  },
-  {
-    q: "Can you transport a vehicle that is not broken down?",
-    a: "Yes. We can transport non-running vehicles, dealership purchases and vehicles being moved between homes, garages or storage locations.",
-  },
-  {
-    q: "What types of vehicles can you recover?",
-    a: "We assist most cars and light vans. Tell us the vehicle type and condition when you contact us so we can send suitable equipment.",
-  },
-  {
-    q: "Can I travel with my vehicle?",
-    a: "Passenger space depends on the recovery vehicle and circumstances. Let us know how many people are with you when you call so we can advise.",
-  },
 ];
+
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "CollectionPage",
+      name: "Vehicle Recovery Services",
+      url: "https://fsrrecoverygroups.co.uk/services",
+      hasPart: {
+        "@type": "ItemList",
+        itemListElement: services.map((s, i) => ({
+          "@type": "ListItem",
+          position: i + 1,
+          url: `https://fsrrecoverygroups.co.uk${s.href}`,
+          name: s.title,
+        })),
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
 
 export default function ServicesPage() {
   return (
@@ -189,7 +200,21 @@ export default function ServicesPage() {
 
       <main>
         {/* Page Banner */}
-        <section className="hero-bg text-white">
+        <section className="relative isolate overflow-hidden text-white">
+          <Image
+            src="/images/service-roadside.webp"
+            alt="Technician checking a car engine roadside in the rain"
+            fill
+            preload
+            fetchPriority="high"
+            quality={65}
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }}
+          />
           <div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20">
             <p className="mb-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/40 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
               <i className="fa-solid fa-screwdriver-wrench flex-shrink-0"></i> Our Services
@@ -201,11 +226,11 @@ export default function ServicesPage() {
               Practical, professional support for breakdowns, accidents and roadside emergencies across the region.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
-                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
@@ -220,55 +245,44 @@ export default function ServicesPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">What We Offer</p>
+              <p className="mb-3 font-bold text-red-dark">What We Offer</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Complete Roadside &amp; Recovery Support</h2>
               <p className="text-navy/70">From a flat battery to a full accident recovery, our team handles every job with the same care and attention.</p>
             </div>
-            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
               {services.map((service) => (
-                <article id={service.key} key={service.title} className="service-card fade-up group flex scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white">
-                  <div className="relative overflow-hidden">
-                    <Image src={service.img} alt={service.alt} width={1200} height={900} className="h-52 w-full object-cover transition duration-500 group-hover:scale-105" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-navy/60 via-transparent to-transparent" />
-                    <div className="absolute bottom-4 left-5 flex h-11 w-11 items-center justify-center rounded-xl border border-white/30 bg-white/95 shadow-lg">
-                      <i className={`${service.icon} text-lg text-red`}></i>
-                    </div>
-                  </div>
+                <article id={service.key} key={service.title} className="service-card fade-up flex scroll-mt-28 flex-col overflow-hidden rounded-3xl border border-navy/10 bg-white">
+                  <Image src={service.img} alt={service.alt} width={900} height={600} sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw" className="h-48 w-full object-cover" />
                   <div className="flex flex-1 flex-col p-6">
+                    <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-red/10">
+                      <i className={`${service.icon} text-xl text-red`}></i>
+                    </div>
                     <h3 className="mb-2 text-xl font-bold text-navy">
-                      {service.href ? <Link href={service.href} className="transition hover:text-red">{service.title}</Link> : service.title}
+                      {service.available ? <Link href={service.href} className="transition hover:text-red">{service.title}</Link> : service.title}
                     </h3>
-                    <p className="mb-5 text-sm leading-6 text-navy/65">{service.desc}</p>
-                    <ul className="mb-6 grid flex-1 gap-2 border-t border-navy/8 pt-4">
+                    <p className="mb-4 text-navy/70">{service.desc}</p>
+                    <ul className="mb-6 flex-1 space-y-2">
                       {service.features.map((feature) => (
-                        <li key={feature} className="flex items-start gap-2.5 text-sm font-medium text-navy/75">
-                          <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-red/10">
-                            <i className="fa-solid fa-check text-[10px] text-red"></i>
-                          </span>
+                        <li key={feature} className="flex items-start gap-2 text-sm text-navy/70">
+                          <i className="fa-solid fa-check mt-1 text-red"></i>
                           <span>{feature}</span>
                         </li>
                       ))}
                     </ul>
-                    <div className="mt-auto flex items-center gap-3 border-t border-navy/8 pt-5">
-                      {service.href && (
-                        <Link href={service.href} aria-label={`Learn more about ${service.title}`} className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full border border-navy/15 text-navy transition hover:border-red hover:bg-red hover:text-white">
-                          <i className="fa-solid fa-arrow-right text-sm"></i>
-                        </Link>
-                      )}
+                    <div className="mt-auto flex gap-3">
                       <a
-                        href="tel:+447888502989"
+                        href={business.tel}
                         className="flex-1 rounded-full bg-navy px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-navy-light"
                       >
                         <i className="fa-solid fa-phone mr-1.5"></i>Call Now
                       </a>
                       <a
-                        href="https://wa.me/447888502989"
+                        href={business.whatsapp}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-whatsapp text-white transition hover:bg-green-600"
-                        aria-label={`Message about ${service.title} on WhatsApp`}
+                        className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
                       >
-                        <i className="fa-brands fa-whatsapp text-lg"></i>
+                        <i className="fa-brands fa-whatsapp mr-1.5"></i>WhatsApp
                       </a>
                     </div>
                   </div>
@@ -282,7 +296,7 @@ export default function ServicesPage() {
         <section className="bg-navy py-20 text-white">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">How It Works</p>
+              <p className="mb-3 font-bold text-red-dark">How It Works</p>
               <h2 className="mb-4 text-3xl font-extrabold lg:text-4xl">Simple From First Call to Drop-Off</h2>
               <p className="text-white/70">No confusing steps. Here is exactly what happens when you contact us.</p>
             </div>
@@ -301,21 +315,20 @@ export default function ServicesPage() {
 
         {/* FAQs */}
         <section className="bg-white py-20">
-          <div className="container-site mx-auto max-w-4xl">
+          <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
-              <p className="mb-3 font-bold text-red">Common Questions</p>
+              <p className="mb-3 font-bold text-red-dark">Common Questions</p>
               <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">Frequently Asked Questions</h2>
             </div>
-            <div className="grid gap-4 md:grid-cols-2 md:items-start">
-              {faqs.map((faq, index) => (
-                <details key={faq.q} className="faq-item fade-up group rounded-2xl border border-navy/10 bg-slate-50">
-                  <summary className="flex cursor-pointer list-none items-center gap-3 p-5 font-bold text-navy">
-                    <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-red/10 text-xs font-extrabold text-red">{String(index + 1).padStart(2, "0")}</span>
-                    <span className="flex-1">{faq.q}</span>
-                    <i className="fa-solid fa-plus text-sm text-red transition-transform group-open:rotate-45"></i>
-                  </summary>
-                  <p className="px-5 pb-5 pl-16 text-sm leading-6 text-navy/70">{faq.a}</p>
-                </details>
+            <div className="grid gap-5">
+              {faqs.map((faq) => (
+                <div key={faq.q} className="fade-up rounded-2xl border border-navy/10 p-6">
+                  <h3 className="mb-2 flex items-start gap-2 font-bold text-navy">
+                    <i className="fa-solid fa-circle-question mt-1 text-red"></i>
+                    {faq.q}
+                  </h3>
+                  <p className="pl-7 text-navy/70">{faq.a}</p>
+                </div>
               ))}
             </div>
           </div>
@@ -327,11 +340,11 @@ export default function ServicesPage() {
             <h2 className="mb-5 text-3xl font-extrabold lg:text-5xl">Need a Service Not Listed?</h2>
             <p className="mb-8 text-lg text-white/90">Get in touch and we will let you know how we can help with your specific situation.</p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+              <a href={business.tel} className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
                 <i className="fa-solid fa-phone mr-2"></i>Call Now
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"
@@ -341,6 +354,8 @@ export default function ServicesPage() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />

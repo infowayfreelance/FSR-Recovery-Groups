@@ -57,7 +57,6 @@ const content: AreaPageContent = {
   ctaHeading: "Broken Down in Catterick?",
   ctaText: "Call or WhatsApp FSR Recovery Group now with your location and we'll confirm the fastest way to help.",
   nearbyAreas: [
-    { label: "Darlington", href: "/areas/darlington" },
     { label: "Ripon", href: "/areas/ripon" },
     { label: "A1(M) Recovery", href: "/areas/a1m" },
   ],

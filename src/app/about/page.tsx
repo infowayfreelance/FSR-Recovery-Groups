@@ -1,12 +1,20 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { business } from "@/data/business";
+import { businessEntityRef, breadcrumbList } from "@/data/schema";
+
+const title = "About FSR Recovery Group | Darlington Recovery Team";
+const description = "Meet FSR Recovery Group: a fully insured, 15-year Darlington recovery team offering fast, honest 24/7 breakdown and roadside assistance across the region.";
 
 export const metadata: Metadata = {
-  title: "About Us",
-  description:
-    "Learn about FSR Recovery Groups — 15+ years providing dependable 24/7 vehicle recovery, roadside assistance and transport across the region.",
+  title: { absolute: title },
+  description,
+  alternates: { canonical: "/about" },
+  openGraph: { title, description, url: "/about", type: "website", siteName: business.name },
+  twitter: { card: "summary", title, description },
 };
 
 const values = [
@@ -56,7 +64,7 @@ const areas = [
 const faqs = [
   {
     q: "How long have you been operating?",
-    a: "FSR Recovery Groups has been providing roadside and recovery services for over 15 years. Our reputation is built on consistent, careful service.",
+    a: "FSR Recovery Group has been providing roadside and recovery services for over 15 years. Our reputation is built on consistent, careful service.",
   },
   {
     q: "What vehicles can you recover?",
@@ -72,6 +80,32 @@ const faqs = [
   },
 ];
 
+const schema = {
+  "@context": "https://schema.org",
+  "@graph": [
+    breadcrumbList([{ name: "Home", path: "/" }, { name: "About", path: "/about" }]),
+    {
+      "@type": "AboutPage",
+      name: title,
+      description,
+      url: "https://fsrrecoverygroups.co.uk/about",
+      mainEntity: {
+        ...businessEntityRef,
+        email: business.email,
+        description: "A fully insured vehicle recovery and roadside assistance company based in Darlington, providing 24/7 breakdown recovery, winch-out, jumpstart, refuelling, tyre and accident recovery services across the North East.",
+      },
+    },
+    {
+      "@type": "FAQPage",
+      mainEntity: faqs.map((faq) => ({
+        "@type": "Question",
+        name: faq.q,
+        acceptedAnswer: { "@type": "Answer", text: faq.a },
+      })),
+    },
+  ],
+};
+
 export default function AboutPage() {
   return (
     <>
@@ -79,7 +113,21 @@ export default function AboutPage() {
 
       <main>
         {/* Page Banner */}
-        <section className="hero-bg text-white">
+        <section className="relative isolate overflow-hidden text-white">
+          <Image
+            src="/images/about-hero.webp"
+            alt="FSR Recovery Group technician checking equipment on the back of a recovery truck"
+            fill
+            preload
+            fetchPriority="high"
+            quality={65}
+            sizes="100vw"
+            className="-z-20 object-cover"
+          />
+          <div
+            className="absolute inset-0 -z-10"
+            style={{ background: "linear-gradient(90deg, rgba(11, 34, 65, 0.95), rgba(11, 34, 65, 0.8))" }}
+          />
           <div className="container-site fade-up py-10 text-center sm:py-14 lg:py-20">
             <p className="mb-4 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/40 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:mb-6 sm:px-4 sm:py-2 sm:text-sm">
               <i className="fa-solid fa-users flex-shrink-0"></i> About Us
@@ -91,11 +139,11 @@ export default function AboutPage() {
               A straightforward, professional recovery service run by people who care about getting you back on the road safely.
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
-              <a href="tel:+447888502989" className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
-                <i className="fa-solid fa-phone mr-2"></i>Call +44 7888 502989
+              <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-5 py-3.5 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:px-7 sm:py-4 sm:text-base"
@@ -110,12 +158,12 @@ export default function AboutPage() {
         <section className="bg-white py-20">
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Our Story</p>
+              <p className="mb-3 font-bold text-red-dark">Our Story</p>
               <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
                 A Recovery Team You Can Rely On
               </h2>
               <p className="mb-4 leading-8 text-navy/70">
-                FSR Recovery Groups started with a single truck and a simple promise: turn up fast, treat
+                FSR Recovery Group started with a single truck and a simple promise: turn up fast, treat
                 every vehicle like our own, and never leave a customer stranded. Fifteen years later, that
                 promise hasn&rsquo;t changed, even as we&rsquo;ve grown into a full regional recovery operation.
               </p>
@@ -123,7 +171,9 @@ export default function AboutPage() {
                 Today our team handles everything from routine roadside callouts to complex accident
                 recoveries, working with private drivers, fleet operators, and insurance partners across
                 the region. We&rsquo;ve invested in a modern fleet and ongoing training so that whatever
-                the job, it&rsquo;s handled properly the first time.
+                the job, it&rsquo;s handled properly the first time. See our full{" "}
+                <Link href="/services" className="font-semibold text-red">range of recovery services</Link>{" "}
+                to find the right option for your situation.
               </p>
               <p className="leading-8 text-navy/70">
                 We are fully insured, always reachable, and available to take calls when you need us. No
@@ -132,11 +182,11 @@ export default function AboutPage() {
             </div>
             <div className="fade-up">
               <Image
-                src="/images/service-transport.jpg"
-                alt="FSR Recovery Groups vehicle transporter on the highway"
-                width={1735}
-                height={1080}
-                priority
+                src="/images/about-fleet-transport.webp"
+                alt="FSR Recovery Group transporter delivering a car outside the depot"
+                width={1600}
+                height={900}
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
             </div>
@@ -147,7 +197,7 @@ export default function AboutPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">What Drives Us</p>
+              <p className="mb-3 font-bold text-red-dark">What Drives Us</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Our Values</h2>
               <p className="text-navy/70">The principles we apply to every job, regardless of size or complexity.</p>
             </div>
@@ -169,7 +219,7 @@ export default function AboutPage() {
         <section className="bg-navy py-20 text-white">
           <div className="container-site grid items-center gap-12 lg:grid-cols-2">
             <div className="fade-up">
-              <p className="mb-3 font-bold text-red">Why Drivers Choose Us</p>
+              <p className="mb-3 font-bold text-red-dark">Why Drivers Choose Us</p>
               <h2 className="mb-5 text-3xl font-extrabold lg:text-4xl">
                 Trusted, Straightforward and Fast
               </h2>
@@ -195,10 +245,11 @@ export default function AboutPage() {
             </div>
             <div className="fade-up">
               <Image
-                src="/images/gallery-2.jpg"
-                alt="FSR Recovery technician winching a vehicle free"
-                width={2000}
-                height={1333}
+                src="/images/about-tyre-strap.webp"
+                alt="FSR Recovery Group technician securing a car wheel with a ratchet strap"
+                width={1200}
+                height={800}
+                sizes="(max-width: 1023px) 100vw, 50vw"
                 className="min-h-[380px] w-full rounded-3xl object-cover shadow-2xl"
               />
             </div>
@@ -209,7 +260,7 @@ export default function AboutPage() {
         <section className="bg-white py-20">
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red">Where We Operate</p>
+              <p className="mb-3 font-bold text-red-dark">Where We Operate</p>
               <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Areas We Cover</h2>
               <p className="text-navy/70">
                 We regularly assist drivers across the following situations and locations. Not sure if we
@@ -224,6 +275,11 @@ export default function AboutPage() {
                 </div>
               ))}
             </div>
+            <div className="fade-up mt-8 text-center">
+              <Link href="/areas" className="inline-block font-bold text-red">
+                See our full coverage area <i className="fa-solid fa-arrow-right ml-1" />
+              </Link>
+            </div>
           </div>
         </section>
 
@@ -231,8 +287,8 @@ export default function AboutPage() {
         <section className="bg-slate-50 py-20">
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-12 text-center">
-              <p className="mb-3 font-bold text-red">Common Questions</p>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">About FSR Recovery Groups</h2>
+              <p className="mb-3 font-bold text-red-dark">Common Questions</p>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">About {business.name}</h2>
             </div>
             <div className="grid gap-5">
               {faqs.map((faq) => (
@@ -256,11 +312,11 @@ export default function AboutPage() {
               Call or WhatsApp us and our team will be with you as quickly as possible.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
-              <a href="tel:+447888502989" className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
+              <a href={business.tel} className="rounded-full bg-navy px-8 py-4 font-bold text-white transition hover:bg-navy-light">
                 <i className="fa-solid fa-phone mr-2"></i>Call Now
               </a>
               <a
-                href="https://wa.me/447888502989"
+                href={business.whatsapp}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"
@@ -270,6 +326,8 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
+
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />
       </main>
 
       <Footer />
