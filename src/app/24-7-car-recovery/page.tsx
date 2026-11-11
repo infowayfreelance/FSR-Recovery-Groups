@@ -8,8 +8,8 @@ import { Eyebrow, FaqAccordion, SectionHeading } from "@/components/ServicePage"
 import { business } from "@/data/business";
 import { getServiceNavigation } from "@/data/services";
 
-const title = "Need a Tow? 24/7 Breakdown Recovery | FSR";
-const description = "Speak to FSR about a breakdown, a flat battery or a vehicle that needs moving. Ask for a quote by phone or WhatsApp, day or night.";
+const title = "24/7 Car Recovery, Van Recovery & Towing | FSR";
+const description = "Call FSR for 24/7 roadside assistance, emergency towing, car and van recovery, or a jumpstart service. Get a quote by phone or WhatsApp.";
 const path = "/24-7-car-recovery";
 
 export const metadata: Metadata = {
@@ -41,30 +41,30 @@ export const metadata: Metadata = {
 };
 
 const howItWorks = [
-  { lead: "Get hold of the team", text: "Call or start a WhatsApp chat so we can hear what you need." },
-  { lead: "Describe the job", text: "Send the pickup point, vehicle details and preferred drop-off if you have one." },
-  { lead: "Agree on the next step", text: "We explain what we can do and discuss the cost before you decide." },
-  { lead: "Hand over the vehicle", text: "If a tow is needed, we secure the vehicle for the trip and unload it at the agreed stop." },
+  { lead: "Request breakdown help", text: "Call FSR or send a WhatsApp message for roadside assistance or a recovery quote." },
+  { lead: "Share your vehicle and pickup details", text: "Give us your pickup point, the make and model, and where you want the vehicle taken if you need a tow." },
+  { lead: "Confirm the service and price", text: "We check whether a roadside callout or a recovery truck is the right option and quote before you book." },
+  { lead: "Get your vehicle towed", text: "If a tow is needed, we secure the vehicle for the trip and unload it at the agreed stop." },
 ];
 
 const marqueeItems = [
-  { icon: "fa-solid fa-truck-pickup", text: "Day and Night Towing" },
-  { icon: "fa-solid fa-triangle-exclamation", text: "Help Where You Stop" },
-  { icon: "fa-solid fa-car-battery", text: "Flat Battery Help" },
-  { icon: "fa-solid fa-truck-monster", text: "Stuck Vehicle Recovery" },
-  { icon: "fa-solid fa-car-burst", text: "Towing After a Crash" },
+  { icon: "fa-solid fa-truck-pickup", text: "24/7 Emergency Towing" },
+  { icon: "fa-solid fa-triangle-exclamation", text: "24/7 Roadside Assistance" },
+  { icon: "fa-solid fa-car-battery", text: "Jumpstart Service" },
+  { icon: "fa-solid fa-truck-monster", text: "Vehicle Winch-Out" },
+  { icon: "fa-solid fa-car-burst", text: "Accident Recovery" },
   { icon: "fa-solid fa-gas-pump", text: "Emergency Fuel Delivery" },
-  { icon: "fa-solid fa-truck-ramp-box", text: "Booked Vehicle Moves" },
-  { icon: "fa-solid fa-bolt", text: "Speak to the Team" },
+  { icon: "fa-solid fa-truck-ramp-box", text: "Flatbed Vehicle Transport" },
+  { icon: "fa-solid fa-bolt", text: "Light Van Recovery" },
 ];
 
 const featureIcons = [
-  { icon: "fa-solid fa-truck-pickup", label: "Breakdown Towing" },
-  { icon: "fa-solid fa-car-battery", label: "Battery Boosts" },
-  { icon: "fa-solid fa-truck-monster", label: "Winch Assistance" },
-  { icon: "fa-solid fa-car-burst", label: "Post-Collision Towing" },
-  { icon: "fa-solid fa-truck-ramp-box", label: "Scheduled Transport" },
-  { icon: "fa-solid fa-clock", label: "Day or Night Help" },
+  { icon: "fa-solid fa-truck-pickup", label: "Car Recovery" },
+  { icon: "fa-solid fa-car-battery", label: "Flat Jumpstart Service for Flat Batteries" },
+  { icon: "fa-solid fa-truck-monster", label: "Winch-Out Recovery" },
+  { icon: "fa-solid fa-car-burst", label: "Accident Towing" },
+  { icon: "fa-solid fa-truck-ramp-box", label: "Vehicle Transport" },
+  { icon: "fa-solid fa-clock", label: "24/7 Breakdown Help" },
 ];
 
 const services = [
@@ -72,43 +72,43 @@ const services = [
     key: "vehicle-breakdown-recovery",
     img: "/images/service-breakdown.jpg",
     alt: "Flatbed collecting a stranded vehicle at twilight",
-    title: "Breakdown Towing, Day or Night",
-    desc: "If your car or light van has stopped working, we can collect it and tow it to a garage or another agreed stop.",
+    title: "Car and Light Van Breakdown Recovery",
+    desc: "Book a recovery truck if your car or light van has broken down and cannot be driven. We can tow it to a garage, your home or another agreed drop-off.",
   },
   {
     key: "roadside-assistance",
     img: "/images/service-roadside.jpg",
     alt: "Roadside technician looking under the bonnet",
-    title: "On-the-Spot Roadside Help",
-    desc: "Tell us what stopped your journey. We can check whether the problem can be dealt with where you stopped.",
+    title: "24/7 Roadside Assistance",
+    desc: "Call for help with a flat battery, a puncture or an empty tank. We check what can be done on the spot and whether you need a tow.",
   },
   {
     key: "jumpstart-services",
     img: "/images/service-jumpstart.jpg",
     alt: "Jump leads connected to a vehicle battery",
-    title: "Battery Jump Starts",
-    desc: "If the battery is flat, we can try a jump start on a suitable vehicle and discuss recovery if it still will not start.",
+    title: "Jumpstart Service for Flat Batteries",
+    desc: "If your engine won’t turn over, ask for a jump start for your car or light van. If it still won’t start, we can discuss towing it to a garage.",
   },
   {
     key: "accident-emergency-assistance",
     img: "/images/service-accident.jpg",
     alt: "Recovery worker checking a car with collision damage",
-    title: "Recovery After a Collision",
-    desc: "Once the scene is safe, we can collect your damaged vehicle and take it to a repairer or another suitable drop-off.",
+    title: "Accident Recovery and Towing",
+    desc: "Need a tow after a crash? Once the scene is safe, we can recover a damaged car or light van and take it to a bodyshop or another suitable drop-off.",
   },
   {
     key: "winch-out",
     img: "/images/service-winch.jpg",
     alt: "Winch line pulling a 4x4 clear of a ditch",
-    title: "Winching for Stuck Vehicles",
-    desc: "Stuck off the road? We check access and the ground before deciding whether we can winch the vehicle free.",
+    title: "Winch-Out Recovery for Stuck Vehicles",
+    desc: "If your car, van or 4x4 is stuck in mud, snow or a ditch, ask about winch-out recovery. We check access and ground conditions before taking on the job.",
   },
   {
     key: "vehicle-transporting",
     img: "/images/service-transport.jpg",
     alt: "Vehicle strapped down for a flatbed journey",
-    title: "Scheduled Vehicle Transport",
-    desc: "Moving a car on a planned date? Give us both addresses and we can discuss a flatbed collection and delivery.",
+    title: "Booked Flatbed Vehicle Transport",
+    desc: "Arrange flatbed transport for a car that needs moving between addresses. Send the collection point, drop-off and preferred date for a quote.",
   },
 ];
 
@@ -117,15 +117,15 @@ const additionalServices = [
     key: "changing-spare-tyre",
     img: "/images/service-tyre.jpg",
     alt: "Spare wheel being fitted by a roadside technician",
-    title: "Roadside Spare Wheel Fitting",
-    desc: "If a puncture stops you and you have a usable spare wheel, we can fit it when there is a safe place to work.",
+    title: "Flat Tyre Help and Spare Wheel Fitting",
+    desc: "If a puncture leaves you stranded, we can fit your suitable spare wheel where it’s safe to work. Call us if you need recovery instead.",
   },
   {
     key: "refueling",
     img: "/images/service-refuel.jpg",
     alt: "Roadside refuelling from a portable fuel can",
     title: "Emergency Fuel Delivery",
-    desc: "If the tank is empty, tell us which fuel your vehicle takes so we can discuss bringing some to you.",
+    desc: "Run out of petrol or diesel? Call for emergency fuel delivery and tell us which fuel your vehicle takes.",
   },
 ];
 
@@ -134,7 +134,7 @@ const landingServices = [...services, ...additionalServices];
 const whyChoose = [
   { icon: "fa-solid fa-award", text: "Over 15 years spent helping drivers after breakdowns and moving vehicles." },
   { icon: "fa-solid fa-shield-halved", text: "Insurance covers the recovery while your vehicle is loaded, moved and unloaded." },
-  { icon: "fa-solid fa-car-side", text: "We can discuss recovery for your car, light van, SUV or 4x4." },
+  { icon: "fa-solid fa-car-side", text: "We offer car recovery and light van recovery. Call to check if we can tow your SUV or 4x4." },
   { icon: "fa-solid fa-clock", text: "You can reach us at night, on weekends and during the working week." },
   { icon: "fa-solid fa-comments", text: "The recovery team answers calls and WhatsApp messages directly." },
   { icon: "fa-solid fa-handshake-angle", text: "Ask us if you need us to speak with your insurer or its recovery contact." },
@@ -142,28 +142,28 @@ const whyChoose = [
 
 const landingFaqs = [
   {
-    question: "Can I call in the middle of the night?",
-    answer: "Yes. The team takes calls and WhatsApp enquiries at any hour.",
+    question: "Do you offer 24/7 roadside assistance?",
+    answer: "Yes. You can call day or night for a jump start, spare wheel fitting, emergency fuel delivery or breakdown towing.",
   },
   {
-    question: "What helps you quote over the phone?",
-    answer: "Have your pickup point, make and model, and a short description of the fault ready. Give us a drop-off if you have chosen one.",
+    question: "Can I book a towing service near me?",
+    answer: "Call or WhatsApp your pickup point and vehicle details. We’ll confirm whether we can attend and quote for the tow before you book.",
   },
   {
-    question: "Can I choose where the tow ends?",
+    question: "Can your recovery truck tow my car to a garage?",
     answer: "Yes. We can discuss a suitable place to unload, such as your mechanic, a bodyshop or your driveway.",
   },
   {
-    question: "Can you collect a car that cannot be driven?",
+    question: "Can I book accident recovery for a car I can’t drive?",
     answer: "Call us if your car will not start or has damage that makes driving unsafe. If a collision has left anyone hurt or at risk, contact emergency services before arranging a tow.",
   },
   {
-    question: "Can I book recovery for a van or a 4x4?",
-    answer: "We handle suitable light vans and 4x4s as well as cars and SUVs. Share the model so we can check what equipment the job needs.",
+    question: "Do you offer light van recovery?",
+    answer: "Yes. Tell us your van’s make, model and whether it’s carrying a load. We’ll check what recovery equipment is suitable.",
   },
   {
-    question: "What affects the price of a tow?",
-    answer: "The quote depends on the vehicle, the journey and the equipment needed. We can talk through the price once we have the job details.",
+    question: "How much does emergency towing cost?",
+    answer: "The price depends on your vehicle, the towing distance and any equipment needed for recovery. Send the pickup and drop-off details for a quote.",
   },
 ];
 
@@ -205,22 +205,22 @@ export default function CarRecoveryLandingPage() {
             <div className="fade-up">
               <p className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/30 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:px-4 sm:py-2 sm:text-sm">
                 <i className="fa-solid fa-bolt flex-shrink-0"></i>
-                <span>Speak to a recovery operator now</span>
+                <span>Emergency breakdown and towing service</span>
               </p>
               <h1 className="mb-4 text-3xl leading-tight font-extrabold sm:mb-6 sm:text-4xl lg:text-6xl">
-                Broken down? <span className="text-red">Get 24/7 car recovery</span>
+                24/7 Car Recovery <span className="text-red">&amp; Emergency Towing</span>
               </h1>
               <p className="mb-6 text-base text-white/80 sm:mb-8 sm:text-lg">
-                If your car has stopped or is unsafe to drive, speak to the team at {business.name}.
-                Share the pickup point and tell us what went wrong. We&rsquo;ll check what help is
-                available and explain the cost before you book.
+                Call FSR for <strong className="text-white">24/7 roadside assistance</strong>, light
+                van recovery or a jumpstart service. If your vehicle can&rsquo;t be driven, send us
+                your pickup point for an emergency towing quote.
               </p>
               <div className="mb-7 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:gap-4">
                 <a
                   href={business.tel}
                   className="btn-glow flex min-h-[52px] w-full items-center justify-center rounded-full bg-red px-6 py-4 text-center text-sm font-bold text-white transition sm:w-auto sm:px-7 sm:text-base"
                 >
-                  <i className="fa-solid fa-phone mr-2"></i>Phone {business.phoneDisplay}
+                  <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
                 </a>
                 <a
                   href={business.whatsapp}
@@ -228,13 +228,13 @@ export default function CarRecoveryLandingPage() {
                   rel="noopener noreferrer"
                   className="flex min-h-[52px] w-full items-center justify-center rounded-full bg-whatsapp px-6 py-4 text-center text-sm font-bold text-white transition hover:bg-green-600 sm:w-auto sm:px-7 sm:text-base"
                 >
-                  <i className="fa-brands fa-whatsapp mr-2"></i>Chat on WhatsApp
+                  <i className="fa-brands fa-whatsapp mr-2"></i>Get a WhatsApp Quote
                 </a>
               </div>
               <div className="mb-6 grid grid-cols-2 gap-2 sm:mb-8 sm:grid-cols-4 sm:gap-3">
                 <div className="rounded-xl border border-white/20 bg-white/10 p-3 text-center sm:rounded-2xl sm:p-4">
                   <strong className="block text-xl text-red sm:text-2xl">24/7</strong>
-                  <span className="text-xs text-slate-300">Phone support</span>
+                  <span className="text-xs text-slate-300">Breakdown assistance</span>
                 </div>
                 <div className="rounded-xl border border-white/20 bg-white/10 p-3 text-center sm:rounded-2xl sm:p-4">
                   <strong className="block text-xl text-red sm:text-2xl">Direct</strong>
@@ -298,17 +298,17 @@ export default function CarRecoveryLandingPage() {
             <div className="fade-up order-1 lg:order-2">
               <p className="mb-3 font-bold text-red-dark">Over 15 years in vehicle recovery</p>
               <h2 className="mb-5 text-3xl font-extrabold text-navy lg:text-4xl">
-                When your vehicle can&rsquo;t go any further
+                Emergency Towing for Cars and Light Vans
               </h2>
               <p className="mb-6 leading-8 text-navy/70">
-                If the vehicle needs a tow, let us know where it can be picked up and where you want it
-                taken. We load and secure suitable cars and light vans on a recovery truck for the trip
-                to a garage, repair centre or other agreed stop.
+                A mechanical fault, overheating or a failed clutch can leave your vehicle unsafe to
+                drive. Our car recovery and light van recovery service can get it to your chosen
+                garage, repair centre or other agreed drop-off.
               </p>
               <p className="mb-6 leading-8 text-navy/70">
                 Engine trouble, an electrical fault or a failed clutch can leave you stuck. Ask about{" "}
                 <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">
-                  towing after a breakdown
+                  breakdown towing
                 </Link>{" "}
                 or help after a collision. For a car stuck in mud or a ditch, we can check whether{" "}
                 <Link href="/services/winch-out" className="font-semibold text-red hover:underline">
@@ -319,7 +319,7 @@ export default function CarRecoveryLandingPage() {
               <p className="mb-8 leading-8 text-navy/70">
                 For a move you can book ahead, our{" "}
                 <Link href="/services/vehicle-transporting" className="font-semibold text-red hover:underline">
-                  scheduled transport service
+                  flatbed vehicle transport
                 </Link>{" "}
                 can take a car from one agreed address to another.
               </p>
@@ -362,10 +362,10 @@ export default function CarRecoveryLandingPage() {
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
               <p className="mb-3 font-bold text-red-dark">Find the help you need</p>
-              <h2 className="mb-4 text-3xl font-extrabold text-white lg:text-4xl">Roadside Help, Towing and Transport</h2>
+              <h2 className="mb-4 text-3xl font-extrabold text-white lg:text-4xl">Roadside Assistance and Vehicle Recovery Services</h2>
               <p className="text-slate-400">
-                Need a battery boost, a tow or a vehicle moved on a set date? Choose the service that fits
-                your situation and contact us for a quote.
+                Find the right service for a breakdown, collision, flat battery or puncture. You can
+                also book a flatbed for a planned vehicle move.
               </p>
             </div>
             <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
@@ -425,7 +425,7 @@ export default function CarRecoveryLandingPage() {
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
               <Eyebrow>From call to drop-off</Eyebrow>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">What Happens After You Get in Touch?</h2>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">How to Book a Recovery Truck</h2>
             </div>
             <ol className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
               {howItWorks.map((step, i) => (
@@ -448,7 +448,7 @@ export default function CarRecoveryLandingPage() {
           <div className="container-site">
             <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
               <p className="mb-3 font-bold text-red-dark">About our team</p>
-              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">What You Can Expect From FSR</h2>
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Why Book Your Vehicle Recovery With FSR?</h2>
             </div>
             <div className="grid gap-7 md:grid-cols-3">
               {whyChoose.map((item) => (
@@ -468,7 +468,7 @@ export default function CarRecoveryLandingPage() {
           <div className="container-site mx-auto max-w-3xl">
             <div className="fade-up mb-10 text-center">
               <Eyebrow>Before we arrive</Eyebrow>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">While You Wait for the Recovery Truck</h2>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">Waiting for Roadside Assistance or a Tow</h2>
             </div>
             <div className="fade-up space-y-4 leading-7 text-navy/70">
               <p>Call emergency services before arranging recovery if anyone is hurt or still at risk.</p>
@@ -480,7 +480,7 @@ export default function CarRecoveryLandingPage() {
         {/* ── FAQs ── */}
         <section className="bg-slate-50 py-16 sm:py-24">
           <div className="container-site">
-            <SectionHeading eyebrow="Before you book" title="Questions About Arranging a Tow" />
+            <SectionHeading eyebrow="Before you book" title="Car Recovery and Towing FAQs" />
             <FaqAccordion faqs={landingFaqs} />
           </div>
         </section>
@@ -489,16 +489,16 @@ export default function CarRecoveryLandingPage() {
         <section className="cta-parallax-bg py-24 text-center text-white">
           <div className="container-site fade-up">
             <p className="mb-6 inline-flex items-center gap-2 rounded-full border border-red/40 bg-red/20 px-5 py-2 text-sm font-bold text-red">
-              <i className="fa-solid fa-triangle-exclamation"></i> Talk to the team directly
+              <i className="fa-solid fa-triangle-exclamation"></i> Urgent recovery enquiries
             </p>
-            <h2 className="mb-5 text-3xl font-extrabold lg:text-5xl">Let&rsquo;s Get Your Recovery Arranged</h2>
+            <h2 className="mb-5 text-3xl font-extrabold lg:text-5xl">Need an Emergency Tow or Van Recovery?</h2>
             <p className="mx-auto mb-8 max-w-2xl text-lg text-white/80">
-              Send your vehicle details and pickup point, or speak to the team if you need urgent help.
-              We&rsquo;ll confirm what we can do and explain how to book.
+              Call or WhatsApp with your vehicle details and pickup point. We&rsquo;ll confirm
+              availability and quote for roadside assistance, breakdown recovery or a tow.
             </p>
             <div className="flex flex-col justify-center gap-4 sm:flex-row">
               <a href={business.tel} className="btn-glow rounded-full bg-red px-8 py-4 font-bold text-white transition">
-                <i className="fa-solid fa-phone mr-2"></i>Phone {business.phoneDisplay}
+                <i className="fa-solid fa-phone mr-2"></i>Call {business.phoneDisplay}
               </a>
               <a
                 href={business.whatsapp}
@@ -506,7 +506,7 @@ export default function CarRecoveryLandingPage() {
                 rel="noopener noreferrer"
                 className="rounded-full bg-whatsapp px-8 py-4 font-bold text-white transition hover:bg-green-600"
               >
-                <i className="fa-brands fa-whatsapp mr-2"></i>Chat on WhatsApp
+                <i className="fa-brands fa-whatsapp mr-2"></i>Get a WhatsApp Quote
               </a>
             </div>
           </div>
@@ -517,7 +517,7 @@ export default function CarRecoveryLandingPage() {
         <div className="container-site flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
           <div className="flex flex-col items-start gap-3">
             <Logo size="sm" priority={false} />
-            <p>Breakdown recovery and towing, day or night.</p>
+            <p>24/7 car and van recovery, roadside assistance and towing.</p>
           </div>
           <div className="flex flex-col items-start gap-2 sm:items-end">
             <p>© {new Date().getFullYear()} {business.name}</p>
