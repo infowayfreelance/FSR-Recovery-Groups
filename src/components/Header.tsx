@@ -16,7 +16,14 @@ const navLinks = [
   { href: "/contact", label: "Contact" },
 ];
 
-export function Header({ activePath = "/" }: { activePath?: string }) {
+export function Header({
+  activePath = "/",
+  showAreas = true,
+}: {
+  activePath?: string;
+  showAreas?: boolean;
+}) {
+  const visibleNavLinks = showAreas ? navLinks : navLinks.filter((link) => link.href !== "/areas");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
@@ -42,7 +49,7 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
           </Link>
 
           <nav className="hidden items-center gap-7 text-sm font-semibold lg:flex" aria-label="Main navigation">
-            {navLinks.map((link) =>
+            {visibleNavLinks.map((link) =>
               link.href === "/services" ? (
                 <div
                   key={link.label}
@@ -206,7 +213,7 @@ export function Header({ activePath = "/" }: { activePath?: string }) {
         {isMenuOpen && (
           <div id="mobile-navigation" className="border-t border-white/10 bg-navy lg:hidden">
             <div className="container-site max-h-[calc(100dvh-7rem)] overflow-y-auto py-4 font-semibold">
-              {navLinks.map((link) =>
+              {visibleNavLinks.map((link) =>
                 link.href === "/services" ? (
                   <div key={link.label}>
                     <button
