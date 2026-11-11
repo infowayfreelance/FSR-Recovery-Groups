@@ -8,8 +8,8 @@ import { Eyebrow, FaqAccordion, SectionHeading } from "@/components/ServicePage"
 import { business } from "@/data/business";
 import { getServiceNavigation } from "@/data/services";
 
-const title = "24/7 Car Recovery, Van Recovery & Towing | FSR";
-const description = "Call FSR for 24/7 roadside assistance, emergency towing, car and van recovery, or a jumpstart service. Get a quote by phone or WhatsApp.";
+const title = "24/7 Breakdown Recovery, Car & Van Towing | FSR";
+const description = "Call FSR for 24/7 breakdown recovery, emergency towing and roadside assistance. Get help with a car or light van, a flat battery, a puncture or an empty tank.";
 const path = "/24-7-car-recovery";
 
 export const metadata: Metadata = {
@@ -41,10 +41,10 @@ export const metadata: Metadata = {
 };
 
 const howItWorks = [
-  { lead: "Request breakdown help", text: "Call FSR or send a WhatsApp message for roadside assistance or a recovery quote." },
-  { lead: "Share your vehicle and pickup details", text: "Give us your pickup point, the make and model, and where you want the vehicle taken if you need a tow." },
-  { lead: "Confirm the service and price", text: "We check whether a roadside callout or a recovery truck is the right option and quote before you book." },
-  { lead: "Get your vehicle towed", text: "If a tow is needed, we secure the vehicle for the trip and unload it at the agreed stop." },
+  { lead: "Call for Recovery", text: "Call FSR or send a WhatsApp message for roadside assistance or a recovery quote." },
+  { lead: "Send Your Pickup Details", text: "Give us your pickup point, the make and model, and where you want the vehicle taken if you need a tow." },
+  { lead: "Confirm the Quote", text: "We check whether a roadside callout or a recovery truck is the right option and quote before you book." },
+  { lead: "Get Roadside Help or a Tow", text: "We help at the roadside where possible. If you need a tow, we secure the vehicle and take it to your agreed drop-off." },
 ];
 
 const marqueeItems = [
@@ -72,7 +72,7 @@ const services = [
     key: "vehicle-breakdown-recovery",
     img: "/images/service-breakdown.jpg",
     alt: "Flatbed collecting a stranded vehicle at twilight",
-    title: "Car and Light Van Breakdown Recovery",
+    title: "Breakdown Recovery for Cars and Light Vans",
     desc: "Book a recovery truck if your car or light van has broken down and cannot be driven. We can tow it to a garage, your home or another agreed drop-off.",
   },
   {
@@ -107,7 +107,7 @@ const services = [
     key: "vehicle-transporting",
     img: "/images/service-transport.jpg",
     alt: "Vehicle strapped down for a flatbed journey",
-    title: "Booked Flatbed Vehicle Transport",
+    title: "Flatbed Vehicle Transport and Delivery",
     desc: "Arrange flatbed transport for a car that needs moving between addresses. Send the collection point, drop-off and preferred date for a quote.",
   },
 ];
@@ -205,15 +205,15 @@ export default function CarRecoveryLandingPage() {
             <div className="fade-up">
               <p className="mb-5 inline-flex flex-wrap items-center gap-2 rounded-full border border-red/30 bg-red/15 px-3 py-1.5 text-xs font-semibold text-red-100 sm:px-4 sm:py-2 sm:text-sm">
                 <i className="fa-solid fa-bolt flex-shrink-0"></i>
-                <span>Emergency breakdown and towing service</span>
+                <span>24/7 Emergency Breakdown Recovery</span>
               </p>
               <h1 className="mb-4 text-3xl leading-tight font-extrabold sm:mb-6 sm:text-4xl lg:text-6xl">
-                24/7 Car Recovery <span className="text-red">&amp; Emergency Towing</span>
+                Broken Down? <span className="text-red">Get 24/7 Car Recovery</span>
               </h1>
               <p className="mb-6 text-base text-white/80 sm:mb-8 sm:text-lg">
-                Call FSR for <strong className="text-white">24/7 roadside assistance</strong>, light
-                van recovery or a jumpstart service. If your vehicle can&rsquo;t be driven, send us
-                your pickup point for an emergency towing quote.
+                Call FSR for <strong className="text-white">24/7 roadside assistance</strong>, emergency
+                towing or light van recovery. If a flat battery, puncture or empty tank has stopped
+                your journey, ask about a jumpstart service, spare wheel fitting or emergency fuel delivery.
               </p>
               <div className="mb-7 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:gap-4">
                 <a
@@ -251,7 +251,110 @@ export default function CarRecoveryLandingPage() {
               </div>
             </div>
 
-            <QuoteForm variant="hero" landingPage />
+            <div className="grid gap-4">
+              <aside
+                aria-labelledby="recovery-line-heading"
+                className="rounded-2xl border border-white/20 bg-navy p-5 shadow-xl sm:p-6"
+              >
+                <h2 id="recovery-line-heading" className="text-lg font-bold">24/7 Recovery Line</h2>
+                <p className="mt-2 text-sm leading-6 text-slate-300">
+                  Tell us where you&rsquo;re stopped and what you&rsquo;re driving. We&rsquo;ll confirm
+                  availability and give you a price before you book.
+                </p>
+                <a
+                  href={business.tel}
+                  className="mt-4 inline-flex min-h-11 items-center gap-2 rounded-full border border-red/50 px-4 font-bold text-white transition hover:bg-red-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white"
+                >
+                  <i className="fa-solid fa-phone text-red-400" aria-hidden="true" />
+                  {business.phoneDisplay}
+                </a>
+              </aside>
+              <QuoteForm variant="hero" landingPage />
+            </div>
+          </div>
+        </section>
+
+        <section className="border-y border-navy/10 bg-slate-50 py-7" aria-labelledby="urgent-recovery-heading">
+          <div className="container-site flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h2 id="urgent-recovery-heading" className="text-xl font-extrabold text-navy">
+                Need a Recovery Truck Now?
+              </h2>
+              <p className="mt-1 text-sm leading-6 text-navy/75">
+                Have your pickup point and vehicle details ready so we can check the right help for you.
+              </p>
+            </div>
+            <a
+              href={business.tel}
+              className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-full bg-red px-6 py-3 font-bold text-white transition hover:bg-red-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-navy"
+            >
+              <i className="fa-solid fa-phone" aria-hidden="true" />
+              Call for Emergency Recovery
+            </a>
+          </div>
+        </section>
+
+        {/* ── Services (Dark Cards) ── */}
+        <section id="services" className="bg-navy py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+              <p className="mb-3 font-bold text-red-dark">Find the help you need</p>
+              <h2 className="mb-4 text-3xl font-extrabold text-white lg:text-4xl">Breakdown Recovery, Roadside Help and Transport</h2>
+              <p className="text-slate-400">
+                Call for car or van recovery when your vehicle can&rsquo;t be driven. For a flat battery,
+                puncture or empty tank, ask what we can do at the roadside. We also take bookings for
+                planned flatbed transport.
+              </p>
+            </div>
+            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
+              {landingServices.map((service) => {
+                const href = getServiceNavigation(service.key).href;
+                return (
+                  <article key={service.title} className="dark-service-card fade-up flex flex-col">
+                    <Link href={href}>
+                      <Image
+                        src={service.img}
+                        alt={service.alt}
+                        width={900}
+                        height={600}
+                        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
+                        className="h-52 w-full rounded-t-3xl object-cover"
+                      />
+                    </Link>
+                    <div className="flex flex-1 flex-col p-6">
+                      <h3 className="mb-2 text-xl font-bold text-white">
+                        <Link href={href} className="transition hover:text-red">{service.title}</Link>
+                      </h3>
+                      <p className="mb-4 flex-1 text-slate-400">{service.desc}</p>
+                      <Link href={href} className="mb-5 inline-block text-sm font-bold text-red transition hover:text-red-dark">
+                        Service Details <i className="fa-solid fa-arrow-right ml-1" />
+                      </Link>
+                      <div className="mt-auto flex gap-3">
+                        <a
+                          href={business.tel}
+                          className="flex-1 rounded-full bg-red px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-red-dark"
+                        >
+                          <i className="fa-solid fa-phone mr-1.5"></i>Call FSR
+                        </a>
+                        <a
+                          href={business.whatsapp}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
+                        >
+                          <i className="fa-brands fa-whatsapp mr-1.5"></i>Message Us
+                        </a>
+                      </div>
+                    </div>
+                  </article>
+                );
+              })}
+            </div>
+            <div className="fade-up mt-10 text-center">
+              <a href="/services" className="inline-block rounded-full border-2 border-red px-8 py-4 font-bold text-red transition hover:bg-red hover:text-white">
+                Browse Every Service <i className="fa-solid fa-arrow-right ml-2"></i>
+              </a>
+            </div>
           </div>
         </section>
 
@@ -279,6 +382,49 @@ export default function CarRecoveryLandingPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+
+        {/* ── Why Choose ── */}
+        <section className="bg-slate-50 py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+              <p className="mb-3 font-bold text-red-dark">About our team</p>
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Why Book Your Vehicle Recovery With FSR?</h2>
+            </div>
+            <div className="grid gap-7 md:grid-cols-3">
+              {whyChoose.map((item) => (
+                <div key={item.text} className="fade-up rounded-3xl border border-navy/10 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
+                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-navy/5">
+                    <i className={`${item.icon} text-3xl text-red`}></i>
+                  </div>
+                  <p className="text-navy/70">{item.text}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* ── How Car Recovery Works ── */}
+        <section className="bg-white py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+              <Eyebrow>From call to drop-off</Eyebrow>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">How to Arrange a Recovery Callout</h2>
+            </div>
+            <ol className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
+              {howItWorks.map((step, i) => (
+                <li key={step.lead} className="fade-up relative rounded-3xl border border-navy/10 bg-slate-50 p-7">
+                  <span className="absolute top-5 right-6 text-3xl font-extrabold text-navy/10">{i + 1}</span>
+                  <h3 className="mb-2 text-xl font-bold text-navy">{step.lead}</h3>
+                  <p className="leading-7 text-navy/70">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="fade-up mx-auto mt-10 max-w-2xl text-center leading-7 text-navy/70">
+              You can call even if you&rsquo;re unsure what the car needs. Describe what you noticed and
+              we&rsquo;ll explain the options we can offer.
+            </p>
           </div>
         </section>
 
@@ -353,112 +499,6 @@ export default function CarRecoveryLandingPage() {
                   Meet the Recovery Team
                 </a>
               </div>
-            </div>
-          </div>
-        </section>
-
-        {/* ── Services (Dark Cards) ── */}
-        <section id="services" className="bg-navy py-20">
-          <div className="container-site">
-            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red-dark">Find the help you need</p>
-              <h2 className="mb-4 text-3xl font-extrabold text-white lg:text-4xl">Roadside Assistance and Vehicle Recovery Services</h2>
-              <p className="text-slate-400">
-                Find the right service for a breakdown, collision, flat battery or puncture. You can
-                also book a flatbed for a planned vehicle move.
-              </p>
-            </div>
-            <div className="grid gap-7 md:grid-cols-2 lg:grid-cols-3">
-              {landingServices.map((service) => {
-                const href = getServiceNavigation(service.key).href;
-                return (
-                  <article key={service.title} className="dark-service-card fade-up flex flex-col">
-                    <Link href={href}>
-                      <Image
-                        src={service.img}
-                        alt={service.alt}
-                        width={900}
-                        height={600}
-                        sizes="(max-width: 767px) 100vw, (max-width: 1023px) 50vw, 33vw"
-                        className="h-52 w-full rounded-t-3xl object-cover"
-                      />
-                    </Link>
-                    <div className="flex flex-1 flex-col p-6">
-                      <h3 className="mb-2 text-xl font-bold text-white">
-                        <Link href={href} className="transition hover:text-red">{service.title}</Link>
-                      </h3>
-                      <p className="mb-4 flex-1 text-slate-400">{service.desc}</p>
-                      <Link href={href} className="mb-5 inline-block text-sm font-bold text-red transition hover:text-red-dark">
-                        Service Details <i className="fa-solid fa-arrow-right ml-1" />
-                      </Link>
-                      <div className="mt-auto flex gap-3">
-                        <a
-                          href={business.tel}
-                          className="flex-1 rounded-full bg-red px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-red-dark"
-                        >
-                          <i className="fa-solid fa-phone mr-1.5"></i>Call FSR
-                        </a>
-                        <a
-                          href={business.whatsapp}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="flex-1 rounded-full bg-whatsapp px-4 py-2.5 text-center text-sm font-bold text-white transition hover:bg-green-600"
-                        >
-                          <i className="fa-brands fa-whatsapp mr-1.5"></i>Message Us
-                        </a>
-                      </div>
-                    </div>
-                  </article>
-                );
-              })}
-            </div>
-            <div className="fade-up mt-10 text-center">
-              <a href="/services" className="inline-block rounded-full border-2 border-red px-8 py-4 font-bold text-red transition hover:bg-red hover:text-white">
-                Browse Every Service <i className="fa-solid fa-arrow-right ml-2"></i>
-              </a>
-            </div>
-          </div>
-        </section>
-
-        {/* ── How Car Recovery Works ── */}
-        <section className="bg-white py-20">
-          <div className="container-site">
-            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <Eyebrow>From call to drop-off</Eyebrow>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">How to Book a Recovery Truck</h2>
-            </div>
-            <ol className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-              {howItWorks.map((step, i) => (
-                <li key={step.lead} className="fade-up relative rounded-3xl border border-navy/10 bg-slate-50 p-7">
-                  <span className="absolute top-5 right-6 text-3xl font-extrabold text-navy/10">{i + 1}</span>
-                  <h3 className="mb-2 text-xl font-bold text-navy">{step.lead}</h3>
-                  <p className="leading-7 text-navy/70">{step.text}</p>
-                </li>
-              ))}
-            </ol>
-            <p className="fade-up mx-auto mt-10 max-w-2xl text-center leading-7 text-navy/70">
-              You can call even if you&rsquo;re unsure what the car needs. Describe what you noticed and
-              we&rsquo;ll explain the options we can offer.
-            </p>
-          </div>
-        </section>
-
-        {/* ── Why Choose ── */}
-        <section className="bg-slate-50 py-20">
-          <div className="container-site">
-            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <p className="mb-3 font-bold text-red-dark">About our team</p>
-              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Why Book Your Vehicle Recovery With FSR?</h2>
-            </div>
-            <div className="grid gap-7 md:grid-cols-3">
-              {whyChoose.map((item) => (
-                <div key={item.text} className="fade-up rounded-3xl border border-navy/10 bg-white p-8 text-center shadow-sm transition-all duration-300 hover:-translate-y-2 hover:shadow-xl">
-                  <div className="mx-auto mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-navy/5">
-                    <i className={`${item.icon} text-3xl text-red`}></i>
-                  </div>
-                  <p className="text-navy/70">{item.text}</p>
-                </div>
-              ))}
             </div>
           </div>
         </section>
