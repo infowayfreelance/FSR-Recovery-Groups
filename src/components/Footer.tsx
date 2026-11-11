@@ -3,7 +3,7 @@ import { Logo } from "./Logo";
 import { CookieSettingsLink } from "./CookieConsent";
 import { business } from "@/data/business";
 
-export function Footer() {
+export function Footer({ showLocation = true }: { showLocation?: boolean }) {
   return (
     <footer className="bg-navy pt-16 pb-8 text-slate-300">
       <div className="container-site">
@@ -12,8 +12,9 @@ export function Footer() {
           <div>
             <Logo variant="light" size="md" priority={false} />
             <p className="mt-4 mb-5 text-sm leading-7 text-slate-400">
-              Vehicle recovery, towing and roadside support for drivers across the region,
-              24 hours a day, every day of the year.
+              {showLocation
+                ? "Vehicle recovery, towing and roadside support for drivers across the region, 24 hours a day, every day of the year."
+                : "Vehicle recovery, towing and roadside support, 24 hours a day."}
             </p>
             <div className="flex gap-3">
               <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Message us on WhatsApp">
@@ -42,10 +43,12 @@ export function Footer() {
                   {business.email}
                 </a>
               </div>
-              <div className="contact-info-item">
-                <i className="fa-solid fa-location-dot mt-0.5 shrink-0 text-red"></i>
-                <span>{business.addressFull}</span>
-              </div>
+              {showLocation && (
+                <div className="contact-info-item">
+                  <i className="fa-solid fa-location-dot mt-0.5 shrink-0 text-red"></i>
+                  <span>{business.addressFull}</span>
+                </div>
+              )}
               <div className="contact-info-item">
                 <i className="fa-solid fa-clock mt-0.5 shrink-0 text-red"></i>
                 <span>Available for urgent roadside enquiries</span>
@@ -60,7 +63,9 @@ export function Footer() {
               <li><Link href="/" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Home</Link></li>
               <li><Link href="/services" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Services</Link></li>
               <li><Link href="/about" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>About Us</Link></li>
-              <li><Link href="/areas" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Areas Covered</Link></li>
+              {showLocation && (
+                <li><Link href="/areas" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Areas Covered</Link></li>
+              )}
               <li><Link href="/blog" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Blog</Link></li>
               <li><Link href="/contact" className="footer-link"><i className="fa-solid fa-chevron-right text-xs text-red"></i>Contact</Link></li>
             </ul>
