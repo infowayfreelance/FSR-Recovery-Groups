@@ -40,16 +40,6 @@ export const metadata: Metadata = {
   },
 };
 
-const roadsideTable: { situation: string; help: React.ReactNode }[] = [
-  { situation: "Flat or weak battery", help: <>A <Link href="/services/jumpstart-services" className="font-semibold text-red hover:underline">jump start</Link> at the roadside</> },
-  { situation: "Flat tyre and you have a suitable spare", help: "We fit the spare, so you can get moving again" },
-  { situation: "Ran out of fuel", help: "Fuel delivered to your location" },
-  { situation: "Engine, clutch or gearbox failure", help: "Car recovery to a garage" },
-  { situation: "Overheating", help: "Recovery, so you don't drive on and risk more damage" },
-  { situation: "Damage after a collision", help: <><Link href="/services/accident-emergency-assistance" className="font-semibold text-red hover:underline">Accident recovery</Link> once the scene is safe</> },
-  { situation: "Stuck in mud, snow or a ditch", help: "Winching, then recovery if the car can't continue" },
-];
-
 const howItWorks = [
   { lead: "Call or message us.", text: "Phone +44 7888 502989 or use WhatsApp. You speak directly to our recovery team." },
   { lead: "Share your details.", text: "Give us your location, the car's make and model, what has happened and where you'd like it taken." },
@@ -358,65 +348,6 @@ export default function CarRecoveryLandingPage() {
           </div>
         </section>
 
-        {/* ── Roadside Fix or Car Recovery? ── */}
-        <section className="bg-slate-50 py-20">
-          <div className="container-site">
-            <div className="fade-up mx-auto mb-10 max-w-3xl text-center">
-              <Eyebrow>Know Your Options</Eyebrow>
-              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Roadside Fix or Car Recovery?</h2>
-              <p className="leading-7 text-navy/70">
-                <Link href="/services/roadside-assistance" className="font-semibold text-red hover:underline">
-                  Roadside assistance
-                </Link>{" "}
-                can solve some problems where you stand. Others need a recovery truck. Roadside checks
-                decide which, and if a fix doesn&rsquo;t work, we can recover the car instead. This table
-                shows what usually helps.
-              </p>
-            </div>
-            <div className="fade-up overflow-x-auto rounded-3xl border border-navy/10 bg-white shadow-sm">
-              <table className="w-full min-w-[560px] text-left">
-                <thead>
-                  <tr className="bg-navy/5">
-                    <th scope="col" className="px-5 py-4 text-sm font-extrabold uppercase tracking-wide text-navy">Your situation</th>
-                    <th scope="col" className="px-5 py-4 text-sm font-extrabold uppercase tracking-wide text-navy">What usually helps</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {roadsideTable.map((row) => (
-                    <tr key={row.situation} className="border-t border-navy/10">
-                      <td className="px-5 py-4 font-semibold text-navy">{row.situation}</td>
-                      <td className="px-5 py-4 text-navy/70">{row.help}</td>
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </section>
-
-        {/* ── How Car Recovery Works ── */}
-        <section className="bg-white py-20">
-          <div className="container-site">
-            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
-              <Eyebrow>The Process</Eyebrow>
-              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">How Car Recovery Works</h2>
-            </div>
-            <ol className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
-              {howItWorks.map((step, i) => (
-                <li key={step.lead} className="fade-up relative rounded-3xl border border-navy/10 bg-slate-50 p-7">
-                  <span className="absolute top-5 right-6 text-3xl font-extrabold text-navy/10">{i + 1}</span>
-                  <h3 className="mb-2 text-xl font-bold text-navy">{step.lead}</h3>
-                  <p className="leading-7 text-navy/70">{step.text}</p>
-                </li>
-              ))}
-            </ol>
-            <p className="fade-up mx-auto mt-10 max-w-2xl text-center leading-7 text-navy/70">
-              Not sure whether you need recovery or a roadside fix? Describe the problem and we&rsquo;ll
-              talk through the options.
-            </p>
-          </div>
-        </section>
-
         {/* ── Services (Dark Cards) ── */}
         <section id="services" className="bg-navy py-20">
           <div className="container-site">
@@ -477,6 +408,29 @@ export default function CarRecoveryLandingPage() {
                 View All Services <i className="fa-solid fa-arrow-right ml-2"></i>
               </a>
             </div>
+          </div>
+        </section>
+
+        {/* ── How Car Recovery Works ── */}
+        <section className="bg-white py-20">
+          <div className="container-site">
+            <div className="fade-up mx-auto mb-12 max-w-3xl text-center">
+              <Eyebrow>The Process</Eyebrow>
+              <h2 className="text-3xl font-extrabold text-navy lg:text-4xl">How Car Recovery Works</h2>
+            </div>
+            <ol className="grid gap-7 md:grid-cols-2 lg:grid-cols-4">
+              {howItWorks.map((step, i) => (
+                <li key={step.lead} className="fade-up relative rounded-3xl border border-navy/10 bg-slate-50 p-7">
+                  <span className="absolute top-5 right-6 text-3xl font-extrabold text-navy/10">{i + 1}</span>
+                  <h3 className="mb-2 text-xl font-bold text-navy">{step.lead}</h3>
+                  <p className="leading-7 text-navy/70">{step.text}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="fade-up mx-auto mt-10 max-w-2xl text-center leading-7 text-navy/70">
+              Not sure whether you need recovery or a roadside fix? Describe the problem and we&rsquo;ll
+              talk through the options.
+            </p>
           </div>
         </section>
 
