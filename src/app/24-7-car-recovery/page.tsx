@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { Header } from "@/components/Header";
-import { Footer } from "@/components/Footer";
+import { CookieSettingsLink } from "@/components/CookieConsent";
+import { Logo } from "@/components/Logo";
 import { QuoteForm } from "@/components/QuoteForm";
 import { Eyebrow, FaqAccordion, SectionHeading } from "@/components/ServicePage";
 import { business } from "@/data/business";
@@ -170,11 +170,19 @@ const landingFaqs = [
 export default function CarRecoveryLandingPage() {
   return (
     <>
-      <Header
-        activePath={path}
-        showAreas={false}
-        announcement="Day or night, speak to FSR about a breakdown or a tow."
-      />
+      <header className="sticky top-0 z-40 border-b border-white/10 bg-navy shadow-md">
+        <div className="container-site flex min-h-16 items-center justify-between gap-4 py-2 sm:min-h-20">
+          <Logo />
+          <a
+            href={business.tel}
+            aria-label={`Call ${business.name} at ${business.phoneDisplay}`}
+            className="inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-full bg-red text-sm font-bold text-white transition hover:bg-red-dark focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-white sm:px-5"
+          >
+            <i className="fa-solid fa-phone" aria-hidden="true" />
+            <span className="hidden sm:inline">{business.phoneDisplay}</span>
+          </a>
+        </div>
+      </header>
 
       <main>
         {/* ── Hero ── */}
@@ -505,7 +513,18 @@ export default function CarRecoveryLandingPage() {
         </section>
       </main>
 
-      <Footer showLocation={false} />
+      <footer className="border-t border-white/10 bg-navy py-8 text-sm text-slate-300 sm:py-10">
+        <div className="container-site flex flex-col gap-5 sm:flex-row sm:items-center sm:justify-between">
+          <div className="flex flex-col items-start gap-3">
+            <Logo size="sm" priority={false} />
+            <p>Breakdown recovery and towing, day or night.</p>
+          </div>
+          <div className="flex flex-col items-start gap-2 sm:items-end">
+            <p>© {new Date().getFullYear()} {business.name}</p>
+            <CookieSettingsLink className="text-slate-300 underline underline-offset-4 transition hover:text-white" />
+          </div>
+        </div>
+      </footer>
     </>
   );
 }
