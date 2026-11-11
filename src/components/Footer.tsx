@@ -14,7 +14,7 @@ export function Footer({ showLocation = true }: { showLocation?: boolean }) {
             <p className="mt-4 mb-5 text-sm leading-7 text-slate-400">
               {showLocation
                 ? "Vehicle recovery, towing and roadside support for drivers across the region, 24 hours a day, every day of the year."
-                : "Vehicle recovery, towing and roadside support, 24 hours a day."}
+                : "Talk to our team about a tow, help after a breakdown or a booked vehicle move."}
             </p>
             <div className="flex gap-3">
               <a href={business.whatsapp} target="_blank" rel="noopener noreferrer" className="social-icon" aria-label="Message us on WhatsApp">
@@ -51,7 +51,7 @@ export function Footer({ showLocation = true }: { showLocation?: boolean }) {
               )}
               <div className="contact-info-item">
                 <i className="fa-solid fa-clock mt-0.5 shrink-0 text-red"></i>
-                <span>Available for urgent roadside enquiries</span>
+                <span>{showLocation ? "Available for urgent roadside enquiries" : "Phone lines open day and night"}</span>
               </div>
             </div>
           </div>
