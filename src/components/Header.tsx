@@ -19,9 +19,11 @@ const navLinks = [
 export function Header({
   activePath = "/",
   showAreas = true,
+  announcement = "24/7 Emergency Towing & Recovery – Fast Response, Call Now",
 }: {
   activePath?: string;
   showAreas?: boolean;
+  announcement?: string;
 }) {
   const visibleNavLinks = showAreas ? navLinks : navLinks.filter((link) => link.href !== "/areas");
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -36,7 +38,7 @@ export function Header({
       <div className="border-b border-red/20 bg-navy py-2 text-white/70">
         <div className="container-site flex items-center justify-center text-xs md:text-sm">
           <span>
-            <i className="fas fa-triangle-exclamation mr-1"></i>24/7 Emergency Towing &amp; Recovery – Fast Response, Call Now
+            <i className="fas fa-triangle-exclamation mr-1"></i>{announcement}
           </span>
         </div>
       </div>

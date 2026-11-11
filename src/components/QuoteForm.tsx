@@ -5,9 +5,10 @@ import { business } from "@/data/business";
 
 type QuoteFormProps = {
   variant?: "hero" | "light";
+  landingPage?: boolean;
 };
 
-export function QuoteForm({ variant = "light" }: QuoteFormProps) {
+export function QuoteForm({ variant = "light", landingPage = false }: QuoteFormProps) {
   const nameRef = useRef<HTMLInputElement>(null);
   const serviceRef = useRef<HTMLSelectElement>(null);
   const vehicleRef = useRef<HTMLInputElement>(null);
@@ -64,14 +65,14 @@ export function QuoteForm({ variant = "light" }: QuoteFormProps) {
     <div className={isHero ? "hero-form-card fade-up p-5 text-white shadow-2xl sm:p-6" : ""}>
       {isHero && (
         <>
-          <h3 className="mb-1 text-2xl font-bold">Get a Free Quote</h3>
-          <p className="mb-5 text-sm text-white/70">Tell us your situation and we&rsquo;ll respond fast.</p>
+          <h3 className="mb-1 text-2xl font-bold">{landingPage ? "Ask for a Recovery Quote" : "Get a Free Quote"}</h3>
+          <p className="mb-5 text-sm text-white/70">{landingPage ? "Share a few details about the job and we can talk through the price." : "Tell us your situation and we’ll respond fast."}</p>
         </>
       )}
       <div className="grid gap-4">
         <div>
           <label htmlFor={serviceId} className={labelClass}>
-            Service required
+            {landingPage ? "What do you need help with?" : "Service required"}
           </label>
           <select
             id={serviceId}
@@ -81,7 +82,7 @@ export function QuoteForm({ variant = "light" }: QuoteFormProps) {
             style={isHero ? ({ colorScheme: "dark" } as React.CSSProperties) : undefined}
           >
             <option value="" disabled={isHero} style={isHero ? { color: "#0b2241", background: "#ffffff" } : undefined}>
-              Service required
+              {landingPage ? "Choose a service" : "Service required"}
             </option>
             {[
               "Vehicle Breakdown Recovery",
@@ -103,27 +104,27 @@ export function QuoteForm({ variant = "light" }: QuoteFormProps) {
 
         <div>
           <label htmlFor={nameId} className={labelClass}>
-            Your name <span className="font-normal opacity-70">(optional)</span>
+            {landingPage ? "Name for the quote" : "Your name"} <span className="font-normal opacity-70">(optional)</span>
           </label>
-          <input id={nameId} ref={nameRef} type="text" placeholder="Your name" className={fieldClass} />
+          <input id={nameId} ref={nameRef} type="text" placeholder={landingPage ? "First name" : "Your name"} className={fieldClass} />
         </div>
 
         <div>
           <label htmlFor={vehicleId} className={labelClass}>
-            Vehicle make / model <span className="font-normal opacity-70">(optional)</span>
+            {landingPage ? "What do you drive?" : "Vehicle make / model"} <span className="font-normal opacity-70">(optional)</span>
           </label>
-          <input id={vehicleId} ref={vehicleRef} type="text" placeholder="e.g. Ford Focus" className={fieldClass} />
+          <input id={vehicleId} ref={vehicleRef} type="text" placeholder={landingPage ? "Make and model, e.g. VW Golf" : "e.g. Ford Focus"} className={fieldClass} />
         </div>
 
         <div>
           <label htmlFor={locationId} className={labelClass}>
-            Current location
+            {landingPage ? "Vehicle pickup point" : "Current location"}
           </label>
           <input
             id={locationId}
             ref={locationRef}
             type="text"
-            placeholder="Your current location"
+            placeholder={landingPage ? "Address or nearest landmark" : "Your current location"}
             required
             aria-required="true"
             aria-invalid={error}
@@ -134,20 +135,20 @@ export function QuoteForm({ variant = "light" }: QuoteFormProps) {
 
         <div>
           <label htmlFor={destinationId} className={labelClass}>
-            Destination <span className="font-normal opacity-70">(optional)</span>
+            {landingPage ? "Preferred drop-off" : "Destination"} <span className="font-normal opacity-70">(optional)</span>
           </label>
-          <input id={destinationId} ref={destinationRef} type="text" placeholder="Where the vehicle needs to go" className={fieldClass} />
+          <input id={destinationId} ref={destinationRef} type="text" placeholder={landingPage ? "Garage or other drop-off address" : "Where the vehicle needs to go"} className={fieldClass} />
         </div>
 
         <div>
           <label htmlFor={messageId} className={labelClass}>
-            Additional details <span className="font-normal opacity-70">(optional)</span>
+            {landingPage ? "Anything else we should know?" : "Additional details"} <span className="font-normal opacity-70">(optional)</span>
           </label>
           <textarea
             id={messageId}
             ref={messageRef}
             rows={3}
-            placeholder="Any additional details..."
+            placeholder={landingPage ? "Tell us what went wrong or mention any access issues" : "Any additional details..."}
             className={fieldClass + " resize-none"}
           />
         </div>
@@ -157,20 +158,22 @@ export function QuoteForm({ variant = "light" }: QuoteFormProps) {
           onClick={handleSendWhatsApp}
           className="btn-glow rounded-xl bg-red px-5 py-4 font-bold text-white transition hover:bg-red-dark"
         >
-          <i className="fa-brands fa-whatsapp mr-2" aria-hidden="true"></i>Get Quote on WhatsApp
+          <i className="fa-brands fa-whatsapp mr-2" aria-hidden="true"></i>{landingPage ? "Continue to WhatsApp" : "Get Quote on WhatsApp"}
         </button>
         <p className={isHero ? "text-center text-xs text-white/60" : "text-center text-xs text-navy/50"}>
-          Opens WhatsApp with your details filled in — you&rsquo;ll need to send the message there to reach us.
+          {landingPage
+            ? "We’ll prepare a message with your details. Tap Send in WhatsApp to request your quote."
+            : "Opens WhatsApp with your details filled in — you’ll need to send the message there to reach us."}
         </p>
         {error && (
           <p id={locationErrorId} role="alert" className="text-center text-sm text-red">
-            Please enter your location so we can provide an accurate quote.
+            {landingPage ? "Add the pickup point so we know where to collect your vehicle." : "Please enter your location so we can provide an accurate quote."}
           </p>
         )}
       </div>
       {isHero && (
         <p className="mt-4 text-center text-xs text-white/60">
-          Or call us directly:{" "}
+          {landingPage ? "Prefer to speak to the team?" : "Or call us directly:"}{" "}
           <a href={business.tel} className="font-bold text-red transition hover:text-white">
             {business.phoneDisplay}
           </a>
