@@ -13,11 +13,7 @@ export const metadata: Metadata = {
   title: { absolute: title }, description,
   alternates: { canonical: path }, robots: { index: true, follow: true },
   openGraph: { title, description, url: path, type: "website", siteName: business.name },
-  twitter: {
-    card: "summary",
-    title: "Middlesbrough Car Recovery Services Available 24/7",
-    description: "Experience quick car recovery in Middlesbrough anytime! Contact us for reliable assistance on the road.",
-  },
+  twitter: { card: "summary", title, description },
 };
 
 const content: AreaPageContent = {
