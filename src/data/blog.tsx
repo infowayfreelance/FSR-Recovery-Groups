@@ -27,6 +27,7 @@ export type BlogPost = {
   readingTime: string;
   tags: string[];
   content: BlogContentBlock[];
+  faqs?: { question: string; answer: string }[];
   /** Explicit related-post slugs; falls back to shared-tag matching when omitted. */
   relatedSlugs?: string[];
   /**
@@ -47,6 +48,244 @@ export function formatBlogDate(iso: string): string {
 }
 
 export const blogPosts: BlogPost[] = [
+  {
+    slug: "broken-down-on-the-a66-in-winter",
+    title: "Broken Down on the A66 in Winter? What to Do Between Scotch Corner and Bowes",
+    metaTitle: "Broken Down on the A66 in Winter? What to Do",
+    metaDescription: "What to do if you break down on the A66 in winter between Scotch Corner and Bowes: safety steps from the Highway Code, how to describe your location, and when to call for recovery.",
+    excerpt: "If your car or light van stops on the A66 in winter, the first job is not the repair. It is getting you, your passengers and the vehicle into a safer position, then calling for the right help.",
+    featuredImage: "/images/broken-down-on-the-a66-in-winter-featured.webp",
+    featuredImageAlt: "Winter A66 lay-by with a dark hatchback and hazard lights, title text Broken Down on the A66 in Winter?",
+    publishedDate: "2026-11-19",
+    author: "FSR Recovery Group",
+    authorRole: "Editorial Team",
+    readingTime: "12 min read",
+    tags: ["A66", "breakdown recovery", "winter driving", "roadside assistance"],
+    faqs: [
+      {
+        question: "What should I do first if I break down on the A66 in winter?",
+        answer: "Get off the live carriageway if you can, into a lay-by or other place of relative safety, and switch on your hazards. Get clear if it is safe; if not, stay belted in and call 999, then National Highways and a recovery service."
+      },
+      {
+        question: "Do you cover the A66 near Scotch Corner and Bowes?",
+        answer: "Yes. FSR Recovery Group covers the A66 around Scotch Corner, Darlington, the approaches toward Barnard Castle, and Bowes Moor. Further toward Cumbria, call with your location so availability can be confirmed. The base is 135 Gladstone Street, Darlington DL3 6LB."
+      },
+      {
+        question: "Should I stay in the car or get out?",
+        answer: "If you have reached a place of relative safety and can get out safely, leave by the side furthest from traffic and get well away, behind a barrier if there is one. If you cannot get clear, stay belted in with the hazards on and call 999."
+      },
+      {
+        question: "Can a warning triangle be used on the A66?",
+        answer: "The A66 is not a motorway, so The Highway Code allows a triangle at least 45 metres behind, on the same side, if you can place and retrieve it safely. Never use one on the A1(M). If it would put you at risk, do not use one."
+      },
+      {
+        question: "What details should I give the recovery operator?",
+        answer: "Direction of travel, the last place name or junction you are sure of, any marker post or driver location sign, whether you are in a lay-by, on a verge or in a live lane, the weather, your vehicle, and whether anyone is vulnerable."
+      },
+      {
+        question: "What if the vehicle is stuck in snow or on a verge?",
+        answer: "Do not keep spinning the wheels. Stay clear of the live carriageway and call for help. A winch-out may be possible for a suitable car or light van if access and ground conditions allow it to be done safely."
+      },
+      {
+        question: "Is recovery on the A66 available at night?",
+        answer: "Yes. FSR Recovery Group provides 24/7 recovery and roadside assistance, including overnight. In poor weather, a clear location still matters so the operator can reach you safely."
+      }
+    ],
+    content: [
+      { type: "paragraph", text: "If your car or light van stops on the A66 in winter, the first job is not the repair. It is getting you, your passengers and the vehicle into a safer position, then calling for the right help." },
+      { type: "paragraph", text: (
+          <>{"This guide is for the stretch between Scotch Corner, where the A66 meets the "}
+            <a href="https://fsrrecoverygroups.co.uk/areas/a1m" className="font-semibold text-red hover:underline">{"A1(M)"}</a>
+            {", and the climb toward Bowes and Bowes Moor. The safety steps follow "}
+            <a href="https://www.gov.uk/guidance/the-highway-code/breakdowns-and-incidents-274-to-287" className="font-semibold text-red hover:underline">{"The Highway Code: Breakdowns and incidents (rules 275 to 287)"}</a>
+            {" and "}
+            <a href="https://nationalhighways.co.uk/safety/driving-on-our-roads/driving-on-motorways/" className="font-semibold text-red hover:underline">{"National Highways’ advice on what to do if you break down"}</a>
+            {". It is a practical briefing, not legal advice. Where anything is in doubt, follow the official sources and the emergency services."}</>
+        ),
+      },
+      { type: "heading", level: 2, id: "if-you-only-read-one-section-get-safe-then-get-help", text: "If you only read one section: get safe, then get help" },
+      { type: "paragraph", text: "Work through this in order. Do not start with the bonnet." },
+      { type: "list", items: [
+        "1. If the vehicle can still be moved, leave at the next junction or pull into a lay-by or other place designed for stopping.",
+        "2. If you cannot, move left. Stop as far left as you can, leaving room to get out, with the wheels turned left. Switch on your hazard warning lights. If it is dark or visibility is poor, use your sidelights.",
+        "3. If you have reached a place of relative safety and it is safe to get out, leave by the side furthest from traffic. Put on high-visibility clothing if you have it. Get behind a safety barrier if there is one and it is safe to do so.",
+        "4. If you cannot get off the live carriageway, stay in the vehicle, keep your seat belts and hazard lights on, and call 999 for the police. Use the vehicle’s SOS button if it has one.",
+        "5. Once you are safe, call National Highways on 0300 123 5000 from a safe position, then a breakdown recovery service. Face the traffic while you speak.",
+      ] },
+      { type: "image", src: "/images/a66-breakdown-get-safe.webp", alt: "Driver in high-visibility clothing standing behind a safety barrier beside a winter dual carriageway" },
+      { type: "heading", level: 2, id: "why-the-a66-in-winter-is-a-different-breakdown", text: "Why the A66 in winter is a different breakdown" },
+      { type: "paragraph", text: (
+          <>{"The A66 here is a trans-Pennine A-road, not a motorway. Some rules differ from those on the "}
+            <a href="https://fsrrecoverygroups.co.uk/areas/a1m" className="font-semibold text-red hover:underline">{"A1(M)"}</a>
+            {" at Scotch Corner, including the rule on warning triangles. The road also changes character over a short distance, which is why “I’m on the A66” is rarely enough on its own."}</>
+        ),
+      },
+      { type: "paragraph", text: "At Scotch Corner the interchange is busy, and you may still be close to motorway traffic. West of there, toward Bowes, the road opens and climbs. Some stretches are dual carriageway. Around Bowes there is a shorter single-carriageway section between dual stretches. Beyond the village the ground rises toward Bowes Moor, where there is less shelter if the weather turns." },
+      { type: "paragraph", text: "Winter on these high, open sections can bring wind, rain, snow, ice and sudden drops in visibility. A lay-by or a firm, designed pull-in is a very different place to wait than a verge that looks solid under a thin layer of snow and is soft underneath." },
+      { type: "paragraph", text: (
+          <><strong>{"FSR Recovery Group"}</strong>
+            {"’s "}
+            <a href="https://fsrrecoverygroups.co.uk/areas/a66" className="font-semibold text-red hover:underline">{"A66 area page"}</a>
+            {" covers this route around Scotch Corner, Darlington, the approaches toward "}
+            <a href="https://fsrrecoverygroups.co.uk/areas/barnard-castle" className="font-semibold text-red hover:underline">{"Barnard Castle"}</a>
+            {", and Bowes Moor. This article is the winter safety sequence, and the detail to give when you call, rather than a repeat of that page."}</>
+        ),
+      },
+      { type: "heading", level: 2, id: "step-by-step-what-to-do-on-the-carriageway", text: "Step-by-step: what to do on the carriageway" },
+      { type: "paragraph", text: (
+          <><a href="https://gov.uk/guidance/the-highway-code/breakdowns-and-incidents-274-to-287" className="font-semibold text-red hover:underline">{"The Highway Code"}</a>
+            {" asks you to think first of all other road users. National Highways puts the same idea in three words: go left, get safe, get help."}</>
+        ),
+      },
+      { type: "list", items: [
+        <>{"1. "}
+            <strong>{"Get off the live road if you can"}</strong>
+            {" (Rule 276). Aim for a junction, a lay-by or another place designed for parking. Rule 275 calls this a place of relative safety: somewhere you, your passengers and the vehicle are less likely to be at risk from moving traffic. Hard shoulders, where they exist, give less protection because they sit so close to fast traffic. A snow-covered or waterlogged verge is not a good substitute."}</>,
+        <>{"2. "}
+            <strong>{"Make the vehicle and yourself visible."}</strong>
+            {" If you are causing an obstruction, use your hazard warning lights. If it is dark or visibility is poor, keep your sidelights on if you can. Wear light-coloured or fluorescent clothing in daylight, and reflective clothing at night or in poor visibility."}</>,
+        <>{"3. "}
+            <strong>{"Use a warning triangle only if it is safe, and never on a motorway."}</strong>
+            {" Rule 276 allows a triangle on ordinary roads at least 45 metres (147 feet) behind the vehicle, on the same side, with great care. The A66 is not a motorway, so a triangle may be used if you can place and retrieve it without stepping into traffic or walking on ice. If you have stopped on the A1(M) at Scotch Corner, do not use a triangle at all."}</>,
+        <>{"4. "}
+            <strong>{"Stay out of the danger line, then get well clear if it is safe to leave."}</strong>
+            {" Do not stand between the vehicle and oncoming traffic, or where you will block your lights. Leave by the side furthest from traffic, and make sure passengers do the same. Get behind a safety barrier where there is one, watching for drops, uneven ground or debris. Official advice for high-speed roads is not to return to the vehicle even if it is raining, cold or dark, and not to attempt repairs at the roadside. Keep animals in the vehicle, or under control on the verge in an emergency. Keep well away from the vehicle and moving traffic, because a collision could force the vehicle into you."}</>,
+        <>{"5. "}
+            <strong>{"If you cannot get to a place of relative safety, stay in the vehicle."}</strong>
+            {" Keep your seat belts and hazard lights on and call 999 for the police, or use the vehicle’s SOS button. Rule 279 gives the same advice if a disability prevents you from following the usual steps."}</>,
+      ] },
+      { type: "heading", level: 2, id: "how-to-describe-your-location-on-the-a66", text: "How to describe your location on the A66" },
+      { type: "paragraph", text: "Once you are safe, a precise location helps National Highways and a recovery operator plan how to reach you. “Westbound, just west of Bowes, in the lay-by” is far more useful than “somewhere on the A66.”" },
+      { type: "image", src: "/images/a66-marker-post-location.webp", alt: "Roadside location marker post beside a frosty A-road verge" },
+      { type: "paragraph", text: "Give as much of the following as you can, without walking back toward the carriageway to find it:" },
+      { type: "list", items: [
+        <><strong>{"Direction of travel."}</strong>
+            {" Eastbound, toward Scotch Corner and the A1(M), or westbound, toward Bowes and the Pennines."}</>,
+        <><strong>{"The last junction or place name you are sure of."}</strong>
+            {" Scotch Corner, the approaches toward Barnard Castle, Bowes, or Bowes Moor."}</>,
+        <><strong>{"Marker posts or driver location signs."}</strong>
+            {" Quote the numbers and letters on the posts or signs along the edge of the road, as The Highway Code and National Highways advise."}</>,
+        <><strong>{"A map pin"}</strong>
+            {", only if you can send one safely."}</>,
+        <><strong>{"Where the vehicle actually is."}</strong>
+            {" A lay-by, a verge, or still in a live lane. If you are still in a live lane, that is a 999 call first."}</>,
+        <><strong>{"The weather, the vehicle and who is with you."}</strong>
+            {" Snow, ice, fog or strong wind all affect access. Say whether it is a car or light van, the colour, the registration if you are asked, and if anyone is disabled, older, travelling alone, or if there are children in the group."}</>,
+      ] },
+      { type: "paragraph", text: "If you have an SOS or eCall button, use it when you need the police, fire or ambulance, not for ordinary breakdown recovery. For advice on England’s motorways and major A-roads, call National Highways on 0300 123 5000 from a safe position, facing the traffic." },
+      { type: "heading", level: 2, id: "when-it-is-a-999-call-not-only-a-recovery-call", text: "When it is a 999 call, not only a recovery call" },
+      { type: "paragraph", text: "A recovery service cannot make a live lane safe. Call 999 and ask for the police, or press the vehicle’s SOS button and ask for the police, if any of the following is true:" },
+      { type: "list", items: [
+        "You have had to stop in a live lane and cannot reach a place of relative safety.",
+        "You cannot get out of the vehicle safely.",
+        "A disability prevents you from following the usual “get out and get behind the barrier” advice.",
+        "You are involved in a collision, someone is injured, or there is an immediate danger to life.",
+        "Something has fallen onto the carriageway on a high-speed road. Rule 280 says you must not remove that obstruction yourself. Stop in a place of relative safety if you can, and call 999.",
+      ] },
+      { type: "paragraph", text: "Once you are safe, or once the police have been called, you can also contact National Highways and a recovery service. If you are a vulnerable motorist — disabled, older, or travelling alone — say so." },
+      { type: "heading", level: 2, id: "what-recovery-may-involve-on-this-road", text: "What recovery may involve on this road" },
+      { type: "paragraph", text: "What happens next depends on where the vehicle is, whether it can be moved, and whether the ground and weather make roadside work sensible. That cannot be promised in advance, and no honest operator should promise how soon someone will arrive from a page like this." },
+      { type: "image", src: "/images/a66-winter-recovery-van.webp", alt: "Recovery vehicle loading a car onto a flatbed in a winter lay-by beside open moorland" },
+      { type: "paragraph", text: (
+          <>{"If the car or light van cannot safely continue, "}
+            <a href="https://fsrrecoverygroups.co.uk/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">{"vehicle breakdown recovery"}</a>
+            {" is the usual next step: the vehicle is collected and taken to an agreed garage, home address or other suitable destination. "}
+            <strong>{"FSR Recovery Group"}</strong>
+            {" provides this 24/7 for cars and light vans, including on the A66 near Darlington, subject to the location when you call."}</>
+        ),
+      },
+      { type: "paragraph", text: (
+          <>{"Sometimes "}
+            <a href="https://fsrrecoverygroups.co.uk/services/roadside-assistance" className="font-semibold text-red hover:underline">{"roadside assistance"}</a>
+            {" is enough — a spare wheel, a jump start, or fuel, for example. On a winter A66, the safer option is often to load the vehicle and move the work off the road. That is a judgement for the operator once they can see the site."}</>
+        ),
+      },
+      { type: "paragraph", text: (
+          <>{"If the vehicle is stuck in snow, mud or a soft verge, stop spinning the wheels. A short, controlled "}
+            <a href="https://fsrrecoverygroups.co.uk/services/winch-out" className="font-semibold text-red hover:underline">{"winch-out"}</a>
+            {" may be possible for a suitable car or light van, but only where access, position and ground conditions allow it to be done safely. It is not an off-road recovery claim. If the vehicle cannot continue after it has been moved, it can still be recovered to an agreed destination."}</>
+        ),
+      },
+      { type: "paragraph", text: "Tell the operator if you are on the open stretch toward Bowes Moor, on the approaches to Barnard Castle, or close to the Scotch Corner interchange. Those are different places to work, especially after dark or in snow." },
+      { type: "heading", level: 2, id: "waiting-in-the-cold-practical-checks", text: "Waiting in the cold: practical checks" },
+      { type: "paragraph", text: "Waiting is often the hardest part on an exposed stretch with little shelter. Stay with the official advice rather than with what would feel more comfortable." },
+      { type: "list", items: [
+        "If you have left the vehicle and reached a safer position, stay there. Do not go back to sit in the car because it is raining, cold or dark.",
+        "Keep high-visibility clothing on, stay behind a safety barrier if it is safe, and remain alert for traffic or debris.",
+        "Do not attempt a repair at the roadside, and do not walk along the carriageway to “just have a look.”",
+        "Keep children away from the road. Keep animals in the vehicle unless it is an emergency and you can control them on the verge.",
+        "If you had to stay in the vehicle because you could not get clear, keep the seat belts and hazard lights on and wait for the police.",
+        "Use your phone from a safe position. Do not step closer to the traffic to find a better signal.",
+      ] },
+      { type: "paragraph", text: (
+          <>{"If the engine will not restart, treat it as a breakdown, not as a reason to keep trying in a risky place. There is a separate guide on "}
+            <a href="https://fsrrecoverygroups.co.uk/blog/car-wont-start-but-battery-is-fine" className="font-semibold text-red hover:underline">{"what to check when a car will not start but the battery seems fine"}</a>
+            {". Make those checks only if you are already in a place of relative safety."}</>
+        ),
+      },
+      { type: "heading", level: 2, id: "frequently-asked-questions", text: "Frequently asked questions" },
+      { type: "paragraph", text: (
+          <><strong>{"What should I do first if I break down on the A66 in winter?"}</strong></>
+        ),
+      },
+      { type: "paragraph", text: "Get off the live carriageway if you can, into a lay-by or other place of relative safety, and switch on your hazards. Get clear if it is safe; if not, stay belted in and call 999, then National Highways and a recovery service." },
+      { type: "paragraph", text: (
+          <><strong>{"Do you cover the A66 near Scotch Corner and Bowes?"}</strong></>
+        ),
+      },
+      { type: "paragraph", text: (
+          <>{"Yes. "}
+            <strong>{"FSR Recovery Group"}</strong>
+            {" covers the A66 around Scotch Corner, Darlington, the approaches toward Barnard Castle, and Bowes Moor. Further toward Cumbria, call with your location so availability can be confirmed. The base is 135 Gladstone Street, Darlington DL3 6LB."}</>
+        ),
+      },
+      { type: "paragraph", text: (
+          <><strong>{"Should I stay in the car or get out?"}</strong></>
+        ),
+      },
+      { type: "paragraph", text: "If you have reached a place of relative safety and can get out safely, leave by the side furthest from traffic and get well away, behind a barrier if there is one. If you cannot get clear, stay belted in with the hazards on and call 999." },
+      { type: "paragraph", text: (
+          <><strong>{"Can a warning triangle be used on the A66?"}</strong></>
+        ),
+      },
+      { type: "paragraph", text: "The A66 is not a motorway, so The Highway Code allows a triangle at least 45 metres behind, on the same side, if you can place and retrieve it safely. Never use one on the A1(M). If it would put you at risk, do not use one." },
+      { type: "paragraph", text: (
+          <><strong>{"What details should I give the recovery operator?"}</strong></>
+        ),
+      },
+      { type: "paragraph", text: "Direction of travel, the last place name or junction you are sure of, any marker post or driver location sign, whether you are in a lay-by, on a verge or in a live lane, the weather, your vehicle, and whether anyone is vulnerable." },
+      { type: "paragraph", text: (
+          <><strong>{"What if the vehicle is stuck in snow or on a verge?"}</strong></>
+        ),
+      },
+      { type: "paragraph", text: "Do not keep spinning the wheels. Stay clear of the live carriageway and call for help. A winch-out may be possible for a suitable car or light van if access and ground conditions allow it to be done safely." },
+      { type: "paragraph", text: (
+          <><strong>{"Is recovery on the A66 available at night?"}</strong></>
+        ),
+      },
+      { type: "paragraph", text: (
+          <>{"Yes. "}
+            <strong>{"FSR Recovery Group"}</strong>
+            {" provides 24/7 recovery and roadside assistance, including overnight. In poor weather, a clear location still matters so the operator can reach you safely."}</>
+        ),
+      },
+      { type: "heading", level: 2, id: "if-you-need-recovery-on-the-a66", text: "If you need recovery on the A66" },
+      { type: "paragraph", text: (
+          <>{"If you have broken down between Scotch Corner and Bowes, or elsewhere on the A66 near Darlington, call "}
+            <strong>{"FSR Recovery Group"}</strong>
+            {" on +44 7888 502989. The service is available 24/7 for cars and light vans. Have your location, your direction of travel and a short description of what has happened ready if you can. The operator can then confirm what help is possible from where you are."}</>
+        ),
+      },
+      { type: "paragraph", text: (
+          <>{"You can also use the "}
+            <a href="https://fsrrecoverygroups.co.uk/contact" className="font-semibold text-red hover:underline">{"contact page"}</a>
+            {". For more practical guides, see the "}
+            <a href="https://fsrrecoverygroups.co.uk/blog" className="font-semibold text-red hover:underline">{"FSR Recovery Group blog"}</a>
+            {"."}</>
+        ),
+      },
+    ],
+  },
   {
     slug: "car-wont-start-but-battery-is-fine",
     title: "Car Won't Start but Battery Is Fine? 8 Possible Reasons",
