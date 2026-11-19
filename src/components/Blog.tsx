@@ -238,6 +238,16 @@ export function ArticleSchema({ post }: { post: BlogPost }) {
         author: { "@type": "Organization", name: post.author },
         publisher: businessEntityRef,
       },
+      ...(post.faqs?.length
+        ? [{
+            "@type": "FAQPage",
+            mainEntity: post.faqs.map(({ question, answer }) => ({
+              "@type": "Question",
+              name: question,
+              acceptedAnswer: { "@type": "Answer", text: answer },
+            })),
+          }]
+        : []),
     ],
   };
 
