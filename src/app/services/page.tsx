@@ -6,10 +6,16 @@ import { Footer } from "@/components/Footer";
 import { getServiceNavigation } from "@/data/services";
 import { business } from "@/data/business";
 
+const title = "Recovery & Towing Services Darlington | FSR Recovery";
+const description = "Breakdown and accident recovery, jump starts, winch outs and vehicle transport from FSR Recovery Group in Darlington. Call or WhatsApp +44 7888 502989.";
+const heading = "Recovery & Towing Services in Darlington & the North East";
+const heroIntro = "From our base on Gladstone Street in Darlington, FSR Recovery Group provides breakdown recovery, accident recovery, roadside help and vehicle transport across County Durham, Teesside, Tyne and Wear and North Yorkshire.";
+
 export const metadata: Metadata = {
-  title: { absolute: "Expert Vehicle Recovery Services You Can Trust" },
-  description: "Need fast help? Our professional vehicle recovery services are just a call away. Get assistance today!",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/services" },
+  openGraph: { title, description, url: "/services", type: "website", siteName: business.name },
 };
 
 const services = [
@@ -22,7 +28,7 @@ const services = [
     desc: "Round-the-clock recovery for any breakdown, wherever you are on the road, day or night.",
     features: [
       "Available 24 hours a day, every day of the year",
-      "Modern fleet of flatbed and recovery vehicles",
+      "Flatbed recovery for cars, light vans, 4x4s and SUVs",
       "Transport to a garage, home address or storage location",
     ],
   },
@@ -45,9 +51,9 @@ const services = [
     alt: "Jump-starting a car battery on a frosty driveway",
     title: "Jumpstart Services",
     ...getServiceNavigation("jumpstart-services"),
-    desc: "Flat battery? We'll get your engine running again in minutes, anywhere you're parked.",
+    desc: "Flat battery? We'll try to get your engine running where you're parked.",
     features: [
-      "Fast response for flat or failing batteries",
+      "Help for flat or failing batteries",
       "Basic diagnostic check of charging issues",
       "Recovery arranged if the vehicle cannot be restarted",
     ],
@@ -71,7 +77,7 @@ const services = [
     alt: "Technician inspecting a damaged car with a tow truck behind",
     title: "Accident Emergency Assistance",
     ...getServiceNavigation("accident-emergency-assistance"),
-    desc: "Fast, careful recovery from the scene of a collision, handled with care and full insurance.",
+    desc: "Fast, careful recovery from the scene of a collision, handled with care.",
     features: [
       "Sensitive, professional handling at the scene",
       "Coordination with insurers, police or third parties on request",
@@ -100,7 +106,7 @@ const services = [
     desc: "Run out of fuel? We'll bring enough to get you safely to the nearest station.",
     features: [
       "Enough fuel to reach the nearest station",
-      "Fast response to minimise time stuck roadside",
+      "Fuel brought to where you've stopped",
       "Available for petrol and diesel vehicles",
     ],
   },
@@ -163,6 +169,22 @@ const faqs = [
     q: "Is my vehicle insured during recovery?",
     a: "Yes, we are fully insured and take care to load, transport and unload every vehicle safely from start to finish.",
   },
+  {
+    q: "Which areas do you cover?",
+    a: "We're based on Gladstone Street in Darlington and cover County Durham, Teesside, Tyne and Wear and North Yorkshire, including Durham, Newcastle, Sunderland, Middlesbrough, Peterlee, Bishop Auckland, Barnard Castle, Northallerton, Thirsk, Ripon and Catterick, plus the A1(M), A66, A19, A167, A67 and A68. Call with your location if you're not sure.",
+  },
+  {
+    q: "Where can you take my vehicle?",
+    a: "Wherever you need it to go: your usual garage, a body repair centre, your home, a storage location or another address you agree with us when you call.",
+  },
+  {
+    q: "What vehicles do you recover?",
+    a: "Cars, light vans, 4x4s and SUVs. Tell us the make and model, and whether it's automatic, electric or hybrid, so we can plan how to load it safely.",
+  },
+  {
+    q: "Can you deal with my insurer?",
+    a: "On request, we can liaise with your insurer or their recovery coordinator about where the vehicle should go.",
+  },
 ];
 
 const schema = {
@@ -170,8 +192,12 @@ const schema = {
   "@graph": [
     {
       "@type": "CollectionPage",
-      name: "Vehicle Recovery Services",
+      "@id": "https://fsrrecoverygroups.co.uk/services#webpage",
+      name: heading,
       url: "https://fsrrecoverygroups.co.uk/services",
+      isPartOf: { "@id": "https://fsrrecoverygroups.co.uk/#website" },
+      about: { "@id": "https://fsrrecoverygroups.co.uk/#business" },
+      breadcrumb: { "@id": "https://fsrrecoverygroups.co.uk/services#breadcrumb" },
       hasPart: {
         "@type": "ItemList",
         itemListElement: services.map((s, i) => ({
@@ -183,7 +209,16 @@ const schema = {
       },
     },
     {
+      "@type": "BreadcrumbList",
+      "@id": "https://fsrrecoverygroups.co.uk/services#breadcrumb",
+      itemListElement: [
+        { "@type": "ListItem", position: 1, name: "Home", item: "https://fsrrecoverygroups.co.uk" },
+        { "@type": "ListItem", position: 2, name: "Services", item: "https://fsrrecoverygroups.co.uk/services" },
+      ],
+    },
+    {
       "@type": "FAQPage",
+      "@id": "https://fsrrecoverygroups.co.uk/services#faq",
       mainEntity: faqs.map((faq) => ({
         "@type": "Question",
         name: faq.q,
@@ -196,7 +231,7 @@ const schema = {
 export default function ServicesPage() {
   return (
     <>
-      <Header activePath="/services" />
+      <Header activePath="/services" announcement="24/7 Emergency Towing & Recovery – Call Now" />
 
       <main>
         {/* Page Banner */}
@@ -220,10 +255,10 @@ export default function ServicesPage() {
               <i className="fa-solid fa-screwdriver-wrench flex-shrink-0"></i> Our Services
             </p>
             <h1 className="mb-3 text-3xl leading-tight font-extrabold sm:mb-5 sm:text-4xl lg:text-6xl">
-              Roadside Recovery &amp; Towing Services
+              {heading}
             </h1>
             <p className="mx-auto mb-5 max-w-2xl text-base text-white/80 sm:mb-8 sm:text-lg">
-              Practical, professional support for breakdowns, accidents and roadside emergencies across the region.
+              {heroIntro}
             </p>
             <div className="flex flex-col justify-center gap-3 sm:flex-row sm:gap-4">
               <a href={business.tel} className="btn-glow rounded-full bg-red px-5 py-3.5 text-center text-sm font-bold text-white transition sm:px-7 sm:py-4 sm:text-base">
@@ -288,6 +323,64 @@ export default function ServicesPage() {
                   </div>
                 </article>
               ))}
+            </div>
+          </div>
+        </section>
+
+        <section className="bg-white py-20">
+          <div className="container-site space-y-12">
+            <div className="fade-up">
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Which Service Do You Need?</h2>
+              <p className="mb-5 text-navy/70">Not sure what to ask for? Tell us what’s happened and we’ll send the right help:</p>
+              <ul className="list-disc space-y-3 pl-5 leading-7 text-navy/70">
+                <li><strong>Car won’t start</strong> → <Link href="/services/jumpstart-services" className="font-semibold text-red hover:underline">jump start</Link>. If it still won’t start, we arrange <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">breakdown recovery</Link>.</li>
+                <li><strong>Flat tyre and you have a usable spare</strong> → <Link href="/services/changing-spare-tyre" className="font-semibold text-red hover:underline">spare tyre change</Link>.</li>
+                <li><strong>Run out of fuel</strong> → <Link href="/services/refueling" className="font-semibold text-red hover:underline">emergency refuelling</Link>.</li>
+                <li><strong>Car can’t be driven safely</strong> → <Link href="/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">breakdown recovery</Link> to a garage, your home or another agreed address.</li>
+                <li><strong>After a collision</strong> → <Link href="/services/accident-emergency-assistance" className="font-semibold text-red hover:underline">accident recovery</Link> once the scene is safe.</li>
+                <li><strong>Stuck in mud, snow or a ditch</strong> → <Link href="/services/winch-out" className="font-semibold text-red hover:underline">winch out</Link>.</li>
+                <li><strong>Planned move, non-runner or dealership transfer</strong> → <Link href="/services/vehicle-transporting" className="font-semibold text-red hover:underline">vehicle transporting</Link>.</li>
+              </ul>
+            </div>
+            <div className="fade-up">
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Recovery Across Darlington and the North East</h2>
+              <p className="leading-7 text-navy/70">
+                We’re based at 135 Gladstone Street, Darlington, and recover vehicles from homes, car parks, industrial estates and the roadside across the region. Towns we cover include{" "}
+                <Link href="/" className="font-semibold text-red hover:underline">Darlington</Link>,{" "}
+                <Link href="/areas/durham" className="font-semibold text-red hover:underline">Durham</Link>,{" "}
+                <Link href="/areas/newcastle" className="font-semibold text-red hover:underline">Newcastle</Link>,{" "}
+                <Link href="/areas/sunderland" className="font-semibold text-red hover:underline">Sunderland</Link>,{" "}
+                <Link href="/areas/middlesbrough" className="font-semibold text-red hover:underline">Middlesbrough</Link>,{" "}
+                <Link href="/areas/peterlee" className="font-semibold text-red hover:underline">Peterlee</Link>,{" "}
+                <Link href="/areas/bishop-auckland" className="font-semibold text-red hover:underline">Bishop Auckland</Link>,{" "}
+                <Link href="/areas/barnard-castle" className="font-semibold text-red hover:underline">Barnard Castle</Link>,{" "}
+                <Link href="/areas/northallerton" className="font-semibold text-red hover:underline">Northallerton</Link>,{" "}
+                <Link href="/areas/thirsk" className="font-semibold text-red hover:underline">Thirsk</Link>,{" "}
+                <Link href="/areas/ripon" className="font-semibold text-red hover:underline">Ripon</Link>,{" "}
+                <Link href="/areas/catterick" className="font-semibold text-red hover:underline">Catterick</Link>. On the main roads we cover the{" "}
+                <Link href="/areas/a1m" className="font-semibold text-red hover:underline">A1(M)</Link>,{" "}
+                <Link href="/areas/a66" className="font-semibold text-red hover:underline">A66</Link>,{" "}
+                <Link href="/areas/a19" className="font-semibold text-red hover:underline">A19</Link>,{" "}
+                <Link href="/areas/a167" className="font-semibold text-red hover:underline">A167</Link>,{" "}
+                <Link href="/areas/a67" className="font-semibold text-red hover:underline">A67</Link>,{" "}
+                <Link href="/areas/a68" className="font-semibold text-red hover:underline">A68</Link>.
+              </p>
+              <p className="mt-4 leading-7 text-navy/70">
+                If you’re not sure whether we cover your location, call or WhatsApp +44 7888 502989 with the postcode or a shared location.{" "}
+                <Link href="/areas" className="font-semibold text-red hover:underline">See all areas we cover</Link>.
+              </p>
+            </div>
+            <div className="fade-up">
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Vehicles We Recover</h2>
+              <p className="leading-7 text-navy/70">We recover cars, light vans, 4x4s and SUVs. When you call, tell us the make and model, whether it’s manual, automatic, electric or hybrid, and whether the wheels turn and the steering is free. That helps us plan how to load it safely and send the right recovery vehicle.</p>
+            </div>
+            <div className="fade-up">
+              <h2 className="mb-4 text-3xl font-extrabold text-navy lg:text-4xl">Staying Safe While You Wait</h2>
+              <p className="leading-7 text-navy/70">
+                If you break down on a busy road, switch on your hazard lights and, if it’s safe, get everyone out on the side away from traffic and wait well back from the road, behind a barrier where there is one. On a motorway, don’t put out a warning triangle. If you can’t get out safely, stay in the vehicle with your seat belt on and call 999. Follow the{" "}
+                <a href="https://www.gov.uk/guidance/the-highway-code/breakdowns-and-incidents-274-to-287" className="font-semibold text-red hover:underline">Highway Code breakdown advice</a>. For other warning signs, read{" "}
+                <Link href="/blog/car-wont-start-but-battery-is-fine" className="font-semibold text-red hover:underline">car won’t start but the battery is fine</Link>.
+              </p>
             </div>
           </div>
         </section>
