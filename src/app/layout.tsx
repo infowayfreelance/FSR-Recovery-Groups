@@ -19,6 +19,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://fsrrecoverygroups.co.uk"),
+  verification: { google: "HmzXza_hSBNCHg6uTxOSFJBwzX6f3yazBYnhmpeUJgs" },
   title: {
     template: `%s | ${business.name}`,
     default: `${business.name} | 24/7 Car Recovery & Towing Services`,

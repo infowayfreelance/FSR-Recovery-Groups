@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { AreaPageLayout, type AreaPageContent } from "@/components/AreaPage";
 import { business } from "@/data/business";
 
-const title = "Middlesbrough Car Recovery Services Available 24/7";
-const description = "Experience quick car recovery in Middlesbrough anytime! Contact us for reliable assistance on the road.";
+const title = "Car Recovery Middlesbrough | 24/7 Breakdown | FSR Recovery";
+const description = "24/7 car recovery and breakdown help in Middlesbrough and Teesside, including the A66 and A19. Cars and light vans recovered. Call FSR on +44 7888 502989.";
 const path = "/areas/middlesbrough";
 
 export const metadata: Metadata = {
@@ -18,7 +19,7 @@ export const metadata: Metadata = {
 const content: AreaPageContent = {
   category: "city",
   eyebrow: "Middlesbrough",
-  h1: "24/7 Vehicle Recovery in Middlesbrough",
+  h1: "24/7 Car Recovery & Breakdown Help in Middlesbrough",
   heroIntro: "FSR Recovery Group provides fast, reliable breakdown recovery across Middlesbrough and the wider Teesside area, from the town centre to the industrial estates.",
   heroImage: "/images/gallery-1.jpg",
   heroImageAlt: "Recovery vehicle assisting a driver in an industrial town",
@@ -27,7 +28,13 @@ const content: AreaPageContent = {
   introParagraphs: [
     "Middlesbrough's mix of town centre streets, the areas around the Riverside Stadium and the industrial estates that line the Tees can each bring different recovery challenges. FSR Recovery Group responds to breakdowns throughout the town, including residential streets in Linthorpe and Acklam.",
     "We also cover the A66 and A19 as they serve Middlesbrough, along with routes toward Stockton and the Tees Transporter Bridge area, so commuters and visitors have a dependable recovery option nearby.",
-    "Whether your vehicle has broken down in the town centre, on an industrial estate or on the approach roads, contact us with your location and we'll confirm the quickest way to assist.",
+    <>
+      Whether your vehicle has broken down in the town centre, on an industrial estate or on the approach roads, contact us with your location and we&apos;ll confirm the quickest way to assist. Our base is in Darlington — see{" "}
+      <Link href="/" className="font-semibold text-red hover:underline">
+        car recovery in Darlington
+      </Link>{" "}
+      for our main service area.
+    </>,
   ],
   localHighlightsTitle: "Middlesbrough Coverage Highlights",
   localHighlights: [

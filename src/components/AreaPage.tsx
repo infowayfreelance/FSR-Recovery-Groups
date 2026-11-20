@@ -115,7 +115,11 @@ function AreaSchema({ content, path }: { content: AreaPageContent; path: string 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />;
 }
 
-export function AreaPageLayout({ content, path }: { content: AreaPageContent; path: string }) {
+export function AreaPageLayout({ content, path, afterIntro }: {
+  content: AreaPageContent;
+  path: string;
+  afterIntro?: React.ReactNode;
+}) {
   return (
     <>
       {/* Hero */}
@@ -179,6 +183,8 @@ export function AreaPageLayout({ content, path }: { content: AreaPageContent; pa
           </div>
         </div>
       </section>
+
+      {afterIntro}
 
       {/* Situations */}
       <section className="bg-slate-50 py-16 sm:py-24">
