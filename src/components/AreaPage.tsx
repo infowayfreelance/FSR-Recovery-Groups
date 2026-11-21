@@ -83,8 +83,8 @@ const serviceLinkCards: { title: string; text: string; icon: string; key: string
   { key: "vehicle-transporting", title: "Vehicle Transporting", text: "Planned vehicle transport between agreed locations, on a flatbed or tow.", icon: "fa-solid fa-truck" },
 ];
 
-function AreaSchema({ content, path }: { content: AreaPageContent; path: string }) {
-  const schema = {
+function AreaSchema({ content, path, schemaOverride }: { content: AreaPageContent; path: string; schemaOverride?: Record<string, unknown> }) {
+  const schema = schemaOverride ?? {
     "@context": "https://schema.org",
     "@graph": [
       breadcrumbList([{ name: "Home", path: "/" }, { name: "Areas", path: "/areas" }, { name: content.eyebrow, path }]),
@@ -115,10 +115,11 @@ function AreaSchema({ content, path }: { content: AreaPageContent; path: string 
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />;
 }
 
-export function AreaPageLayout({ content, path, afterIntro }: {
+export function AreaPageLayout({ content, path, afterIntro, schema }: {
   content: AreaPageContent;
   path: string;
   afterIntro?: React.ReactNode;
+  schema?: Record<string, unknown>;
 }) {
   return (
     <>
@@ -368,7 +369,7 @@ export function AreaPageLayout({ content, path, afterIntro }: {
         </div>
       </section>
 
-      <AreaSchema content={content} path={path} />
+      <AreaSchema content={content} path={path} schemaOverride={schema} />
     </>
   );
 }
