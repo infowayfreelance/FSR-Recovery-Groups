@@ -49,6 +49,610 @@ export function formatBlogDate(iso: string): string {
 
 export const blogPosts: BlogPost[] = [
   {
+    slug: "run-out-of-fuel-what-to-do",
+    title: "Run Out of Fuel? What to Do on the A1(M), A19 and North East Roads",
+    metaTitle: "Run Out of Fuel? What to Do, Step by Step",
+    metaDescription: "Run out of fuel in the North East? Where to stop, what not to do on a motorway, what to tell the operator, and how roadside fuel help or recovery works.",
+    excerpt: "The fuel light has been on for longer than you meant it to be. The car coughs, loses power, and coasts to a stop. Running out of fuel is one of the most ordinary ways to break down, and it can still leave you in an awkward or dangerous place: a hard shoulder on the A1(M), a dark stretch of the A66 across the tops, or a narrow lane outside Barnard Castle with nowhere to pull in.",
+    featuredImage: "/images/run-out-of-fuel-what-to-do-featured.webp",
+    featuredImageAlt: "Car stopped on a motorway hard shoulder with hazard lights on after running out of fuel",
+    publishedDate: "2026-11-21",
+    author: "FSR Recovery Group",
+    authorRole: "Editorial Team",
+    readingTime: "12 min read",
+    tags: ["out of fuel", "roadside assistance", "breakdown recovery", "A1(M)", "A19"],
+    faqs: [
+      {
+        question: "What should I do first if I run out of fuel on the A1(M)?",
+        answer: "Get into the left lane and stop on the hard shoulder or in an emergency area if you can, with hazard lights on. Leave by the side away from traffic, get behind the barrier, and call for help. If you cannot get out of a live lane safely, stay in the vehicle with your seat belt on and call 999.",
+      },
+      {
+        question: "Can I walk to the next services or filling station?",
+        answer: "Not along a motorway or a fast road. National Highways advises waiting well away from your vehicle and moving traffic, behind the safety barrier where there is one. Call for help instead.",
+      },
+      {
+        question: "Should I put a warning triangle out?",
+        answer: "Never on a motorway. On an ordinary road, the Highway Code says a warning triangle can be placed at least 45 metres behind the vehicle on the same side of the road, but only if it is safe to do so.",
+      },
+      {
+        question: "Will my car start straight away once fuel is added?",
+        answer: "Often, but not always. Some vehicles take a few attempts to draw fuel through, and some diesels need more than fuel after running dry. If it still will not start, another fault may be involved and further assistance or recovery can be discussed.",
+      },
+      {
+        question: "What if I put the wrong fuel in rather than running out?",
+        answer: "That is a different problem. Do not start the engine if you have not already, and explain exactly what happened when you call so the right help can be discussed.",
+      },
+      {
+        question: "Is roadside fuel help available at night?",
+        answer: "Yes. FSR Recovery Group's emergency refueling assistance is available 24/7 for genuine out-of-fuel situations.",
+      }
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "The fuel light has been on for longer than you meant it to be. The car coughs, loses power, and coasts to a stop. Running out of fuel is one of the most ordinary ways to break down, and it can still leave you in an awkward or dangerous place: a hard shoulder on the A1(M), a dark stretch of the A66 across the tops, or a narrow lane outside Barnard Castle with nowhere to pull in.",
+      },
+      {
+        type: "paragraph",
+        text: "This guide is for drivers around Darlington, Durham, Teesside and North Yorkshire. It covers what to do in the first few minutes, what not to do, how to describe where you are, and how roadside fuel assistance or recovery usually works once you are safe. It is written in the order you need it: safety first, then help.",
+      },
+      { type: "heading", level: 2, id: "the-short-answer", text: "The short answer" },
+      {
+        type: "paragraph",
+        text: "If you are running out of fuel, or the vehicle has already stopped:",
+      },
+      {
+        type: "list",
+        items: [
+          (
+          <>
+            {"1. "}
+            <strong>{"Get off the live road if you can."}</strong>
+            {" Leave at the next exit, or use a service area, lay-by or car park. On a motorway, if you cannot leave, get into the left lane and stop on the hard shoulder or in an emergency area."}
+          </>
+        ),
+          (
+          <>
+            {"2. "}
+            <strong>{"Hazard lights on."}</strong>
+            {" Sidelights too if it is dark or visibility is poor."}
+          </>
+        ),
+          (
+          <>
+            {"3. "}
+            <strong>{"Get yourself and passengers safe."}</strong>
+            {" On a motorway or fast road, leave by the side away from traffic and wait behind the barrier if there is one."}
+          </>
+        ),
+          (
+          <>
+            {"4. "}
+            <strong>{"Do not walk to a filling station"}</strong>
+            {" along a motorway or fast road."}
+          </>
+        ),
+          (
+          <>
+            {"5. "}
+            <strong>{"Call for help"}</strong>
+            {" with your location, direction of travel, vehicle and fuel type ready."}
+          </>
+        ),
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If you cannot get out of a live lane safely, stay in the vehicle with your seat belt and hazard lights on, and call 999 for the police.",
+      },
+      { type: "heading", level: 2, id: "before-the-tank-runs-dry-when-the-fuel-light-comes-on", text: "Before the tank runs dry: when the fuel light comes on" },
+      {
+        type: "paragraph",
+        text: "The best time to deal with low fuel is before the engine stops. There is no single rule for how far a car will go once the warning light comes on. It depends on the vehicle, the load, the road and the weather, and a car that is cold, heavily loaded or climbing towards Bowes on the A66 will use fuel differently from one on a flat run. Treat the light as a firm instruction, not a challenge.",
+      },
+      { type: "image", src: "/images/low-fuel-warning-light-dashboard.webp", alt: "Low fuel warning light glowing on a car dashboard at dusk" },
+      {
+        type: "paragraph",
+        text: "Practical steps once the light comes on:",
+      },
+      {
+        type: "list",
+        items: [
+          (
+          <>
+            <strong>{"Plan the nearest fuel stop now,"}</strong>
+            {" not the one you would usually use. Some stops on rural roads and quieter A-roads may be closed late at night."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Drive smoothly."}</strong>
+            {" Gentle acceleration and steady speeds are kinder to what is left in the tank."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Choose where you might stop."}</strong>
+            {" If you think you will not make it, start looking for a lay-by, a service area or a slip road exit rather than waiting for the engine to cut out in a live lane."}
+          </>
+        ),
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If the car begins to hesitate, lose power or surge, take it as the final warning and get off the carriageway while you still have some control.",
+      },
+      { type: "heading", level: 2, id: "if-you-run-out-on-the-a1-m-or-another-motorway", text: "If you run out on the A1(M) or another motorway" },
+      {
+        type: "paragraph",
+        text: "Some North East routes are motorway, signed A1(M), and some are ordinary dual carriageway. If you are not sure which you are on, treat it as a motorway. National Highways' advice for a vehicle problem on a motorway is to leave at the next exit or pull into a service area if possible. If you cannot, it is \"Go left, get safe, get help\":",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"Go left"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "list",
+        items: [
+          "Move into the left lane.",
+          "Pull into an emergency area or onto the hard shoulder if you can.",
+          "Stop as far left as possible, with your wheels turned to the left, leaving space to get out.",
+          "If you can, stop just beyond an emergency telephone.",
+          "Hazard lights on; sidelights if it is dark or visibility is poor.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"Get safe"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "list",
+        items: [
+          "Leave the vehicle by the side away from traffic, if it is safe and possible, and make sure passengers do the same.",
+          "Put on high-visibility clothing if it is within easy reach.",
+          "Get behind the safety barrier where there is one, keeping an eye out for drops, uneven ground or debris.",
+          "Do not return to the vehicle, even if it is cold, wet or dark.",
+          (
+          <>
+            <strong>{"Do not place a warning triangle on the carriageway."}</strong>
+          </>
+        ),
+          "Do not attempt repairs on the vehicle.",
+        ],
+      },
+      { type: "image", src: "/images/out-of-fuel-waiting-behind-barrier.webp", alt: "Driver in a high-visibility vest waiting behind a motorway safety barrier, well away from traffic" },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"Get help"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "list",
+        items: [
+          "Use the free emergency telephone, or call National Highways on 0300 123 5000.",
+          "Contact a breakdown recovery service.",
+          "Face the traffic while you speak.",
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "The Highway Code says the same in its breakdowns and incidents rules (Rule 277 for motorways), and reminds drivers that the safest place to stop on a high-speed road is a service area. Hard shoulders give less protection than other places because they are so close to fast traffic.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"Do not walk along the motorway to the next services or junction"}</strong>
+            {" with a can. Wait behind the barrier for help to come to you."}
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            {"For more on the A1(M) specifically, see our guide to "}
+            <a href="https://fsrrecoverygroups.co.uk/blog/broken-down-on-the-a1m" className="font-semibold text-red hover:underline">{"breaking down on the A1(M)"}</a>
+            {" and our "}
+            <a href="https://fsrrecoverygroups.co.uk/areas/a1m" className="font-semibold text-red hover:underline">{"A1(M) area page"}</a>
+            {"."}
+          </>
+        ),
+      },
+      { type: "heading", level: 2, id: "if-you-run-out-on-an-a-road-or-country-lane", text: "If you run out on an A-road or country lane" },
+      {
+        type: "paragraph",
+        text: "Many North East fuel stops happen away from the motorway: the A19 through Teesside, the A66 between Scotch Corner and Penrith, the A167 or A68, or a rural lane where filling stations are far apart. The principles are the same, adapted to the road:",
+      },
+      { type: "image", src: "/images/out-of-fuel-rural-lay-by-a66.webp", alt: "Car pulled into a rural lay-by on an upland A-road in winter with hazard lights on" },
+      {
+        type: "list",
+        items: [
+          (
+          <>
+            <strong>{"Use the last of your momentum."}</strong>
+            {" As the engine falters, aim for a lay-by, a field gateway that is not in use, a car park or a wide verge on a straight stretch, rather than a bend or the brow of a hill."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Hazard lights on."}</strong>
+            {" Sidelights if visibility is poor."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Get passengers out and away from traffic"}</strong>
+            {" if it is safe, and wait somewhere well clear of the road."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Warning triangle on ordinary roads only."}</strong>
+            {" The Highway Code allows a warning triangle on an ordinary road if it is safe to place, at least 45 metres behind the vehicle on the same side of the road. Never use one on a motorway, and do not put yourself at risk placing it on a fast or busy road."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Keep warm and visible."}</strong>
+            {" On the A66 or upland roads in winter, the temperature can drop quickly. Take coats and a phone with you if you leave the vehicle."}
+          </>
+        ),
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "If you are blocking the road, are in a dangerous position, or anyone is unwell or injured, call 999 first.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            {"You can read more about local routes on our "}
+            <a href="https://fsrrecoverygroups.co.uk/areas/a19" className="font-semibold text-red hover:underline">{"A19"}</a>
+            {" and "}
+            <a href="https://fsrrecoverygroups.co.uk/areas/a66" className="font-semibold text-red hover:underline">{"A66"}</a>
+            {" area pages."}
+          </>
+        ),
+      },
+      { type: "heading", level: 2, id: "what-not-to-do-when-you-have-run-out-of-fuel", text: "What not to do when you have run out of fuel" },
+      {
+        type: "paragraph",
+        text: "A few common reactions make things worse:",
+      },
+      {
+        type: "list",
+        items: [
+          (
+          <>
+            <strong>{"Do not keep turning the key or pressing start."}</strong>
+            {" Repeated cranking on an empty tank drains the battery and, on some vehicles, can leave you with a second problem to deal with."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Do not walk along a motorway or fast road for fuel."}</strong>
+            {" Wait for help in a safe place."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Do not try to push the vehicle on a live road."}</strong>
+            {" It is heavier and harder to control than it looks, especially on a slope."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Do not use an improvised container."}</strong>
+            {" If someone brings fuel to you, it should be in a container designed for fuel."}
+          </>
+        ),
+        ],
+      },
+      { type: "heading", level: 2, id: "petrol-diesel-wrong-fuel-or-an-electric-car", text: "Petrol, diesel, wrong fuel or an electric car?" },
+      {
+        type: "paragraph",
+        text: "Tell the operator exactly what you are driving and what happened, because the right help depends on it.",
+      },
+      {
+        type: "list",
+        items: [
+          (
+          <>
+            <strong>{"Petrol:"}</strong>
+            {" many petrol vehicles restart once enough fuel has been added, although it can take a few turns of the key to draw fuel through."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Diesel:"}</strong>
+            {" some diesel vehicles need more than fuel to restart after running completely dry, because air can get into the fuel system. Your vehicle handbook may describe what is needed. Mention it on the call."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Wrong fuel:"}</strong>
+            {" if you have put the wrong fuel in, that is a different problem from running out. Do not start the engine if you have not already, and say clearly on the call what has happened so the right help can be discussed."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Electric vehicles:"}</strong>
+            {" if an electric car has run out of charge, fuel obviously will not help. Tell the operator the make and model so they can say what assistance is suitable."}
+          </>
+        ),
+        ],
+      },
+      { type: "heading", level: 2, id: "how-to-describe-your-location", text: "How to describe your location" },
+      {
+        type: "paragraph",
+        text: "A clear location helps whoever is coming to find you. Have these ready:",
+      },
+      {
+        type: "list",
+        items: [
+          (
+          <>
+            <strong>{"Road number and direction of travel."}</strong>
+            {" For example, \"A1(M) northbound\" or \"A66 westbound towards Penrith\"."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Nearest junction or landmark."}</strong>
+            {" The last junction you passed, the next one signed, or a village, roundabout or service area you recognise."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Marker posts or driver location signs."}</strong>
+            {" On motorways, small blue signs and marker posts give a reference that helps pinpoint where you are."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"What3words or a map pin"}</strong>
+            {", if you have it and your phone has signal."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Which side of the road"}</strong>
+            {" you are on, and whether you are on the hard shoulder, in a lay-by or on a verge."}
+          </>
+        ),
+        ],
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            {"Our "}
+            <a href="https://fsrrecoverygroups.co.uk/areas" className="font-semibold text-red hover:underline">{"areas page"}</a>
+            {" lists the towns and main roads FSR Recovery Group covers, including Durham, Bishop Auckland, Northallerton, Middlesbrough and Barnard Castle, and the A1(M), A66, A19, A67, A68 and A167."}
+          </>
+        ),
+      },
+      { type: "heading", level: 2, id: "how-roadside-fuel-assistance-usually-works", text: "How roadside fuel assistance usually works" },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            {"Once you are safe, you can call "}
+            <strong>{"FSR Recovery Group"}</strong>
+            {" on "}
+            <a href="tel:+447888502989" className="font-semibold text-red hover:underline">+44 7888 502989</a>
+            {", or WhatsApp the same number. Our "}
+            <a href="https://fsrrecoverygroups.co.uk/services/refueling" className="font-semibold text-red hover:underline">{"emergency refueling service"}</a>
+            {" is for genuine out-of-fuel situations with suitable cars and light vans. It is available 24/7."}
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "When you call, have this information ready:",
+      },
+      {
+        type: "list",
+        items: [
+          (
+          <>
+            {"1. "}
+            <strong>{"Your location and direction of travel,"}</strong>
+            {" as above."}
+          </>
+        ),
+          (
+          <>
+            {"2. "}
+            <strong>{"Vehicle make and model,"}</strong>
+            {" and whether it is a car or light van."}
+          </>
+        ),
+          (
+          <>
+            {"3. "}
+            <strong>{"The fuel type the vehicle needs,"}</strong>
+            {" if you know it. If you are not sure, check the fuel filler flap or the handbook."}
+          </>
+        ),
+          (
+          <>
+            {"4. "}
+            <strong>{"What happened before it stopped."}</strong>
+            {" Did it run out gradually, or were there warning lights, noises or loss of power beforehand?"}
+          </>
+        ),
+          (
+          <>
+            {"5. "}
+            <strong>{"Where you are waiting,"}</strong>
+            {" and whether anyone with you is vulnerable, elderly or has young children."}
+          </>
+        ),
+        ],
+      },
+      {
+        type: "paragraph",
+        text: "Where appropriate, enough fuel can be provided to help you restart and continue to a nearby filling station or a suitable destination. The aim is to get you moving, not to fill the tank, so plan your next fuel stop straight away.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            {"If the vehicle still does not start after fuel has been added, another fault may be involved. That might be a flat battery after repeated cranking, a diesel that needs more attention, or something unrelated to fuel. In that case, further "}
+            <a href="https://fsrrecoverygroups.co.uk/services/roadside-assistance" className="font-semibold text-red hover:underline">{"roadside assistance"}</a>
+            {", a "}
+            <a href="https://fsrrecoverygroups.co.uk/services/jumpstart-services" className="font-semibold text-red hover:underline">{"jumpstart"}</a>
+            {" or "}
+            <a href="https://fsrrecoverygroups.co.uk/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">{"vehicle breakdown recovery"}</a>
+            {" can be discussed. If you find the car will not start for reasons that do not seem to be fuel or battery, our guide to "}
+            <a href="https://fsrrecoverygroups.co.uk/blog/car-wont-start-but-battery-is-fine" className="font-semibold text-red hover:underline">{"a car that won't start when the battery is fine"}</a>
+            {" may help."}
+          </>
+        ),
+      },
+      { type: "heading", level: 2, id: "how-to-avoid-running-out-again", text: "How to avoid running out again" },
+      {
+        type: "paragraph",
+        text: "Once you are moving, a few habits make a repeat less likely:",
+      },
+      {
+        type: "list",
+        items: [
+          (
+          <>
+            <strong>{"Refuel at a quarter of a tank"}</strong>
+            {" on longer journeys, especially on rural routes and at night."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Know your stops."}</strong>
+            {" On regular routes such as the A1(M), A66 or A19, know where you would fuel up and which places are likely to be closed late."}
+          </>
+        ),
+          (
+          <>
+            <strong>{"Allow for diversions and delays."}</strong>
+            {" Closures, queues and winter conditions can add miles and engine-running time you did not plan for."}
+          </>
+        ),
+        ],
+      },
+      { type: "heading", level: 2, id: "frequently-asked-questions", text: "Frequently asked questions" },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"What should I do first if I run out of fuel on the A1(M)?"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "Get into the left lane and stop on the hard shoulder or in an emergency area if you can, with hazard lights on. Leave by the side away from traffic, get behind the barrier, and call for help. If you cannot get out of a live lane safely, stay in the vehicle with your seat belt on and call 999.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"Can I walk to the next services or filling station?"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "Not along a motorway or a fast road. National Highways advises waiting well away from your vehicle and moving traffic, behind the safety barrier where there is one. Call for help instead.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"Should I put a warning triangle out?"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "Never on a motorway. On an ordinary road, the Highway Code says a warning triangle can be placed at least 45 metres behind the vehicle on the same side of the road, but only if it is safe to do so.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"Will my car start straight away once fuel is added?"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "Often, but not always. Some vehicles take a few attempts to draw fuel through, and some diesels need more than fuel after running dry. If it still will not start, another fault may be involved and further assistance or recovery can be discussed.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"What if I put the wrong fuel in rather than running out?"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "That is a different problem. Do not start the engine if you have not already, and explain exactly what happened when you call so the right help can be discussed.",
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            <strong>{"Is roadside fuel help available at night?"}</strong>
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: "Yes. FSR Recovery Group's emergency refueling assistance is available 24/7 for genuine out-of-fuel situations.",
+      },
+      { type: "heading", level: 2, id: "run-out-of-fuel-call-fsr-recovery-group", text: "Run out of fuel? Call FSR Recovery Group" },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            {"If you have run out of fuel around Darlington, Durham, Teesside or North Yorkshire, and you are safe — or you have already called 999 if you are not — contact "}
+            <strong>{"FSR Recovery Group"}</strong>
+            {" on "}
+            <a href="tel:+447888502989" className="font-semibold text-red hover:underline">+44 7888 502989</a>
+            {". You can also WhatsApp the same number with your location, vehicle and fuel type. We are based at 135 Gladstone Street, Darlington DL3 6LB, and our roadside assistance is available 24/7."}
+          </>
+        ),
+      },
+      {
+        type: "paragraph",
+        text: (
+          <>
+            {"You can also use our "}
+            <a href="https://fsrrecoverygroups.co.uk/contact" className="font-semibold text-red hover:underline">{"contact page"}</a>
+            {", or read more practical guides on the "}
+            <a href="https://fsrrecoverygroups.co.uk/blog" className="font-semibold text-red hover:underline">{"FSR Recovery Group blog"}</a>
+            {"."}
+          </>
+        ),
+      },
+    ],
+  },
+  {
     slug: "broken-down-on-the-a1m",
     title: "Broken Down on the A1(M)? What to Do Around Durham, Darlington and Scotch Corner",
     metaTitle: "Broken Down on the A1(M)? What to Do",
