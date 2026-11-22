@@ -814,399 +814,109 @@ export const blogPosts: BlogPost[] = [
     title: "Broken Down on the A1(M)? What to Do Around Durham, Darlington and Scotch Corner",
     metaTitle: "Broken Down on the A1(M)? What to Do",
     metaDescription: "What to do if you break down on the A1(M) in the North East: official safety steps, how to describe your junction and direction, and when to call for recovery.",
-    excerpt: "If your car or light van stops on the A1(M) around Durham, Darlington or Scotch Corner, the first job is not the repair. It is getting you, your passengers and the vehicle into a safer position, then calling for the right help.",
+    excerpt: "An A1(M) breakdown can leave you deciding what to do while traffic keeps passing. A warning light, a damaged tyre or sudden loss of power needs a different response here from the one you would make on your drive.",
     featuredImage: "/images/broken-down-a1m-featured.webp",
     featuredImageAlt: "Dark hatchback stopped on an A1(M) motorway hard shoulder with hazard lights, titled Broken Down on the A1(M)? What to Do",
     publishedDate: "2026-11-20",
+    updatedDate: "2026-11-23",
     author: "FSR Recovery Group",
     authorRole: "Editorial Team",
-    readingTime: "12 min read",
+    readingTime: "11 min read",
     tags: ["A1(M)", "breakdown recovery", "roadside assistance", "motorway safety"],
     faqs: [
-      {
-        question: "What should I do first if I break down on the A1(M)?",
-        answer: "Leave at the next exit or a service area if you can. If not, go left, switch on your hazards, and get behind a barrier if it is safe to get out. Then call National Highways on 0300 123 5000 and a recovery service. In a live lane, stay belted in and call 999.",
-      },
-      {
-        question: "Should I put a warning triangle out on the A1(M)?",
-        answer: "No. National Highways and The Highway Code say you should not place a warning triangle on the carriageway, and never on a motorway. On ordinary A1 stretches, Rule 276 allows a triangle at least 45 metres behind only if it is safe to place and retrieve. If you are unsure, do not put one out.",
-      },
-      {
-        question: "Who do I call — 999, National Highways, or a recovery company?",
-        answer: "Call 999 for the police if you are in a live lane, cannot leave the vehicle safely, someone is injured, or there is an immediate danger. Once you are in an emergency area, a lay-by or on the hard shoulder, call National Highways on 0300 123 5000 and a recovery service.",
-      },
-      {
-        question: "How do I tell a recovery operator where I am on the A1(M)?",
-        answer: "Give your direction of travel, the last junction you are sure of, a nearby place name such as Durham, Darlington or Scotch Corner, and any marker post or driver location sign. Say whether you are in an emergency area, on the hard shoulder or in a live lane.",
-      },
-      {
-        question: "Is the A1 the same as the A1(M) around Durham and Darlington?",
-        answer: "No. Some stretches are motorway, signed A1(M); some are ordinary A1 dual carriageway. On motorway sections, follow the motorway rules in full, including the ban on warning triangles. If you are not sure, treat it as a motorway.",
-      },
-      {
-        question: "What if I break down in a live lane and cannot reach the hard shoulder?",
-        answer: "Stay in the vehicle, keep your seat belts and hazard lights on, and call 999 immediately for the police. Do not get out or try to push the car. Use the SOS button if the vehicle has one.",
-      },
-      {
-        question: "Can FSR Recovery Group recover a car from the A1(M) near Durham or Darlington?",
-        answer: "Yes. FSR Recovery Group provides 24/7 recovery for cars and light vans on the A1(M) through this region, including the junctions near Durham, Darlington, Scotch Corner and Catterick. Call with your direction of travel and nearest junction. The base is 135 Gladstone Street, Darlington DL3 6LB.",
-      }
+      { question: "What should I do first if I break down on the A1(M)?", answer: "Reach an exit or service area if the vehicle can safely get there. Otherwise move left, stop in an available hard shoulder or emergency area, and use hazards. Leave and get clear only if safe; if trapped in danger, stay belted in and call 999." },
+      { question: "Should I put a warning triangle out on the A1(M)?", answer: "No. Do not place a warning triangle on a motorway or carriageway. Do not walk back towards traffic to make your car more visible. Use hazard lights, get clear if safe, and tell the emergency or recovery operator where you have stopped." },
+      { question: "Who do I call: 999, National Highways or a recovery company?", answer: "Call 999 for police assistance when you cannot reach safety or leave safely. For a breakdown where you are safely clear, contact National Highways on 0300 123 5000 and a recovery company. Report injuries or immediate danger to the emergency services." },
+      { question: "How can I explain where I am on the A1(M)?", answer: "Give your direction, the last confirmed junction and any visible marker reference. Describe where the vehicle is stopped and where you are waiting. A safely shared map pin can help. Tell the operator when a junction or place name is only a guess." },
+      { question: "Are the A1 and A1(M) the same around Durham and Darlington?", answer: "No. The route name includes motorway and non-motorway sections. Read the designation shown for your current position and report it accurately. Follow motorway advice on A1(M) sections; do not assume that an ordinary-road instruction applies throughout your journey." },
+      { question: "What if I stop in a live lane with no way to reach the hard shoulder?", answer: "Stay in the vehicle if you cannot get clear safely. Keep seat belts fastened and hazards on, call 999 and ask for the police. Use the SOS button if available. Do not try to push the vehicle or walk across live lanes." },
+      { question: "Can FSR Recovery Group help near Durham or Darlington?", answer: "Yes. FSR Recovery Group provides 24/7 car and light-van recovery across its A1(M) service area. Call with your exact position and vehicle details so the operator can confirm arrangements. Emergency assistance comes first if you are still in danger." }
     ],
     content: [
-      {
-        type: "paragraph",
-        text: "If your car or light van stops on the A1(M) around Durham, Darlington or Scotch Corner, the first job is not the repair. It is getting you, your passengers and the vehicle into a safer position, then calling for the right help.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"This guide is for the A1(M) through the North East — the junctions near Durham, Darlington and Scotch Corner, and the places already named on FSR Recovery Group's "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/a1m" className="font-semibold text-red hover:underline">{"A1(M) area page"}</a>
-            {", including Catterick and the approach to Chester-le-Street. It is a full safety-and-recovery sequence, not a repeat of that shorter page."}
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"The steps follow "}
-            <a href="https://nationalhighways.co.uk/safety/driving-on-our-roads/driving-on-motorways/" className="font-semibold text-red hover:underline">{"National Highways' advice on what to do if you break down on a motorway"}</a>
-            {" and "}
-            <a href="https://www.gov.uk/guidance/the-highway-code/breakdowns-and-incidents-274-to-287" className="font-semibold text-red hover:underline">{"The Highway Code: Breakdowns and incidents (rules 275 to 287)"}</a>
-            {". It is a practical briefing, not legal advice. Where anything is in doubt, follow the official sources and the emergency services."}
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"If you have stopped on the A66 rather than the motorway, there is a separate "}
-            <a href="https://fsrrecoverygroups.co.uk/blog/broken-down-on-the-a66-in-winter" className="font-semibold text-red hover:underline">{"winter guide for that road"}</a>
-            {"."}
-          </>
-        ),
-      },
-      { type: "heading", level: 2, id: "short-answer-what-to-do-first-on-the-a1-m", text: "Short answer: what to do first on the A1(M)" },
-      {
-        type: "paragraph",
-        text: "Work through this in order. Do not start with the bonnet. National Highways puts it in three words: go left, get safe, get help.",
-      },
-      {
-        type: "list",
-        items: [
-          "1. If the vehicle can still be moved, leave at the next exit or pull into a service area if you can.",
-          "2. If you cannot, move into the left lane and pull into an emergency area, a lay-by or onto a hard shoulder. Stop as far left as possible, leaving room to get out, with the wheels turned left. Switch on your hazard warning lights. Use sidelights if it is dark or visibility is poor.",
-          "3. If it is safe to get out, leave by the side furthest from traffic. Put on high-visibility clothing if you have it, and get behind a safety barrier if there is one.",
-          "4. If you cannot get off a live lane, stay in the vehicle, keep your seat belts and hazard lights on, and call 999 for the police. Use the vehicle's SOS button if it has one.",
-          "5. Once you are safe, call National Highways on 0300 123 5000 from a safe position, then a breakdown recovery service. Face the traffic while you speak. Do not place a warning triangle on the carriageway, and do not attempt a repair at the roadside.",
-        ],
-      },
-      { type: "heading", level: 2, id: "a1-or-a1-m-why-that-matters-for-safety", text: "A1 or A1(M)? Why that matters for safety" },
-      {
-        type: "paragraph",
-        text: "Around Durham, Darlington and Scotch Corner you will see both A1(M) motorway and ordinary A1. The difference matters, especially for warning triangles and where you should wait.",
-      },
-      {
-        type: "paragraph",
-        text: "If the signs say A1(M), or you are clearly on a motorway, follow the National Highways motorway advice in full: no repairs, and no warning triangle on the carriageway. Get to a service area, an emergency area or a hard shoulder if you can, then get behind a barrier.",
-      },
-      {
-        type: "paragraph",
-        text: "Some stretches of the A1 in the North East are ordinary dual carriageway, not motorway. On those roads, The Highway Code still asks you to reach a place of relative safety (Rule 275 and Rule 276). A warning triangle may be used on ordinary roads, at least 45 metres behind, with great care — but never on a motorway. If you are unsure, treat the stretch as a motorway and do not walk onto the carriageway to put a triangle out.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"Junction numbers are landmarks when you call, not a claim of exclusive cover. Junction 62 and Junction 61 sit around "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/durham" className="font-semibold text-red hover:underline">{"Durham"}</a>
-            {". Junction 60 is the turning toward "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/bishop-auckland" className="font-semibold text-red hover:underline">{"Bishop Auckland"}</a>
-            {". Junction 59 is near Darlington. Scotch Corner is where the A66 meets the A1(M)."}
-          </>
-        ),
-      },
-      { type: "heading", level: 2, id: "official-safety-steps", text: "Official safety steps" },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"If a problem develops, or a warning light comes on, "}
-            <a href="https://nationalhighways.co.uk/safety/driving-on-our-roads/driving-on-motorways/" className="font-semibold text-red hover:underline">{"National Highways"}</a>
-            {" says to leave at the next exit or pull into a service area if you can. Do not stop in a live lane unless it is absolutely necessary. If you cannot leave the motorway, follow the official three steps."}
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"Go left."}</strong>
-            {" Move into the left lane and pull into an emergency area, a lay-by or onto a hard shoulder if you can. Stop as far to the left as possible, leaving space to exit, with the wheels turned to the left. If you can, stop just beyond an emergency telephone. Switch on your hazard warning lights, and use sidelights if it is dark or visibility is poor. Rule 275 notes that a hard shoulder gives less protection than a service area or emergency area, because it sits so close to high-speed traffic."}
-          </>
-        ),
-      },
+      { type: "paragraph", text: "Last updated: 23 November 2026." },
+      { type: "paragraph", text: <>{"An A1(M) breakdown can leave you deciding what to do while traffic keeps passing. A warning light, a damaged tyre or sudden loss of power needs a different response here from the one you would make on your drive."}</> },
+      { type: "paragraph", text: <>{"This guide puts those decisions in order for drivers around Durham, Darlington and Scotch Corner. Start with your position on the road, then the people in your vehicle, then the calls for help. Leave the diagnosis until you are somewhere safer."}</> },
+      { type: "heading", level: 2, id: "broken-down-on-the-a1-m-start-with-these-decisions", text: "Broken down on the A1(M)? Start with these decisions" },
       { type: "image", src: "/images/a1m-hard-shoulder-hazards.webp", alt: "Dark hatchback stopped on a motorway hard shoulder with hazard lights on in overcast daylight" },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"Get safe."}</strong>
-            {" If it is safe to leave the vehicle, exit on the side furthest from traffic and make sure passengers do the same. Put on high-visibility clothing if you have it, get behind a safety barrier where there is one, and keep everyone away from the carriageway. Do not stand where a collision could force your vehicle into you. Do not return to the vehicle even if it is raining, cold or dark, and do not attempt repairs. Do not place a warning triangle on the carriageway — National Highways and Rule 277 both say this, and Rule 276 also says never use one on motorways. Keep animals in the vehicle, or under control on the verge in an emergency."}
-          </>
-        ),
-      },
+      { type: "paragraph", text: <>{"Your first decision is whether you can reach a stopping place away from moving traffic. Do not make checking the engine your first task."}</> },
+      { type: "list", items: [
+        <>{"1. "}<strong>{"Still able to drive safely?"}</strong>{" Leave at the next exit or enter a service area if possible. Do not continue solely to reach your preferred garage."}</>,
+        <>{"2. "}<strong>{"Unable to leave the motorway?"}</strong>{" Move left and use a hard shoulder or emergency area where you can. Stop as far left as possible, leaving space to leave the vehicle, and turn your wheels left."}</>,
+        <>{"3. "}<strong>{"Once stopped:"}</strong>{" use hazard warning lights, with sidelights if visibility is poor or it is dark."}</>,
+        <>{"4. "}<strong>{"Safe to leave?"}</strong>{" Use the side away from traffic and move well clear, behind a barrier where available. Keep passengers together and away from the road."}</>,
+        <>{"5. "}<strong>{"Unable to get clear safely?"}</strong>{" Remain belted in, keep the hazards on and call 999 for the police. Otherwise, contact National Highways and a recovery operator from your safer waiting position."}</>
+      ] },
+      { type: "paragraph", text: <>{"Read the fuller steps below only when you can use your phone safely. A passenger can help with the call, but nobody should step towards traffic to read a sign or investigate the fault."}</> },
+      { type: "heading", level: 2, id: "a1-or-a1-m-check-which-road-you-are-on", text: "A1 or A1(M): check which road you are on" },
+      { type: "paragraph", text: <>{"The motorway designation matters more than how familiar the route feels. The wider A1 route includes motorway and non-motorway sections; do not assume that advice for an ordinary road applies wherever you see “A1”."}</> },
+      { type: "paragraph", text: <>{"When speaking to an operator, use the road designation shown on signs or your map, together with your direction. Say if you are on a slip road, in a service area or on the main carriageway. Those details describe different access problems."}</> },
+      { type: "paragraph", text: <>{"On A1(M) sections, use motorway breakdown guidance. "}<strong>{"Do not put out a warning triangle on a motorway or carriageway."}</strong>{" Do not walk along the road looking for a garage or filling station. Calling from a safer position is the next step."}</> },
+      { type: "paragraph", text: <>{"If you have already left onto another road, explain that change. “Off the A1(M), stopped on the approach to the roundabout” gives a different starting point from “on the motorway”. Do not try to return to the motorway to make the collection easier."}</> },
+      { type: "paragraph", text: <>{"Our "}<a href="https://fsrrecoverygroups.co.uk/areas/a1m" className="font-semibold text-red hover:underline">{"A1(M) recovery area page"}</a>{" describes FSR Recovery Group’s regional coverage. This guide explains the safety decisions before a recovery can take place."}</> },
+      { type: "heading", level: 2, id: "official-safety-steps-stop-get-clear-and-report-the-breakdown", text: "Official safety steps: stop, get clear and report the breakdown" },
       { type: "image", src: "/images/a1m-behind-barrier-safe.webp", alt: "Driver waiting behind a motorway safety barrier away from a stopped vehicle and passing traffic" },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"Get help."}</strong>
-            {" From an emergency area, lay-by or hard shoulder, use the free emergency telephone if there is one, or a mobile, to call National Highways on 0300 123 5000, then a breakdown recovery service. Face the traffic while you speak. Say if you are a vulnerable motorist — disabled, older, or travelling alone — and wait well away from the vehicle, behind the barrier where there is one."}
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"To rejoin from an emergency area, use the emergency telephone first and follow the operator's advice (Rule 278). From a hard shoulder, build up speed, indicate, and watch for a safe gap. Read the current official wording on the "}
-            <a href="https://nationalhighways.co.uk/safety/driving-on-our-roads/driving-on-motorways/" className="font-semibold text-red hover:underline">{"National Highways motorway page"}</a>
-            {" and the "}
-            <a href="https://www.gov.uk/guidance/the-highway-code/breakdowns-and-incidents-274-to-287" className="font-semibold text-red hover:underline">{"Highway Code breakdowns and incidents rules"}</a>
-            {"."}
-          </>
-        ),
-      },
-      { type: "heading", level: 2, id: "how-to-describe-your-location", text: "How to describe your location" },
-      {
-        type: "paragraph",
-        text: "Once you are safe, a precise location helps National Highways and a recovery operator plan how to reach you. \"Northbound, just after Junction 62, on the hard shoulder\" is far more useful than \"somewhere on the A1.\"",
-      },
+      { type: "paragraph", text: <>{"The stopping and waiting sequence below follows "}<a href="https://nationalhighways.co.uk/safety/driving-on-our-roads/driving-on-motorways/" className="font-semibold text-red hover:underline">{"National Highways’ motorway breakdown guidance"}</a>{" and "}<a href="https://www.gov.uk/guidance/the-highway-code/breakdowns-and-incidents-274-to-287" className="font-semibold text-red hover:underline">{"The Highway Code, rules 275–279"}</a>{". Follow police or traffic officer instructions at the scene."}</> },
+      { type: "list", items: [
+        <>{"1. "}<strong>{"Choose the best available stopping place."}</strong>{" If the vehicle can safely reach an exit or service area, leave the carriageway. A hard shoulder remains close to traffic, so reaching it does not end the risk."}</>,
+        <>{"2. "}<strong>{"Make your stopped vehicle visible."}</strong>{" Switch on hazards and use sidelights in darkness or poor visibility. Do not stand where you hide the lights from approaching drivers."}</>,
+        <>{"3. "}<strong>{"Leave only when it is safe."}</strong>{" Get out on the side furthest from traffic. Help passengers follow that route rather than opening doors towards passing vehicles."}</>,
+        <>{"4. "}<strong>{"Move away from the vehicle."}</strong>{" Use a barrier where there is one, checking for uneven ground, drops or debris before stepping behind it. Keep out of the path your vehicle could take if another vehicle struck it."}</>,
+        <>{"5. "}<strong>{"Leave repairs for a safer location."}</strong>{" Do not change a wheel, connect jump leads or inspect the underside on the hard shoulder. Do not put out a warning triangle. A small fault does not make the roadside a safe workshop."}</>,
+        <>{"6. "}<strong>{"Report your situation."}</strong>{" Use an emergency telephone where provided and safely accessible, or call National Highways on 0300 123 5000. Contact your recovery operator too. Face approaching traffic while using the phone."}</>
+      ] },
+      { type: "paragraph", text: <>{"Keep children under control and away from the carriageway. Animals should stay in the vehicle unless an emergency means they must be kept under control on the verge."}</> },
+      { type: "paragraph", text: <>{"Do not return to sit in the vehicle because the weather is unpleasant. If you cannot leave safely in the first place, use the emergency procedure below instead of attempting these steps at any cost."}</> },
+      { type: "heading", level: 2, id: "how-to-describe-your-location-around-durham-darlington-and-scotch-corner", text: "How to describe your location around Durham, Darlington and Scotch Corner" },
       { type: "image", src: "/images/a1m-marker-post-location.webp", alt: "Motorway location marker beside the A1(M) for reporting a breakdown location" },
-      {
-        type: "paragraph",
-        text: "Give as much of the following as you can, without walking back toward the carriageway:",
-      },
-      {
-        type: "list",
-        items: [
-          "Direction of travel: northbound or southbound.",
-          "The last junction number you are sure of — Junction 62 or 61 near Durham, Junction 60 toward Bishop Auckland, or Junction 59 near Darlington. If you are at Scotch Corner, where the A66 meets the A1(M), say so.",
-          "A nearby place name: Durham, Darlington, Scotch Corner, Catterick, or the approach to Chester-le-Street.",
-          "The numbers and letters on marker posts or driver location signs.",
-          "A map pin only if you can send one safely, or the vehicle's SOS button if you need the police.",
-          "Where the vehicle is: emergency area, hard shoulder, slip road, verge, or a live lane. A live lane is a 999 call first.",
-          "The vehicle and who is with you, including whether anyone is vulnerable.",
-        ],
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"FSR Recovery Group's "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/a1m" className="font-semibold text-red hover:underline">{"A1(M) area page"}</a>
-            {" is the shorter local reference for this road. There are also area pages for "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/durham" className="font-semibold text-red hover:underline">{"Durham"}</a>
-            {", "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/bishop-auckland" className="font-semibold text-red hover:underline">{"Bishop Auckland"}</a>
-            {" and "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/northallerton" className="font-semibold text-red hover:underline">{"Northallerton"}</a>
-            {". Name Darlington as a landmark when you call. For the wider patch, see the "}
-            <a href="https://fsrrecoverygroups.co.uk/areas" className="font-semibold text-red hover:underline">{"areas list"}</a>
-            {"."}
-          </>
-        ),
-      },
+      { type: "paragraph", text: <>{"Give the operator a road, a direction and a landmark before explaining the mechanical problem. “A1(M) southbound, beyond the last junction I passed” starts a useful conversation; a town name alone can still leave uncertainty about the carriageway."}</> },
+      { type: "paragraph", text: <>{"Use junctions you actually remember. Useful junction references on this stretch include Junctions 62, 61, 60 and 59. They help describe where you stopped; they do not mean an operator can enter the motorway beside your vehicle."}</> },
+      { type: "paragraph", text: <>{"For journeys around "}<a href="https://fsrrecoverygroups.co.uk/areas/durham" className="font-semibold text-red hover:underline">{"Durham"}</a>{", say whether the last sign you recognised showed Junction 62 or Junction 61. Further along the corridor, report Junction 60 or Junction 59 if those are the numbers you saw. Never choose one simply because it sounds nearby."}</> },
+      { type: "paragraph", text: <>{"Scotch Corner is the A66 connection at A1(M) Junction 53. If you have turned towards the "}<a href="https://fsrrecoverygroups.co.uk/areas/a66" className="font-semibold text-red hover:underline">{"A66"}</a>{", say whether you have left the A1(M), rather than describing the whole journey as a motorway breakdown."}</> },
+      { type: "paragraph", text: <>{"Add these details when you can obtain them without approaching traffic:"}</> },
+      { type: "list", items: [
+        <>{"The letters and numbers on a visible driver location sign or marker post."}</>,
+        <>{"Whether you are northbound or southbound, and before or after the junction you remember."}</>,
+        <>{"Your stopping place: hard shoulder, emergency area, slip road, service area or live lane."}</>,
+        <>{"A map location you can share from where you are safely waiting."}</>,
+        <>{"Any uncertainty: say “I think” rather than presenting a guess as confirmed."}</>
+      ] },
+      { type: "paragraph", text: <>{"A journey towards "}<a href="https://fsrrecoverygroups.co.uk/areas/bishop-auckland" className="font-semibold text-red hover:underline">{"Bishop Auckland"}</a>{" or "}<a href="https://fsrrecoverygroups.co.uk/areas/northallerton" className="font-semibold text-red hover:underline">{"Northallerton"}</a>{" can help explain your route, but give your present position first. Your intended destination is not necessarily near the place you stopped."}</> },
       { type: "heading", level: 2, id: "if-you-cannot-get-off-the-carriageway", text: "If you cannot get off the carriageway" },
-      {
-        type: "paragraph",
-        text: "A recovery service cannot make a live lane safe. If you cannot get the vehicle to the left, onto a hard shoulder, into an emergency area or another place of relative safety, stay in the vehicle.",
-      },
-      {
-        type: "list",
-        items: [
-          "1. Keep your seat belts and hazard warning lights on.",
-          "2. Call 999 immediately and ask for the police, or press the vehicle's SOS button and ask for the police.",
-          "3. Do not get out, do not try to push the car, and do not walk across live lanes to reach a barrier or an emergency telephone.",
-        ],
-      },
-      {
-        type: "paragraph",
-        text: "The emergency services can alert National Highways so that lanes can be closed. The same advice applies if a disability prevents you from following the usual \"get out and get behind the barrier\" steps (Rule 279): hazards on, stay belted in, and call 999 for the police.",
-      },
-      {
-        type: "paragraph",
-        text: "Call 999 as well if you are involved in a collision, someone is injured, or there is an immediate danger to life. If something has fallen onto a motorway or other high-speed road, Rule 280 says you must not remove it yourself. Stop in a place of relative safety if you can, and call 999. Once you are safe, or the police have been called, you can also contact National Highways and a recovery service.",
-      },
+      { type: "paragraph", text: <>{"A vehicle stopped in a live lane is an emergency. If you cannot reach a safer position and get well clear safely, stay in the vehicle, keep everyone’s seat belts fastened and leave the hazard lights on. Call 999 immediately and ask for the police."}</> },
+      { type: "paragraph", text: <>{"Use the vehicle’s SOS button if available and ask for the police. Explain that you are stopped in a live lane, then give your road, direction and best available location. Do not postpone that call while arranging a tow."}</> },
+      { type: "paragraph", text: <>{"Do not push the vehicle, stand behind it to wave traffic around, or cross live lanes. A recovery booking cannot provide the lane protection that the emergency services may need to arrange."}</> },
+      { type: "paragraph", text: <>{"If a disability prevents you or a passenger from getting out and reaching safety, explain this immediately. The Highway Code’s Rule 279 advises staying belted in with hazards on and calling 999 for police assistance in these circumstances."}</> },
+      { type: "paragraph", text: <>{"Tell a recovery operator once the emergency call has been made. Make clear whether police assistance is already arranged and whether your position has changed. Follow the emergency operator’s directions if they differ from a general checklist."}</> },
+      { type: "heading", level: 2, id: "waiting-safely-passengers-weather-and-changing-conditions", text: "Waiting safely: passengers, weather and changing conditions" },
+      { type: "paragraph", text: <>{"Keep watching the road while you wait, even after somebody confirms that help has been arranged. A booking does not remove the risk from passing vehicles, debris or a vehicle moving after an impact."}</> },
+      { type: "paragraph", text: <>{"If you have left the car safely, remain away from it and traffic. Keep children close enough to supervise. Tell the operator about anyone who is disabled, older, travelling alone or otherwise needs extra help; do not assume those needs are obvious over the phone."}</> },
+      { type: "paragraph", text: <>{"Cold, rain and darkness can make the vehicle feel like the easier place to wait. Official motorway advice says not to return for shelter. Explain any difficulty to the operator instead of changing position without telling anyone."}</> },
+      { type: "paragraph", text: <>{"If the situation becomes more dangerous, or somebody becomes injured or unwell, contact the emergency services. Give the new information clearly, including whether you are outside the vehicle or still inside it. Do not leave somebody else to guess what has changed."}</> },
       { type: "heading", level: 2, id: "what-recovery-usually-involves-once-you-are-safe", text: "What recovery usually involves once you are safe" },
-      {
-        type: "paragraph",
-        text: "What happens next depends on where the vehicle is, whether it can be moved, and whether roadside work is sensible on a motorway. No honest operator should promise timings from a page like this.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"If the car or light van cannot safely continue, "}
-            <a href="https://fsrrecoverygroups.co.uk/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">{"vehicle breakdown recovery"}</a>
-            {" is the usual next step, taking the vehicle to an agreed garage, home address or other suitable destination. "}
-            <strong>{"FSR Recovery Group"}</strong>
-            {" provides this 24/7 for cars and light vans on the A1(M) around Durham, Darlington and Scotch Corner, subject to the location when you call. Tell the operator your direction of travel, the last junction or place name you are sure of, where the vehicle is, whether it will roll, steer or start, and whether anyone is vulnerable. If you are still in a live lane, 999 comes first."}
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"Sometimes "}
-            <a href="https://fsrrecoverygroups.co.uk/services/roadside-assistance" className="font-semibold text-red hover:underline">{"roadside assistance"}</a>
-            {" is enough — a spare wheel, a jump start or fuel, for example. On the A1(M), the safer option is often to load the vehicle and move the work off the motorway."}
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"If the vehicle has left the carriageway and is on a verge, stop trying to drive it out. A short, controlled "}
-            <a href="https://fsrrecoverygroups.co.uk/services/winch-out" className="font-semibold text-red hover:underline">{"winch-out"}</a>
-            {" may be possible for a suitable car or light van, but only where access, position and ground allow it to be done safely. Do not leave a place of relative safety to inspect the ground."}
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"If you have broken down on the A66 rather than the A1(M), use the "}
-            <a href="https://fsrrecoverygroups.co.uk/blog/broken-down-on-the-a66-in-winter" className="font-semibold text-red hover:underline">{"winter A66 guide"}</a>
-            {" and the "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/a66" className="font-semibold text-red hover:underline">{"A66 area page"}</a>
-            {". The two roads meet at Scotch Corner, but the safety advice is not identical."}
-          </>
-        ),
-      },
+      { type: "paragraph", text: <>{"Recovery starts with confirming the location, the vehicle and what prevents it continuing. Tell the operator whether it is a car or light van, its make and model, what happened before it stopped, and whether it starts, rolls and steers."}</> },
+      { type: "paragraph", text: <>{"Also describe the people travelling with you and your preferred destination. A garage, home address or another agreed place needs to be discussed before the move. Explain if you do not yet know where the vehicle should go."}</> },
+      { type: "paragraph", text: <><a href="https://fsrrecoverygroups.co.uk/services/roadside-assistance" className="font-semibold text-red hover:underline">{"Roadside assistance"}</a>{" may suit some faults, but a motorway stopping place can limit what is sensible there. Do not attempt a repair yourself while waiting for an operator to decide how to help."}</> },
+      { type: "paragraph", text: <>{"Where the vehicle cannot safely continue, "}<a href="https://fsrrecoverygroups.co.uk/services/vehicle-breakdown-recovery" className="font-semibold text-red hover:underline">{"vehicle breakdown recovery"}</a>{" can move it to an agreed destination. Describe collision damage, a locked wheel or steering trouble when booking; these affect collection arrangements even when the original fault sounds straightforward."}</> },
+      { type: "paragraph", text: <>{"If the vehicle has left the carriageway onto a verge, say so. A "}<a href="https://fsrrecoverygroups.co.uk/services/winch-out" className="font-semibold text-red hover:underline">{"winch-out"}</a>{" may be considered only after access, ground conditions and the vehicle’s position have been assessed. Do not attempt to drive it back into moving traffic."}</> },
+      { type: "paragraph", text: <>{"For a journey continuing west from Scotch Corner, our "}<a href="https://fsrrecoverygroups.co.uk/blog/broken-down-on-the-a66-in-winter" className="font-semibold text-red hover:underline">{"A66 winter breakdown guide"}</a>{" covers that separate road. Use the guidance for the road you are on now, rather than applying one route’s stopping arrangements to another."}</> },
       { type: "heading", level: 2, id: "frequently-asked-questions", text: "Frequently asked questions" },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"What should I do first if I break down on the A1(M)?"}</strong>
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: "Leave at the next exit or a service area if you can. If not, go left, switch on your hazards, and get behind a barrier if it is safe to get out. Then call National Highways on 0300 123 5000 and a recovery service. In a live lane, stay belted in and call 999.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"Should I put a warning triangle out on the A1(M)?"}</strong>
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: "No. National Highways and The Highway Code say you should not place a warning triangle on the carriageway, and never on a motorway. On ordinary A1 stretches, Rule 276 allows a triangle at least 45 metres behind only if it is safe to place and retrieve. If you are unsure, do not put one out.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"Who do I call — 999, National Highways, or a recovery company?"}</strong>
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: "Call 999 for the police if you are in a live lane, cannot leave the vehicle safely, someone is injured, or there is an immediate danger. Once you are in an emergency area, a lay-by or on the hard shoulder, call National Highways on 0300 123 5000 and a recovery service.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"How do I tell a recovery operator where I am on the A1(M)?"}</strong>
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: "Give your direction of travel, the last junction you are sure of, a nearby place name such as Durham, Darlington or Scotch Corner, and any marker post or driver location sign. Say whether you are in an emergency area, on the hard shoulder or in a live lane.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"Is the A1 the same as the A1(M) around Durham and Darlington?"}</strong>
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: "No. Some stretches are motorway, signed A1(M); some are ordinary A1 dual carriageway. On motorway sections, follow the motorway rules in full, including the ban on warning triangles. If you are not sure, treat it as a motorway.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"What if I break down in a live lane and cannot reach the hard shoulder?"}</strong>
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: "Stay in the vehicle, keep your seat belts and hazard lights on, and call 999 immediately for the police. Do not get out or try to push the car. Use the SOS button if the vehicle has one.",
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            <strong>{"Can FSR Recovery Group recover a car from the A1(M) near Durham or Darlington?"}</strong>
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"Yes. "}
-            <strong>{"FSR Recovery Group"}</strong>
-            {" provides 24/7 recovery for cars and light vans on the A1(M) through this region, including the junctions near Durham, Darlington, Scotch Corner and Catterick. Call with your direction of travel and nearest junction. The base is 135 Gladstone Street, Darlington DL3 6LB."}
-          </>
-        ),
-      },
+      { type: "paragraph", text: <><strong>{"What should I do first if I break down on the A1(M)?"}</strong></> },
+      { type: "paragraph", text: <>{"Reach an exit or service area if the vehicle can safely get there. Otherwise move left, stop in an available hard shoulder or emergency area, and use hazards. Leave and get clear only if safe; if trapped in danger, stay belted in and call 999."}</> },
+      { type: "paragraph", text: <><strong>{"Should I put a warning triangle out on the A1(M)?"}</strong></> },
+      { type: "paragraph", text: <>{"No. Do not place a warning triangle on a motorway or carriageway. Do not walk back towards traffic to make your car more visible. Use hazard lights, get clear if safe, and tell the emergency or recovery operator where you have stopped."}</> },
+      { type: "paragraph", text: <><strong>{"Who do I call: 999, National Highways or a recovery company?"}</strong></> },
+      { type: "paragraph", text: <>{"Call 999 for police assistance when you cannot reach safety or leave safely. For a breakdown where you are safely clear, contact National Highways on 0300 123 5000 and a recovery company. Report injuries or immediate danger to the emergency services."}</> },
+      { type: "paragraph", text: <><strong>{"How can I explain where I am on the A1(M)?"}</strong></> },
+      { type: "paragraph", text: <>{"Give your direction, the last confirmed junction and any visible marker reference. Describe where the vehicle is stopped and where you are waiting. A safely shared map pin can help. Tell the operator when a junction or place name is only a guess."}</> },
+      { type: "paragraph", text: <><strong>{"Are the A1 and A1(M) the same around Durham and Darlington?"}</strong></> },
+      { type: "paragraph", text: <>{"No. The route name includes motorway and non-motorway sections. Read the designation shown for your current position and report it accurately. Follow motorway advice on A1(M) sections; do not assume that an ordinary-road instruction applies throughout your journey."}</> },
+      { type: "paragraph", text: <><strong>{"What if I stop in a live lane with no way to reach the hard shoulder?"}</strong></> },
+      { type: "paragraph", text: <>{"Stay in the vehicle if you cannot get clear safely. Keep seat belts fastened and hazards on, call 999 and ask for the police. Use the SOS button if available. Do not try to push the vehicle or walk across live lanes."}</> },
+      { type: "paragraph", text: <><strong>{"Can FSR Recovery Group help near Durham or Darlington?"}</strong></> },
+      { type: "paragraph", text: <>{"Yes. FSR Recovery Group provides 24/7 car and light-van recovery across its A1(M) service area. Call with your exact position and vehicle details so the operator can confirm arrangements. Emergency assistance comes first if you are still in danger."}</> },
       { type: "heading", level: 2, id: "calling-for-recovery-on-the-a1-m", text: "Calling for recovery on the A1(M)" },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"If you have broken down on the A1(M) around Durham, Darlington or Scotch Corner, and you are already safe — or the police have been called if you are not — contact "}
-            <strong>{"FSR Recovery Group"}</strong>
-            {" on +44 7888 502989. The service is available 24/7 for cars and light vans. Have your location, your direction of travel and a short description of what has happened ready if you can."}
-          </>
-        ),
-      },
-      {
-        type: "paragraph",
-        text: (
-          <>
-            {"You can also use the "}
-            <a href="https://fsrrecoverygroups.co.uk/contact" className="font-semibold text-red hover:underline">{"contact page"}</a>
-            {". For more practical guides, see the "}
-            <a href="https://fsrrecoverygroups.co.uk/blog" className="font-semibold text-red hover:underline">{"FSR Recovery Group blog"}</a>
-            {". The "}
-            <a href="https://fsrrecoverygroups.co.uk/areas/a1m" className="font-semibold text-red hover:underline">{"A1(M) area page"}</a>
-            {" remains the shorter local reference for this road."}
-          </>
-        ),
-      },
+      { type: "paragraph", text: <>{"Once you are safe, call "}<strong>{"FSR Recovery Group"}</strong>{" on "}<strong><a href="tel:+447888502989" className="font-semibold text-red hover:underline">+44 7888 502989</a></strong>{". Have your direction, junction or location reference, vehicle details and proposed destination ready. Say whether anybody needs additional help and whether the emergency services are already involved."}</> },
+      { type: "paragraph", text: <>{"The base is 135 Gladstone Street, Darlington DL3 6LB. For a non-emergency enquiry, use the "}<a href="https://fsrrecoverygroups.co.uk/contact" className="font-semibold text-red hover:underline">{"contact page"}</a>{". When you call from the roadside, begin with your current position so the operator can confirm the next steps for your vehicle."}</> },
     ],
   },
   {
