@@ -115,10 +115,11 @@ function AreaSchema({ content, path, schemaOverride }: { content: AreaPageConten
   return <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema).replace(/</g, "\\u003c") }} />;
 }
 
-export function AreaPageLayout({ content, path, afterIntro, schema }: {
+export function AreaPageLayout({ content, path, afterIntro, afterSituations, schema }: {
   content: AreaPageContent;
   path: string;
   afterIntro?: React.ReactNode;
+  afterSituations?: React.ReactNode;
   schema?: Record<string, unknown>;
 }) {
   return (
@@ -199,6 +200,8 @@ export function AreaPageLayout({ content, path, afterIntro, schema }: {
           <CardGrid cards={content.situations} />
         </div>
       </section>
+
+      {afterSituations}
 
       {/* Featured photo + text sections */}
       {content.featured?.map((feature, i) => (
